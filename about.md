@@ -1,0 +1,14 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+<!-- TODO add more content here -->
+This is my personal website. I'm a software engineer student at Université Laval.
+
+You can find the source code of this site at GitHub:
+[willGuimont][will] /
+[willGuimont.github.io](https://github.com/willGuimont/willGuimont.github.io)
+
+
+[will]: https://github.com/willGuimont
