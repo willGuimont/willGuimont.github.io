@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 <!-- TODO add more content here -->
-This is my personal website. I'm a software engineer student at Université Laval.
+This is my personal website. I'm a software engineering student at Université Laval.
 
 You can find the source code of this site at GitHub:
 [willGuimont][will] /
