@@ -8,7 +8,6 @@ function setup() {
 
 function draw() {
     clear();
-    console.log(parent.parent);
     fill(0);
     textSize(80);
     textAlign(CENTER);
