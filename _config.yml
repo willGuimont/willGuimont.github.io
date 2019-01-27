@@ -16,7 +16,7 @@
 title: William Guimont-Martin  # TODO find a title
 email: william.guimont-martin.1@ulaval.ca
 description: >- # this means to ignore newlines until "baseurl:" # TODO change
-  Personal website about computer science and software engineering.
+  Personal website about computer science and software engineering
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://willguimont.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: WilliamGuimont
