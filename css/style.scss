@@ -341,7 +341,7 @@ pre {
 .site-description {
   font-size: 14px;
   letter-spacing: 2px;
-  text-indent: 6px;
+  // text-indent: 6px;
   font-family: 'Josefin Sans';
 }
 .exclamationMark {
@@ -364,18 +364,20 @@ pre {
   }
 }
 .page-title {
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: 2px;
   text-indent: 2px;
   font-family: "PT Sans";
-  font-size: 12px;
+  font-size: 18px;
   text-align:center;
+  display: block;
 }
 .page-tagline {
   font-size: 18px;
   font-family: "PT Sans";
   text-align: center;
-  text-transform: lowercase;
+  display: block;
+  // text-transform: lowercase;
 }
 .site-nav {
   .page-link {
