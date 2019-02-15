@@ -1,5 +1,7 @@
 # Stack ADT
 
+<!-- TODO check notes -->
+
 The Stack ADT is defined by the following operations
 
 **Push**: Add an element on the stack
@@ -21,3 +23,27 @@ We usually add the following principal operations to the definitions:
 **Empty**: Return a Boolean value specifying if the stack is empty
 
 In a functional language, each state is considered another entity. The operations on the ADT are simply functions that map one state to another.
+
+## New stack properties
+
+$$ empty(create()) $$ is true. A new stack is empty.
+
+$$ size(create()) = 0$$. A new stack has size 0.
+
+$$ peek(create()) $$ generates an error.
+
+$$ pop(create()) $$ generates an error.
+
+### Operations
+
+$$ peek(push(S, x)) = x $$
+
+$$ pop(push(S, x)) $$ leaves the stack unchanged.
+
+$$ empty(push(S, x)) $$ is always false.
+
+### Size operation
+
+$$ size(push(S, x)) = size(S) + 1 $$
+
+$$ size(pop(S)) = size(S) - 1 $$

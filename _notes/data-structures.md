@@ -9,6 +9,7 @@ Here some example of common ADTs. This list will link to corresponding article w
 - Tree
   - Heap
   - AVL
+  - Red-black
 - Set
 - MultiSet
 - Map
