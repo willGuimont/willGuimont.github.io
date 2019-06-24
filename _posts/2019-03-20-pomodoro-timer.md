@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pomodoro Timer in Vue.js"
-date:   2019-03-01 10:40:00 -0500
+date:   2019-03-20 10:40:00 -0500
 categories: cs
 ---
 
