@@ -49,4 +49,6 @@ $$e=\frac{a-p}{a+p}$$
 
 And there you go, you have computed the eccentricity of Moon's orbit just using a camera.
 
-As stated at the start, this experiment blew my mind when I took the course: we calculated the eccentricity of a big rock moving around the Earth just using a camera. Wow.
+As stated at the start, this experiment blew my mind when I took the course: we calculated the eccentricity of a big rock moving around the Earth just using a camera.
+
+Wow.
