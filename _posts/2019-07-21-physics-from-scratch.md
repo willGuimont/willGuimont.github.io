@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Physics from scratch"
+title:  "Physics from Scratch"
 date:   2019-06-23 20:00:00 -0500
 categories: physics
 ---

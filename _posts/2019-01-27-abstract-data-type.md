@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to abstract data types"
+title:  "Introduction to Abstract Data Types"
 date:   2019-01-27 14:00:00 -0500
 categories: cs
 ---
