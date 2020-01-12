@@ -96,7 +96,7 @@ To define quality, we could inverse the ratio.
 
 $$quality = \frac{s_2}{s_1}$$
 
-You can use any metric you want, as long as the higher the quality is, the higher the probability of the point is correct.
+You can use any metric you want, as long as the higher the quality is, the higher the probability of the point being correct is.
 
 ## Fast sampling
 We could simply sample $$m$$ points from the top $$n$$ points, but that would be inefficient. We could sample multiple times the same set of points. So, to better explore the possibles sets of $$m$$ points, we use the fact that when adding a new point $$p_{n+1}$$, we add a number $$a$$ of new samples. Each new sample contains the new point $$p_{n+1}$$ and $$m-1$$ from the $$n$$ first points. 
