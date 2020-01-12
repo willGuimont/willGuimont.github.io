@@ -123,7 +123,7 @@ The solution is considered non-random if the probability of having its number of
 We want to stop sampling when the chance of getting a model that fit more points is lower than a certain threshold. This is computed by looking at the odds of missing a set of inliers bigger than previously found after a number of draws. If this probability falls under a certain threshold (usually 5%), it is not worth continuing drawing and we terminate.
 
 # Code
-Not having found any implementation of PROSAC online, I decided to post my one: [willGuimont/PROSAC](https://github.com/willGuimont/PROSAC){:target="_blank"}.
+Not having found any implementation of PROSAC online, I decided to post mine: [willGuimont/PROSAC](https://github.com/willGuimont/PROSAC){:target="_blank"}.
 
 # Sources
 [^ChumMatas]: Chum, Ondrej & Matas, Jiri. Matching with PROSAC = Progressive Sample Consensus. 2005.
