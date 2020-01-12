@@ -3,6 +3,7 @@ layout: post
 title:  "Squirrels"
 date:   2019-01-28 14:20:00 -0500
 categories: photo
+tags: [Photos]
 ---
 
 Here are some pictures of squirrels I took in the last few years. Most of them are from the *Domaine de Maizerets* in Quebec City.
