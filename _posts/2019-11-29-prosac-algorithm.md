@@ -3,11 +3,11 @@ layout: post
 title: "PROSAC"
 date: 2019-12-26 12:00:00 -0500
 categories: cs
-color: rgb(94,80,134)
+tags: [Computer Sciences]
+# color: rgb(110, 93, 157)
 # feature-img: "assets/img/sample.png"
 # thumbnail: "assets/img/thumbnail/sample-th.png"
 # bootstrap: true
-tags: [Computer Sciences]
 # excerpt_separator: <!--more-->
 # author: willGuimontMartin
 ---

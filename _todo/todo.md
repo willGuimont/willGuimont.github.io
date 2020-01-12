@@ -2,6 +2,7 @@
 
 Varia:
   - Sort asset folder
+    - move images to img
   - Color for all posts
   - copy pasta from prosac
   - do new favicon
@@ -16,7 +17,6 @@ Text:
 
 Images:
   - use Gallery to make pages for duck and squirrels
-  - Remove Gallery from header bar
 
 Portfolio:
   - See pages/_portfolio
