@@ -49,7 +49,7 @@ In the paper, they looked at estimating epipolar geometry from a pair of picture
 
 ![Plant 1](/assets/images/PROSAC/plant01.png) | ![Plant 2](/assets/images/PROSAC/plant02.png)
 
-With this pair of pictures, there is a lot of repetitive patterns on the floor and leaves, so there will be a lot of false matches. We have $$m=7$$ (epipolar geometry) and $$w=9.2%$$. The number of iteration of RANSAC is given by $$\frac{1}{w^m}$$. The estimated number of samples is over $$8.43 \times 10^7$$ !!! RANSAC would take a pretty long time before finding a good solution... That's not realistic!
+With this pair of pictures, there is a lot of repetitive patterns on the floor and leaves, so there will be a lot of false matches. We have $$m=7$$ (epipolar geometry) and $$w=9.2\%$$. The number of iteration of RANSAC is given by $$\frac{1}{w^m}$$. The estimated number of samples is over $$8.43 \times 10^7$$ !!! RANSAC would take a pretty long time before finding a good solution... That's not realistic!
 
 When the model is complex and the number of correct points is low, RANSAC often takes very long before finding a satisfying solution. Let's see if PROSAC can help.
 
