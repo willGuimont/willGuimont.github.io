@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction aux conditions et à la boucle principale"
 date:   2019-03-01 10:20:00 -0500
 categories: cs
-tags: [Computer Sciences]
+tags: [Computer Sciences, French, Tutorial, Arduino]
 ---
 
 Dans l'article précédant, nous avons vu comment faire clignoter une DEL 2 fois avant de s'éteindre. Maintenant, essayons de n'allumer la DEL que lorsqu'un bouton est enfoncé.

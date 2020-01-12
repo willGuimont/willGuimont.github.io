@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction to Abstract Data Types"
 date:   2019-01-27 14:00:00 -0500
 categories: cs
-tags: [Computer Sciences]
+tags: [Computer Sciences, Data Structure]
 ---
 
 The proposition of abstract data types by Liskov and Zilles is an important step in the way we build computer software. Abstract data types allow programmers to leverage the power of abstraction. By hiding implementation details, they allow programmers to use a structure by only being concerned about their behaviors and not how the structure works inside.

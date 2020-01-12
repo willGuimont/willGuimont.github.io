@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction à Arduino"
 date:   2019-03-01 10:00:00 -0500
 categories: cs
-tags: [Computer Sciences]
+tags: [Computer Sciences, French, Tutorial, Arduino]
 ---
 
 # Qu'est-ce qu'Arduino

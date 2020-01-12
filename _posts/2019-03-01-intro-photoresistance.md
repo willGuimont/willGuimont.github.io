@@ -3,7 +3,7 @@ layout: post
 title:  "Exercice conditions avec des photorésistances"
 date:   2019-03-01 10:40:00 -0500
 categories: cs
-tags: [Computer Sciences]
+tags: [Computer Sciences, French, Tutorial, Arduino]
 ---
 
 Le but de cet exercice est de vous faire pratiquer les conditions et la boucle principale. De plus, vous aurez la chance de vous pratiquer à lire de la documentation.
