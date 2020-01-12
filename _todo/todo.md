@@ -3,10 +3,7 @@
 Varia:
   - Sort asset folder
     - move images to img
-  - Color for all posts
-  - copy pasta from prosac
   - do new favicon
-  - Read all previous posts for errors
   - personalized image for posts
 
 Change images:
