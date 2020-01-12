@@ -7,6 +7,7 @@ Varia:
   - copy pasta from prosac
   - do new favicon
   - Read all previous posts for errors
+  - personalized image for posts
 
 Change images:
   - About

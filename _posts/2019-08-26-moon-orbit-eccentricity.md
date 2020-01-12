@@ -4,6 +4,7 @@ title:  "Calculate Moon's Orbit Eccentricity"
 date:   2019-08-26 10:00:00 -0500
 categories: physics
 tags: [Physics]
+color: rgb(110, 93, 157)
 ---
 
 In my third session of CÉGEP, I decided to take a thermodynamic and astrophysics class. It was the kind of class that completely changed the way you see physics. 
