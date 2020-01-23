@@ -133,4 +133,4 @@ We want to stop sampling when the chance of getting a model that fit more points
 Not having found any implementation of PROSAC online, I decided to post mine: [willGuimont/PROSAC](https://github.com/willGuimont/PROSAC){:target="_blank"}.
 
 # Sources
-[^ChumMatas]: Chum, Ondrej & Matas, Jiri. Matching with PROSAC = Progressive Sample Consensus. 2005.
+[^ChumMatas]: Chum, Ondrej & Matas, Jiri. Matching with PROSAC - Progressive Sample Consensus. 2005.
