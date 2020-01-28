@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On learning"
+title: "On Learning"
 date: 2020-01-23 07:00:00 -0500
 categories: cs
 tags: [Computer Sciences, Algorithm, Machine Learning, Learning]
