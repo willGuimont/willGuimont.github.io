@@ -35,7 +35,7 @@ Perhaps, there are other links between machine learning and the Dreyfus model.
 ## Mental representations
 In The Sciences of the artificial[^Simon] from Herbert A. Simon, the author discusses the experience of A. de Groot and al. on chess perception. They showed chessboard with pieces in positions of real games for 5 seconds, then removed the pieces. Then they asked the subjects to put the pieces back in their position.
 
-As you might guess, somebody not accustomed to chess would have a pretty hard time to reconstruct the positions. For grandmasters and masters thought, they were able to reconstruct the positions with almost no error!
+As you might guess, somebody not accustomed to chess would have a pretty hard time to reconstruct the positions. For grandmasters and masters though, they were able to reconstruct the positions with almost no error!
 
 They then retried the experiment with *random* piece positions. In that case, even grandmasters could not reconstruct the board.
 
