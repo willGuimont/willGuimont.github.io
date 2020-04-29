@@ -3,7 +3,7 @@ layout: post
 title: "On Learning"
 date: 2020-01-23 07:00:00 -0500
 categories: cs
-tags: [Computer Sciences, Algorithm, Machine Learning, Learning]
+tags: [Computer Sciences, Algorithm, Deep Learning, Machine Learning, Learning]
 color: rgb(110, 93, 157)
 # feature-img: "assets/img/sample.png"
 # thumbnail: "assets/img/thumbnail/sample-th.png"
