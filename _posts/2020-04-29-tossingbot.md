@@ -10,10 +10,11 @@ color: rgb(110, 93, 157)
 # bootstrap: true
 # excerpt_separator: <!--more-->
 # author: willGuimontMartin
+youtubeId: Icx6j3s_Pmc
 ---
 This video presents TossingBot, a robotic arm that learns to throw arbitrary objects with residual physics.
 
 This video was made for the class *GLO-7030: Deep Learning* at Université Laval.
 
-{% include youtubePlayer.html id=Icx6j3s_Pmc %}
+{% include youtubePlayer.html id=page.youtubeId %}
 
