@@ -15,7 +15,7 @@ This gives programmers tools to think at a higher level, focused on the problem 
 
 Abstract data types (ADT) were proposed in 1974 by, 2008 Turing Award winner, Barbara Liskov and her coauthor Stephen Zilles in the paper *Programming with abstract data types*[^Liskov]. This paper wasn't only a theoretical paper, they implemented the concept in a programming language. Liskov and her students created the programming language CLU that included abstract data types. ADTs are often seen as a step in the development of object-oriented programming.
 
-ADTs were proposed in the 70s, around the time when the term *software crisis* was coined. People were wanted to build sophisticated software programs but didn't know how to build them effectively. Projects often ran over-budget, over-time, and the resulting software was often unmanageable, hard to maintain, and of low quality.
+ADTs were proposed in the 70s, around the time when the term *software crisis* was coined. People wanted to build sophisticated software programs but didn't know how to build them effectively. Projects often ran over-budget, over-time, and the resulting software was often unmanageable, hard to maintain, and of low quality.
 
 It was around that time that the use of the Go To statement was still controversial. Dijkstra wrote *Go To Statement Considered Harmful*[^Dijkstra] in 1968. At that time, the use of Go To statements was widespread, which led to hard to debug and maintain codes.
 
