@@ -17,7 +17,7 @@ ADT is a lot more concise but requires to use pattern-matching. Adding a new ADT
 
 For IOP on the other hand, adding a new implementation of the interface is easy. You simply implement the needed methods. Whereas adding a new function in the interface can quickly become expensive, you'll have to add the method to every class implementing the interface. I'll include Haskell's type-classes and Rust's traits as IOP.
 
-I discussed that compromise a bit more in [a previous abstract data types]({{ site.baseurl }}{% link _posts/2019-01-27-abstract-data-type.md %}). Albeit about a different type of ADT (algebraic vs abstract), the post is still relevant to understand the difference between ADT and IOP.
+I discussed that compromise a bit more in [a previous post on abstract data types]({{ site.baseurl }}{% link _posts/2019-01-27-abstract-data-type.md %}). Albeit about a different type of ADT (algebraic vs abstract), the post is still relevant to understand the difference between ADT and IOP.
 
 Here, I would like to discuss the software engineering aspect of using IOP and ADT when designing modules. I'll introduce the concept of inward and outward polymorphism.
 
