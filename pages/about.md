@@ -7,7 +7,9 @@ tags: [About, Archive]
 ---
 
 <!-- TODO add more content here -->
-This is my personal website. I'm a software engineering student at Université Laval.
+This is my personal website. I'm a master's degree student at Université Laval.
+
+My principal research interests are Deep Learning and Mobile Robotics.
 
 You can find the source code of this site at GitHub:
 [willGuimont][will] /
