@@ -11,7 +11,7 @@ color: rgb(110, 93, 157)
 # excerpt_separator: <!--more-->
 # author: willGuimontMartin
 ---
-Ce post est un court résumé d'une article que j'ai écrit dans le cadre du cours [IFT-3100 Infographie](https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/ift-3100-infographie.html) à l'Université Laval.
+Ce post est un court résumé d'un article que j'ai écrit dans le cadre du cours [IFT-3100 Infographie](https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/ift-3100-infographie.html) à l'Université Laval.
 
 J’aimerais vous présentez une technique de rendu que je trouve très originale : le ray marching. Pour ce faire, je vous propose un résumé de cet article[^walczyk] de Michael Walczyk.
 
