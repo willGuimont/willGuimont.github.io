@@ -12,7 +12,9 @@ color: rgb(110, 93, 157)
 # author: willGuimontMartin
 youtubeId: eaWXeXs8dh0
 ---
-On September 2nd, 2021 I gave a talk on transformer-based neural network architectures for computer vision.
+On September 2nd 2021, I gave a talk on transformer-based neural network architectures for computer vision.
+
+I gave the in University Laval's [Norlab](https://norlab.ulaval.ca/).
 
 Here are the slides: [Transformers in Computer Vision](/assets/presentations/TransformersInComputerVision.pdf){:target="_blank"}
 
