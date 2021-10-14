@@ -3,7 +3,7 @@ layout: post
 title: "Transformers in Computer Vision"
 date: 2021-09-02 01:00:00 -0500
 categories: cs
-tags: [Computer Graphics, French]
+tags: [Computer Sciences, Deep Learning, Machine Learning]
 color: rgb(110, 93, 157)
 # feature-img: "assets/img/sample.png"
 # thumbnail: "assets/img/thumbnail/sample-th.png"
