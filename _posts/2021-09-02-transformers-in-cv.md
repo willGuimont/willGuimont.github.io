@@ -21,4 +21,3 @@ Here are the slides: [Transformers in Computer Vision](/assets/presentations/Tra
 And here is the recording of the event:
 
 {% include youtubePlayer.html id=page.youtubeId %}
-
