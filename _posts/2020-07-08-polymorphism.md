@@ -45,7 +45,7 @@ So, your library calls the user's code polymorphically.
 ## Inward or Outward
 In the last two examples, we can see two different uses of polymorphism. In the first example, the user called your library passing polymorphic data type, while the second one, the user implemented an interface so that your library would call their code.
 
-We can see that the flow of control in both cases is different in both cases. In the first example, the flow moves **into** your code whereas, in the other example, the flow moves **out of** your code.
+We can see that the flow of control in both cases is different. In the first example, the flow moves **into** your code whereas, in the other example, the flow moves **out of** your code.
 
 Based on the control flow, we can define **inward polymorphism** as polymorphism used when the user calls your code. **Outward polymorphism** would then be the use of polymorphism when your code is expected to call the user's code.
 
