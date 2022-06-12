@@ -26,7 +26,7 @@ The main goal of RANSAC is to estimate a model from noised data with outliers.
 
 The basic idea is to randomly sample points from all points; fit a model on those randomly chosen points; then check if the model fits with the rest of the data.
 
-As you can see, the algorithm is relatively simple, sample, fit, check, rinse and repeat.
+As you can see, the algorithm is relatively simple: sample, fit, check, rinse and repeat.
 
 ## Pseudocode
 
