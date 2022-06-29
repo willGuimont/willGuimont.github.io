@@ -17,7 +17,7 @@ footer_text: >
 # Blog
 excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
-color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
+color_image: /assets/img/lineart.webp                    # A bit transparent for color posts.
 
 # Features
 markdown: kramdown
@@ -47,7 +47,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-sitemap, kramdown]
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-sitemap, kramdown, jekyll-gzip]
 exclude: [".jekyll-cache", "Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", ".idea", "vendor/*",
           "LICENSE", "README.md", "screenshot.png", "assets/package.json", "assets/node_modules", "assets/gulpfile.js"]
 

@@ -10,9 +10,9 @@ layout: page
 
 <section>
     <!-- Script pointing to jekyll-search.js -->
-    <script src="{{ "/assets/js/vendor/simple-jekyll-search.min.js" | relative_url }}" type="text/javascript"></script>
+    <script defer=true src="{{ "/assets/js/vendor/simple-jekyll-search.min.js" | relative_url }}" type="text/javascript"></script>
 
-    <script type="text/javascript">
+    <script defer=true type="text/javascript">
         SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
