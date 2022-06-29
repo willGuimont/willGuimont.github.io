@@ -5,7 +5,7 @@ url: "https://willguimont.github.io"
 # THEME-SPECIFIC CONFIGURATION
 title: William Guimont-Martin                                    # site's title
 description: "Personal website about computer science and software engineering"      # used by search engines
-avatar: assets/img/rubik.png                         # Empty for no avatar in navbar
+avatar: assets/img/avatar.webp                          # Empty for no avatar in navbar
 favicon: assets/favicon.png                             # Icon displayed in the tab
 
 # Header and footer text
