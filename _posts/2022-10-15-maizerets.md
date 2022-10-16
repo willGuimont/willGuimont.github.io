@@ -9,9 +9,9 @@ color: rgb(22, 168, 61)
 
 Here are some pictures I took in *Domaine de Maizerets* in Quebec City.
 
-![Maizeret oct 2022](/assets/images/2022-10-15-maizerets/01.png){: .center-image }
-
 ![Maizeret oct 2022](/assets/images/2022-10-15-maizerets/02.png){: .center-image }
+
+![Maizeret oct 2022](/assets/images/2022-10-15-maizerets/01.png){: .center-image }
 
 ![Maizeret oct 2022](/assets/images/2022-10-15-maizerets/03.png){: .center-image }
 
