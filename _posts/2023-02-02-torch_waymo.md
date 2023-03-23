@@ -3,7 +3,7 @@ layout: post
 title:  "torch_waymo"
 date:   2023-02-02 8:20:00 -0500
 categories: cs
-tags: [Computer Sciences, Deep Learning, Machine Learning, French]
+tags: [Computer Sciences, Deep Learning, Machine Learning]
 color: rgb(110, 93, 157)
 ---
 
