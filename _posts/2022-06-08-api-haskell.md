@@ -13,3 +13,5 @@ color: rgb(110, 93, 157)
 ---
 
 Here's a simple API in Haskell using Servant and Polysemy: [willGuimont/status-checker](https://github.com/willGuimont/status-checker).
+
+And another one: [willGuimont/exercises_api](https://github.com/willGuimont/exercises_api)
