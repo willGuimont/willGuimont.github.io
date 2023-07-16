@@ -48,7 +48,7 @@ Si on augmente la concentration en CO2, l’air au-dessus du nuage devient moins
 Aussi, comme la température de l’eau est plus élevée, il y a davantage d’évaporation. Lorsque l’eau se condense dans l’air, elle libère de la chaleur, ce qui chauffe le nuage par en dessous. Ceci augmente la force des turbulences qui apportent de l’air chaud et sec dans le nuage, désintégrant le nuage du même coup.
 Si la concentration en CO2 augmente, il y aura alors moins de stratocumulus.
 
-es simulations commencent avec une concentration de CO2 semblable aux niveaux actuels, soit environ 400 ppm. Les chercheurs ont alors augmenté la concentration de CO2. Au fur et à mesure que la concentration augmente, on note que l’humidité dans les nuages diminue jusqu’à ce qu’ils se désintègrent à des concentrations supérieures à 1200 ppm. Dès lors, comme il y a moins de nuages, moins d’énergie est reflétée vers l’espace. La température de l’eau à la surface aux tropiques augmente de 8◦C et de 10◦C dans les régions subtropicales.
+Les simulations commencent avec une concentration de CO2 semblable aux niveaux actuels, soit environ 400 ppm. Les chercheurs ont alors augmenté la concentration de CO2. Au fur et à mesure que la concentration augmente, on note que l’humidité dans les nuages diminue jusqu’à ce qu’ils se désintègrent à des concentrations supérieures à 1200 ppm. Dès lors, comme il y a moins de nuages, moins d’énergie est reflétée vers l’espace. La température de l’eau à la surface aux tropiques augmente de 8◦C et de 10◦C dans les régions subtropicales.
 
 Donc, la disparition des nuages avec l’augmentation de CO2 dans l’atmosphère pourrait expliquer pourquoi l’on retrouvait autrefois des palmiers et des crocodiles dans l’Arctique canadien.
 
