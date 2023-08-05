@@ -24,6 +24,7 @@ markdown: kramdown
 katex: false                                            # Enable if using math markup
 google_analytics: "UA-131357723-1"                      # Tracking ID, e.g. "UA-000000-01"
 google_analytics_ga4: "G-ZVN21R65NP"
+google_adsense: "ca-pub-4383858425192181"
 disqus_shortname:                                       # Your discus shortname for comments
 layout_variables:                                       # Open the "_sass > base" folder, and open "_variables.scss"
 footer_icons:                                           # In _data/social.yml
