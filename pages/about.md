@@ -7,7 +7,7 @@ tags: [About]
 ---
 
 <!-- TODO add more content here -->
-This is my personal website. I'm a master's degree student at Université Laval in the [Northern Robotics Laboratory (Norlab)](https://norlab.ulaval.ca/).
+This is my personal website. I'm a Ph.D. student at Université Laval in the [Northern Robotics Laboratory (Norlab)](https://norlab.ulaval.ca/).
 
 My principal research interests are Deep Learning and Mobile Robotics.
 
