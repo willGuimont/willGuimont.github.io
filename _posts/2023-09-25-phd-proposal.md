@@ -9,4 +9,4 @@ color: rgb(110, 93, 157)
 
 This is my Ph.D. proposal. It is a work in progress.
 
-[Ph.D. Proposal](/assets/papers/phdProposal_williamGuimontMartin.pdf){:target="_blank"}
+[Ph.D. Proposal](/assets/papers/phdProposal_williamGuimontMartin_v0.pdf){:target="_blank"}
