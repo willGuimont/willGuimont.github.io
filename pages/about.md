@@ -15,5 +15,6 @@ My principal research interests are Deep Learning and Mobile Robotics.
 - [YouTube](https://www.youtube.com/@willGuimont)
 - [LinkedIn](https://www.linkedin.com/in/william-guimont-martin/)
 - [Thingiverse](https://www.thingiverse.com/wigum/designs)
+- [Instagram](https://www.instagram.com/wilguimont/)
 
 [will]: https://github.com/willGuimont
