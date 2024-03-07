@@ -3,6 +3,7 @@
 
 # VSCode
 .vscode
+.vscode-server-insiders/
 
 # Mac files
 .DS_Store
@@ -34,3 +35,7 @@ jekyll-theme-type-on-strap.gemspec
 *copy.md
 .jekyll-cache/*
 test/*
+.jekyll-metadata
+
+# Other
+.ssh/
