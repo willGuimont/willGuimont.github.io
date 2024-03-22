@@ -43,4 +43,4 @@
 [branch]
 	sort = -committerdate
 [credential]
-	helper = "!f() { /root/.vscode-server-insiders/bin/e244acbb172c428cb219717a07bf55d2737492ca-insider/node /tmp/vscode-remote-containers-33702cd1-22f1-460a-8f76-c91b3f1fd16f.js git-credential-helper $*; }; f"
+	helper = "!f() { /root/.vscode-server-insiders/bin/e244acbb172c428cb219717a07bf55d2737492ca-insider/node /tmp/vscode-remote-containers-08498fa2-7572-4d39-beb5-807f9dbb012f.js git-credential-helper $*; }; f"
