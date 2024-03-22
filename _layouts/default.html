@@ -6,27 +6,28 @@
     https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
 -->
 <html lang="en">
-  {% include head.html %}
-  <body>
-    {% include navbar.html %}
-    <div class="content">
-      {{ content }}
-    </div>
-    {% include footer.html %}
-  </body>
+{% include head.html %}
 
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  </script>
+<body>
+  {% include navbar.html %}
+  <div class="content">
+    {{ content }}
+  </div>
+  {% include footer.html %}
+</body>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
 <script async defer=true type="text/javascript" id="MathJax-script"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js">
-</script>
+  </script>
 
 </html>
