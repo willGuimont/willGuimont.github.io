@@ -1,6 +1,12 @@
-## William Guimont-Matin website
+# William Guimont-Matin website
 
-### Markdown cheatsheet
+## Run with docker
+
+```bash
+docker-compose run dev-linux --build
+```
+
+## Markdown cheatsheet
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 

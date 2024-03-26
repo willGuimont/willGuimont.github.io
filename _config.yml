@@ -1,6 +1,7 @@
 # SITE CONFIGURATION
 baseurl: ""
 url: "https://willguimont.github.io"
+timezone: America/Montreal
 
 # THEME-SPECIFIC CONFIGURATION
 title: William Guimont-Martin                                    # site's title
