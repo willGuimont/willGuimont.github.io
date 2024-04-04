@@ -26,4 +26,4 @@ EXPOSE 4000
 
 ENTRYPOINT source /usr/share/rvm/scripts/rvm \
     && bundle update \
-    && bundle exec jekyll serve --host=0.0.0.0 --incremental
+    && bundle exec jekyll serve --host=0.0.0.0 --incremental -w --force_polling --trace

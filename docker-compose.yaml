@@ -11,6 +11,7 @@ services:
     tty: true
     stdin_open: true
     network_mode: host
+    # entrypoint: bash  # For debug purposes (overwride entrypoint)
 
   # dev-osx:
   #   extends:
