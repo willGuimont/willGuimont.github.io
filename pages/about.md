@@ -29,5 +29,6 @@ Here are some of my profiles on the web:
 - [LinkedIn](https://www.linkedin.com/in/william-guimont-martin/)
 - [Thingiverse](https://www.thingiverse.com/wigum/designs)
 - [Instagram](https://www.instagram.com/wilguimont/)
+- [ResearchGate](https://www.researchgate.net/profile/William-Guimont-Martin)
 
 [will]: https://github.com/willGuimont
