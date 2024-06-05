@@ -16,7 +16,8 @@ RUN add-apt-repository -y ppa:rael-gc/rvm  \
     && apt update  \
     && apt install -y rvm  \
     && source /usr/share/rvm/scripts/rvm  \
-    && rvm install "ruby-2.5.3"
+    && rvm install "ruby-2.5.3" \
+    && gem update --system 3.3.22
 
 COPY Gemfile type-on-strap.gemspec ./
 RUN source /usr/share/rvm/scripts/rvm  \
@@ -26,4 +27,5 @@ EXPOSE 4000
 
 ENTRYPOINT source /usr/share/rvm/scripts/rvm \
     && bundle update \
+    && jekyll build --verbose \
     && bundle exec jekyll serve --host=0.0.0.0 --incremental -w --force_polling --trace

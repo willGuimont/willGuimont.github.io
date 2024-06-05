@@ -39,3 +39,4 @@ test/*
 
 # Other
 .ssh/
+.bash_history
