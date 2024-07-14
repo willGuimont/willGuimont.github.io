@@ -22,10 +22,10 @@ Now, on your phone:
 1. Install [F-Droid](https://f-droid.org/)
 2. Open F-Droid and install [Termux](https://f-droid.org/packages/com.termux/)
 3. In Termux, install `git` using `pkg install git`
-4. In Termux install `termu-am` using `pkg install pkg install termux-am`
+4. In Termux install `termu-am` using `pkg install termux-am`
 5. Mount the phone storage using `termux-setup-storage`
 6. Copy your SSH key into `~/.ssh/` using `cp ~/storage/shared/path/to/obsidian-phone-key ~/.ssh/`
-7. Now go to the location you want to clone the repository (should be in `~/storare/shared/` for Obsidian to have access) and clone it using `git clone git@github.com:username/repo.git`
+7. Now go to the location you want to clone the repository (should be in `~/storage/shared/` for Obsidian to have access) and clone it using `git clone git@github.com:username/repo.git`
 8. You can now open Obsidian
 	1. Open folder as vault
 	2. Browse to the repository you copied from your computer
