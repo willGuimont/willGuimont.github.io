@@ -22,6 +22,8 @@ I am also a Candidate to the engineering profession (CEP) in Canada and an [inve
 Since 2016, I've been mentoring secondary school students in a [FIRST Robotics](https://www.firstinspires.org/robotics/frc) team, Les Chevaliers 5440 from École secondaire de la Seigneurie.
 I teach them about programming, electronics, and robotics, and I help them build a robot to compete in the FIRST Robotics Competition.
 
+## Around the web
+
 Here are some of my profiles on the web:
 
 - [GitHub](https://github.com/willGuimont)
@@ -31,5 +33,6 @@ Here are some of my profiles on the web:
 - [Cults3d](https://cults3d.com/en/users/wigum/)
 - [Instagram](https://www.instagram.com/wilguimont/)
 - [ResearchGate](https://www.researchgate.net/profile/William-Guimont-Martin)
+- [Mastodon](https://mastodon.social/@willGuimont)
 
 [will]: https://github.com/willGuimont
