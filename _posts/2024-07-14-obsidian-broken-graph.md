@@ -12,6 +12,6 @@ If the Graph View in Obsidian is broken after an update, you can fix it by follo
 ```shell
 # Close Obsidian
 cd ~/.config/obsidian
-rm -rf rm -rf Cache Code\ Cache DawnCache GPUCache
+rm -rf Cache Code\ Cache DawnCache GPUCache
 # Reopen Obsidian
 ```
