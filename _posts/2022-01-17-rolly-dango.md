@@ -3,7 +3,7 @@ layout: post
 title: "Rolly Dango"
 date: 2022-01-17 01:00:00 -0500
 categories: poesy
-tags: [Gamedev, SoftwareEngineering, Dango]
+tags: [Gamedev, Software Engineering, Dango]
 color: rgb(200, 130, 200)
 # feature-img: "assets/img/sample.png"
 # thumbnail: "assets/img/thumbnail/sample-th.png"
