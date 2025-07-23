@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://willguimont.github.io"
+url: "https://willguimont.com"
 timezone: America/Montreal
 
 # THEME-SPECIFIC CONFIGURATION
