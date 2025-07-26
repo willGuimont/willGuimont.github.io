@@ -65,7 +65,7 @@ Still, `defer` only solves the cleanup part. You’re still manually threading e
 
 ## Playing Tag with Errors (Rust)
 
-Rust’s `Result<T, E>` and `Option<T>` types give you a better tradeoff. Errors are in the type system. The compiler forces you to handle them - or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
+Rust’s tagged unions `Result<T, E>` and `Option<T>` types give you a better tradeoff. Errors are in the type system. The compiler forces you to handle them - or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
 
 ```rust
 fn foo() -> Result<T, E> { ... }
@@ -108,8 +108,14 @@ impl<T, E> Try for MyResult<T, E> {
 
     fn branch(self) -> ControlFlow<Self::Residual, Self::Output> {
         match self {
-            MyResult::Ok(val) => ControlFlow::Continue(val),
-            MyResult::Err(e) => ControlFlow::Break(MyResult::Err(e)),
+            MyResult::Ok(val) => {
+                println!("Encountered Ok with value.");
+                ControlFlow::Continue(val)
+            },
+            MyResult::Err(e) => {
+                println!("Encountered Err with value.");
+                ControlFlow::Break(MyResult::Err(e))
+            },
         }
     }
 }
@@ -117,7 +123,10 @@ impl<T, E> Try for MyResult<T, E> {
 impl<T, E> FromResidual<MyResult<Infallible, E>> for MyResult<T, E> {
     fn from_residual(residual: MyResult<Infallible, E>) -> Self {
         match residual {
-            MyResult::Err(e) => MyResult::Err(e),
+            MyResult::Err(e) => {
+                println!("Converting residual Err to MyResult.");
+                MyResult::Err(e)
+            },
             _ => unreachable!(),
         }
     }
@@ -130,9 +139,17 @@ fn do_something() -> MyResult<i32, &'static str> {
 }
 
 fn main() {
-    println!("{:?}", do_something());
+    println!("Output: {:?}", do_something());
 }
 
+```
+
+Outputs:
+```
+Encountered Ok with value.
+Encountered Err with value.
+Converting residual Err to MyResult.
+Output: Err("oops")
 ```
 
 In this implementation:
@@ -462,4 +479,4 @@ Every meaningful computation—every I/O operation, API call, database query - c
 
 There’s [no silver bullet](https://worrydream.com/refs/Brooks_1986_-_No_Silver_Bullet.pdf). But there are better tradeoffs - depending on your constraints, goals, and team culture. Personally, I prefer systems where errors are explicit in the type system - like Rust or Haskell - and where failure is an architectural concern, as in Elixir, forcing you to confront it from the start.
 
-Errors are the norm, not the exception. The best systems are those that make handling them not only possible, but obvious.
+Errors are the norm, not the exception. The best systems are those that make handling them not only simple, but obvious.
