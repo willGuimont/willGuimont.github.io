@@ -64,7 +64,6 @@ if err != nil {
 Still, `defer` only solves the cleanup part. You’re still manually threading error values through the entire call chain. But at least nothing is hidden. Errors are values, not ghosts in the stack trace. You see them, you pass them, or you drop them - but nothing happens behind your back.
 
 ## Playing Tag with Errors (Rust)
-
 Rust’s tagged unions `Result<T, E>` and `Option<T>` types give you a better tradeoff. Errors are in the type system. The compiler forces you to handle them - or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
 
 ```rust
@@ -73,7 +72,7 @@ fn foo() -> Result<T, E> { ... }
 let val = foo()?; // propagates if Err
 ```
 
-The `?` operator propagates errors, and makes code readable - until it doesn’t. It’s just a tiny symbol, but it does a lot. Misread it, and you might think the call returns a `T` directly, when it might actually short-circuit out of the function.
+The `?` operator propagates errors, and makes code readable - until it doesn’t. It’s just a tiny symbol, but it does a lot. This single symbol rewires control flow and introduces implicit short-circuiting, which can obscure the data path.
 
 Still, it's structured. It composes. It’s not just `return err`; it’s a limited but practical form of monad. This is arguably one of Rust's strengths, it makes functional programming ideas more mainstream.
 
@@ -158,8 +157,8 @@ In this implementation:
 - `from_residual` is required for integrating with other `Try`-compatible types and enabling error propagation across type boundaries.
 
 Despite this flexibility, Rust’s `?` operator remains fundamentally tied to error-handling semantics. Unlike Haskell, where monads generalize sequencing of computations across various effects, Rust’s monadic ergonomics, through `?`, are constrained to types modelling control flow interruption.
-## A monad is just a monoid in the category of endofunctors, what's the problem? (Haskell)
 
+## A monad is just a monoid in the category of endofunctors, what's the problem? (Haskell)
 Where Rust brings functional error handling into a systems programming language - with `Result<T, E>`, `Option<T>`, and `?` - Haskell generalizes the idea far beyond.
 
 Monads give you composable effects, including errors. You can throw, catch, pattern match, and compose computations in `Either`, `Maybe`, or more complex stacks using monad transformers. 
@@ -298,7 +297,6 @@ robustness you want in real-world parsing, form validation, or config loading. A
 It is important to note, though, that `Validated` [is not a monad](https://typelevel.org/cats/datatypes/validated.html#of-flatmaps-and-eithers) due to the accumulation of errors.
 
 ## Effect Systems (Haskell++)
-
 Effect systems bring error handling - and side effects more broadly - under rigorous control. Rather than wrapping all effects in a monad like `IO`, these systems explicitly track them in the type signature. This means you can determine exactly which effects a function might perform (I/O, logging, error handling, state, etc.) directly from its type - not by convention, but enforced by the compiler.
 
 The [polysemy](https://hackage.haskell.org/package/polysemy) library in Haskell is a good example of such a system. Here's an example that combines state, logging, and error handling, all visible in the type signature. Here's a simple example extracted from [willGuimont/exercises\_api](https://github.com/willGuimont/exercises_api):
@@ -376,6 +374,7 @@ startServer = do
 ```
 
 This makes exception handling more explicit and modular - you can define and run separate interpreters for each type of error, allowing each subsystem to handle its own failures independently.
+
 ## Trust, but ~~verify~~ `assert` (D)
 Some languages, like Eiffel and D, support design by contract, a declarative way to specify preconditions, postconditions, and invariants. If a contract is violated, the program crashes or throws, often with minimal recovery. They are often even omitted when compiled in release mode. Thus, they are not, as the other techniques overviewed in this document, ways to validate user input or alternatives to exceptions.
 
@@ -472,7 +471,6 @@ This design makes fault tolerance an architectural feature, not an implementatio
 Unlike Go, where the programmer is responsible for inspecting and propagating every error manually, Elixir encourages you to crash early and let the system self-heal. Resilience is not patched in - it's built in.
 
 ## Conclusion: Errors Are the Norm, Not the Exception
-
 There is no perfect model. But there are better tradeoffs.
 
 Every meaningful computation—every I/O operation, API call, database query - can fail. Yet most programming languages treat error handling as a second-class concern: either overly verbose, dangerously ignorable, or both. The happy path is easy to write. The hard part is everything else.
