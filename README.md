@@ -1,7 +1,9 @@
-# William Guimont-Matin website
+# William Guimont-Martin's Website
 
-## Run with docker
-
-```bash
-docker-compose run dev-linux --build
+```shell
+zola serve
+# Draft mode will render posts with draft = true
+zola serve --drafts
 ```
+
+Theme: [Duckquill](https://duckquill.daudix.one/)
