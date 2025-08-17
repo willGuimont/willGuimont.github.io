@@ -1,9 +1,9 @@
 +++
-title = "Writings of Duck's Feet"
+title = "Mind in Motion"
 sort_by = "date"
 template = "article_list.html"
 page_template = "article.html"
-paginate_by = 2
+paginate_by = 5
 +++
 
-Welcome to my quack'in blog, I quack about various stuff, but mostly I'm a demo.
+Welcome to the `Mind in Motion` blog, where I write about just about anything that sparks my interest, from technology and programming to personal development and creativity.

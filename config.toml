@@ -171,7 +171,7 @@ show_repo = true
 # i.e. "@/blog/_index.md".
 # See https://www.getzola.org/documentation/content/linking/#internal-links
 links = [
-	{ url = "@/demo/index.md", name = "Demo" },
+	# { url = "@/demo/index.md", name = "Demo" },
 	{ url = "@/blog/_index.md", name = "Blog" },
 	{ name = "Links", menu = [
 		{ url = "https://github.com/willGuimont", name = "GitHub" },
