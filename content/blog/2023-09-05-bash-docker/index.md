@@ -24,19 +24,19 @@ Ils ont été donnés dans le cadre du cours IFT-2001 et GLO-2001 Systèmes d'ex
 Ce premier atelier a pour but de vous familiariser avec le terminal et le langage de script Bash.
 Vous apprendrez à utiliser les commandes de base de Bash et à écrire des scripts simples.
 
-[Énoncé Bash](/assets/papers/Ateliers/AtelierBash.pdf)
+[Énoncé Bash](AtelierBash.pdf)
 
-[Solutionnaire Bash](/assets/papers/Ateliers/AtelierBashSolutionnaire.pdf)
+[Solutionnaire Bash](AtelierBashSolutionnaire.pdf)
 
-[Code source](https://github.com/ulavalIFTGLOateliers/IFT2001-Scripting)
+<a class="external" href="https://github.com/ulavalIFTGLOateliers/IFT2001-Scripting" target="_blank">Code source</a>
 
 # Atelier d'introduction à Docker
 
 Ce deuxième atelier a pour but de vous familiariser avec Docker.
 Vous apprendrez à utiliser les commandes de base de Docker et à écrire des Dockerfile.
 
-[Énoncé Docker](/assets/papers/Ateliers/AtelierDocker.pdf)
+[Énoncé Docker](AtelierDocker.pdf)
 
-[Solutionnaire Docker](/assets/papers/Ateliers/AtelierDockerSolutionnaire.pdf)
+[Solutionnaire Docker](AtelierDockerSolutionnaire.pdf)
 
-[Code source](https://github.com/ulavalIFTGLOateliers/IFT2001-Docker)
+<a class="external" href="https://github.com/ulavalIFTGLOateliers/IFT2001-Docker" target="_blank">Code source</a>

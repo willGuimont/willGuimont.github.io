@@ -16,7 +16,7 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Here's a small library I made to explain the Transformer architecture in PyTorch: [willGuimont/transformers](https://github.com/willGuimont/transformers).
+Here's a small library I made to explain the Transformer architecture in PyTorch: <a class="external" href="https://github.com/willGuimont/transformers" target="_blank">willGuimont/transformers</a>.
 The code is heavily commented and should be easy to follow.
 
 This repository also contains some popular transformer-based models, such as Vision Transformer.

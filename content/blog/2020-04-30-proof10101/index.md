@@ -19,7 +19,7 @@ katex = true
 
 1, 101, 10101, 1010101, 101010101, 10101010101, 1010101010101, 101010101010101, 10101010101010101, 1010101010101010101, 101010101010101010101, 10101010101010101010101, 1010101010101010101010101, 101010101010101010101010101, 10101010101010101010101010101
 
-This is the sequence A094028 of the [On-Line Encyclopedia of Integer Sequences (OEIS)](https://oeis.org/A094028). According to a comment from Felix Fröhlich on the sequence's page:
+This is the sequence A094028 of the <a class="external" href="https://oeis.org/A094028" target="_blank">On-Line Encyclopedia of Integer Sequences (OEIS)</a>. According to a comment from Felix Fröhlich on the sequence's page:
 
 > 101 is the only term that is prime, since (100^k-1)/99 = (10^k+1)/11 * (10^k-1)/9. When k is odd and not 1, (10^k+1)/11 is an integer > 1 and thus (100^k-1)/99 is nonprime. When k is even and greater than 2, (100^k-1)/99 has the prime factor 101 and is nonprime. 
 >

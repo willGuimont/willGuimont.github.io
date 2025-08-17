@@ -116,5 +116,5 @@ D'autres textes ont été consultés pour la rédaction de cet essai: [^Rousseau
 [^Sartre]: SARTRE, Jean-Paul. L’existentialisme est un humanisme. Ed Gallimard, 1996, 111 p. 
 [^Rowell]: ROWELL, Vincent. Philosophie, Les conceptions de l’être humain. Ed Études Vivantes, 1998, 306 p.
 [^StOnge]: ST-ONGE, J.-Claude. La condition humaine. Ed Chenelière éducation, 2011, 232 p.
-[^Manon]: MANON, Simone (professeure de philosophie). PhiloLog [http://www.philolog.fr/], 23/04/16.
+[^Manon]: MANON, Simone (professeure de philosophie). PhiloLog <a class="external" href="http://www.philolog.fr/" target="_blank">http://www.philolog.fr/</a>, 23/04/16.
 [^RousseauDiscours]: ROUSSEAU, Jean-Jacques. Discours sur l’origine et les fondements de l’inégalité parmi les hommes. Éd. Cégep de Chicoutimi. 2016, 124 p.

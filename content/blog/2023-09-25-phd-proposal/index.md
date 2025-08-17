@@ -18,4 +18,4 @@ toc_ordered = true
 
 This is my Ph.D. proposal. It is a work in progress.
 
-[Ph.D. Proposal](/assets/papers/phdProposal_williamGuimontMartin_v0.pdf)
+[Ph.D. Proposal](phdProposal_williamGuimontMartin_v0.pdf)

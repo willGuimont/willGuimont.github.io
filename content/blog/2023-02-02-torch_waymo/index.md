@@ -16,6 +16,6 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Here's a small library I made to use the [Waymo Open Dataset](https://waymo.com/open/) in PyTorch, without any dependency to Tensorflow: [willGuimont/torch_waymo](https://github.com/willGuimont/torch_waymo).
+Here's a small library I made to use the <a class="external" href="https://waymo.com/open/" target="_blank">Waymo Open Dataset</a> in PyTorch, without any dependency to Tensorflow: <a class="external" href="https://github.com/willGuimont/torch_waymo" target="_blank">willGuimont/torch_waymo</a>.
 
-Here's the corresponding PyPI package: [torch-waymo](https://pypi.org/project/torch-waymo/).
+Here's the corresponding PyPI package: <a class="external" href="https://pypi.org/project/torch-waymo/" target="_blank">torch-waymo</a>.

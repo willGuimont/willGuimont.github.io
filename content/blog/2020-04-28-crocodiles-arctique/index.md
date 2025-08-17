@@ -66,4 +66,4 @@ Lecture intéressante: Silberg[^Silberg].
 [^Schneider]: T. Schneider, C. M. Kaul, K. G. Pressel, 2019. Possible climate transition from breakup of stratocumulus decks under greenhouse warming. Nature Geoscience. 2019.
 [^Everle]: J. Everle, M. D. Gottfried, J. H. Hutchison, C. A. Brochu, 2014. First Record of Eocene Bony Fishes and Crocodyliforms from Canada’s Western Arctic. Public Library of Science. 2014.
 [^Sluijs]: A. Sluijs, S. Schouten, T. H. Donders et al. 2009.  Warm and wet conditions in the Arctic region during Eocene Thermal Maximum 2. Nature Geoscience. 2019
-[^Silberg]: Silberg, Bob. 2020. Clouds, Arctic Crocodiles and a New Climate Model. NASA : Globa Climate Change. https://climate.nasa.gov/news/2936/clouds-arctic-crocodiles-and-a-new-climate-model/.
+[^Silberg]: Silberg, Bob. 2020. Clouds, Arctic Crocodiles and a New Climate Model. NASA : Globa Climate Change. <a class="external" href="https://climate.nasa.gov/news/2936/clouds-arctic-crocodiles-and-a-new-climate-model/" target="_blank">https://climate.nasa.gov/news/2936/clouds-arctic-crocodiles-and-a-new-climate-model/</a>.

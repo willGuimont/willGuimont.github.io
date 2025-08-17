@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Compute Canada Quickstart"
-description = ""
+description = "A guide to using Compute Canada clusters for deep learning."
 date = 2022-01-28
 # updated = ""
 # draft = false
@@ -18,15 +18,17 @@ toc_ordered = true
 
 Here's a small guide on how to use Compute Canada clusters to train deep learning models.
 
-In this guide, we'll do the necessary setup to get you up and running on a cluster. This guide is written to work with [Narval](https://docs.computecanada.ca/wiki/Narval/en), but it should be easy to adapt it to other clusters by changing the URLs. You can see available clusters at [this URL](https://www.computecanada.ca/research-portal/accessing-resources/available-resources/).
+In this guide, we'll do the necessary setup to get you up and running on a cluster. This guide is written to work with <a class="external" href="https://docs.computecanada.ca/wiki/Narval/en" target="_blank">Narval</a>, but it should be easy to adapt it to other clusters by changing the URLs. You can see available clusters at <a class="external" href="https://www.computecanada.ca/research-portal/accessing-resources/available-resources/" target="_blank">this URL</a>.
 
 We recommend Narval for deep learning as of now (2021-2022) because it has 4 NVIDIA A100 (40 Gb memory) per node.
 
 *This guide was written by William Guimont-Martin, 2021*
 
+Also available on <a class="external" href="https://github.com/norlab-ulaval/Norlab_wiki/wiki/Compute-Canada-Quickstart" target="_blank">Norlab Wiki</a>.
+
 # Account creation
 
-First of all, you'll need a Compute Canada account to access the clusters. To do so, please see [Tips for new students](https://docs.google.com/document/d/1fk0P_4wIKaP1giUD0rtbpCtxzj3YYm797RQKklQjpuk/edit?usp=sharing). You'll see the URL to apply for an account and Philippe Giguère's sponsor code.
+First of all, you'll need a Compute Canada account to access the clusters. To do so, please see <a class="external" href="https://docs.google.com/document/d/1fk0P_4wIKaP1giUD0rtbpCtxzj3YYm797RQKklQjpuk/edit?usp=sharing" target="_blank">Tips for new students</a>. You'll see the URL to apply for an account and Philippe Giguère's sponsor code.
 
 You'll need your username and your password for the following steps.
 
@@ -45,9 +47,9 @@ You'll be asked to enter your password. If everything goes right, you'll be gree
 
 To make things easier later, we recommend to set up an SSH key to connect to the cluster.
 
-To do so, you'll need to generate an SSH key [if you don't already have one you'd like to use](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).
+To do so, you'll need to generate an SSH key <a class="external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys" target="_blank">if you don't already have one you'd like to use</a>.
 
-Please see [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) from GitHub to generate a new SSH key.
+Please see <a class="external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">Generating a new SSH key and adding it to the ssh-agent</a> from GitHub to generate a new SSH key.
 
 Once you have added your SSH key and added it to the ssh-agent, copy your key to the cluster with
 
@@ -64,7 +66,7 @@ Now that you are logged in the cluster, you should have a bash shell. From that 
 
 We'll now clone your project on the cluster.
 
-From the cluster, you can create another SSH key and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+From the cluster, you can create another SSH key and <a class="external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank">add it to GitHub</a>.
 
 This will allow you to `git clone` your repository into your home directory.
 
@@ -102,7 +104,7 @@ If you want to create your venv from inside a job, note the commands you did to 
 
 To put your data on the cluster, we recommend using `sftp`.
 
-First of all, take the time to familiarize yourself with [the different types of storage available on the clusters](https://docs.computecanada.ca/wiki/Storage_and_file_management/en#Storage_types).
+First of all, take the time to familiarize yourself with <a class="external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/en#Storage_types" target="_blank">the different types of storage available on the clusters</a>.
 
 From that, you'll have to upload your dataset in `~/projects/def-philg/<username>`. Note that this space is shared across the people in the lab. Please keep it clean!
 
@@ -244,7 +246,7 @@ You can then verify the job is queued by running:
 sq
 ```
 
-More information is available [here](https://docs.computecanada.ca/wiki/Running_jobs)
+More information is available <a class="external" href="https://docs.computecanada.ca/wiki/Running_jobs" target="_blank">here</a>
 
 # Useful tools
 

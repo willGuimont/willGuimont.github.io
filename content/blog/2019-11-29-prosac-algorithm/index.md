@@ -18,11 +18,11 @@ katex = true
 styles = ["custom.css"]
 +++
 
-Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read [Matching with PROSAC - Progressive Sample Concensus](/assets/linked_paper/2005-Matching-with-PROSAC-progressive-sample-consensus.pdf)[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.
+Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read [Matching with PROSAC - Progressive Sample Concensus](2005-Matching-with-PROSAC-progressive-sample-consensus.pdf)[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.
 
-This article will be a more detailed version of the presentation I gave for that class, the slides are [here](/assets/presentations/PROSAC.pdf). I won't go into much of the mathematics, the details are in the paper. What I want to do with this article is to give you the intuition behind the algorithm more than writing a lot of equations.
+This article will be a more detailed version of the presentation I gave for that class, the slides are [here](PROSAC.pdf). I won't go into much of the mathematics, the details are in the paper. What I want to do with this article is to give you the intuition behind the algorithm more than writing a lot of equations.
 
-To supplement the presentation, I wrote an implementation of PROSAC in Python: [willGuimont/PROSAC](https://github.com/willGuimont/PROSAC).
+To supplement the presentation, I wrote an implementation of PROSAC in Python: <a class="external" href="https://github.com/willGuimont/PROSAC" target="_blank">willGuimont/PROSAC</a>.
 
 Before jumping in PROSAC, let's just review RANSAC a bit.
 
@@ -173,7 +173,7 @@ The solution is considered non-random if the probability of having its number of
 We want to stop sampling when the chance of getting a model that fit more points is lower than a certain threshold. This is computed by looking at the odds of missing a set of inliers bigger than previously found after a number of draws. If this probability falls under a certain threshold (usually 5%), it is not worth continuing drawing and we terminate.
 
 # Code
-Not having found any implementation of PROSAC online, I decided to post mine: [willGuimont/PROSAC](https://github.com/willGuimont/PROSAC).
+Not having found any implementation of PROSAC online, I decided to post mine: <a class="external" href="https://github.com/willGuimont/PROSAC" target="_blank">willGuimont/PROSAC</a>.
 
 # Sources
 [^ChumMatas]: Chum, Ondrej & Matas, Jiri. Matching with PROSAC - Progressive Sample Consensus. 2005.

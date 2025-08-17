@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Rolly Dango"
-description = ""
+description = "A game about rolling"
 date = 2022-01-17
 # updated = ""
 # draft = false
@@ -16,20 +16,20 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Rolly Dango, an isometric rolling puzzle made with [WASM-4](https://wasm4.org/). We made it for the [WASM-4 Game Jam](https://itch.io/jam/wasm4).
+Rolly Dango, an isometric rolling puzzle made with <a class="external" href="https://wasm4.org/" target="_blank">WASM-4</a>. We made it for the <a class="external" href="https://itch.io/jam/wasm4" target="_blank">WASM-4 Game Jam</a>.
 
-[Try the game here](https://willguimont.github.io/rolly-dango/) or on [itch.io](https://willguimont.itch.io/rolly-dango)!
+<a class="external" href="https://willguimont.github.io/rolly-dango/" target="_blank">Try the game here</a> or on <a class="external" href="https://willguimont.itch.io/rolly-dango" target="_blank">itch.io</a>!
 
 ![rolly dango](https://raw.githubusercontent.com/willGuimont/rolly-dango/main/assets/game.png)
 
-Source code is here: [willGuimont/rolly-dango](https://github.com/willGuimont/rolly-dango)
+Source code is here: <a class="external" href="https://github.com/willGuimont/rolly-dango" target="_blank">willGuimont/rolly-dango</a>
 
 Here's some key points of our project:
 
 - We made our own ECS (entity-component-systems) from scratch
 - To save cartridge space, we built our own Huffman coding algorithm
-- To help ourselves make levels, we built our own level editor using [p5.js](https://p5js.org/)
-- Made all of our sprites using [Aseprite](https://www.aseprite.org/)
+- To help ourselves make levels, we built our own level editor using <a class="external" href="https://p5js.org/" target="_blank">p5.js</a>
+- Made all of our sprites using <a class="external" href="https://www.aseprite.org/" target="_blank">Aseprite</a>
 
 Our level editor:
 ![level editor](https://raw.githubusercontent.com/willGuimont/rolly-dango/main/assets/editor.png)

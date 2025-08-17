@@ -16,13 +16,13 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Dashy Dango a wave fighting game made with [WASM-4](https://wasm4.org/) by [@samX500](https://github.com/samX500) and [@willGuimont](https://github.com/willGuimont).
+Dashy Dango a wave fighting game made with <a class="external" href="https://wasm4.org/" target="_blank">WASM-4</a> by <a class="external" href="https://github.com/samX500" target="_blank">@samX500</a> and <a class="external" href="https://github.com/willGuimont" target="_blank">@willGuimont</a>.
 
-[Try the game here](https://willguimont.github.io/dashy-dango/) or on [itch.io](https://willguimont.itch.io/dashy-dango)!
+<a class="external" href="https://willguimont.github.io/dashy-dango/" target="_blank">Try the game here</a> or on <a class="external" href="https://willguimont.itch.io/dashy-dango" target="_blank">itch.io</a>!
 
 ![dash dango](https://raw.githubusercontent.com/willGuimont/dashy-dango/main/assets/art/DashyDangolong.png)
 
-Source code is here: [willGuimont/dashy-dango](https://github.com/willGuimont/dashy-dango)
+Source code is here: <a class="external" href="https://github.com/willGuimont/dashy-dango" target="_blank">willGuimont/dashy-dango</a>
 
 We built our own ECS (entity-component-systems) from scratch in Rust.
 

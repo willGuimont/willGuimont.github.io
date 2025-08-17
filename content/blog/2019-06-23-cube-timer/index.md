@@ -18,4 +18,4 @@ toc_ordered = true
 
 Here a simple Rubik's Cube Timer I made in Vue.js
 
-[Link to the timer](https://willguimont.github.io/cube_timer/)
+<a class="external" href="https://willguimont.github.io/cube_timer/" target="_blank">Link to the timer</a>

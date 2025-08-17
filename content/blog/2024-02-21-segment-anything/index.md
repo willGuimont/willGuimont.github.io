@@ -16,8 +16,8 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Presentation made for the course [GIF-7010: Avancées en apprentissage automatique](https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique) at Université Laval on [Segment Anything](https://arxiv.org/abs/2304.02643).
+Presentation made for the course <a class="external" href="https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique" target="_blank">GIF-7010: Avancées en apprentissage automatique</a> at Université Laval on <a class="external" href="https://arxiv.org/abs/2304.02643" target="_blank">Segment Anything</a>.
 
 Here are the slides:
-- [Segment Anything.pptx](/assets/presentations/SegmentAnything.pptx)
-- [Segment Anything.pdf](/assets/presentations/SegmentAnything.pdf)
+- [Segment Anything.pptx](SegmentAnything.pptx)
+- [Segment Anything.pdf](SegmentAnything.pdf)

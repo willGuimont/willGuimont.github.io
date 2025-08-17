@@ -16,4 +16,4 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Co-authored paper in MDPI: [Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment](https://www.mdpi.com/1999-4907/16/4/616)
+Co-authored paper in MDPI: <a class="external" href="https://www.mdpi.com/1999-4907/16/4/616" target="_blank">Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment</a>

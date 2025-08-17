@@ -10,7 +10,7 @@ tags = ["Draft"]
 
 ### Blog post specific:
 
-- `banner`: Filename of the [colocated](https://www.getzola.org/documentation/content/overview/#asset-colocation) banner image. Recommended dimensions are 2:1 aspect ratio and 1920x960 resolution.
+- `banner`: Filename of the <a class="external" href="https://www.getzola.org/documentation/content/overview/#asset-colocation" target="_blank">colocated</a> banner image. Recommended dimensions are 2:1 aspect ratio and 1920x960 resolution.
 - `banner_pixels` Makes the banner use nearest neighbor algorithm for scaling, useful for keeping pixel-art sharp.
 - `archived`: Make the post visually stand out in the post list. Also accepts message as a value.
 - `featured`: Ditto but doesn't accept message as a value.

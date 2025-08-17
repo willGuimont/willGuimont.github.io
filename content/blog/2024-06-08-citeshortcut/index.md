@@ -16,10 +16,10 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-To automatically cite a website in [bibme.org](https://www.bibme.org), add the following bookmarklet to your bookmarks bar:
+To automatically cite a website in <a class="external" href="https://www.bibme.org" target="_blank">bibme.org</a>, add the following bookmarklet to your bookmarks bar:
 
 ```javascript
 javascript:void((function(){location.href='https://www.bibme.org/apa/website-citation/search?q='+location.href;})());
 ```
 
-Clicking the bookmarklet will open the current page in [bibme.org](https://www.bibme.org)'s citation generator.
+Clicking the bookmarklet will open the current page in <a class="external" href="https://www.bibme.org" target="_blank">bibme.org</a>'s citation generator.

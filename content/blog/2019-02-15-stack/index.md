@@ -384,7 +384,7 @@ Also note that we don't need an $\text{isEmpty}$ operation either, because we ca
 
 ## Functional Implementations in Haskell
 
-This bit of code is adapted from [haskell.org](https://haskell.org)[^Haskell].
+This bit of code is adapted from <a class="external" href="https://haskell.org" target="_blank">haskell.org</a>[^Haskell].
 
 ```haskell
 -- stack.hs
@@ -427,9 +427,9 @@ Note here that this code is much shorter and that the stacks aren't mutated, ins
 
 # Summary
 
-Stacks are an elementary data structure. They are fundamentals in computer science. We note their uses in multiples places such as [solving sudokus using backtracking algorithms](https://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking), recursion, converting equations to [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) and much more. We even see stacks used in how CPUs handle subroutines. They truly are fundamental to the computer science field, from the theoretical to the practical.
+Stacks are an elementary data structure. They are fundamentals in computer science. We note their uses in multiples places such as <a class="external" href="https://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking" target="_blank">solving sudokus using backtracking algorithms</a>, recursion, converting equations to <a class="external" href="https://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">reverse Polish notation</a> and much more. We even see stacks used in how CPUs handle subroutines. They truly are fundamental to the computer science field, from the theoretical to the practical.
 
 # References
 
 [^Cormen]: Thomas H. Cormen et al. Introduction to Algorithms. 2009.
-[^Haskell]: Haskell org. [Abstract Data Types](https://wiki.haskell.org/Abstract_data_type). 2014.
+[^Haskell]: Haskell org. <a class="external" href="https://wiki.haskell.org/Abstract_data_type" target="_blank">Abstract Data Types</a>. 2014.

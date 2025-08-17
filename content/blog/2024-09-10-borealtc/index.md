@@ -16,4 +16,4 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Co-authored paper at IROS 2024: [Proprioception Is All You Need: Terrain Classification for Boreal Forests](https://norlab-ulaval.github.io/BorealTC/)
+Co-authored paper at IROS 2024: <a class="external" href="https://norlab-ulaval.github.io/BorealTC/" target="_blank">Proprioception Is All You Need: Terrain Classification for Boreal Forests</a>

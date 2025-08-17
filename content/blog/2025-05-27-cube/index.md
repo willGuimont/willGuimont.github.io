@@ -29,6 +29,6 @@ Why `Tracker3D.jl`?
 - ☁️ Weatherproof and reusable
 - 🧩 Ideal for industrial, outdoor, or educational setups
 
-**GitHub:** [willGuimont/Tracker3D.jl](https://github.com/willGuimont/Tracker3D.jl)
+**GitHub:** <a class="external" href="https://github.com/willGuimont/Tracker3D.jl" target="_blank">willGuimont/Tracker3D.jl</a>
 
-**Ready-to-print tags:** [Thingiverse](https://www.thingiverse.com/thing:6983741)
+**Ready-to-print tags:** <a class="external" href="https://www.thingiverse.com/thing:6983741" target="_blank">Thingiverse</a>

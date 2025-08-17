@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Ray marching"
-description = ""
+description = "Une autre technique de rendu basée sur le lancer de rayons"
 date = 2021-03-16
 # updated = ""
 # draft = false
@@ -14,15 +14,16 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+katex = true
 +++
 
-Ce post est un court résumé d'un article que j'ai écrit dans le cadre du cours [IFT-3100 Infographie](https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/ift-3100-infographie.html) à l'Université Laval.
+Ce post est un court résumé d'un article que j'ai écrit dans le cadre du cours <a class="external" href="https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/ift-3100-infographie.html" target="_blank">IFT-3100 Infographie</a> à l'Université Laval.
 
 J’aimerais vous présentez une technique de rendu que je trouve très originale : le ray marching. Pour ce faire, je vous propose un résumé de cet article[^walczyk] de Michael Walczyk.
 
 Le ray marching représente les objets dans la scène grâce à une fonction de distance signée. Cette fonction donne la distance entre un point et la surface d’un objet. Si le point est à l’extérieur de l’objet, alors la distance est positive, si le point est à l’intérieur alors la distance est négative et si le point est exactement sur la surface, sa distance sera nulle. Par exemple, la fonction de distance signée d'une sphère sera :
 
-$\lVert p - c \rVert - r$
+$$\lVert p - c \rVert - r.$$
 
 où $p$ est le point, $c$ est le centre de la sphère et $r$ est le rayon de la sphère.
 
@@ -36,7 +37,7 @@ On peut alors utiliser la fonction de distance signée pour nous indiquer la tai
 
 L’image ci-dessous, tirée de l’article, illustre ce principe. Les points bleus représentent les positions de chaque itération de l’algorithme de ray marching. Les rayons des cercles représentent les tailles des pas. À chaque itération, on va se déplacer d'un pas de taille égale au rayon du cercle. Comme le cercle a pour rayon la distance avec la surface, on peut avancer de cette distance sans entrer en collision avec la surface.
 
-| ![Figure](/assets/images/ray_marching/sphere-tracing.png)| 
+| ![Sphere tracing](sphere-tracing.png)| 
 |:--:| 
 | *Ray marching, figure extraite de [^walczyk]* |
 
@@ -54,9 +55,14 @@ Il est aussi possible de faire des combinaisons très intéressantes visuellemen
 
 Pour explorer cette technique un peu plus en détail, j’ai implémenté un ray marcher dans openframeworks. Voici un rendu que j’ai réalisé avec une union smooth entre des sphères et un cube. 
 
-![Figure](/assets/images/ray_marching/screenshot.png)
+![Ray marching](screenshot.png)
 
-Le code source est disponible ici : [willGuimont/ray](https://github.com/willGuimont/ray). À noter qu'il est possible de faire de l'illumination avec cette technique aussi. Il faut simplement approximer la normale en lançant des rayons autour du rayon de la caméra. Cette technique est vraiment très intéressante.
+Le code source est disponible ici : <a class="external" href="https://github.com/willGuimont/ray" target="_blank">willGuimont/ray</a>. À noter qu'il est possible de faire de l'illumination avec cette technique aussi. Il faut simplement approximer la normale en lançant des rayons autour du rayon de la caméra. Cette technique est vraiment très intéressante.
+
+{% alert(important=true) %}
+J'ai aussi implémenté le même algorithme en Rust: <a class="external" href="https://github.com/willGuimont/rust_ray" target="_blank">willGuimont/rust_ray</a>
+{% end %}
+
 
 # Références
-[^walczyk]: M. Walczyk. Ray Marching. [https://michaelwalczyk.com/blog-ray-marching.html](https://michaelwalczyk.com/blog-ray-marching.html)
+[^walczyk]: M. Walczyk. Ray Marching. <a class="external" href="https://michaelwalczyk.com/blog-ray-marching.html" target="_blank">https://michaelwalczyk.com/blog-ray-marching.html</a>

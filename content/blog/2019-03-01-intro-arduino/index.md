@@ -83,9 +83,9 @@ On voudrait demander à l'Arduino de faire clignoter une la DEL deux fois en la 
 
 ## Télécharger Arduino
 
-Il est maintenant temps d'essayer de demander à l'Arduino de faire ces étapes. Téléchargeons le logiciel depuis [le site officiel d'Arduino](https://www.arduino.cc/en/main/software).
+Il est maintenant temps d'essayer de demander à l'Arduino de faire ces étapes. Téléchargeons le logiciel depuis <a class="external" href="https://www.arduino.cc/en/main/software" target="_blank">le site officiel d'Arduino</a>.
 
-On peut télécharger le ZIP ne demandant pas d'installation à cette [adresse](https://www.arduino.cc/download_handler.php).
+On peut télécharger le ZIP ne demandant pas d'installation à cette <a class="external" href="https://www.arduino.cc/download_handler.php" target="_blank">adresse</a>.
 
 On peut maintenant lancer l'application.
 

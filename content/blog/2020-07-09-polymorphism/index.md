@@ -35,7 +35,7 @@ To motivate the introduction of those concepts, let's start with two small examp
 
 ## Algebraic Data Type
 
-You are charged to build a networking library in Rust. You want to support both IPv4 and IPv6. Each one represents addresses in different ways, IPv4 stores address using four 8 bits numbers, while IPv6 stores it as a string. Using Rust, and having recently read the [Rust Book's chapter on enums](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html), you decide to declare them the following way:
+You are charged to build a networking library in Rust. You want to support both IPv4 and IPv6. Each one represents addresses in different ways, IPv4 stores address using four 8 bits numbers, while IPv6 stores it as a string. Using Rust, and having recently read the <a class="external" href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html" target="_blank">Rust Book's chapter on enums</a>, you decide to declare them the following way:
 
 ```rust
 enum IpAddr {

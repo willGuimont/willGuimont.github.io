@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "L’Art poétique, Boileau"
-description = ""
+description = "Un poème sur l'art de rédiger"
 date = 2021-10-26
 # updated = ""
 # draft = false
@@ -16,11 +16,13 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-[Nicolas Boileau, L'Art poétique](https://fr.wikisource.org/wiki/Boileau_-_%C5%92uvres_po%C3%A9tiques/L%E2%80%99Art_po%C3%A9tique/Chant_I)
+J'apprécie beaucoup le poème <a class="external" href="https://fr.wikisource.org/wiki/Boileau_-_%C5%92uvres_po%C3%A9tiques/L%E2%80%99Art_po%C3%A9tique/Chant_I" target="_blank">L'Art poétique</a> de Nicolas Boileau.
+
+Dans l'extrait suivant, il aborde l'importance de la clarté de l'esprit lors de l'écriture: Il est impossible d'écrire clairement si l'on n'a pas une idée précise de ce que l'on veut dire. Depuis que j'ai découvert ce poème, j'y pense dès lors que je m'assois pour écrire.
 
 Voici un extrait que je trouve particulièrement intéressant:
 
-{% highlight none %}
+```
 Il est certains esprits dont les sombres pensées
 Sont d’un nuage épais toujours embarrassées ; 
 Le jour de la raison ne le saurait percer. 
@@ -88,4 +90,4 @@ Ici le sens le choque, et plus loin c’est la phrase.
 Votre construction semble un peu s’obscurcir ; 
 Ce terme est équivoque, il le faut éclaircir. 
 C’est ainsi que vous parle un ami véritable.
-{% endhighlight %}
+```

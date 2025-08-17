@@ -16,6 +16,6 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Here's a simple API in Haskell using Servant and Polysemy: [willGuimont/status-checker](https://github.com/willGuimont/status-checker).
+Here's a simple API in Haskell using Servant and Polysemy: <a class="external" href="https://github.com/willGuimont/status-checker" target="_blank">willGuimont/status-checker</a>.
 
-And another one: [willGuimont/exercises_api](https://github.com/willGuimont/exercises_api)
+And another one: <a class="external" href="https://github.com/willGuimont/exercises_api" target="_blank">willGuimont/exercises_api</a>

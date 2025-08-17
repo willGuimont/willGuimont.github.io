@@ -25,11 +25,11 @@ This blog post stems from some experimentation on error handling I did back in 2
 ## `Try`ing to `Catch` ~~Lightning in a Bottle~~ Exceptions (Java and Friends)
 The most well-known model is the `try/catch` mechanism. You throw something and hope someone, somewhere, catches it.
 
-It’s _easy_ - throw the exception and forget about it - but not simple. As Rich Hickey pointed out in his talk "[Simple Made Easy](https://www.infoq.com/presentations/Simple-Made-Easy/)", easy means accessible, simple means minimal. Exceptions are neither minimal nor predictable. They are easy, until they inevitably _complect_ and create a mess.
+It’s _easy_ - throw the exception and forget about it - but not simple. As Rich Hickey pointed out in his talk "<a class="external" href="https://www.infoq.com/presentations/Simple-Made-Easy/" target="_blank">Simple Made Easy</a>", easy means accessible, simple means minimal. Exceptions are neither minimal nor predictable. They are easy, until they inevitably _complect_ and create a mess.
 
 They let you skip instructions, bubble errors up several layers, and bypass normal control flow. They’re sugar-coated `goto`s that jump through stack frames instead of lines of code.
 
-Yes, `try/catch/finally` blocks and RAII (in C++/Java with try-with-resources) can clean things up nicely, but you're still left with a system where it's not obvious what code might throw. And don't even get me started on null - [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/). Every value might be absent, which means every line might throw. Sure, coding standards can help limit these kinds of errors, until you realize that Java's standard library liberally uses `null` (e.g., `Map.get`). Unless your team is being very cautious, you are vulnerable to unexpected `NullPointerException`s.
+Yes, `try/catch/finally` blocks and RAII (in C++/Java with try-with-resources) can clean things up nicely, but you're still left with a system where it's not obvious what code might throw. And don't even get me started on null - <a class="external" href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/" target="_blank">the billion-dollar mistake</a>. Every value might be absent, which means every line might throw. Sure, coding standards can help limit these kinds of errors, until you realize that Java's standard library liberally uses `null` (e.g., `Map.get`). Unless your team is being very cautious, you are vulnerable to unexpected `NullPointerException`s.
 
 Java attempted to solve the uncertainty around which operations might throw exceptions through checked exceptions, but that just shifted the problem. You now have to annotate everything, tracing all possible failure paths and punting the problem upstream. Most Java developers end up defaulting to unchecked exceptions anyway, sacrificing safety for sanity. Even Robert C. Martin said in Clean Code:
 
@@ -53,7 +53,7 @@ This makes error handling explicit, which is a good thing. You can follow the co
 
 But despite its explicitness, Go doesn't force you to handle errors - you’re completely free to ignore them in a haze of `if err != nil` overdose apathy. You just have to put the error in a variable called `_` and the Go compiler will let you ignore it.
 
-Also, Go gives you no tools to help with error handling. You’re on your own. No try, no pattern matching, no syntactic sugar. Just `if err != nil` over and over. This gets old fast. You end up either duplicating error propagation boilerplate or using helper functions to hide the verbosity (e.g., [`errors.Join`](https://pkg.go.dev/errors)) - at which point you’ve reinvented a monad poorly.
+Also, Go gives you no tools to help with error handling. You’re on your own. No try, no pattern matching, no syntactic sugar. Just `if err != nil` over and over. This gets old fast. You end up either duplicating error propagation boilerplate or using helper functions to hide the verbosity (e.g., <a class="external" href="https://pkg.go.dev/errors" target="_blank">errors.Join</a>) - at which point you’ve reinvented a monad poorly.
 
 To its credit, Go includes one elegant feature for cleanup after an error might have occurred: `defer`. It allows you to schedule resource cleanup (like closing files or releasing locks) regardless of how the function exits, which pairs well with manual error handling:
 
@@ -304,12 +304,12 @@ Invalid(Chain(Name cannot be empty, Email must contain '@', Age must be non-nega
 If name and email both fail, you get both errors, not just the first. That’s the kind of 
 robustness you want in real-world parsing, form validation, or config loading. And all that without much boilerplate code.
 
-It is important to note, though, that `Validated` [is not a monad](https://typelevel.org/cats/datatypes/validated.html#of-flatmaps-and-eithers) due to the accumulation of errors.
+It is important to note, though, that `Validated` <a class="external" href="https://typelevel.org/cats/datatypes/validated.html#of-flatmaps-and-eithers" target="_blank">is not a monad</a> due to the accumulation of errors.
 
 ## Effect Systems (Haskell++)
 Effect systems bring error handling - and side effects more broadly - under rigorous control. Rather than wrapping all effects in a monad like `IO`, these systems explicitly track them in the type signature. This means you can determine exactly which effects a function might perform (I/O, logging, error handling, state, etc.) directly from its type - not by convention, but enforced by the compiler.
 
-The [polysemy](https://hackage.haskell.org/package/polysemy) library in Haskell is a good example of such a system. Here's an example that combines state, logging, and error handling, all visible in the type signature. Here's a simple example extracted from [willGuimont/exercises\_api](https://github.com/willGuimont/exercises_api):
+The <a class="external" href="https://hackage.haskell.org/package/polysemy" target="_blank">polysemy</a> library in Haskell is a good example of such a system. Here's an example that combines state, logging, and error handling, all visible in the type signature. Here's a simple example extracted from <a class="external" href="https://github.com/willGuimont/exercises_api" target="_blank">willGuimont/exercises_api</a>:
 
 ```haskell
 -- Error type
@@ -485,6 +485,6 @@ There is no perfect model. But there are better tradeoffs.
 
 Every meaningful computation—every I/O operation, API call, database query - can fail. Yet most programming languages treat error handling as a second-class concern: either overly verbose, dangerously ignorable, or both. The happy path is easy to write. The hard part is everything else.
 
-There’s [no silver bullet](https://worrydream.com/refs/Brooks_1986_-_No_Silver_Bullet.pdf). But there are better tradeoffs - depending on your constraints, goals, and team culture. Personally, I prefer systems where errors are explicit in the type system - like Rust or Haskell - and where failure is an architectural concern, as in Elixir, forcing you to confront it from the start.
+There’s <a class="external" href="https://worrydream.com/refs/Brooks_1986_-_No_Silver_Bullet.pdf" target="_blank">no silver bullet</a>. But there are better tradeoffs - depending on your constraints, goals, and team culture. Personally, I prefer systems where errors are explicit in the type system - like Rust or Haskell - and where failure is an architectural concern, as in Elixir, forcing you to confront it from the start.
 
 Errors are the norm, not the exception. The best systems are those that make handling them not only simple, but obvious.

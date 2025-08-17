@@ -16,4 +16,4 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Accepted paper at IROS 2023: [MaskBEV: Joint Object Detection and Footprint Completion for Bird's-eye View 3D Point Clouds](https://arxiv.org/abs/2307.01864)
+Accepted paper at IROS 2023: <a class="external" href="https://arxiv.org/abs/2307.01864" target="_blank">MaskBEV: Joint Object Detection and Footprint Completion for Bird's-eye View 3D Point Clouds</a>

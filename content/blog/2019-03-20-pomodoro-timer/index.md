@@ -18,4 +18,4 @@ toc_ordered = true
 
 Here a simple Pomodoro Timer I made in Vue.js.
 
-[Link to the timer](https://willguimont.github.io/Pomodoro/)
+<a class="external" href="https://willguimont.github.io/Pomodoro/" target="_blank">Link to the timer</a>

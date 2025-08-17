@@ -31,6 +31,6 @@ Une photorésistance est une composante électronique dont la résistance change
 
 # Liens utiles
 
-[`analogRead`](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/)
+<a class="external" href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/" target="_blank">analogRead</a>
 
-[Serial pour afficher des informations à l'écran](https://www.arduino.cc/en/Serial/Println)
+<a class="external" href="https://www.arduino.cc/en/Serial/Println" target="_blank">Serial pour afficher des informations à l'écran</a>

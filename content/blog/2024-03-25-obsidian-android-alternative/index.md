@@ -19,7 +19,7 @@ toc_ordered = true
 Updated way to sync your Obsidian vault to an Android phone using Git.
 Previous method can be found [here]({{ site.url }}{% post_url 2023-07-07-obsidian-android %}).
 
-Here's the procedure to sync your [Obsidian](https://obsidian.md/) vault to an Android phone.
+Here's the procedure to sync your <a class="external" href="https://obsidian.md/" target="_blank">Obsidian</a> vault to an Android phone.
 
 First, you'll have to run these commands on your computer:
 1. Create a SSH key using `ssh-keygen -f ~/obsidian-phone-key -t ed25519 -C "your_email@example.com"`
@@ -28,8 +28,8 @@ First, you'll have to run these commands on your computer:
 4. Copy the private key (`~/obsidian-phone-key`) to your phone
 
 Now, on your phone:
-1. Install [F-Droid](https://f-droid.org/)
-2. Open F-Droid and install [Termux](https://f-droid.org/packages/com.termux/)
+1. Install <a class="external" href="https://f-droid.org/" target="_blank">F-Droid</a>
+2. Open F-Droid and install <a class="external" href="https://f-droid.org/packages/com.termux/" target="_blank">Termux</a>
 3. In Termux, install `git` using `pkg install git`
 4. In Termux install `termu-am` using `pkg install termux-am`
 5. Mount the phone storage using `termux-setup-storage`
@@ -38,7 +38,7 @@ Now, on your phone:
 8. You can now open Obsidian
 	1. Open folder as vault
 	2. Browse to the repository you copied from your computer
-9. Open F-Droid and install [MGit](https://f-droid.org/packages/com.manichord.mgit/)
+9. Open F-Droid and install <a class="external" href="https://f-droid.org/packages/com.manichord.mgit/" target="_blank">MGit</a>
 10. From the settings page of MGit, import the SSH key
 	1. SSH Keys
 	2. Download button in the upper right corner

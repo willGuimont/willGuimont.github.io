@@ -18,4 +18,4 @@ toc_ordered = true
 
 Passed the Ph.D. proposal exam!
 
-[Ph.D. Proposal Final Version](/assets/papers/phdProposal_williamGuimontMartin.pdf)
+[Ph.D. Proposal Final Version](phdProposal_williamGuimontMartin.pdf)

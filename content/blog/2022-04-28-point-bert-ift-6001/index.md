@@ -16,9 +16,9 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Voici une présentation que j'ai donnée le 28 avril 2022 pour le cours [IFT-6001 Introduction à la recherche en informatique : communication et méthodologie](https://www.ulaval.ca/etudes/cours/ift-6001-introduction-a-la-recherche-en-informatique-communication-et-methodologie) à l'Université Laval sur [Point-BERT](https://arxiv.org/abs/2111.14819).
+Voici une présentation que j'ai donnée le 28 avril 2022 pour le cours <a class="external" href="https://www.ulaval.ca/etudes/cours/ift-6001-introduction-a-la-recherche-en-informatique-communication-et-methodologie" target="_blank">IFT-6001 Introduction à la recherche en informatique : communication et méthodologie</a> à l'Université Laval sur <a class="external" href="https://arxiv.org/abs/2111.14819" target="_blank">Point-BERT</a>.
 
-Voici les diapositives: [Point-BERT](/assets/presentations/Point-BERT-IFT-6001.pdf)
+Voici les diapositives: [Point-BERT](Point-BERT-IFT-6001.pdf)
 
 <!-- And here is the recording of the event: -->
 Voici l'enregistrement de la présentation:

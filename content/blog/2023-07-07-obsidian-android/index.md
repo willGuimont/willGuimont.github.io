@@ -18,7 +18,7 @@ toc_ordered = true
 
 **UPDATE:** Alternative way to sync your Obsidian vault to an Android phone using Git: [available here]({{ site.url }}{% post_url 2024-03-25-obsidian-android-alternative %})
 
-Here's the procedure to sync your [Obsidian](https://obsidian.md/) vault to an Android phone.
+Here's the procedure to sync your <a class="external" href="https://obsidian.md/" target="_blank">Obsidian</a> vault to an Android phone.
 
 First, you'll have to run these commands on your computer:
 1. Create a SSH key using `ssh-keygen -f ~/obsidian-phone-key -t ed25519 -C "your_email@example.com"`
@@ -28,8 +28,8 @@ First, you'll have to run these commands on your computer:
 5. Also copy your Obsidian vault, including the `.git` folder
 
 Now, on your phone:
-1. Install [F-Droid](https://f-droid.org/)
-2. Open F-Droid and install [MGit](https://f-droid.org/packages/com.manichord.mgit/)
+1. Install <a class="external" href="https://f-droid.org/" target="_blank">F-Droid</a>
+2. Open F-Droid and install <a class="external" href="https://f-droid.org/packages/com.manichord.mgit/" target="_blank">MGit</a>
 3. From the settings page of MGit, import the SSH key
 	1. SSH Keys
 	2. Download button in the upper right corner

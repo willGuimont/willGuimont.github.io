@@ -23,4 +23,4 @@ No need to buy separate weight plates — just reuse what you already own.
 Print it. Bolt it. Lift.
 
 🔗 Get it on Cults3D:
-https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter
+<a class="external" href="https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter" target="_blank">https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter</a>

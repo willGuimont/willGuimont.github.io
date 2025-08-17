@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Point-BERT"
-description = ""
+description = "Explaining Point-BERT"
 date = 2022-01-28
 # updated = ""
 draft = true
@@ -18,8 +18,8 @@ toc_ordered = true
 
 Talk I gave on January 28th for a point cloud deep learning reading group.
 
-Here are the slides: [Point-BERT](/assets/presentations/Point-BERT.pdf)
+Here are the slides: [Point-BERT](Point-BERT.pdf)
 
 And here is the recording of the event:
 
-{% include youtubePlayer.html id=page.youtubeId %}
+{{ youtube(id="VPm3Cq7JMp4") }}

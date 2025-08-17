@@ -231,6 +231,6 @@ In this article, we discussed the concept of an abstract data type. They are an 
 # References
 
 [^Liskov]: Liskov, Barbara & Zilles, Stephen. Programming with Abstract Data Types. 1974.
-[^Keynote]: Barbara Liskov. [Keynote: The Power of Abstraction](https://www.infoq.com/presentations/programming-abstraction-liskov). 2013.
+[^Keynote]: Barbara Liskov. <a class="external" href="https://www.infoq.com/presentations/programming-abstraction-liskov" target="_blank">Keynote: The Power of Abstraction</a>. 2013.
 [^Dijkstra]: Edsger W. Dijkstra. Go To Statement Considered Harmful. 1968.
 [^Martin]: Robert C. Martin. Clean Code. 2008.

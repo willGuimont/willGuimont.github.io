@@ -16,8 +16,8 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Presentation made for the course [GIF-7010: Avancées en apprentissage automatique](https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique) at Université Laval on [RandAugment](https://arxiv.org/abs/1909.13719).
+Presentation made for the course <a class="external" href="https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique" target="_blank">GIF-7010: Avancées en apprentissage automatique</a> at Université Laval on <a class="external" href="https://arxiv.org/abs/1909.13719" target="_blank">RandAugment</a>.
 
 Here are the slides:
-- [RandAugment.pptx](/assets/presentations/RandAugment.pptx)
-- [RandAugment.pdf](/assets/presentations/RandAugment.pdf)
+- [RandAugment.pptx](RandAugment.pptx)
+- [RandAugment.pdf](RandAugment.pdf)

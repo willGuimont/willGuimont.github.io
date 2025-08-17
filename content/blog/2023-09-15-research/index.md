@@ -34,7 +34,7 @@ And some quotes from discussions with friends.
 > 
 > **A friend:** But there is no box to think outside of.
 
-And a ~~poem~~ joke about this video [Socialism Is When The Government Does Stuff](https://www.youtube.com/watch?v=rgiC8YfytDw)
+And a ~~poem~~ joke about this video <a class="external" href="https://www.youtube.com/watch?v=rgiC8YfytDw" target="_blank">Socialism Is When The Government Does Stuff</a>
 
 > Science is when you know stuff.
 >

@@ -20,4 +20,4 @@ This dumbbell-to-barbell adapter allows you to transform your dumbbells into bar
 
 The adapter fits on standard barbells with a diameter of 1" (25.4 mm) and is compatible with dumbbells that have a handle length of 6" (124 mm) or longer.
 
-Available here: [Dumbbell to Barbell Adapter @ cults3d.com](https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter)
+Available here: <a class="external" href="https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter" target="_blank">Dumbbell to Barbell Adapter @ cults3d.com</a>
