@@ -14,11 +14,12 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+styles = ["custom.css"]
 +++
 
 # Qu'est-ce qu'Arduino
 
-![Arduino](/assets/images/arduino/arduino.png)
+![Arduino](arduino.png)
 
 > The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.
 >
@@ -58,9 +59,9 @@ Il faut plutôt lui dire:
 
 # DEL et Arduino
 
-**DEL**: **D**iode **É**lectro**L**uminescente
+`DEL`: `D`iode `É`lectro `L`uminescente
 
-![DEL](/assets/images/arduino/del.png)
+<img src="del.png" alt="DEL" class="img-bg" />
 
 En bref, une DEL est une lumière qui ne demande que très peu d'énergie. On peut donc l'alimenter directement depuis l'Arduino.
 
@@ -90,7 +91,7 @@ On peut maintenant lancer l'application.
 
 ## Premiers pas en Arduino
 
-![IDE](/assets/images/arduino/ide.png)
+![IDE](ide.png)
 
 On voit maintenant un code de base fournit par Arduino.
 
@@ -106,13 +107,13 @@ void loop() {
 }
 ```
 
-**setup** est exécuté qu'une fois au démarrage de l'Arduino.
+`setup` est exécuté qu'une fois au démarrage de l'Arduino.
 
-**loop** est ensuite exécuté continuellement.
+`loop` est ensuite exécuté continuellement.
 
 Toutefois, avant de commencer à coder, branchons la DEL dans l'Arduino.
 
-![Branchement](/assets/images/arduino/1.png)
+![Branchement](branchement.png)
 
 Dans le cadre de ce document, nous allons utiliser la **pin** numéro 13. Vous pouvez en choisir une autre si vous voulez. La longue patte doit être connectée dans la pin 13 et la courte au ground. Le **ground** est le 0 volt de référence de l'Arduino.
 
@@ -130,7 +131,7 @@ On doit indiquer à l'Arduino quelles pins on désire utiliser, dans notre cas i
 pinMode(13, OUTPUT);
 ```
 
-**OUTPUT** signifie que l'on veut se servir de la pin comme d'une sortie, donc mettre une certaine tension à la pin plutôt que de lire la tension. On aurait pu utiliser **INPUT** pour initialiser la pin comme une entrée. Nous allons en voir une exemple par la suite.
+`OUTPUT` signifie que l'on veut se servir de la pin comme d'une sortie, donc mettre une certaine tension à la pin plutôt que de lire la tension. On aurait pu utiliser `INPUT` pour initialiser la pin comme une entrée. Nous allons en voir une exemple par la suite.
 
 #### Allumer la DEL
 
@@ -140,7 +141,7 @@ Pour allumer la DEL, on doit mettre une certaine tension aux bornes de la DEL. C
 digitalWrite(13, HIGH);
 ```
 
-**HIGH** signifie une tension positive. Dans le cas d'une Arduino UNO, on met 5 volts sur la pin 13.
+`HIGH` signifie une tension positive. Dans le cas d'une Arduino UNO, on met 5 volts sur la pin 13.
 
 #### Éteindre la DEL
 
@@ -197,13 +198,9 @@ On peut maintenant connecter l'Arduino par USB à l'ordinateur.
 
 On doit premièrement vérifier que l'Aduino est connectée dans Outils -> Port. Il faut s'assurer que le port selectionné est bien celui de l'Arduino.
 
-![Port](/assets/images/arduino/port.png)
+![Port](port.png)
 
-On peut envoyer le code sur l'Arduino.
-
-![Port](/assets/images/arduino/port.png)
-
-Après un certain temps, l'Arduino devrait faire clignoter la DEL deux fois selon les délais définit.
+On peut envoyer le code sur l'Arduino avec le bouton "Téléverser" (la flèche vers la droite). Après un certain temps, l'Arduino devrait faire clignoter la DEL deux fois selon les délais définit.
 
 ## À l'infini
 

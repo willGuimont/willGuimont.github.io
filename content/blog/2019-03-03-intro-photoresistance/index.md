@@ -2,7 +2,7 @@
 authors = ["William Guimont-Martin"]
 title = "Exercice conditions avec des photorésistances"
 description = ""
-date = 2019-03-01
+date = 2019-03-03
 # updated = ""
 # draft = false
 [taxonomies]
@@ -20,7 +20,7 @@ Le but de cet exercice est de vous faire pratiquer les conditions et la boucle p
 
 # Photorésistance
 
-![photores](/assets/images/arduino/photores.png)
+![Photoresistance](photores.png)
 
 Une photorésistance est une composante électronique dont la résistance change selon la lumière qui l'éclaire. En bref, on peut regarder la tension aux bornes de la photorésistance.
 
@@ -30,6 +30,6 @@ Une photorésistance est une composante électronique dont la résistance change
 
 # Liens utiles
 
-[analogRead](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/)
+[`analogRead`](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/)
 
 [Serial pour afficher des informations à l'écran](https://www.arduino.cc/en/Serial/Println)
