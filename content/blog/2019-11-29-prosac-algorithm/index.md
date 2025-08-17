@@ -15,7 +15,6 @@ toc_ordered = true
 # trigger = ""
 # disclaimer = ""
 katex = true
-styles = ["custom.css"]
 +++
 
 Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read [Matching with PROSAC - Progressive Sample Concensus](2005-Matching-with-PROSAC-progressive-sample-consensus.pdf)[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.

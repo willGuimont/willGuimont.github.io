@@ -9,7 +9,7 @@ date = 2020-01-23
 tags = ["Computer Sciences", "Algorithm", "Deep Learning", "Machine Learning", "Learning"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

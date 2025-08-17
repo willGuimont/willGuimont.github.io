@@ -14,7 +14,6 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
-styles = ["custom.css"]
 +++
 
 # Qu'est-ce qu'Arduino

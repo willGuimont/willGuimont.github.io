@@ -9,7 +9,7 @@ date = 2020-07-09
 tags = ["Computer Sciences", "Software Engineering"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

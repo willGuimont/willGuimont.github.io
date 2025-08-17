@@ -14,7 +14,6 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
-styles = ["custom.css"]
 +++
 
 Le but de cet exercice est de vous faire pratiquer les conditions et la boucle principale. De plus, vous aurez la chance de vous pratiquer à lire de la documentation.

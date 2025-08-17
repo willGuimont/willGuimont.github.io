@@ -9,7 +9,7 @@ date = 2020-05-03
 tags = ["Mathematics"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

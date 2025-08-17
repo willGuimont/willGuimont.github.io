@@ -20,7 +20,6 @@ Voici une présentation que j'ai donnée le 28 avril 2022 pour le cours <a class
 
 Voici les diapositives: [Point-BERT](Point-BERT-IFT-6001.pdf)
 
-<!-- And here is the recording of the event: -->
 Voici l'enregistrement de la présentation:
 
-{% include youtubePlayer.html id=page.youtubeId %}
+{{ youtube(id="fywySHYLzW4") }}
