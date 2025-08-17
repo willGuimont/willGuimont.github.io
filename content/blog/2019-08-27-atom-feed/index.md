@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Atom Feed"
-description = ""
+title = "Atom and RSS Feed"
+description = "Update about the Atom and RSS Feed"
 date = 2019-08-27
 # updated = ""
 # draft = false
@@ -16,4 +16,4 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-I just made an [Atom Feed]({{ site.baseurl }}{% link feed.xml %}).
+I just made an <a class="external" href="https://willGuimont.com/rss.xml" target="_blank">Atom Feed</a> and an <a class="external" href="https://willGuimont.com/rss.xml" target="_blank">RSS Feed</a>.

@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Squirrels"
-description = ""
+description = "A collection of squirrel photos"
 date = 2019-01-28
 # updated = ""
 # draft = false

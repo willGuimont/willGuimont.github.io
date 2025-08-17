@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Pomodoro Timer in Vue.js"
-description = ""
+description = "A simple Pomodoro Timer built with Vue.js"
 date = 2019-03-20
 # updated = ""
 # draft = false

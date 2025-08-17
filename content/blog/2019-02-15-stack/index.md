@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Stacks"
-description = ""
+description = "Stacks from an abstract data type perspective"
 date = 2019-02-15
 # updated = ""
 # draft = false

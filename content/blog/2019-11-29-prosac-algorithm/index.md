@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "PROSAC"
-description = ""
+description = "A variant of RANSAC using quality to speed up the process"
 date = 2019-12-26
 # updated = ""
 # draft = false
@@ -9,11 +9,13 @@ date = 2019-12-26
 tags = ["Computer Sciences", "Algorithm", "Machine Learning"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+katex = true
+styles = ["custom.css"]
 +++
 
 Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read [Matching with PROSAC - Progressive Sample Concensus](/assets/linked_paper/2005-Matching-with-PROSAC-progressive-sample-consensus.pdf)[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.
@@ -34,33 +36,37 @@ As you can see, the algorithm is relatively simple: sample, fit, check, rinse an
 
 ## Pseudocode
 
-Let $$m$$ be the minimum required number of points to fit a model. For a linear model in 2D, $$m$$ would be equal to $$2$$.
+Let $m$ be the minimum required number of points to fit a model. For a linear model in 2D, $m$ would be equal to $2$.
 
-Let $$M$$ a model to fit on the data.
+Let $M$ a model to fit on the data.
 
-Let $$\epsilon_{tol}$$ be the maximum error between a point and the model to be considered an inlier.
+Let $\epsilon_{tol}$ be the maximum error between a point and the model to be considered an inlier.
 
-Let $$\tau$$ the fraction of inlier over the total number of points above which we are satisfied by the model. If we achieve that ratio, we stop early.
+Let $\tau$ the fraction of inlier over the total number of points above which we are satisfied by the model. If we achieve that ratio, we stop early.
 
-Let $$w$$ be the probability of a given point to be an inlier. This is used to estimate the number of times we have to run RANSAC before finding a satisfying solution.
+Let $w$ be the probability of a given point to be an inlier. This is used to estimate the number of times we have to run RANSAC before finding a satisfying solution.
 
-Let $$I$$ be the set of inliers of maximal cardinality.
+Let $I$ be the set of inliers of maximal cardinality.
 
 ### RANSAC
-1. Sample $$m$$ points
-2. Estimate a model $$M$$ from the $$m$$ sampled points
-3. Find the number of inliers with model $$M$$ with tolerance $$\epsilon_{tol}$$. If the number of inliers is greater than the number of previously found inliers, replace $$I$$ with the new set of inliers.
-4. If the fraction of inliers over the total number of points is greater than $$\tau$$, estimate the model with all inliers and stop.
-5. Repeat steps 1 to 4, a maximum of $$\frac{1}{w^m}$$ times
-6. After $$\frac{1}{w^m}$$ iterations, estimate the model with $$I$$.
+1. Sample $m$ points
+2. Estimate a model $M$ from the $m$ sampled points
+3. Find the number of inliers with model $M$ with tolerance $\epsilon_{tol}$. If the number of inliers is greater than the number of previously found inliers, replace $I$ with the new set of inliers.
+4. If the fraction of inliers over the total number of points is greater than $\tau$, estimate the model with all inliers and stop.
+5. Repeat steps 1 to 4, a maximum of $\frac{1}{w^m}$ times
+6. After $\frac{1}{w^m}$ iterations, estimate the model with $I$.
 
 ## Limitations of RANSAC
 
 In the paper, they looked at estimating epipolar geometry from a pair of pictures.
 
-![Plant 1](/assets/images/PROSAC/plant01.png) | ![Plant 2](/assets/images/PROSAC/plant02.png)
+<div class="img-row">
+  <img src="plant01.png" alt="Plant 1" class="img-bg" />
+  <img src="plant02.png" alt="Plant 2" class="img-bg" />
+  
+</div>
 
-With this pair of pictures, there is a lot of repetitive patterns on the floor and leaves, so there will be a lot of false matches. We have $$m=7$$ (epipolar geometry) and $$w=9.2\%$$. The number of iteration of RANSAC is given by $$\frac{1}{w^m}$$. The estimated number of samples is over $$8.43 \times 10^7$$ !!! RANSAC would take a pretty long time before finding a good solution... That's not realistic!
+With this pair of pictures, there is a lot of repetitive patterns on the floor and leaves, so there will be a lot of false matches. We have $m=7$ (epipolar geometry) and $w=9.2\%$. The number of iteration of RANSAC is given by $\frac{1}{w^m}$. The estimated number of samples is over $8.43 \times 10^7$ !!! RANSAC would take a pretty long time before finding a good solution... That's not realistic!
 
 When the model is complex and the number of correct points is low, RANSAC often takes very long before finding a satisfying solution. Let's see if PROSAC can help.
 
@@ -71,48 +77,81 @@ PROSAC adds the notion of quality to points with the basic assumption that point
 So, to make the algorithm quicker, the algorithm starts by trying to fit with points of greater quality first. Then we *progressively* add points of lesser quality.
 
 ## Intuition
-Let's say that the points in red are outliers. We would like to fit a model of complexity $$m=2$$ on those points.
+Let's say that the points in red are outliers. We would like to fit a model of complexity $m=2$ on those points.
 
-![Comp](/assets/images/PROSAC/comp.png)
+<table>
+  <thead>
+    <tr>
+      <th>RANSAC</th>
+      <th>PROSAC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color:red;"><i>$p_1$</i></td>
+      <td><i>$p_2$</i></td>
+    </tr>
+    <tr>
+      <td><i>$p_2$</i></td>
+      <td><i>$p_4$</i></td>
+    </tr>
+    <tr>
+      <td style="background-color:red;"><i>$p_3$</i></td>
+      <td style="background-color:red;"><i>$p_6$</i></td>
+    </tr>
+    <tr>
+      <td><i>$p_4$</i></td>
+      <td style="background-color:red;"><i>$p_3$</i></td>
+    </tr>
+    <tr>
+      <td style="background-color:red;"><i>$p_5$</i></td>
+      <td><i>$p_5$</i></td>
+    </tr>
+    <tr>
+      <td><i>$p_6$</i></td>
+      <td style="background-color:red;"><i>$p_1$</i></td>
+    </tr>
+  </tbody>
+</table>
 
-In RANSAC, we would be sampling $$2$$ points among all points, so we would have a probability of $$\frac{3}{6}\cdot\frac{2}{5}=20\%$$. So, we would need, on average, $$5$$ samples before finding an uncontaminated sample.
+In RANSAC, we would be sampling $2$ points among all points, so we would have a probability of $\frac{3}{6}\cdot\frac{2}{5}=20\%$. So, we would need, on average, $5$ samples before finding an uncontaminated sample.
 
-Whereas in PROSAC, we sort points by quality. The first points would be of higher quality. We would start sampling from the top 2 points, so we would sample $$p_2$$ and $$p_4$$, both of which are correct. In this case, we would have found an uncontaminated sample on the first draw.
+Whereas in PROSAC, we sort points by quality. The first points would be of higher quality. We would start sampling from the top 2 points, so we would sample $p_2$ and $p_4$, both of which are correct. In this case, we would have found an uncontaminated sample on the first draw.
 
 Even with this simple example, we can see the possible speedup.
 
 ## Simplified pseudo code
 ### PROSAC
 1. Sort points by quality (highest quality first)
-2. Consider the first $$m$$ points ($$n\leftarrow m$$)
-3. Sample $$m$$ points from the top $$n$$
+2. Consider the first $m$ points ($n\leftarrow m$)
+3. Sample $m$ points from the top $n$
 4. Fit the model
 5. Verify model with all points
-6. If the stopping criteria are not met, repeat steps 3 to 6, adding progressively points ($$n\leftarrow n + 1$$). Otherwise, fit the model on all inliers and terminate.
+6. If the stopping criteria are not met, repeat steps 3 to 6, adding progressively points ($n\leftarrow n + 1$). Otherwise, fit the model on all inliers and terminate.
 
 ## Quality
 There are multiple ways of defining quality. For feature matching on images, we could use the correlation of intensity around features on each image. 
 
 In the paper, they mention Lowe's distance. Lowe's distance is the ratio between the most and second most similar matches.
 
-$$s_1$$: distance of the most similar match
+$s_1$: distance of the most similar match
 
-$$s_2$$: distance of the second most similar match
+$s_2$: distance of the second most similar match
 
-$$distance = \frac{s_1}{s_2}$$
+$\text{distance} = \frac{s_1}{s_2}$
 
 This distance allows us to select the first points that are significantly better than any other. A match with a low Lowe's distance has more chances of being correct.
 
 To define quality, we could inverse the ratio.
 
-$$quality = \frac{s_2}{s_1}$$
+$\text{quality} = \frac{s_2}{s_1}$
 
 You can use any metric you want, as long as the higher the quality is, the higher the probability of the point being correct is.
 
 ## Fast sampling
-We could simply sample $$m$$ points from the top $$n$$ points, but that would be inefficient. We could sample multiple times the same set of points. So, to better explore the new possibles sets of $$m$$ points, we use the fact that when adding a new point $$p_{n+1}$$, we add a number $$a$$ of new samples. Each new sample contains the new point $$p_{n+1}$$ and $$m-1$$ from the $$n$$ first points. 
+We could simply sample $m$ points from the top $n$ points, but that would be inefficient. We could sample multiple times the same set of points. So, to better explore the new possibles sets of $m$ points, we use the fact that when adding a new point $p_{n+1}$, we add a number $a$ of new samples. Each new sample contains the new point $p_{n+1}$ and $m-1$ from the $n$ first points. 
 
-So, we can simply sample $$a$$ times, picking $$p_{n+1}$$ and $$m-1$$ points in the best $$n$$ points. That way, we ensure the quickly explore the possibles sets of $$m$$ points.
+So, we can simply sample $a$ times, picking $p_{n+1}$ and $m-1$ points in the best $n$ points. That way, we ensure the quickly explore the possibles sets of $m$ points.
 
 ## End criterion
 

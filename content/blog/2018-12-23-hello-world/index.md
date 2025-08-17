@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Hello World!"
-description = ""
+description = "First post on this blog"
 date = 2018-12-23
 # updated = ""
 # draft = false

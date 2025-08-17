@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Introduction to Abstract Data Types"
-description = ""
+description = "This post introduces the concept of abstract data types and their importance in software development."
 date = 2019-01-27
 # updated = ""
 # draft = false

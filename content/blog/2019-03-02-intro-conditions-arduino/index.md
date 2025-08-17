@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Introduction aux conditions et à la boucle principale"
-description = ""
+description = "Cet article présente les concepts de conditions et de boucles dans le contexte de la programmation Arduino."
 date = 2019-03-02
 # updated = ""
 # draft = false
@@ -9,7 +9,7 @@ date = 2019-03-02
 tags = ["Computer Sciences", "French", "Tutorial", "Arduino"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

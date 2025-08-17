@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Introduction à Arduino"
-description = ""
+description = "Une introduction à la plateforme Arduino et à ses concepts de base."
 date = 2019-03-01
 # updated = ""
 # draft = false
@@ -9,7 +9,7 @@ date = 2019-03-01
 tags = ["Computer Sciences", "French", "Tutorial", "Arduino"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

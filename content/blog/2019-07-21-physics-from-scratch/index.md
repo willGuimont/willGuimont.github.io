@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Physics from Scratch"
-description = ""
+description = "Wanting to rediscover physics"
 date = 2019-06-23
 # updated = ""
 # draft = false

@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Calculate Moon's Orbit Eccentricity"
-description = ""
+description = "A simple way to calculate the eccentricity of the Moon's orbit using only a camera"
 date = 2019-08-26
 # updated = ""
 # draft = false
@@ -14,6 +14,7 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+katex = true
 +++
 
 In my third session of CÉGEP, I decided to take a thermodynamic and astrophysics class. It was the kind of class that completely changed the way you see physics. 
@@ -26,11 +27,11 @@ So, to get that data we took pictures of the Moon and measure its diameter in th
 
 Here is some pictures I took back then:
 
-![Moon](/assets/images/moon/moon1.png)
+![Moon 1](moon1.png)
 
-![Moon](/assets/images/moon/moon2.png)
+![Moon 2](moon2.png)
 
-![Moon](/assets/images/moon/moon3.png)
+![Moon 3](moon3.png)
 
 In each picture, we can measure the Moon's diameter in pixel.
 
@@ -38,24 +39,24 @@ We can then compute the distance between Earth and the Moon and pixel in each pi
 
 $$d=\frac{r}{tan \left (\frac{0.5°}{2} \right )}$$
 
-Where $$r$$ is the radius, in pixel, of the Moon in the picture. Notice that $$0.5°$$ is the angular size of the Moon from Earth. To understand this equation, try to draw a right triangle from the Earth to the Moon.
+Where $r$ is the radius, in pixel, of the Moon in the picture. Notice that $0.5°$ is the angular size of the Moon from Earth. To understand this equation, try to draw a right triangle from the Earth to the Moon.
 
-Using the date at which the photo was taken, we can compute its angular position relative to other photos. This can be done knowing that the Moon moves 360° around the Earth in 29.5 days on average. Assuming the Moon's speed does not change on its orbit, we can compute it's angle using:
+Using the date at which the photo was taken, we can compute its angular position relative to other photos. This can be done knowing that the Moon moves 360° around the Earth in $29.5$ days on average. Assuming the Moon's speed does not change on its orbit, we can compute it's angle using:
 
 $$\theta_i = (D_i - D_1) \cdot \frac{360°}{29.5} \bmod 360°$$
 
-Where $$D_i$$ if the current picture, $$D_1$$ is the first picture (all positions will be relative to this one). Both dates are in days.
+Where $D_i$ if the current picture, $D_1$ is the first picture (all positions will be relative to this one). Both dates are in days.
 
 
 We can graph the Moon's distance and its angular position.
 
-![Graph](/assets/images/moon/graph.png)
+![Graph](graph.png)
 
 And tadaaaa! We get an ellipse.
 
-We can then measure the smallest and largest distance between the ellipse and the origin (the Earth) to get respectively $$a$$, the apogee's distance, and $$p$$, the perigee's distance.
+We can then measure the smallest and largest distance between the ellipse and the origin (the Earth) to get respectively $a$, the apogee's distance, and $p$, the perigee's distance.
 
-Using this simple equation, we can get the eccentricity of the Moon's orbit.
+Using this simple equation, we can get the eccentricity of the Moon's orbit:
 
 $$e=\frac{a-p}{a+p}$$
 

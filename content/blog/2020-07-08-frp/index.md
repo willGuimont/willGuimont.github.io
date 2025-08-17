@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "FRP: You don't own your android phone"
-description = ""
+description = "A rant about Android's Factory Reset Protection"
 date = 2020-07-08
 # updated = ""
 # draft = false

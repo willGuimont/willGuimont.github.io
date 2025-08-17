@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "TossingBot"
-description = ""
+description = "Explaining TossingBot"
 date = 2020-04-29
 # updated = ""
 # draft = false
@@ -20,4 +20,4 @@ This video presents TossingBot, a robotic arm that learns to throw arbitrary obj
 
 This video was made for the class *GLO-7030: Deep Learning* at Université Laval.
 
-{% include youtubePlayer.html id=page.youtubeId %}
+{{ youtube(id="Icx6j3s_Pmc") }}

@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Rubik's Cube Timer in Vue.js"
-description = ""
+description = "A simple Rubik's Cube Timer built with Vue.js"
 date = 2019-06-23
 # updated = ""
 # draft = false
