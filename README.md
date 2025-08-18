@@ -2,6 +2,7 @@
 
 ```bash
 git submodule update --init --recursive
+
 zola serve
 # Draft mode will render posts with draft = true
 zola serve --drafts
