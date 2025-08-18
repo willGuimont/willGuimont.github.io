@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>William Guimont-Martin - Physics</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/physics/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-08-26T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/physics/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Calculate Moon&#x27;s Orbit Eccentricity</title>
+        <published>2019-08-26T00:00:00+00:00</published>
+        <updated>2019-08-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/moon-orbit-eccentricity/"/>
+        <id>https://willguimont.com/blog/moon-orbit-eccentricity/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/moon-orbit-eccentricity/">&lt;p&gt;In my third session of CÉGEP, I decided to take a thermodynamic and astrophysics class. It was the kind of class that completely changed the way you see physics.&lt;&#x2F;p&gt;
+&lt;p&gt;I have always seen physics experiments as things you just cannot do at home. You always need some complicated apparatus. Yet, in this class, we calculated the eccentricity of the Moon’s orbit, a bit of rock spinning around Earth, using only a camera and a bit of imagination.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea is quite simple, as the Moon moves closer and further of the Earth, its visual size will vary. When the Moon is at its perigee (closest to the Earth), it will appear bigger than when the Moon is at its apogee (further from the Earth). If we can measure its visual size around its orbit, we could deduce the orbit’s eccentricity.&lt;&#x2F;p&gt;
+&lt;p&gt;So, to get that data we took pictures of the Moon and measure its diameter in the pictures. If we use the same camera and don’t modify the focal length of the lens, the only thing that will make vary the Moon’s size in the picture will be the distance from Moon to Earth.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is some pictures I took back then:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;moon-orbit-eccentricity&#x2F;moon1.png&quot; alt=&quot;Moon 1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;moon-orbit-eccentricity&#x2F;moon2.png&quot; alt=&quot;Moon 2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;moon-orbit-eccentricity&#x2F;moon3.png&quot; alt=&quot;Moon 3&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In each picture, we can measure the Moon’s diameter in pixel.&lt;&#x2F;p&gt;
+&lt;p&gt;We can then compute the distance between Earth and the Moon and pixel in each picture using:&lt;&#x2F;p&gt;
+&lt;p&gt;$$d=\frac{r}{tan \left (\frac{0.5°}{2} \right )}$$&lt;&#x2F;p&gt;
+&lt;p&gt;Where $r$ is the radius, in pixel, of the Moon in the picture. Notice that $0.5°$ is the angular size of the Moon from Earth. To understand this equation, try to draw a right triangle from the Earth to the Moon.&lt;&#x2F;p&gt;
+&lt;p&gt;Using the date at which the photo was taken, we can compute its angular position relative to other photos. This can be done knowing that the Moon moves 360° around the Earth in $29.5$ days on average. Assuming the Moon’s speed does not change on its orbit, we can compute it’s angle using:&lt;&#x2F;p&gt;
+&lt;p&gt;$$\theta_i = (D_i - D_1) \cdot \frac{360°}{29.5} \bmod 360°$$&lt;&#x2F;p&gt;
+&lt;p&gt;Where $D_i$ if the current picture, $D_1$ is the first picture (all positions will be relative to this one). Both dates are in days.&lt;&#x2F;p&gt;
+&lt;p&gt;We can graph the Moon’s distance and its angular position.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;moon-orbit-eccentricity&#x2F;graph.png&quot; alt=&quot;Graph&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;And tadaaaa! We get an ellipse.&lt;&#x2F;p&gt;
+&lt;p&gt;We can then measure the smallest and largest distance between the ellipse and the origin (the Earth) to get respectively $a$, the apogee’s distance, and $p$, the perigee’s distance.&lt;&#x2F;p&gt;
+&lt;p&gt;Using this simple equation, we can get the eccentricity of the Moon’s orbit:&lt;&#x2F;p&gt;
+&lt;p&gt;$$e=\frac{a-p}{a+p}$$&lt;&#x2F;p&gt;
+&lt;p&gt;And there you go, you have computed the eccentricity of Moon’s orbit just using a camera.&lt;&#x2F;p&gt;
+&lt;p&gt;As stated at the start, this experiment blew my mind when I took the course: we calculated the eccentricity of a big rock moving around the Earth just using a camera.&lt;&#x2F;p&gt;
+&lt;p&gt;Wow.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Physics from Scratch</title>
+        <published>2019-06-23T00:00:00+00:00</published>
+        <updated>2019-06-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/physics-from-scratch/"/>
+        <id>https://willguimont.com/blog/physics-from-scratch/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/physics-from-scratch/">&lt;p&gt;Physics classes were among my favorite back in secondary school and CEGEP. Now that I am studying software engineering at university, I don’t get to do a lot of physics. Yet, I still want to learn about the universe and how it works.&lt;&#x2F;p&gt;
+&lt;p&gt;For some years, I wanted to reinvent physics. To use modern tools to rediscover physical laws. I could use computer vision to track moving objects, plot the motions in a Jupyter Notebook and deduce the laws of motions.
+To summarize this project:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I cannot create, I do not understand&lt;&#x2F;p&gt;
+&lt;p&gt;– Richard Feynman&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+        
+    </entry>
+</feed>

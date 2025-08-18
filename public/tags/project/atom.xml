@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>William Guimont-Martin - Project</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/project/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-06-23T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/project/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Rubik&#x27;s Cube Timer in Vue.js</title>
+        <published>2019-06-23T00:00:00+00:00</published>
+        <updated>2019-06-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/cube-timer/"/>
+        <id>https://willguimont.com/blog/cube-timer/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/cube-timer/">&lt;p&gt;Here a simple Rubik’s Cube Timer I made in Vue.js&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.github.io&#x2F;cube_timer&#x2F;&quot; target=&quot;_blank&quot;&gt;Link to the timer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Pomodoro Timer in Vue.js</title>
+        <published>2019-03-20T00:00:00+00:00</published>
+        <updated>2019-03-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/pomodoro-timer/"/>
+        <id>https://willguimont.com/blog/pomodoro-timer/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/pomodoro-timer/">&lt;p&gt;Here a simple Pomodoro Timer I made in Vue.js.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.github.io&#x2F;Pomodoro&#x2F;&quot; target=&quot;_blank&quot;&gt;Link to the timer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

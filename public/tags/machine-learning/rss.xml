@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>William Guimont-Martin - Machine Learning</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/machine-learning/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment</title>
+          <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/citizen-sciences/</link>
+          <guid>https://willguimont.com/blog/citizen-sciences/</guid>
+          <description xml:base="https://willguimont.com/blog/citizen-sciences/">&lt;p&gt;Co-authored paper in MDPI: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.mdpi.com&#x2F;1999-4907&#x2F;16&#x2F;4&#x2F;616&quot; target=&quot;_blank&quot;&gt;Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The ability to monitor forest areas after disturbances is key to ensure their regrowth. Problematic situations that are detected can then be addressed with targeted regeneration efforts. However, achieving this with automated photo interpretation is problematic, as training such systems requires large amounts of labeled data. To this effect, we leverage citizen science data (iNaturalist) to alleviate this issue. More precisely, we seek to generate pre-training data from a classifier trained on selected exemplars. This is accomplished by using a moving-window approach on carefully gathered low-altitude images with an Unmanned Aerial Vehicle (UAV), WilDReF-Q (Wild Drone Regrowth Forest—Quebec) dataset, to generate high-quality pseudo-labels. To generate accurate pseudo-labels, the predictions of our classifier for each window are integrated using a majority voting approach. Our results indicate that pre-training a semantic segmentation network on over 140,000 auto-labeled images yields an $F1$ score of 43.74% over 24 different classes, on a separate ground truth dataset. In comparison, using only labeled images yields a score of 32.45%, while fine-tuning the pre-trained network only yields marginal improvements (46.76%). Importantly, we demonstrate that our approach is able to benefit from more unlabeled images, opening the door for learning at scale. We also optimized the hyperparameters for pseudo-labeling, including the number of predictions assigned to each pixel in the majority voting process. Overall, this demonstrates that an auto-labeling approach can greatly reduce the development cost of plant identification in regeneration regions, based on UAV imagery.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Proprioception Is All You Need: Terrain Classification for Boreal Forests</title>
+          <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/borealtc/</link>
+          <guid>https://willguimont.com/blog/borealtc/</guid>
+          <description xml:base="https://willguimont.com/blog/borealtc/">&lt;p&gt;Co-authored paper at IROS 2024: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;norlab-ulaval.github.io&#x2F;BorealTC&#x2F;&quot; target=&quot;_blank&quot;&gt;Proprioception Is All You Need: Terrain Classification for Boreal Forests&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in field robotics highlighted the importance of resiliency against different types of terrains. Boreal forests, in particular, are home to many mobility-impeding terrains that should be considered for off-road autonomous navigation. Also, being one of the largest land biomes on Earth, boreal forests are an area where autonomous vehicles are expected to become increasingly common. In this paper, we address the issue of classifying boreal terrains by introducing BorealTC, a publicly available dataset for proprioceptive-based terrain classification (TC). Recorded with a Husky A200, our dataset contains 116 min of Inertial Measurement Unit (IMU), motor current, and wheel odometry data, focusing on typical boreal forest terrains, notably snow, ice, and silty loam. Combining our dataset with another dataset from the literature, we evaluate both a Convolutional Neural Network (CNN) and the novel state space model (SSM)-based Mamba architecture on a TC task. We show that while CNN outperforms Mamba on each separate dataset, Mamba achieves greater accuracy when trained on a combination of both. In addition, we demonstrate that Mamba’s learning capacity is greater than a CNN for increasing amounts of data. We show that the combination of two TC datasets yields a latent space that can be interpreted with the properties of the terrains. We also discuss the implications of merging datasets on classification. Our source code and dataset are &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norlab-ulaval&#x2F;BorealTC&quot; target=&quot;_blank&quot;&gt;publicly available online&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Replication Study and Benchmarking of Real-Time Object Detection Models</title>
+          <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/det-bench/</link>
+          <guid>https://willguimont.com/blog/det-bench/</guid>
+          <description xml:base="https://willguimont.com/blog/det-bench/">&lt;p&gt;Published a paper to ArXiv: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2405.06911&quot; target=&quot;_blank&quot;&gt;Replication Study and Benchmarking of Real-Time Object Detection Models&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This work examines the reproducibility and benchmarking of state-of-the-art real-time object detection models. As object detection models are often used in real-world contexts, such as robotics, where inference time is paramount, simply measuring models’ accuracy is not enough to compare them. We thus compare a large variety of object detection models’ accuracy and inference speed on multiple graphics cards. In addition to this large benchmarking attempt, we also reproduce the following models from scratch using PyTorch on the MS COCO 2017 dataset: DETR, RTMDet, ViTDet and YOLOv7. More importantly, we propose a unified training and evaluation pipeline, based on MMDetection’s features, to better compare models. Our implementation of DETR and ViTDet could not achieve accuracy or speed performances comparable to what is declared in the original papers. On the other hand, reproduced RTMDet and YOLOv7 could match such performances. Studied papers are also found to be generally lacking for reproducibility purposes. As for MMDetection pretrained models, speed performances are severely reduced with limited computing resources (larger, more accurate models even more so). Moreover, results exhibit a strong trade-off between accuracy and speed, prevailed by anchor-free models - notably RTMDet or YOLOx models. The code used is this paper and all the experiments is available in the repository at &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Don767&#x2F;segdet_mlcr2024&quot; target=&quot;_blank&quot;&gt;this https URL&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>RandAugment</title>
+          <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/randaugment/</link>
+          <guid>https://willguimont.com/blog/randaugment/</guid>
+          <description xml:base="https://willguimont.com/blog/randaugment/">&lt;p&gt;Presentation made for the course &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.ulaval.ca&#x2F;etudes&#x2F;cours&#x2F;gif-7010-avancees-en-apprentissage-automatique&quot; target=&quot;_blank&quot;&gt;GIF-7010: Avancées en apprentissage automatique&lt;&#x2F;a&gt; at Université Laval on &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1909.13719&quot; target=&quot;_blank&quot;&gt;RandAugment&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are the slides:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;RandAugment.pptx&quot; target=&quot;_blank&quot;&gt;RandAugment.pptx&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;RandAugment.pdf&quot; target=&quot;_blank&quot;&gt;RandAugment.pdf&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>Segment Anything</title>
+          <pubDate>Wed, 21 Feb 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/segment-anything/</link>
+          <guid>https://willguimont.com/blog/segment-anything/</guid>
+          <description xml:base="https://willguimont.com/blog/segment-anything/">&lt;p&gt;Presentation made for the course &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.ulaval.ca&#x2F;etudes&#x2F;cours&#x2F;gif-7010-avancees-en-apprentissage-automatique&quot; target=&quot;_blank&quot;&gt;GIF-7010: Avancées en apprentissage automatique&lt;&#x2F;a&gt; at Université Laval on &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2304.02643&quot; target=&quot;_blank&quot;&gt;Segment Anything&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are the slides:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;SegmentAnything.pptx&quot; target=&quot;_blank&quot;&gt;Segment Anything.pptx&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;SegmentAnything.pdf&quot; target=&quot;_blank&quot;&gt;Segment Anything.pdf&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>MaskBEV: Joint Object Detection and Footprint Completion for Bird&#x27;s-eye View 3D Point Clouds</title>
+          <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maskbev/</link>
+          <guid>https://willguimont.com/blog/maskbev/</guid>
+          <description xml:base="https://willguimont.com/blog/maskbev/">&lt;p&gt;Accepted paper at IROS 2023: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2307.01864&quot; target=&quot;_blank&quot;&gt;MaskBEV: Joint Object Detection and Footprint Completion for Bird’s-eye View 3D Point Clouds&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in object detection in LiDAR point clouds mostly focus on predicting bounding boxes around objects. This prediction is commonly achieved using anchor-based or anchor-free detectors that predict bounding boxes, requiring significant explicit prior knowledge about the objects to work properly. To remedy these limitations, we propose MaskBEV, a bird’s-eye view (BEV) mask-based object detector neural architecture. MaskBEV predicts a set of BEV instance masks that represent the footprints of detected objects. Moreover, our approach allows object detection and footprint completion in a single pass. MaskBEV also reformulates the detection problem purely in terms of classification, doing away with regression usually done to predict bounding boxes. We evaluate the performance of MaskBEV on both SemanticKITTI and KITTI datasets while analyzing the architecture advantages and limitations.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Learn Transformers</title>
+          <pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/transformers/</link>
+          <guid>https://willguimont.com/blog/transformers/</guid>
+          <description xml:base="https://willguimont.com/blog/transformers/">&lt;p&gt;Here’s a small library I made to explain the Transformer architecture in PyTorch: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;transformers&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;transformers&lt;&#x2F;a&gt;.
+The code is heavily commented and should be easy to follow.&lt;&#x2F;p&gt;
+&lt;p&gt;This repository also contains some popular transformer-based models, such as Vision Transformer.&lt;&#x2F;p&gt;
+&lt;p&gt;This was made while developping new practical exercises for &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ulaval-damas&#x2F;glo4030-labs&quot; target=&quot;_blank&quot;&gt;GLO-7030 at Université Laval&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>torch_waymo</title>
+          <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/torch-waymo/</link>
+          <guid>https://willguimont.com/blog/torch-waymo/</guid>
+          <description xml:base="https://willguimont.com/blog/torch-waymo/">&lt;p&gt;Here’s a small library I made to use the &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;waymo.com&#x2F;open&#x2F;&quot; target=&quot;_blank&quot;&gt;Waymo Open Dataset&lt;&#x2F;a&gt; in PyTorch, without any dependency to Tensorflow: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;torch_waymo&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;torch_waymo&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s the corresponding PyPI package: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;torch-waymo&#x2F;&quot; target=&quot;_blank&quot;&gt;torch-waymo&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Apprentissage par réseaux de neurones profonds sur les nuages de points 3D</title>
+          <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/nn-on-pc-ift-6001/</link>
+          <guid>https://willguimont.com/blog/nn-on-pc-ift-6001/</guid>
+          <description xml:base="https://willguimont.com/blog/nn-on-pc-ift-6001/">&lt;p&gt;Papier réalisé pour le cours IFT-6001 @ Université Laval sur l’apprentissage par réseaux de neurones profonds sur les nuages de points 3D: &lt;a href=&quot;ApprentissageParReseauxDeNeuronesProfondsSurLesNuagesDePoints3D.pdf&quot; target=&quot;_blank&quot;&gt;Apprentissage par réseaux de neurones profonds sur les nuages de points 3D&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Point-BERT IFT-6001</title>
+          <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/point-bert-ift-6001/</link>
+          <guid>https://willguimont.com/blog/point-bert-ift-6001/</guid>
+          <description xml:base="https://willguimont.com/blog/point-bert-ift-6001/">&lt;p&gt;Voici une présentation que j’ai donnée le 28 avril 2022 pour le cours &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.ulaval.ca&#x2F;etudes&#x2F;cours&#x2F;ift-6001-introduction-a-la-recherche-en-informatique-communication-et-methodologie&quot; target=&quot;_blank&quot;&gt;IFT-6001 Introduction à la recherche en informatique : communication et méthodologie&lt;&#x2F;a&gt; à l’Université Laval sur &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2111.14819&quot; target=&quot;_blank&quot;&gt;Point-BERT&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Voici les diapositives: &lt;a href=&quot;Point-BERT-IFT-6001.pdf&quot; target=&quot;_blank&quot;&gt;Point-BERT&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Voici l’enregistrement de la présentation:&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;fywySHYLzW4&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+</description>
+      </item>
+      <item>
+          <title>Compute Canada Quickstart</title>
+          <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/compute-canada/</link>
+          <guid>https://willguimont.com/blog/compute-canada/</guid>
+          <description xml:base="https://willguimont.com/blog/compute-canada/">&lt;p&gt;Here’s a small guide on how to use Compute Canada clusters to train deep learning models.&lt;&#x2F;p&gt;
+&lt;p&gt;In this guide, we’ll do the necessary setup to get you up and running on a cluster. This guide is written to work with &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.computecanada.ca&#x2F;wiki&#x2F;Narval&#x2F;en&quot; target=&quot;_blank&quot;&gt;Narval&lt;&#x2F;a&gt;, but it should be easy to adapt it to other clusters by changing the URLs. You can see available clusters at &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.computecanada.ca&#x2F;research-portal&#x2F;accessing-resources&#x2F;available-resources&#x2F;&quot; target=&quot;_blank&quot;&gt;this URL&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;We recommend Narval for deep learning as of now (2021-2022) because it has 4 NVIDIA A100 (40 Gb memory) per node.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;This guide was written by William Guimont-Martin, 2021&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Also available on &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norlab-ulaval&#x2F;Norlab_wiki&#x2F;wiki&#x2F;Compute-Canada-Quickstart&quot; target=&quot;_blank&quot;&gt;Norlab Wiki&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;account-creation&quot;&gt;Account creation&lt;&#x2F;h1&gt;
+&lt;p&gt;First of all, you’ll need a Compute Canada account to access the clusters. To do so, please see &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.google.com&#x2F;document&#x2F;d&#x2F;1fk0P_4wIKaP1giUD0rtbpCtxzj3YYm797RQKklQjpuk&#x2F;edit?usp=sharing&quot; target=&quot;_blank&quot;&gt;Tips for new students&lt;&#x2F;a&gt;. You’ll see the URL to apply for an account and Philippe Giguère’s sponsor code.&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll need your username and your password for the following steps.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ssh-and-ssh-copy-id&quot;&gt;SSH and &lt;code&gt;ssh-copy-id&lt;&#x2F;code&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;To access Compute Canada’s clusters, you’ll need to ssh into them. You can get the login node URL by checking the cluster’s wiki page. For Narval, the URL is &lt;strong&gt;narval.computecanada.ca&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To connect to the cluster:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; replace &amp;lt;username&amp;gt; with your actual Compute Canada username&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;ssh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;username&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;@narval.computecanada.ca&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You’ll be asked to enter your password. If everything goes right, you’ll be greeted by the cluster’s welcome message.&lt;&#x2F;p&gt;
+&lt;p&gt;To make things easier later, we recommend to set up an SSH key to connect to the cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;To do so, you’ll need to generate an SSH key &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;checking-for-existing-ssh-keys&quot; target=&quot;_blank&quot;&gt;if you don’t already have one you’d like to use&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Please see &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent&quot; target=&quot;_blank&quot;&gt;Generating a new SSH key and adding it to the ssh-agent&lt;&#x2F;a&gt; from GitHub to generate a new SSH key.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you have added your SSH key and added it to the ssh-agent, copy your key to the cluster with&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; replace &amp;lt;username&amp;gt; with your actual Compute Canada username&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;ssh-copy-id&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;username&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;@narval.computecanada.ca&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If everything went right, you should now be able to ssh into your cluster without being asked your password.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;clone-your-code&quot;&gt;Clone your code&lt;&#x2F;h1&gt;
+&lt;p&gt;Now that you are logged in the cluster, you should have a bash shell. From that shell, you can use most Linux commands you’re used to like &lt;code&gt;ls&lt;&#x2F;code&gt;, &lt;code&gt;cd&lt;&#x2F;code&gt;, etc..&lt;&#x2F;p&gt;
+&lt;p&gt;We’ll now clone your project on the cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;From the cluster, you can create another SSH key and &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;adding-a-new-ssh-key-to-your-github-account&quot; target=&quot;_blank&quot;&gt;add it to GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This will allow you to &lt;code&gt;git clone&lt;&#x2F;code&gt; your repository into your home directory.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setup-your-python-venv&quot;&gt;Setup your Python venv&lt;&#x2F;h1&gt;
+&lt;p&gt;It is recommended to create your Python venv from inside a SLURM job, if your installation script is quite complex, it will be easier to set up before starting any job.&lt;&#x2F;p&gt;
+&lt;p&gt;To create a Python venv:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;load&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; python&#x2F;3.8.10  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; loads python, you can change the version, you can see available versions using &amp;quot;module avail python&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;python&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;m&lt;&#x2F;span&gt; venv venv  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; creates a virtual environment in the folder .&#x2F;venv&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Once created, you can activate it using:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-source z-shell&quot;&gt;source&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; venv&#x2F;bin&#x2F;activate&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You should now see &lt;code&gt;(venv)&lt;&#x2F;code&gt; at the beginning of your shell prompt.&lt;&#x2F;p&gt;
+&lt;p&gt;You can now &lt;code&gt;pip&lt;&#x2F;code&gt; install all of your dependencies.&lt;&#x2F;p&gt;
+&lt;p&gt;Please note that when installing mmdetection and its dependencies, you might need to also run:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;pip&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; install&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;U&lt;&#x2F;span&gt; numpy&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;pip&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; install&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;U&lt;&#x2F;span&gt; scikit-learn&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you want to create your venv from inside a job, note the commands you did to setup your environment and copy them into your job script.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;putting-your-data-on-the-cluster&quot;&gt;Putting your data on the cluster&lt;&#x2F;h1&gt;
+&lt;p&gt;To put your data on the cluster, we recommend using &lt;code&gt;sftp&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;First of all, take the time to familiarize yourself with &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.computecanada.ca&#x2F;wiki&#x2F;Storage_and_file_management&#x2F;en#Storage_types&quot; target=&quot;_blank&quot;&gt;the different types of storage available on the clusters&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;From that, you’ll have to upload your dataset in &lt;code&gt;~&#x2F;projects&#x2F;def-philg&#x2F;&amp;lt;username&amp;gt;&lt;&#x2F;code&gt;. Note that this space is shared across the people in the lab. Please keep it clean!&lt;&#x2F;p&gt;
+&lt;p&gt;From you local computer:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-cd z-shell&quot;&gt;cd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; path&#x2F;to&#x2F;your&#x2F;dataset&#x2F;on&#x2F;your&#x2F;computer&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; replace &amp;lt;username&amp;gt; with your actual Compute Canada username&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sftp&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;username&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;@narval.computecanada.ca&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sftp&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt; cd &lt;span class=&quot;z-meta z-group z-expansion z-tilde&quot;&gt;&lt;span class=&quot;z-variable z-language z-tilde z-shell&quot;&gt;~&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&#x2F;projects&#x2F;def-philg&#x2F;&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;username&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; use &amp;quot;put file&amp;quot; to upload a file, use &amp;quot;get file&amp;quot; to download a file&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; you can use * to wildcard select multiple files&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you are using mmdetection, you might want to add a symlink to your data in &lt;code&gt;code&#x2F;data&lt;&#x2F;code&gt;. To do so, run the following commands:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-cd z-shell&quot;&gt;cd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; to&#x2F;your&#x2F;code&#x2F;folder  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change this path&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; data&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-cd z-shell&quot;&gt;cd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; data&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;ln&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;s&lt;&#x2F;span&gt; path&#x2F;to&#x2F;your&#x2F;dataset &lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;dataset-name&lt;span class=&quot;z-keyword z-operator z-assignment z-redirection z-shell&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change path and dataset name&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;slurm-jobs&quot;&gt;SLURM jobs&lt;&#x2F;h1&gt;
+&lt;p&gt;We can now create jobs. To do so, create a .sh file and paste the following inside:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;!&#x2F;bin&#x2F;bash&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --gres=gpu:4&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --cpus-per-task=8&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --mem=40000M&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --time=1-00:00&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --job-name=01_baseline_pointpillars&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --output=%x-%j.out&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Variables&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-storage z-modifier z-shell&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;OMP_NUM_THREADS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;SLURM_CPUS_PER_TASK&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-storage z-modifier z-shell&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;MAKEFLAGS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;&lt;span class=&quot;z-string z-quoted z-double z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;-j&lt;span class=&quot;z-meta z-group z-expansion z-command z-parens z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-begin z-shell&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;nproc&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-shell&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Modules&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load cuda&#x2F;11.0&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load python&#x2F;3.8.10&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load qt&#x2F;5.12.8&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load geos&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load llvm&#x2F;8.0.1&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Setup Python&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-source z-shell&quot;&gt;source&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-meta z-group z-expansion z-tilde&quot;&gt;&lt;span class=&quot;z-variable z-language z-tilde z-shell&quot;&gt;~&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&#x2F;venv&#x2F;bin&#x2F;activate&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Start task&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change that part to how you run your python script, this example shows how to do multi GPU training using mmdetection3d&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-cd z-shell&quot;&gt;cd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; to&#x2F;your&#x2F;code&#x2F;folder  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change this path&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;CONFIG_FILE&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;configs&#x2F;01_baseline_pointpillars.py&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;WORK_DIR&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;path&#x2F;to&#x2F;work&#x2F;dir&lt;&#x2F;span&gt;  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change this path too&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;GPUS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;4&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;.&#x2F;dist_train.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;CONFIG_FILE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;GPUS&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; --&lt;&#x2F;span&gt;work-dir&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;WORK_DIR&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; --&lt;&#x2F;span&gt;cfg-options&lt;&#x2F;span&gt; cudnn_benchmark=True evaluation.gpu_collect=True  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; gpu_collect=True is essential to do multi GPU training&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Cleaning up&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;deactivate&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This script is organized in five main parts.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;configure-job&quot;&gt;Configure job&lt;&#x2F;h2&gt;
+&lt;p&gt;This part is used to configure the resources needed for your job.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;!&#x2F;bin&#x2F;bash&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --gres=gpu:4                         # Ask for 4 GPU&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --cpus-per-task=8                    # Ask for 8 CPU&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --mem=40000M                         # Ask for 40 000M of RAM&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --time=1-00:00                       # Run for DD-HH:MM&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --job-name=01_baseline_pointpillars  # Job name&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;SBATCH --output=%x-%j.out                   # Log will be written to f&amp;#39;{job_name}_{job_id}&amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;setup-installation&quot;&gt;Setup installation&lt;&#x2F;h2&gt;
+&lt;p&gt;This part sets environment variables for multithreading and loads needed modules. You might need to change the loaded versions.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Variables&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-storage z-modifier z-shell&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;OMP_NUM_THREADS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;SLURM_CPUS_PER_TASK&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-storage z-modifier z-shell&quot;&gt;export&lt;&#x2F;span&gt; &lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;MAKEFLAGS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;&lt;span class=&quot;z-string z-quoted z-double z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;-j&lt;span class=&quot;z-meta z-group z-expansion z-command z-parens z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-begin z-shell&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;nproc&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-parens z-end z-shell&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-end z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Modules&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load cuda&#x2F;11.0&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load python&#x2F;3.8.10&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load qt&#x2F;5.12.8&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load geos&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; load llvm&#x2F;8.0.1&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;loading-the-venv&quot;&gt;Loading the venv&lt;&#x2F;h2&gt;
+&lt;p&gt;This will load the venv we created earlier&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Setup Python&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-source z-shell&quot;&gt;source&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-meta z-group z-expansion z-tilde&quot;&gt;&lt;span class=&quot;z-variable z-language z-tilde z-shell&quot;&gt;~&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&#x2F;venv&#x2F;bin&#x2F;activate&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;running-your-actual-code&quot;&gt;Running your actual code&lt;&#x2F;h2&gt;
+&lt;p&gt;You will need to change this part to run what you want to run. This scripts shows how to use multi-GPU with mmdetection3d.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Start task&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change that part to how you run your python script, this example shows how to do multi GPU training using mmdetection3d&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-cd z-shell&quot;&gt;cd&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; to&#x2F;your&#x2F;code&#x2F;folder  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change this path&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;CONFIG_FILE&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;configs&#x2F;01_baseline_pointpillars.py&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;WORK_DIR&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;path&#x2F;to&#x2F;work&#x2F;dir&lt;&#x2F;span&gt;  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; TODO change this path too&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-assignment z-shell&quot;&gt;GPUS&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-assignment z-shell&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string z-unquoted z-shell&quot;&gt;4&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;.&#x2F;dist_train.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;CONFIG_FILE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;GPUS&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; --&lt;&#x2F;span&gt;work-dir&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-variable z-shell&quot;&gt;$&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-begin z-shell&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-variable z-other z-readwrite z-shell&quot;&gt;WORK_DIR&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-group z-expansion z-parameter z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-expansion z-parameter z-end z-shell&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; --&lt;&#x2F;span&gt;cfg-options&lt;&#x2F;span&gt; cudnn_benchmark=True evaluation.gpu_collect=True  &lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; gpu_collect=True is essential to do multi GPU training&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;cleaning-up&quot;&gt;Cleaning up&lt;&#x2F;h2&gt;
+&lt;p&gt;Not strictly needed, but it is always a good thing to clean up after yourself.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-begin z-shell&quot;&gt;#&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt; Cleaning up&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment z-line z-number-sign z-shell&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;deactivate&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;run-the-job&quot;&gt;Run the job&lt;&#x2F;h2&gt;
+&lt;p&gt;To run a job, you first have to queue it to the job scheduler. To do so, run the following command:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sbatch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; script.sh&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can then verify the job is queued by running:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sq&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;More information is available &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.computecanada.ca&#x2F;wiki&#x2F;Running_jobs&quot; target=&quot;_blank&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;useful-tools&quot;&gt;Useful tools&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;code&gt;sbatch&lt;&#x2F;code&gt;: queue a job.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;sq&lt;&#x2F;code&gt;: view your queued jobs&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;scancel &amp;lt;id&amp;gt;&lt;&#x2F;code&gt;: cancel job with id &lt;id&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;salloc --account=def-philg --gres=gpu:2 --cpus-per-task=4 --mem=32000M --time=5:00:00&lt;&#x2F;code&gt;: start an interactive job, which will allow you to test your scripts before queuing jobs&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;sftp&lt;&#x2F;code&gt;: useful tool to transfer data from and to the cluster&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;diskusage_report&lt;&#x2F;code&gt;: see used disk space&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Transformers in Computer Vision</title>
+          <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/transformers-in-cv/</link>
+          <guid>https://willguimont.com/blog/transformers-in-cv/</guid>
+          <description xml:base="https://willguimont.com/blog/transformers-in-cv/">&lt;p&gt;On September 2nd 2021, I gave a talk on transformer-based neural network architectures for computer vision. I gave the in University Laval’s &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;norlab.ulaval.ca&#x2F;&quot; target=&quot;_blank&quot;&gt;Norlab&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are the slides: &lt;a href=&quot;TransformersInComputerVision.pdf&quot; target=&quot;_blank&quot;&gt;Transformers in Computer Vision&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;And here is the recording of the event:&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;eaWXeXs8dh0&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+</description>
+      </item>
+      <item>
+          <title>TossingBot</title>
+          <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/tossingbot/</link>
+          <guid>https://willguimont.com/blog/tossingbot/</guid>
+          <description xml:base="https://willguimont.com/blog/tossingbot/">&lt;p&gt;This video presents TossingBot, a robotic arm that learns to throw arbitrary objects with residual physics.&lt;&#x2F;p&gt;
+&lt;p&gt;This video was made for the class &lt;em&gt;GLO-7030: Deep Learning&lt;&#x2F;em&gt; at Université Laval.&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;Icx6j3s_Pmc&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+</description>
+      </item>
+      <item>
+          <title>On Learning</title>
+          <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/on-learning/</link>
+          <guid>https://willguimont.com/blog/on-learning/</guid>
+          <description xml:base="https://willguimont.com/blog/on-learning/">&lt;p&gt;This is just some rambles on learning…&lt;&#x2F;p&gt;
+&lt;p&gt;I’m currently taking a class on deep neural networks. In the first class, we discussed multiple ways to have artificial intelligence systems.&lt;&#x2F;p&gt;
+&lt;p&gt;One way would be to code hand-designed programs to accomplish the task. &lt;code&gt;If&lt;&#x2F;code&gt; something happens, &lt;code&gt;then&lt;&#x2F;code&gt; the system does that, &lt;code&gt;else if&lt;&#x2F;code&gt; this other thing happens, &lt;code&gt;then&lt;&#x2F;code&gt; do this, &lt;code&gt;else if&lt;&#x2F;code&gt;… We can achieve great things using rule-based programs, but on more complex tasks we would need a lot of cases to handle a lot of different cases.&lt;&#x2F;p&gt;
+&lt;p&gt;Another way would be to make the computer learn from the data. So we analyze the data, find features for the system to learn from, then use classical machine learning algorithms such as SVM. Again, for complex tasks, we may miss some useful feature to correctly learn from the data.&lt;&#x2F;p&gt;
+&lt;p&gt;The next step is to make the algorithm find features by itself. This is what neural networks do. Each layer of a deep neural network extract features for the higher layers to “reason” about. The classical example is a neural network that detects faces. The first layers might detect very simple patterns like edges. Higher up, a layer might detect corners and contours. Layers at the end of the network might detect complex object parts used by the final layer to classify the object. This is what is called representation learning, the artificial intelligence system finds a way of representing the data so that it is easy to solve the task.&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Goodfellow-1&quot;&gt;&lt;a href=&quot;#fn-Goodfellow&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A good way of visualizing the different takes on artificial intelligence is from the book Deep Learning&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Goodfellow-2&quot;&gt;&lt;a href=&quot;#fn-Goodfellow&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.
+&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;on-learning&#x2F;types.png&quot; alt=&quot;Types of learning&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dreyfus&quot;&gt;Dreyfus&lt;&#x2F;h2&gt;
+&lt;p&gt;When I learned about representation learning, it got me thinking about how we learn and the Dreyfus model&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Dreyfus-1&quot;&gt;&lt;a href=&quot;#fn-Dreyfus&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I think we can draw links between the Novice stage and rule-based systems. In this first stage of the Dreyfus model, the learner relies on rules to determine the action.&lt;&#x2F;p&gt;
+&lt;p&gt;Perhaps, there are other links between machine learning and the Dreyfus model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mental-representations&quot;&gt;Mental representations&lt;&#x2F;h2&gt;
+&lt;p&gt;In The Sciences of the artificial&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Simon-1&quot;&gt;&lt;a href=&quot;#fn-Simon&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; from Herbert A. Simon, the author discusses the experience of A. de Groot and al. on chess perception. They showed chessboard with pieces in positions of real games for 5 seconds, then removed the pieces. Then they asked the subjects to put the pieces back in their position.&lt;&#x2F;p&gt;
+&lt;p&gt;As you might guess, somebody not accustomed to chess would have a pretty hard time to reconstruct the positions. For grandmasters and masters though, they were able to reconstruct the positions with almost no error!&lt;&#x2F;p&gt;
+&lt;p&gt;They then retried the experiment with &lt;em&gt;random&lt;&#x2F;em&gt; piece positions. In that case, even grandmasters could not reconstruct the board.&lt;&#x2F;p&gt;
+&lt;p&gt;This shows that a grandmaster or a master built a good mental &lt;em&gt;representation&lt;&#x2F;em&gt; of the game. Instead of memorizing all pieces, they memorized relations between pieces, which allow them to memorize them more easily.&lt;&#x2F;p&gt;
+&lt;p&gt;So, when I learned about representation learning, this reminded me of that particular example. Under the hood, a neural network &lt;em&gt;tries&lt;&#x2F;em&gt; to do exactly what the grandmaster did, build a good representation of the problem to solve. Once the representation is built, a simple linear layer can solve the problem!&lt;&#x2F;p&gt;
+&lt;p&gt;I think this is what is really going on when humans learn. All the studying isn’t about memorizing facts or formulas, it’s about building a good mental representation that can be used to solve many problems. Once you understand basic algebra, you can use that framework to solve many problems you weren’t trained on.&lt;&#x2F;p&gt;
+&lt;p&gt;In a neural network, we are usually not concerned about memorizing all the input data, instead, we want to generalize to unseen examples.&lt;&#x2F;p&gt;
+&lt;p&gt;Perhaps we should tell students that they aren’t in school to memorize facts, but instead to build a toolbox of mental representations to help them in life. Our brain is a neural network that needs to be trained with great care!&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;sources&quot;&gt;Sources&lt;&#x2F;h1&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn-Goodfellow&quot;&gt;
+&lt;p&gt;Goodfellow, Ian &amp;amp; Bengio, Yoshua &amp;amp; Courville, Aaron. Deep Learning. 2016. &lt;a href=&quot;#fr-Goodfellow-1&quot;&gt;↩&lt;&#x2F;a&gt; &lt;a href=&quot;#fr-Goodfellow-2&quot;&gt;↩2&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li id=&quot;fn-Dreyfus&quot;&gt;
+&lt;p&gt;Dreyfus, Stuart E. The Five-Stage Model of Adult Skill Acquisition. 2004. &lt;a href=&quot;#fr-Dreyfus-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li id=&quot;fn-Simon&quot;&gt;
+&lt;p&gt;Simon, Herbert A. The Sciences of the Artificial, 1969. &lt;a href=&quot;#fr-Simon-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;section&gt;
+</description>
+      </item>
+      <item>
+          <title>PROSAC</title>
+          <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/prosac-algorithm/</link>
+          <guid>https://willguimont.com/blog/prosac-algorithm/</guid>
+          <description xml:base="https://willguimont.com/blog/prosac-algorithm/">&lt;p&gt;Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read &lt;a href=&quot;2005-Matching-with-PROSAC-progressive-sample-consensus.pdf&quot; target=&quot;_blank&quot;&gt;Matching with PROSAC - Progressive Sample Concensus&lt;&#x2F;a&gt;&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-ChumMatas-1&quot;&gt;&lt;a href=&quot;#fn-ChumMatas&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, a paper presenting a variant of the popular RANSAC algorithm.&lt;&#x2F;p&gt;
+&lt;p&gt;This article will be a more detailed version of the presentation I gave for that class, the slides are &lt;a href=&quot;PROSAC.pdf&quot; target=&quot;_blank&quot;&gt;here&lt;&#x2F;a&gt;. I won’t go into much of the mathematics, the details are in the paper. What I want to do with this article is to give you the intuition behind the algorithm more than writing a lot of equations.&lt;&#x2F;p&gt;
+&lt;p&gt;To supplement the presentation, I wrote an implementation of PROSAC in Python: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;PROSAC&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;PROSAC&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Before jumping in PROSAC, let’s just review RANSAC a bit.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ransac-random-sample-consensus&quot;&gt;RANSAC - Random sample consensus&lt;&#x2F;h1&gt;
+&lt;p&gt;The main goal of RANSAC is to estimate a model from noised data with outliers.&lt;&#x2F;p&gt;
+&lt;p&gt;The basic idea is to randomly sample points from all points; fit a model on those randomly chosen points; then check if the model fits with the rest of the data.&lt;&#x2F;p&gt;
+&lt;p&gt;As you can see, the algorithm is relatively simple: sample, fit, check, rinse and repeat.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pseudocode&quot;&gt;Pseudocode&lt;&#x2F;h2&gt;
+&lt;p&gt;Let $m$ be the minimum required number of points to fit a model. For a linear model in 2D, $m$ would be equal to $2$.&lt;&#x2F;p&gt;
+&lt;p&gt;Let $M$ a model to fit on the data.&lt;&#x2F;p&gt;
+&lt;p&gt;Let $\epsilon_{tol}$ be the maximum error between a point and the model to be considered an inlier.&lt;&#x2F;p&gt;
+&lt;p&gt;Let $\tau$ the fraction of inlier over the total number of points above which we are satisfied by the model. If we achieve that ratio, we stop early.&lt;&#x2F;p&gt;
+&lt;p&gt;Let $w$ be the probability of a given point to be an inlier. This is used to estimate the number of times we have to run RANSAC before finding a satisfying solution.&lt;&#x2F;p&gt;
+&lt;p&gt;Let $I$ be the set of inliers of maximal cardinality.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;ransac&quot;&gt;RANSAC&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample $m$ points&lt;&#x2F;li&gt;
+&lt;li&gt;Estimate a model $M$ from the $m$ sampled points&lt;&#x2F;li&gt;
+&lt;li&gt;Find the number of inliers with model $M$ with tolerance $\epsilon_{tol}$. If the number of inliers is greater than the number of previously found inliers, replace $I$ with the new set of inliers.&lt;&#x2F;li&gt;
+&lt;li&gt;If the fraction of inliers over the total number of points is greater than $\tau$, estimate the model with all inliers and stop.&lt;&#x2F;li&gt;
+&lt;li&gt;Repeat steps 1 to 4, a maximum of $\frac{1}{w^m}$ times&lt;&#x2F;li&gt;
+&lt;li&gt;After $\frac{1}{w^m}$ iterations, estimate the model with $I$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;limitations-of-ransac&quot;&gt;Limitations of RANSAC&lt;&#x2F;h2&gt;
+&lt;p&gt;In the paper, they looked at estimating epipolar geometry from a pair of pictures.&lt;&#x2F;p&gt;
+&lt;div class=&quot;img-row&quot;&gt;
+  &lt;img src=&quot;plant01.png&quot; alt=&quot;Plant 1&quot; class=&quot;img-bg&quot; &#x2F;&gt;
+  &lt;img src=&quot;plant02.png&quot; alt=&quot;Plant 2&quot; class=&quot;img-bg&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;With this pair of pictures, there is a lot of repetitive patterns on the floor and leaves, so there will be a lot of false matches. We have $m=7$ (epipolar geometry) and $w=9.2%$. The number of iteration of RANSAC is given by $\frac{1}{w^m}$. The estimated number of samples is over $8.43 \times 10^7$ !!! RANSAC would take a pretty long time before finding a good solution… That’s not realistic!&lt;&#x2F;p&gt;
+&lt;p&gt;When the model is complex and the number of correct points is low, RANSAC often takes very long before finding a satisfying solution. Let’s see if PROSAC can help.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;prosac-progressive-sample-consensus&quot;&gt;PROSAC - Progressive sample consensus&lt;&#x2F;h1&gt;
+&lt;p&gt;PROSAC adds the notion of quality to points with the basic assumption that points of greater quality have more chances to be correct.&lt;&#x2F;p&gt;
+&lt;p&gt;So, to make the algorithm quicker, the algorithm starts by trying to fit with points of greater quality first. Then we &lt;em&gt;progressively&lt;&#x2F;em&gt; add points of lesser quality.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;intuition&quot;&gt;Intuition&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s say that the points in red are outliers. We would like to fit a model of complexity $m=2$ on those points.&lt;&#x2F;p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RANSAC&lt;&#x2F;th&gt;
+      &lt;th&gt;PROSAC&lt;&#x2F;th&gt;
+    &lt;&#x2F;tr&gt;
+  &lt;&#x2F;thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_1$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td&gt;&lt;i&gt;$p_2$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;i&gt;$p_2$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td&gt;&lt;i&gt;$p_4$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_3$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_6$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;i&gt;$p_4$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_3$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_5$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td&gt;&lt;i&gt;$p_5$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;i&gt;$p_6$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+      &lt;td style=&quot;background-color:red;&quot;&gt;&lt;i&gt;$p_1$&lt;&#x2F;i&gt;&lt;&#x2F;td&gt;
+    &lt;&#x2F;tr&gt;
+  &lt;&#x2F;tbody&gt;
+&lt;&#x2F;table&gt;
+&lt;p&gt;In RANSAC, we would be sampling $2$ points among all points, so we would have a probability of $\frac{3}{6}\cdot\frac{2}{5}=20%$. So, we would need, on average, $5$ samples before finding an uncontaminated sample.&lt;&#x2F;p&gt;
+&lt;p&gt;Whereas in PROSAC, we sort points by quality. The first points would be of higher quality. We would start sampling from the top 2 points, so we would sample $p_2$ and $p_4$, both of which are correct. In this case, we would have found an uncontaminated sample on the first draw.&lt;&#x2F;p&gt;
+&lt;p&gt;Even with this simple example, we can see the possible speedup.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;simplified-pseudo-code&quot;&gt;Simplified pseudo code&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prosac&quot;&gt;PROSAC&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Sort points by quality (highest quality first)&lt;&#x2F;li&gt;
+&lt;li&gt;Consider the first $m$ points ($n\leftarrow m$)&lt;&#x2F;li&gt;
+&lt;li&gt;Sample $m$ points from the top $n$&lt;&#x2F;li&gt;
+&lt;li&gt;Fit the model&lt;&#x2F;li&gt;
+&lt;li&gt;Verify model with all points&lt;&#x2F;li&gt;
+&lt;li&gt;If the stopping criteria are not met, repeat steps 3 to 6, adding progressively points ($n\leftarrow n + 1$). Otherwise, fit the model on all inliers and terminate.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;quality&quot;&gt;Quality&lt;&#x2F;h2&gt;
+&lt;p&gt;There are multiple ways of defining quality. For feature matching on images, we could use the correlation of intensity around features on each image.&lt;&#x2F;p&gt;
+&lt;p&gt;In the paper, they mention Lowe’s distance. Lowe’s distance is the ratio between the most and second most similar matches.&lt;&#x2F;p&gt;
+&lt;p&gt;$s_1$: distance of the most similar match&lt;&#x2F;p&gt;
+&lt;p&gt;$s_2$: distance of the second most similar match&lt;&#x2F;p&gt;
+&lt;p&gt;$\text{distance} = \frac{s_1}{s_2}$&lt;&#x2F;p&gt;
+&lt;p&gt;This distance allows us to select the first points that are significantly better than any other. A match with a low Lowe’s distance has more chances of being correct.&lt;&#x2F;p&gt;
+&lt;p&gt;To define quality, we could inverse the ratio.&lt;&#x2F;p&gt;
+&lt;p&gt;$\text{quality} = \frac{s_2}{s_1}$&lt;&#x2F;p&gt;
+&lt;p&gt;You can use any metric you want, as long as the higher the quality is, the higher the probability of the point being correct is.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fast-sampling&quot;&gt;Fast sampling&lt;&#x2F;h2&gt;
+&lt;p&gt;We could simply sample $m$ points from the top $n$ points, but that would be inefficient. We could sample multiple times the same set of points. So, to better explore the new possibles sets of $m$ points, we use the fact that when adding a new point $p_{n+1}$, we add a number $a$ of new samples. Each new sample contains the new point $p_{n+1}$ and $m-1$ from the $n$ first points.&lt;&#x2F;p&gt;
+&lt;p&gt;So, we can simply sample $a$ times, picking $p_{n+1}$ and $m-1$ points in the best $n$ points. That way, we ensure the quickly explore the possibles sets of $m$ points.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;end-criterion&quot;&gt;End criterion&lt;&#x2F;h2&gt;
+&lt;p&gt;The algorithm has two stopping criteria.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Non-random solution&lt;&#x2F;li&gt;
+&lt;li&gt;Maximality&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;non-random-solution&quot;&gt;Non-random solution&lt;&#x2F;h2&gt;
+&lt;p&gt;This criterion states that for a solution to be considered correct, it must have more inliers than what would randomly happen for an incorrect model.&lt;&#x2F;p&gt;
+&lt;p&gt;This is computed by estimating the probability that an incorrect model (fitted on a sample) is supported by a given point, not in the sample.&lt;&#x2F;p&gt;
+&lt;p&gt;The solution is considered non-random if the probability of having its number of inliers by chance is smaller than a certain threshold (usually 5%).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;maximality&quot;&gt;Maximality&lt;&#x2F;h2&gt;
+&lt;p&gt;We want to stop sampling when the chance of getting a model that fit more points is lower than a certain threshold. This is computed by looking at the odds of missing a set of inliers bigger than previously found after a number of draws. If this probability falls under a certain threshold (usually 5%), it is not worth continuing drawing and we terminate.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;&#x2F;h1&gt;
+&lt;p&gt;Not having found any implementation of PROSAC online, I decided to post mine: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;PROSAC&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;PROSAC&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;sources&quot;&gt;Sources&lt;&#x2F;h1&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn-ChumMatas&quot;&gt;
+&lt;p&gt;Chum, Ondrej &amp;amp; Matas, Jiri. Matching with PROSAC - Progressive Sample Consensus. 2005. &lt;a href=&quot;#fr-ChumMatas-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;section&gt;
+</description>
+      </item>
+    </channel>
+</rss>

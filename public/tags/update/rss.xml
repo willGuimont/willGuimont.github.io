@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>William Guimont-Martin - Update</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/update/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Atom and RSS Feed</title>
+          <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/atom-feed/</link>
+          <guid>https://willguimont.com/blog/atom-feed/</guid>
+          <description xml:base="https://willguimont.com/blog/atom-feed/">&lt;p&gt;I just made an &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willGuimont.com&#x2F;rss.xml&quot; target=&quot;_blank&quot;&gt;Atom Feed&lt;&#x2F;a&gt; and an &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willGuimont.com&#x2F;rss.xml&quot; target=&quot;_blank&quot;&gt;RSS Feed&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Hello World!</title>
+          <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/hello-world/</link>
+          <guid>https://willguimont.com/blog/hello-world/</guid>
+          <description xml:base="https://willguimont.com/blog/hello-world/">&lt;p&gt;This is the first post on this site.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

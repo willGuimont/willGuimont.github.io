@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>William Guimont-Martin - Poesy</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/poesy/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-10-26T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/poesy/atom.xml</id>
+    <entry xml:lang="en">
+        <title>L’Art poétique, Boileau</title>
+        <published>2021-10-26T00:00:00+00:00</published>
+        <updated>2021-10-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/boileau/"/>
+        <id>https://willguimont.com/blog/boileau/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/boileau/">&lt;p&gt;J’apprécie beaucoup le poème &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fr.wikisource.org&#x2F;wiki&#x2F;Boileau_-_%C5%92uvres_po%C3%A9tiques&#x2F;L%E2%80%99Art_po%C3%A9tique&#x2F;Chant_I&quot; target=&quot;_blank&quot;&gt;L’Art poétique&lt;&#x2F;a&gt; de Nicolas Boileau.&lt;&#x2F;p&gt;
+&lt;p&gt;Dans l’extrait suivant, il aborde l’importance de la clarté de l’esprit lors de l’écriture: Il est impossible d’écrire clairement si l’on n’a pas une idée précise de ce que l’on veut dire. Depuis que j’ai découvert ce poème, j’y pense dès lors que je m’assois pour écrire.&lt;&#x2F;p&gt;
+&lt;p&gt;Voici un extrait que je trouve particulièrement intéressant:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il est certains esprits dont les sombres pensées
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Sont d’un nuage épais toujours embarrassées ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Le jour de la raison ne le saurait percer. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Avant donc que d’écrire apprenez à penser. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Selon que notre idée est plus ou moins obscure, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;L’expression la suit, ou moins nette, ou plus pure. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Ce que l’on conçoit bien s’énonce clairement, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Et les mots pour le dire arrivent aisément. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Surtout, qu’en vos écrits la langue révérée 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Dans vos plus grands excès vous soit toujours sacrée. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;En vain vous me frappez d’un son mélodieux, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Si le terme est impropre, ou le tour vicieux ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Mon esprit n’admet pour un pompeux barbarisme, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Ni d’un vers ampoulé l’orgueilleux solécisme. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Sans la langue, en un mot, l’auteur le plus divin 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Est toujours, quoi qu’il fasse, un méchant écrivain. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Travaillez à loisir, quelque ordre qui vous presse, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Et ne vous piquez point d’une folle vitesse ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Un style si rapide, et qui court en rimant, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Marque moins trop d’esprit, que peu de jugement. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;J’aime mieux un ruisseau qui sur la molle arène 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Dans un pré plein de fleurs lentement se promène, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Qu’un torrent débordé qui, d’un cours orageux, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Roule, plein de gravier, sur un terrain fangeux. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Hâtez-vous lentement ; et, sans perdre courage, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Vingt fois sur le métier remettez votre ouvrage : 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Polissez-le sans cesse et le repolissez ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Ajoutez quelquefois, et souvent effacez. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;C’est peu qu’en un ouvrage où les fautes fourmillent, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Des traits d’esprit semés de temps en temps pétillent. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il faut que chaque chose y soit mise en son lieu ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Que le début, la fin répondent au milieu ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Que d’un art délicat les pièces assorties 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;N’y forment qu’un seul tout de diverses parties ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Que jamais du sujet le discours s’écartant 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;N’aille chercher trop loin quelque mot éclatant. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Craignez-vous pour vos vers la censure publique ? 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Soyez-vous à vous-même un sévère critique. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;L’ignorance toujours est prête à s’admirer. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Faites-vous des amis prompts à vous censurer ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Qu’ils soient de vos écrits les confidents sincères, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Et de tous vos défauts les zélés adversaires. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Dépouillez devant eux l’arrogance d’auteur ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Mais sachez de l’ami discerner le flatteur : 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Tel vous semble applaudir, qui vous raille et vous joue. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Aimez qu’on vous conseille et non pas qu’on vous loue. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Un flatteur aussitôt cherche à se récrier : 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Chaque vers qu’il entend le fait extasier. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Tout est charmant, divin : aucun mot ne le blesse ;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il trépigne de joie, il pleure de tendresse ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il vous comble partout d’éloges fastueux : 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;La vérité n’a point cet air impétueux. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Un sage ami, toujours rigoureux, inflexible, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Sur vos fautes jamais ne vous laisse paisible : 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il ne pardonne point les endroits négligés, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il renvoie en leur lieu les vers mal arrangés, 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Il réprime des mots l’ambitieuse emphase ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Ici le sens le choque, et plus loin c’est la phrase. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Votre construction semble un peu s’obscurcir ; 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Ce terme est équivoque, il le faut éclaircir. 
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;C’est ainsi que vous parle un ami véritable.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+</feed>
