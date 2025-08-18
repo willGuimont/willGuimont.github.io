@@ -5,6 +5,16 @@ on:
     branches:
       - master
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -13,6 +23,8 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Build only
         uses: shalzz/zola-deploy-action@v0.21.0
         env:
@@ -28,6 +40,8 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Build and deploy
         uses: shalzz/zola-deploy-action@v0.21.0
         env:
