@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "torch_waymo"
-description = ""
+description = "Python library for loading the Waymo Open Dataset in PyTorch"
 date = 2023-02-02
 # updated = ""
 # draft = false

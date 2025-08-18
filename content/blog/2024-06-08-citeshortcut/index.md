@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Cite website Bookmarklet"
-description = ""
+description = "Simple bookmarklet to cite a website in bibme.org"
 date = 2024-06-08
 # updated = ""
 # draft = false

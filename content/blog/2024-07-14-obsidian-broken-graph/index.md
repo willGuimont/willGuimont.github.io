@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Fix Obsidian Broken Graph View"
-description = ""
+description = "How to fix the broken graph view in Obsidian"
 date = 2024-07-14
 # updated = ""
 # draft = false
@@ -18,7 +18,7 @@ toc_ordered = true
 
 If the Graph View in Obsidian is broken after an update, you can fix it by following these steps:
 
-```shell
+```bash
 # Close Obsidian
 cd ~/.config/obsidian
 rm -rf Cache Code\ Cache DawnCache GPUCache

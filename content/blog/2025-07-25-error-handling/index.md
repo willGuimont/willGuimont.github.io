@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Element of Errors Handling"
-description = ""
+description = "A deep dive into error handling mechanisms"
 date = 2025-07-25
 # updated = ""
 # draft = false
@@ -9,7 +9,7 @@ date = 2025-07-25
 tags = ["Computing Sciences", "Programming", "Software Development"]
 [extra]
 # banner = ""
-# toc = true
+toc = true
 toc_inline = true
 toc_ordered = true
 # trigger = ""

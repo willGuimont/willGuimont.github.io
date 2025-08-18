@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Segment Anything"
-description = ""
+description = "Presentation on Segment Anything"
 date = 2024-02-21
 # updated = ""
 # draft = false
@@ -19,5 +19,5 @@ toc_ordered = true
 Presentation made for the course <a class="external" href="https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique" target="_blank">GIF-7010: Avancées en apprentissage automatique</a> at Université Laval on <a class="external" href="https://arxiv.org/abs/2304.02643" target="_blank">Segment Anything</a>.
 
 Here are the slides:
-- [Segment Anything.pptx](SegmentAnything.pptx)
-- [Segment Anything.pdf](SegmentAnything.pdf)
+- <a href="SegmentAnything.pptx" target="_blank">Segment Anything.pptx</a>
+- <a href="SegmentAnything.pdf" target="_blank">Segment Anything.pdf</a>

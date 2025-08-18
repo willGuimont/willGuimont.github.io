@@ -18,7 +18,7 @@ toc_ordered = true
 
 Talk I gave on January 28th for a point cloud deep learning reading group.
 
-Here are the slides: [Point-BERT](Point-BERT.pdf)
+Here are the slides: <a href="Point-BERT.pdf" target="_blank">Point-BERT</a>
 
 And here is the recording of the event:
 

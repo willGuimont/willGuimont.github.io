@@ -18,7 +18,7 @@ toc_ordered = true
 
 On September 2nd 2021, I gave a talk on transformer-based neural network architectures for computer vision. I gave the in University Laval's <a class="external" href="https://norlab.ulaval.ca/" target="_blank">Norlab</a>.
 
-Here are the slides: [Transformers in Computer Vision](TransformersInComputerVision.pdf)
+Here are the slides: <a href="TransformersInComputerVision.pdf" target="_blank">Transformers in Computer Vision</a>
 
 And here is the recording of the event:
 

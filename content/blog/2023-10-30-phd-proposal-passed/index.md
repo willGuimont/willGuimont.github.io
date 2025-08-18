@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Ph.D. Proposal Passed"
-description = ""
+description = "Finally passed my Ph.D. proposal exam!"
 date = 2023-09-25
 # updated = ""
 # draft = false
@@ -18,4 +18,4 @@ toc_ordered = true
 
 Passed the Ph.D. proposal exam!
 
-[Ph.D. Proposal Final Version](phdProposal_williamGuimontMartin.pdf)
+<a href="phdProposal_williamGuimontMartin.pdf" target="_blank">Ph.D. Proposal Final Version</a>

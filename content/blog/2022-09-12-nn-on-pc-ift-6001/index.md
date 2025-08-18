@@ -16,4 +16,4 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-Papier réalisé pour le cours IFT-6001 @ Université Laval sur l'apprentissage par réseaux de neurones profonds sur les nuages de points 3D: [Apprentissage par réseaux de neurones profonds sur les nuages de points 3D](ApprentissageParReseauxDeNeuronesProfondsSurLesNuagesDePoints3D.pdf)
+Papier réalisé pour le cours IFT-6001 @ Université Laval sur l'apprentissage par réseaux de neurones profonds sur les nuages de points 3D: <a href="ApprentissageParReseauxDeNeuronesProfondsSurLesNuagesDePoints3D.pdf" target="_blank">Apprentissage par réseaux de neurones profonds sur les nuages de points 3D</a>

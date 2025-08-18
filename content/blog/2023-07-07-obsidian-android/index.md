@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Sync Obsidian vaults to Android using Git"
-description = ""
+title = "Synchronise Obsidian vaults to Android using Git"
+description = "Setup Obsidian synchronisation on Android"
 date = 2023-07-07
 # updated = ""
 # draft = false
@@ -14,9 +14,8 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+archive = "Alternative way to sync your Obsidian vault to an Android phone using Git: [available here](@/blog/2024-03-25-obsidian-android-alternative/index.md)"
 +++
-
-**UPDATE:** Alternative way to sync your Obsidian vault to an Android phone using Git: [available here]({{ site.url }}{% post_url 2024-03-25-obsidian-android-alternative %})
 
 Here's the procedure to sync your <a class="external" href="https://obsidian.md/" target="_blank">Obsidian</a> vault to an Android phone.
 

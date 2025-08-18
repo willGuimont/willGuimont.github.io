@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Wayback Machine Bookmarklet"
-description = ""
+description = "Simple bookmarklet to open the Wayback Machine for the current page"
 date = 2023-12-29
 # updated = ""
 # draft = false

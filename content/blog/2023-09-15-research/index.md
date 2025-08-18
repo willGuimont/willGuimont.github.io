@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Random quotes about research"
-description = ""
+description = "Funny quotes about research"
 date = 2023-09-15
 # updated = ""
 # draft = false
@@ -29,6 +29,8 @@ And some quotes from discussions with friends.
 > Research is like wandering through a maze in search of an knowledge. But you can't see the walls, and you don't know if you're lost. So you just keep bumping into walls until you find the something.
 >
 > -- A friend of mine
+
+Where's the box?
 
 > **Me:** Let's think outside of the box to solve this.
 > 

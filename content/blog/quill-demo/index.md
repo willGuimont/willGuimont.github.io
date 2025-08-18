@@ -2,7 +2,7 @@
 authors = ["John Draft"]
 title = "Drafty Draft"
 description = "Drafted post, very drafty."
-date = 2024-04-29
+date = 2030-01-01
 draft = true
 [taxonomies]
 tags = ["Draft"]

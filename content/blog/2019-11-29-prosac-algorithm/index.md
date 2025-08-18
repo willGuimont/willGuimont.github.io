@@ -17,9 +17,9 @@ toc_ordered = true
 katex = true
 +++
 
-Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read [Matching with PROSAC - Progressive Sample Concensus](2005-Matching-with-PROSAC-progressive-sample-consensus.pdf)[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.
+Recently, for a graduated mobile robotics class, I had to present a scientific paper. Loving algorithms, I decided to read <a href="2005-Matching-with-PROSAC-progressive-sample-consensus.pdf" target="_blank">Matching with PROSAC - Progressive Sample Concensus</a>[^ChumMatas], a paper presenting a variant of the popular RANSAC algorithm.
 
-This article will be a more detailed version of the presentation I gave for that class, the slides are [here](PROSAC.pdf). I won't go into much of the mathematics, the details are in the paper. What I want to do with this article is to give you the intuition behind the algorithm more than writing a lot of equations.
+This article will be a more detailed version of the presentation I gave for that class, the slides are <a href="PROSAC.pdf" target="_blank">here</a>. I won't go into much of the mathematics, the details are in the paper. What I want to do with this article is to give you the intuition behind the algorithm more than writing a lot of equations.
 
 To supplement the presentation, I wrote an implementation of PROSAC in Python: <a class="external" href="https://github.com/willGuimont/PROSAC" target="_blank">willGuimont/PROSAC</a>.
 

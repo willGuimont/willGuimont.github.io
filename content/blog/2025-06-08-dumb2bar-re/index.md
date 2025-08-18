@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Turn Your Dumbbells Into Barbell Plates"
-description = ""
+description = "Revolutionize your home workouts"
 date = 2025-06-08
 # updated = ""
 # draft = false

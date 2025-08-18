@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "3D-Printed AprilTags That Withstand the Real World"
-description = ""
+description = "Durable and weather-resistant AprilTags for robotics"
 date = 2025-05-27
 # updated = ""
 # draft = false

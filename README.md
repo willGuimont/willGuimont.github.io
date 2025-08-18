@@ -1,6 +1,6 @@
 # William Guimont-Martin's Website
 
-```shell
+```bash
 git submodule update --init --recursive
 zola serve
 # Draft mode will render posts with draft = true

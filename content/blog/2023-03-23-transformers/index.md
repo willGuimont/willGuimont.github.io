@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Learn Transformers"
-description = ""
+description = "The Transformer architecture reimplemented to be easy to understand"
 date = 2023-03-23
 # updated = ""
 # draft = false
@@ -20,3 +20,5 @@ Here's a small library I made to explain the Transformer architecture in PyTorch
 The code is heavily commented and should be easy to follow.
 
 This repository also contains some popular transformer-based models, such as Vision Transformer.
+
+This was made while developping new practical exercises for <a class="external" href="https://github.com/ulaval-damas/glo4030-labs" target="_blank">GLO-7030 at Université Laval</a>.

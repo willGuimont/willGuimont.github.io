@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Free 3D Scanning using iOS devices"
-description = ""
+description = "How to use iOS devices for 3D scanning"
 date = 2025-03-03
 # updated = ""
 # draft = false

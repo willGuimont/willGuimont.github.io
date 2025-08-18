@@ -22,4 +22,4 @@ Ces slides présentent une approche concrète : les différents niveaux de tests
 
 À travers l’exemple d’UTournament, nous verrons comment structurer un test (Arrange-Act-Assert), comment limiter la fragilité et comment élargir la portée avec des approches comme le property-based testing. L’objectif est de montrer qu’avec un minimum de rigueur, les tests deviennent un allié au développement plutôt qu’un fardeau.
 
-Slides: [Les tests en pratique](LesTestsEnPratique.pdf)
+Slides: <a href="LesTestsEnPratique.pdf" target="_blank">Les tests en pratique</a>
