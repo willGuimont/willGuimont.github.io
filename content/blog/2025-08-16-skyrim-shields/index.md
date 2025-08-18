@@ -4,7 +4,7 @@ title = "Skyrim Shields"
 description = "Shields I made back in the summer of 2017"
 date = 2025-08-17
 # updated = ""
-draft = false
+draft = true
 [taxonomies]
 tags = ["Photos"]
 [extra]
