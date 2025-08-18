@@ -18,11 +18,11 @@ toc_ordered = true
 
 Here are some pictures of ducks I took in the last few years. Most of them are from the *Domaine de Maizerets* in Quebec City.
 
-![Duck](01.png)
-![Duck](04.png)
-![Duck](03.png)
-![Duck](05.png)
-![Duck](02.png)
-![Duck](06.png)
-![Duck](07.png)
-![Duck](08.png)
+![Duck](01.webp)
+![Duck](04.webp)
+![Duck](03.webp)
+![Duck](05.webp)
+![Duck](02.webp)
+![Duck](06.webp)
+![Duck](07.webp)
+![Duck](08.webp)

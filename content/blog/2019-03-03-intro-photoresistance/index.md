@@ -20,7 +20,7 @@ Le but de cet exercice est de vous faire pratiquer les conditions et la boucle p
 
 # Photorésistance
 
-![Photoresistance](photores.png)
+![Photoresistance](photores.webp)
 
 Une photorésistance est une composante électronique dont la résistance change selon la lumière qui l'éclaire. En bref, on peut regarder la tension aux bornes de la photorésistance.
 

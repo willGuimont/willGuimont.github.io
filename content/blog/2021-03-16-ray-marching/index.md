@@ -37,7 +37,7 @@ On peut alors utiliser la fonction de distance signée pour nous indiquer la tai
 
 L’image ci-dessous, tirée de l’article, illustre ce principe. Les points bleus représentent les positions de chaque itération de l’algorithme de ray marching. Les rayons des cercles représentent les tailles des pas. À chaque itération, on va se déplacer d'un pas de taille égale au rayon du cercle. Comme le cercle a pour rayon la distance avec la surface, on peut avancer de cette distance sans entrer en collision avec la surface.
 
-| ![Sphere tracing](sphere-tracing.png)| 
+| ![Sphere tracing](sphere-tracing.webp)| 
 |:--:| 
 | *Ray marching, figure extraite de [^walczyk]* |
 
@@ -55,7 +55,7 @@ Il est aussi possible de faire des combinaisons très intéressantes visuellemen
 
 Pour explorer cette technique un peu plus en détail, j’ai implémenté un ray marcher dans openframeworks. Voici un rendu que j’ai réalisé avec une union smooth entre des sphères et un cube. 
 
-![Ray marching](screenshot.png)
+![Ray marching](screenshot.webp)
 
 Le code source est disponible ici : <a class="external" href="https://github.com/willGuimont/ray" target="_blank">willGuimont/ray</a>. À noter qu'il est possible de faire de l'illumination avec cette technique aussi. Il faut simplement approximer la normale en lançant des rayons autour du rayon de la caméra. Cette technique est vraiment très intéressante.
 

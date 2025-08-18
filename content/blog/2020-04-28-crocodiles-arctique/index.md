@@ -42,7 +42,7 @@ La simulation globale et la LES s’influent l’une l’autre pour obtenir des 
 
 Maintenant que l’on sait comment on peut simuler les stratocumulus, il faut comprendre leurs dynamiques. Comme on peut le voir dans la partie de gauche de la figure ci-dessous, le nuage est bordé par le haut par une masse d’air chaud et sec, et par le bas par de l’air humide venant de l’océan. Les gouttelettes d’eau du nuage sont très efficaces pour absorber et émettre les radiations à ondes longues, contrairement à l’air sec et chaud au-dessus du nuage. On a donc que les radiations à ondes longues viennent de régions plus hautes et plus froides de l’atmosphère. Le nuage reçoit moins d’énergie par rapport à ce qu’il émet, il refroidi donc. L’air froid du dessus du nuage est alors plus dense que le nuage. Étant plus dense, cet air commence à descendre dans le nuage, entraînant du même coup de l’air chaud et sec du dessus du nuage à l’intérieur. Cette convection permet aussi à l’air humide du dessous du nuage d’humidifier le nuage. Ces différents échanges permettent au nuage de rester présent.
 
-| ![Figure](figure.png)| 
+| ![Figure](figure.webp)| 
 |:--:| 
 | *Échanges de chaleurs dans les stratocumulus, figure extraite de [^Schneider]* |
 

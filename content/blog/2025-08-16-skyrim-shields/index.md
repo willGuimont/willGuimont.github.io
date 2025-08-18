@@ -18,4 +18,4 @@ toc_ordered = true
 
 I made these shields using wood and leather straps back in the summer of 2017. They were inspired by the game *Skyrim*.
 
-![Both Shields](IGP5573.jpg)
+![Both Shields](IGP5573.webp)

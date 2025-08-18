@@ -29,11 +29,11 @@ En mots, on voudrait demander à l'Arduino:
 
 Pour ce faire, on branche un bouton de la façon suivante.
 
-![Bouton](bouton.png)
+![Bouton](bouton.webp)
 
 Les zig-zags représentent la résistance. Le symbole avec les deux points vides et le bout de fil représente un bouton ou un interrupteur.
 
-![Schema](schema.png)
+![Schema](schema.webp)
 
 # Fonctions de bases
 
@@ -183,7 +183,7 @@ void loop()
 
 Il y a toutefois un petit problème, la lumière ne s'allume ou ne s'éteint qu'au démarrage de l'Arduino. Pour changer l'état de la lumière, il faut appuyer sur le bouton, puis redémarrer l'Arduino avec le bouton reset. Ce n'est pas très pratique. On aimerait que cela se fasse en tout temps.
 
-![Reset](reset.png)
+![Reset](reset.webp)
 
 Pour palier à ce problème, on peut utiliser `loop`. Comme son nom l'indique, `loop` est une boucle, c'est-à-dire que le code dans cette fonction s'exécute continuellement après l'exécution de `setup`. Déplaçons donc ce qui doit être exécuté plusieurs fois dans `loop`.
 

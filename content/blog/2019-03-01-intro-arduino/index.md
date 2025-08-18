@@ -18,7 +18,7 @@ toc_ordered = true
 
 # Qu'est-ce qu'Arduino
 
-![Arduino](arduino.png)
+![Arduino](arduino.webp)
 
 > The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.
 >
@@ -60,7 +60,7 @@ Il faut plutôt lui dire:
 
 `DEL`: `D`iode `É`lectro `L`uminescente
 
-<img src="del.png" alt="DEL" class="img-bg" />
+<img src="del.webp" alt="DEL" class="img-bg" />
 
 En bref, une DEL est une lumière qui ne demande que très peu d'énergie. On peut donc l'alimenter directement depuis l'Arduino.
 
@@ -90,7 +90,7 @@ On peut maintenant lancer l'application.
 
 ## Premiers pas en Arduino
 
-![IDE](ide.png)
+![IDE](ide.webp)
 
 On voit maintenant un code de base fournit par Arduino.
 
@@ -112,7 +112,7 @@ void loop() {
 
 Toutefois, avant de commencer à coder, branchons la DEL dans l'Arduino.
 
-![Branchement](branchement.png)
+![Branchement](branchement.webp)
 
 Dans le cadre de ce document, nous allons utiliser la **pin** numéro 13. Vous pouvez en choisir une autre si vous voulez. La longue patte doit être connectée dans la pin 13 et la courte au ground. Le **ground** est le 0 volt de référence de l'Arduino.
 
@@ -197,7 +197,7 @@ On peut maintenant connecter l'Arduino par USB à l'ordinateur.
 
 On doit premièrement vérifier que l'Aduino est connectée dans Outils -> Port. Il faut s'assurer que le port selectionné est bien celui de l'Arduino.
 
-![Port](port.png)
+![Port](port.webp)
 
 On peut envoyer le code sur l'Arduino avec le bouton "Téléverser" (la flèche vers la droite). Après un certain temps, l'Arduino devrait faire clignoter la DEL deux fois selon les délais définit.
 

@@ -20,7 +20,7 @@ Dashy Dango a wave fighting game made with <a class="external" href="https://was
 
 <a class="external" href="https://willguimont.github.io/dashy-dango/" target="_blank">Try the game here</a> or on <a class="external" href="https://willguimont.itch.io/dashy-dango" target="_blank">itch.io</a>!
 
-![dash dango](DashyDangolong.png)
+![dash dango](DashyDangolong.webp)
 
 Source code is here: <a class="external" href="https://github.com/willGuimont/dashy-dango" target="_blank">willGuimont/dashy-dango</a>
 
@@ -28,6 +28,6 @@ We built our own ECS (entity-component-systems) from scratch in Rust.
 
 More screenshots:
 
-![screenshot 1](dashy_1.png)
-![screenshot 2](dashy_2.png)
-![screenshot 3](dashy_3.png)
+![screenshot 1](dashy_1.webp)
+![screenshot 2](dashy_2.webp)
+![screenshot 3](dashy_3.webp)

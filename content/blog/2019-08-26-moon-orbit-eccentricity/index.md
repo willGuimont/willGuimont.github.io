@@ -27,11 +27,11 @@ So, to get that data we took pictures of the Moon and measure its diameter in th
 
 Here is some pictures I took back then:
 
-![Moon 1](moon1.png)
+![Moon 1](moon1.webp)
 
-![Moon 2](moon2.png)
+![Moon 2](moon2.webp)
 
-![Moon 3](moon3.png)
+![Moon 3](moon3.webp)
 
 In each picture, we can measure the Moon's diameter in pixel.
 
@@ -50,7 +50,7 @@ Where $D_i$ if the current picture, $D_1$ is the first picture (all positions wi
 
 We can graph the Moon's distance and its angular position.
 
-![Graph](graph.png)
+![Graph](graph.webp)
 
 And tadaaaa! We get an ellipse.
 

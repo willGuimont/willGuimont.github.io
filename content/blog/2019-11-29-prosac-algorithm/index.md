@@ -60,8 +60,8 @@ Let $I$ be the set of inliers of maximal cardinality.
 In the paper, they looked at estimating epipolar geometry from a pair of pictures.
 
 <div class="img-row">
-  <img src="plant01.png" alt="Plant 1" class="img-bg" />
-  <img src="plant02.png" alt="Plant 2" class="img-bg" />
+  <img src="plant01.webp" alt="Plant 1" class="img-bg" />
+  <img src="plant02.webp" alt="Plant 2" class="img-bg" />
   
 </div>
 

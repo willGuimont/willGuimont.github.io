@@ -27,7 +27,7 @@ Another way would be to make the computer learn from the data. So we analyze the
 The next step is to make the algorithm find features by itself. This is what neural networks do. Each layer of a deep neural network extract features for the higher layers to "reason" about. The classical example is a neural network that detects faces. The first layers might detect very simple patterns like edges. Higher up, a layer might detect corners and contours. Layers at the end of the network might detect complex object parts used by the final layer to classify the object. This is what is called representation learning, the artificial intelligence system finds a way of representing the data so that it is easy to solve the task.[^Goodfellow].
 
 A good way of visualizing the different takes on artificial intelligence is from the book Deep Learning[^Goodfellow].
-![Types of learning](types.png)
+![Types of learning](types.webp)
 
 ## Dreyfus
 When I learned about representation learning, it got me thinking about how we learn and the Dreyfus model[^Dreyfus].

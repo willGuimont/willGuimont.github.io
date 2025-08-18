@@ -18,12 +18,12 @@ toc_ordered = true
 
 Here are some pictures of squirrels I took in the last few years. Most of them are from the *Domaine de Maizerets* in Quebec City.
 
-![Squirrel](02.jpg)
-![Squirrel](03.png)
-![Squirrel](01.jpg)
-![Squirrel](04.png)
-![Squirrel](05.jpg)
-![Squirrel](06.png)
-![Squirrel](07.png)
-![Squirrel](08.png)
-![Squirrel](09.png)
+![Squirrel](02.webp)
+![Squirrel](03.webp)
+![Squirrel](01.webp)
+![Squirrel](04.webp)
+![Squirrel](05.webp)
+![Squirrel](06.webp)
+![Squirrel](07.webp)
+![Squirrel](08.webp)
+![Squirrel](09.webp)
