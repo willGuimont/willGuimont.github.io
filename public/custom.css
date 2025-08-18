@@ -1,1 +1,0 @@
-.img-bg{background:#98bbcd;padding:8px;border-radius:6px;display:block;margin:1rem auto;box-shadow:0 0 0 1px rgba(0,0,0,.08)}.img-row{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:.75rem;align-items:start}.img-row img{width:100%;height:auto}@media (max-width: 700px){.img-row{grid-template-columns:1fr}}
