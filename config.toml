@@ -1,4 +1,4 @@
-title = "William Guimont-Martin"
+title = "wigum::website"
 base_url = "https://willguimont.com/"
 description = "William Guimont-Martin's personal website"
 
@@ -154,7 +154,7 @@ csp = [
 	] },
 ]
 # Uncomment this to disable the card displayed in share previews
-# card = false
+card = false
 
 [extra.nav]
 # Whether to automatically hide nav when not hovered or focused
