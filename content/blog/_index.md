@@ -1,5 +1,5 @@
 +++
-# title = "Mind in Motion"
+title = "wigum::blog"
 sort_by = "date"
 template = "article_list.html"
 page_template = "article.html"
