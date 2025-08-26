@@ -20,7 +20,7 @@ The proposition of abstract data types by Liskov and Zilles is an important step
 
 This gives programmers tools to think at a higher level, focused on the problem to solve.
 
-# History
+## History
 
 Abstract data types (ADT) were proposed in 1974 by, 2008 Turing Award winner, Barbara Liskov and her coauthor Stephen Zilles in the paper *Programming with abstract data types*[^Liskov]. This paper wasn't only a theoretical paper, they implemented the concept in a programming language. Liskov and her students created the programming language CLU that included abstract data types. ADTs are often seen as a step in the development of object-oriented programming.
 
@@ -36,9 +36,9 @@ The landscape of software programming was a bit messy, people were building soft
 
 The ideas discussed in Liskov & Zilles's paper may seem obvious now but remember the time when they were proposed. In the last 50 years of building software programs, we learned a lot. This concept paved the way for object-oriented programming and better software design.
 
-# Definitions
+## Definitions
 
-## ADT
+### ADT
 
 Liskov & Zilles describe ADT as following:
 
@@ -54,7 +54,7 @@ If we want to have multiple representations for an ADT, the operations need to b
 
 We can observe two categories of operations: essentials and non-essential. Basically, non-essential can be defined from essential operations. We will see an example later in this article.
 
-## Abstraction
+### Abstraction
 
 Liskov & Zilles describe abstraction:
 
@@ -70,7 +70,7 @@ As Robert C. Martin said in *Clean Code*:
 >
 > -- Robert C. Martin[^Martin]
 
-## A small example
+### A small example
 
 To make it concrete, here a simple example.
 
@@ -78,11 +78,11 @@ Abstract data types are like the built-in types of a programming language. When 
 
 However, the abstraction is not perfect for most types. In the case of *Integer*, we may be interested in knowing if an overflow happened. The overflow depends on the implementation. A 32 bits *Integer* will overflow at a lower value than 64 bits one. More generally, most built-in types are not perfect abstraction because, in practice, we need to know when the implementation fails to represent the data.
 
-## Computational complexity and ADT
+### Computational complexity and ADT
 
 In a more practical context, we consider that the behavior of the object isn't enough to characterize completely the type. Let's imagine we have two implementations of the Stack ADT (see example below). In the first implementation, the push operation is done in $$O(1)$$. The second one was written poorly and the push operation is done in $$O(n!)$$. From a behavioral perspective, both are equivalent. They both correctly implement the expected behavior of a Stack, but in a real software program, it would be better to use the first implementation. That's the reason why some authors include the complexity of the operations as well in the definition of abstract data types.
 
-# Simple examples
+## Simple examples
 
 The Stack is an example of an abstract data type. We can define the behavior of a stack by giving it two operations.
 
@@ -92,11 +92,11 @@ The Stack is an example of an abstract data type. We can define the behavior of 
 
 With those two operations, we can completely define the Stack. We note that those two operations are essential to a stack to effectively be a stack. We can derive other operations from those two. We can, for example, define the **Peek** operator from a pop followed by a push and then returning the value that was popped. **Peek** isn't essential because it can be derived from other operations.
 
-# Differences with object-oriented programming
+## Differences with object-oriented programming
 
 To help demonstrate the differences and trade-offs between object-oriented programming and abstract data type. Here is an adapted version of the Shape example from chapter 6 of *Clean Code* of Robert C. Martin[^Martin]
 
-## Procedural Shape (modified)
+### Procedural Shape (modified)
 
 ```java
 public class Geometry {
@@ -165,7 +165,7 @@ We also notice that if we want to add a new shape, we have to modify all the ope
 
 On the contrary, if we wanted to add an operation, we would only need to add a method. The types of shape don't need to change. The process of adding operations is additive, meaning we do not have to modify existing code.
 
-## Polymorphic shapes
+### Polymorphic shapes
 
 ```java
 public interface Shape {
@@ -206,7 +206,7 @@ Here, we notice that if we want to add a new type of shape, we don't have to mod
 
 On the other side, if we want to add an operation to Shape, we would need to modify all existing classes that implement Shape.
 
-## ADT and OOP
+### ADT and OOP
 
 Briefly, we can say that it is easy to add operations on ADT without modifying the existing structure. On the other hand, object-oriented code makes it easy to add new representation without modifying existing operations. [^Martin]
 
@@ -214,7 +214,7 @@ Another way to say it: ADTs make it difficult to add new structures because we w
 
 OO and ADT are complementary concepts. Sometimes we want to be able to easily add new representation while other times we want to be able to add operation at our heart's content. Not everything is an object.
 
-# Advantages of ADT
+## Advantages of ADT
 
 ADT allows abstraction. As stated above, abstraction allows the programmer to think at a higher level, using tools to solve his problems without being embarrassed by the implementation details. This is achieved by hiding implementation details behind an opaque type. This allows separating the level of abstractions. High-level operations are not punctuated of low-level operations that hinder the understanding of the code.
 
@@ -224,11 +224,11 @@ Another implementation of the ADT can be used interchangeably because of their c
 
 As stated above, ADTs make it easy to add new operations on a type. In a context where the number of representations won't change, but you will often add operations, ADTs are preferable to object.
 
-# Summary
+## Summary
 
 In this article, we discussed the concept of an abstract data type. They are an important historical step in the way we build software programs. They are complementary to object in the way they make it easy to add operation while objects make it easy to add new representation.
 
-# References
+## References
 
 [^Liskov]: Liskov, Barbara & Zilles, Stephen. Programming with Abstract Data Types. 1974.
 [^Keynote]: Barbara Liskov. <a class="external" href="https://www.infoq.com/presentations/programming-abstraction-liskov" target="_blank">Keynote: The Power of Abstraction</a>. 2013.

@@ -64,5 +64,5 @@ J'ai aussi implémenté le même algorithme en Rust: <a class="external" href="h
 {% end %}
 
 
-# Références
+## Références
 [^walczyk]: M. Walczyk. Ray Marching. <a class="external" href="https://michaelwalczyk.com/blog-ray-marching.html" target="_blank">https://michaelwalczyk.com/blog-ray-marching.html</a>

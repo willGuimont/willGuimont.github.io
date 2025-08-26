@@ -58,7 +58,7 @@ Donc, la disparition des nuages avec l’augmentation de CO2 dans l’atmosphèr
 
 Selon les estimations des chercheurs, on pourrait atteindre ce point si l’on continue de produire des gaz à effet de serre à notre rythme présent en une centaine d’années. On note aussi que le retour en arrière n’est pas aussi facile que de diminuer la concentration sous 1200 ppm. Selon leurs simulations, les nuages ne reviennent que lorsque la concentration tombe sous les 300 ppm.
 
-# Références
+## Références
 Source principale: Schneider[^Schneider].
 
 Lecture intéressante: Silberg[^Silberg].

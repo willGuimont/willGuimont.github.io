@@ -25,7 +25,7 @@ To supplement the presentation, I wrote an implementation of PROSAC in Python: <
 
 Before jumping in PROSAC, let's just review RANSAC a bit.
 
-# RANSAC - Random sample consensus
+## RANSAC - Random sample consensus
 
 The main goal of RANSAC is to estimate a model from noised data with outliers.
 
@@ -33,7 +33,7 @@ The basic idea is to randomly sample points from all points; fit a model on thos
 
 As you can see, the algorithm is relatively simple: sample, fit, check, rinse and repeat.
 
-## Pseudocode
+### Pseudocode
 
 Let $m$ be the minimum required number of points to fit a model. For a linear model in 2D, $m$ would be equal to $2$.
 
@@ -47,7 +47,7 @@ Let $w$ be the probability of a given point to be an inlier. This is used to est
 
 Let $I$ be the set of inliers of maximal cardinality.
 
-### RANSAC
+#### RANSAC
 1. Sample $m$ points
 2. Estimate a model $M$ from the $m$ sampled points
 3. Find the number of inliers with model $M$ with tolerance $\epsilon_{tol}$. If the number of inliers is greater than the number of previously found inliers, replace $I$ with the new set of inliers.
@@ -55,7 +55,7 @@ Let $I$ be the set of inliers of maximal cardinality.
 5. Repeat steps 1 to 4, a maximum of $\frac{1}{w^m}$ times
 6. After $\frac{1}{w^m}$ iterations, estimate the model with $I$.
 
-## Limitations of RANSAC
+### Limitations of RANSAC
 
 In the paper, they looked at estimating epipolar geometry from a pair of pictures.
 
@@ -69,13 +69,13 @@ With this pair of pictures, there is a lot of repetitive patterns on the floor a
 
 When the model is complex and the number of correct points is low, RANSAC often takes very long before finding a satisfying solution. Let's see if PROSAC can help.
 
-# PROSAC - Progressive sample consensus
+## PROSAC - Progressive sample consensus
 
 PROSAC adds the notion of quality to points with the basic assumption that points of greater quality have more chances to be correct.
 
 So, to make the algorithm quicker, the algorithm starts by trying to fit with points of greater quality first. Then we *progressively* add points of lesser quality.
 
-## Intuition
+### Intuition
 Let's say that the points in red are outliers. We would like to fit a model of complexity $m=2$ on those points.
 
 <table>
@@ -119,8 +119,8 @@ Whereas in PROSAC, we sort points by quality. The first points would be of highe
 
 Even with this simple example, we can see the possible speedup.
 
-## Simplified pseudo code
-### PROSAC
+### Simplified pseudo code
+#### PROSAC
 1. Sort points by quality (highest quality first)
 2. Consider the first $m$ points ($n\leftarrow m$)
 3. Sample $m$ points from the top $n$
@@ -128,7 +128,7 @@ Even with this simple example, we can see the possible speedup.
 5. Verify model with all points
 6. If the stopping criteria are not met, repeat steps 3 to 6, adding progressively points ($n\leftarrow n + 1$). Otherwise, fit the model on all inliers and terminate.
 
-## Quality
+### Quality
 There are multiple ways of defining quality. For feature matching on images, we could use the correlation of intensity around features on each image. 
 
 In the paper, they mention Lowe's distance. Lowe's distance is the ratio between the most and second most similar matches.
@@ -147,19 +147,19 @@ $\text{quality} = \frac{s_2}{s_1}$
 
 You can use any metric you want, as long as the higher the quality is, the higher the probability of the point being correct is.
 
-## Fast sampling
+### Fast sampling
 We could simply sample $m$ points from the top $n$ points, but that would be inefficient. We could sample multiple times the same set of points. So, to better explore the new possibles sets of $m$ points, we use the fact that when adding a new point $p_{n+1}$, we add a number $a$ of new samples. Each new sample contains the new point $p_{n+1}$ and $m-1$ from the $n$ first points. 
 
 So, we can simply sample $a$ times, picking $p_{n+1}$ and $m-1$ points in the best $n$ points. That way, we ensure the quickly explore the possibles sets of $m$ points.
 
-## End criterion
+### End criterion
 
 The algorithm has two stopping criteria.
 
 1. Non-random solution
 2. Maximality
 
-## Non-random solution
+### Non-random solution
 
 This criterion states that for a solution to be considered correct, it must have more inliers than what would randomly happen for an incorrect model. 
 
@@ -167,12 +167,12 @@ This is computed by estimating the probability that an incorrect model (fitted o
 
 The solution is considered non-random if the probability of having its number of inliers by chance is smaller than a certain threshold (usually 5%).
 
-## Maximality
+### Maximality
 
 We want to stop sampling when the chance of getting a model that fit more points is lower than a certain threshold. This is computed by looking at the odds of missing a set of inliers bigger than previously found after a number of draws. If this probability falls under a certain threshold (usually 5%), it is not worth continuing drawing and we terminate.
 
-# Code
+## Code
 Not having found any implementation of PROSAC online, I decided to post mine: <a class="external" href="https://github.com/willGuimont/PROSAC" target="_blank">willGuimont/PROSAC</a>.
 
-# Sources
+## Sources
 [^ChumMatas]: Chum, Ondrej & Matas, Jiri. Matching with PROSAC - Progressive Sample Consensus. 2005.

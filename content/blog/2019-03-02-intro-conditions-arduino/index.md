@@ -35,9 +35,9 @@ Les zig-zags représentent la résistance. Le symbole avec les deux points vides
 
 ![Schema](schema.webp)
 
-# Fonctions de bases
+## Fonctions de bases
 
-## Pin en lecture
+### Pin en lecture
 
 ```c++
 pinMode(2, INPUT);
@@ -45,7 +45,7 @@ pinMode(2, INPUT);
 
 Cette fonction permet de mettre la pin 2 en mode lecture.
 
-## Lecture d'une pin
+### Lecture d'une pin
 
 ```c++
 digitalRead(2);
@@ -53,13 +53,13 @@ digitalRead(2);
 
 Cette fonction retourne `HIGH` si la tension est près de 5V sur la pin, ou `LOW` si la tension est près de 0V.
 
-# Variables
+## Variables
 
 On aimerait pouvoir garder l'état du bouton pour pouvoir comparer sa valeur. Pour ce faire, on utilise des variables. Les variables sont comme des boîtes. On peut donner un nom à la boîte et mettre une valeur dedans.
 
 On peut demander à l'Arduino de nous créer une boîte avec un certain nom. On peut ensuite mettre une valeur à l'intérieur. Si on veut, on peut mettre une autre valeur dans la boîte par la suite.
 
-## Exemple
+### Exemple
 
 ```c++
 int maVariable;
@@ -79,7 +79,7 @@ On remarque que le signe = n'a pas le même sens qu'en mathématique. En mathém
 
 **Remarque**: D'autres opérateurs que l'addition (`+`) sont définis, on peut faire des soustractions (`-`), des multiplications (`*`), des division (`/`) et le modulo (`%`). La division est toutefois tronqué avec des `int` puisqu'un `int` ne peut contenir que des nombres entiers. Le modulo calcule le reste de la division. Pour le moment, ne vous inquiétez pas avec cela.
 
-# Storer l'état du bouton dans une variable
+## Storer l'état du bouton dans une variable
 
 Maintenant que nous savons ce qu'est une variable et comment récupérer l'état du bouton, sauvegardons l'état du bouton dans une variable.
 
@@ -90,7 +90,7 @@ int etatBouton = digitalRead(2);   // mettre l'etat du bouton dans etatBouton
 
 Voilà, nous avons l'état du bouton dans etatBouton.
 
-# Conditions
+## Conditions
 
 Maintenant que nous avons l'état du bouton dans une variable, on aimerait pouvoir réaliser certaines actions `SI` une condition est vraie et d'autres `SINON`.
 

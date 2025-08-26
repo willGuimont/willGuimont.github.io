@@ -16,7 +16,7 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-# Qu'est-ce qu'Arduino
+## Qu'est-ce qu'Arduino
 
 ![Arduino](arduino.webp)
 
@@ -26,7 +26,7 @@ toc_ordered = true
 
 Il s'agit d'une carte comprenant un micro-contrôleur. La puce sur la carte est un petit ordinateur que l'on peut programmer. Il y a un port USB pour envoyer le code sur la puce et communiquer avec un ordinateur. Les pins sur le côté permettent d'avoir des entrées-sorties vers le vrai monde. On peut activer des lumières et des moteurs. On peut aussi lire les données envoyées par un capteur de distance à l'ultrason ou une photorésistante pour savoir s'il fait noir. 
 
-# Introduction à la programmation
+## Introduction à la programmation
 
 Un programme est une suite d'instructions exécutées les unes après les autres. On peut voir un programme comme une recette très précise pour réaliser des choses.
 
@@ -56,7 +56,7 @@ Il faut plutôt lui dire:
 2. Attendre 10 secondes
 3. Arrête les moteurs
 
-# DEL et Arduino
+## DEL et Arduino
 
 `DEL`: `D`iode `É`lectro `L`uminescente
 
@@ -68,7 +68,7 @@ Si l'on applique une tension aux deux bornes de la DEL, elle s'allumera.
 
 Une DEL a deux "pattes". L'une d'elles est légèrement plus longue, il s'agit de la patte positive. L'autre est la négative. Lors du branchement, il faut faire attention de bien brancher la DEL.
 
-# Faire clignoter une DEL
+## Faire clignoter une DEL
 
 On voudrait demander à l'Arduino de faire clignoter une la DEL deux fois en la laissant 2 secondes éteintes et 3 secondes allumées. En mots, on aurait:
 
@@ -80,7 +80,7 @@ On voudrait demander à l'Arduino de faire clignoter une la DEL deux fois en la 
 6. Attendre 3 secondes
 7. Éteindre la DEL
 
-## Télécharger Arduino
+### Télécharger Arduino
 
 Il est maintenant temps d'essayer de demander à l'Arduino de faire ces étapes. Téléchargeons le logiciel depuis <a class="external" href="https://www.arduino.cc/en/main/software" target="_blank">le site officiel d'Arduino</a>.
 
@@ -88,7 +88,7 @@ On peut télécharger le ZIP ne demandant pas d'installation à cette <a class="
 
 On peut maintenant lancer l'application.
 
-## Premiers pas en Arduino
+### Premiers pas en Arduino
 
 ![IDE](ide.webp)
 
@@ -118,11 +118,11 @@ Dans le cadre de ce document, nous allons utiliser la **pin** numéro 13. Vous p
 
 Pour empêcher de brûler la DEL, on place une résistance en **série** avec la DEL. La résistance doit être entre 220 et 280 Ohms. Elle peut être placée avant ou après la DEL.
 
-### Fonctions de base
+#### Fonctions de base
 
 Pour faire clignoter une DEL, on doit pouvoir être capable de l'allumer, de l'éteindre et d'attendre. Nous allons voir comment réaliser ces actions dans Arduino.
 
-#### Configuration de la DEL
+##### Configuration de la DEL
 
 On doit indiquer à l'Arduino quelles pins on désire utiliser, dans notre cas il s'agit de la pin 13. On appelle alors la fonction suivante:
 
@@ -132,7 +132,7 @@ pinMode(13, OUTPUT);
 
 `OUTPUT` signifie que l'on veut se servir de la pin comme d'une sortie, donc mettre une certaine tension à la pin plutôt que de lire la tension. On aurait pu utiliser `INPUT` pour initialiser la pin comme une entrée. Nous allons en voir une exemple par la suite.
 
-#### Allumer la DEL
+##### Allumer la DEL
 
 Pour allumer la DEL, on doit mettre une certaine tension aux bornes de la DEL. Comme la patte négative est branchée au ground, on doit appliquer un voltage positif à la patte branchée dans la pin 13. Pour ce faire, on utilise la fonction suivante:
 
@@ -142,7 +142,7 @@ digitalWrite(13, HIGH);
 
 `HIGH` signifie une tension positive. Dans le cas d'une Arduino UNO, on met 5 volts sur la pin 13.
 
-#### Éteindre la DEL
+##### Éteindre la DEL
 
 Pour l'éteindre, on procède de façon semblable.
 
@@ -150,7 +150,7 @@ Pour l'éteindre, on procède de façon semblable.
 digitalWrite(13, LOW);
 ```
 
-#### Attendre
+##### Attendre
 
 Pour attendre un certain temps, on utilise la fonction:
 
@@ -160,7 +160,7 @@ delay(1000);
 
 Ici, 1000 représente le temps à attendre en millisecondes. On a qu'une seconde est 1000 ms. Par exemple, pour attendre 5 secondes, on devrait indiquer 5000 ms.
 
-### Mettre le tout ensemble
+#### Mettre le tout ensemble
 
 Reprenons la liste d'étapes à suivre pour faire clignoter notre DEL:
 
@@ -201,7 +201,7 @@ On doit premièrement vérifier que l'Aduino est connectée dans Outils -> Port.
 
 On peut envoyer le code sur l'Arduino avec le bouton "Téléverser" (la flèche vers la droite). Après un certain temps, l'Arduino devrait faire clignoter la DEL deux fois selon les délais définit.
 
-## À l'infini
+### À l'infini
 
 Et si on désirait faire clignoter le DEL à l'infini? Il faudrait demander à l'Arduino de la faire clignoter pleins de fois. On pourrait avoir:
 

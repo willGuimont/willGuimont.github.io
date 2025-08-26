@@ -31,7 +31,7 @@ We can define our stack in an imperative manner. Each operation modifies a stack
 
 We could also define the stack in a functional manner. The operations applied to the stack is viewed as a mathematical function that maps the old state to the new state. Refer to the example below for more information.
 
-# Imperative Definitions
+## Imperative Definitions
 
 An imperative stack has two essential operations:
 
@@ -59,9 +59,9 @@ def peek(S):
     return top_value
 ```
 
-## Imperative Implementations
+### Imperative Implementations
 
-### Stack ADT in C
+#### Stack ADT in C
 
 For simplicity, the stack is implemented with an array, but it could be implemented using a linked list.
 
@@ -203,7 +203,7 @@ ValuePrinter.print_value(vp)  # prints 42 too
 
 Note that the two statements are equivalent because we know that print_value is not overridden. That way we are sure that `vp.print_value()` is equivalent to `ValuePrinter.print_value(vp)`.
 
-### Object Oriented Stack in Java
+#### Object Oriented Stack in Java
 
 ```java
 // Stack.java
@@ -364,7 +364,7 @@ Here the stack is defined with an interface that differs from the way we defined
 
 For more information on the comparison of ADT and object, see [Introduction to Abstract Data Types](@/blog/2019-01-27-abstract-data-type/index.md).
 
-# Functional Definitions
+## Functional Definitions
 
 On the contrary to the imperative stack, a functional implementation doesn't mutate the state of the stack. Instead, the operations are seen as mathematical functions that map from the old state to the new frame. 
 
@@ -382,7 +382,7 @@ Note that we don't need a $\text{Create}$ operation because there is no instance
 
 Also note that we don't need an $\text{isEmpty}$ operation either, because we can simply test the equality to $\Lambda$.
 
-## Functional Implementations in Haskell
+### Functional Implementations in Haskell
 
 This bit of code is adapted from <a class="external" href="https://haskell.org" target="_blank">haskell.org</a>[^Haskell].
 
@@ -425,11 +425,11 @@ main = do
 
 Note here that this code is much shorter and that the stacks aren't mutated, instead, the functions return a new stack each time.
 
-# Summary
+## Summary
 
 Stacks are an elementary data structure. They are fundamentals in computer science. We note their uses in multiples places such as <a class="external" href="https://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking" target="_blank">solving sudokus using backtracking algorithms</a>, recursion, converting equations to <a class="external" href="https://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">reverse Polish notation</a> and much more. We even see stacks used in how CPUs handle subroutines. They truly are fundamental to the computer science field, from the theoretical to the practical.
 
-# References
+## References
 
 [^Cormen]: Thomas H. Cormen et al. Introduction to Algorithms. 2009.
 [^Haskell]: Haskell org. <a class="external" href="https://wiki.haskell.org/Abstract_data_type" target="_blank">Abstract Data Types</a>. 2014.

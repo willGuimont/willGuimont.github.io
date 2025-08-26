@@ -22,36 +22,36 @@ C'est donc un exercice assez intéressant que de relire ce texte et de le mettre
 
 Le texte contient quelques maladresses stylistiques, témoignant de mon niveau de français à l'âge de 18 ans, mais je n'ai pas voulu le modifier pour garder une trace de mon évolution.
 
-# Introduction
+## Introduction
 
 La liberté. L’histoire contemporaine est entachée de guerres civiles dans le but de l’atteindre. Devant de telles évidences, il devient évident que la liberté est un enjeu primordial pour une majorité d’êtres humains. Depuis l’antiquité, cette facette de l’être humain est étudiée et discutée dans toutes les civilisations humaines. Avant tout, il est important de définir la liberté. Selon le dictionnaire Larousse en ligne, la liberté est une « Situation de quelqu’un qui se détermine en dehors de toute pression extérieure ou de tout préjugé ». Cette définition pose plusieurs questions : l’être humain est-il libre ? Quels sont les éléments pouvant entraver notre liberté ? Plusieurs auteurs ont fait de la liberté une pierre angulaire de leur conception de l’être humain. Ainsi pour Rousseau et Sartre l’homme est avant tout un être de liberté.
 
-# Chapitre 1 - Époque des auteurs
+## Chapitre 1 - Époque des auteurs
 
 Les différentes luttes de pouvoirs ont des répercussions sensibles sur toute la société. Les travaux philosophiques représentent bien ces évènements puisque les auteurs s’inspirent directement des problèmes et avantages de son temps. Les époques de Rousseau et de Sartre sont intéressantes à comparer puisqu’elles représentent l’avant et l’après de la société par rapport à la Révolution française. Rousseau vivait à une époque de lutte de pouvoir contre la monarchie en France alors que Sartre vécut une France, certes en république, mais en guerre. Ces différentes époques ont grandement influencé ces auteurs ainsi que leur conception de l’être humain.
 
-## Rousseau et les Lumières
+### Rousseau et les Lumières
 Rousseau né à Genève, le 28 juin 1712, au tout début de la période historique que nous appelons aujourd’hui le siècle des Lumières. Cette période de grandes révolutions influença profondément la conception de l’être humain de Rousseau. En effet, c’est à cette période que de grands philosophes tels Locke, Hume et Montesquieu critiquèrent le système de monarchie absolue jusqu’alors en place. Chacun proposa sa propre façon d’étancher la soif de liberté et d’égalité du peuple. S’inspirant de ces travaux contre la monarchie, Rousseau propose alors le concept de « contrat social » où tous se doivent d’être libres et égaux. Ces idées de libertés, d’égalité et de tolérance firent de Rousseau un héros de la Révolution française de mai 1789. Le mouvement de pensée des Lumières porte 3 idées en essence : l’esprit critique, la liberté et la philosophie. Ce siècle de progrès dans tous les domaines représentait parfaitement ces concepts de nouveauté. Pourtant, contre les courants de son époque, Rousseau reste très prudent quant au progrès fulgurant de l’humanité dans les différentes sphères de l’activité humaine, car il croit que le progrès ne participe pas au développement moral ni au bonheur de l’homme, mais plutôt à la promotion du paraître. Aussi, la découverte des Amériques et l’étude des Amérindiens éclairèrent un lien des plus naturels entre l’homme et la nature. 
 
 Après une enfance relativement comblée d’abord avec son père, puis chez le pasteur Lambercier, il est rapidement confronté à la rude discipline de son maître greffier qu’il considère comme cruel. Cette expérience juvénile avec l’autorité abusive peut lui avoir inspiré des années plus tard le principe de l’état de société.
 
-## Sartre et le XXe siècle
+### Sartre et le XXe siècle
 
 Sartre né à Paris, le 21 juin 1905, au début du XXe siècle. Période à laquelle se déroulèrent les deux Guerres mondiales. Ce siècle de grands bouleversements va grandement influencer Sartre ainsi que sa conception existentialiste de l’être humain. En effet, les conflits que vit l’Europe génèrent une grande inquiétude. Toute l’Europe est plongée dans une misère. La Première Guerre mondiale, le krach boursier de 1929 et la Seconde Guerre mondiale furent la cause de nombreux désespoirs. Sartre traduit bien l’incertitude de son époque. La monté d’un régime nazi ainsi que la Shoah rappelle bien que la vie est étrange. L’humanité est en proie à une barbarie sans précédent. Les Américains larguent des bombes atomiques d’une puissance jamais vue. Cette suite rapide d’évènement que fut le XXe siècle forgera les idées de liberté, d’égalité et des droits de l’homme de Sartre qui au cours de sa vie en devient un véritable défenseur. Sartre et son existentialisme humaniste ne vont pas sans rappeler l’humanisme du siècle des Lumières. Les crimes contre l’humanité, comme la Shoah, qu’ont commis les soldats sous les ordres de leurs supérieurs ont probablement influencé Sartre quant à la mauvaise foi : ces soldats rejetaient leurs responsabilités en disant qu’ils avaient reçu des ordres. Alors qu’il s’agissait totalement de leur choix de commettre ou non ces actes.
 
-# Chapitre 2 - Les conceptions de l’être humain
+## Chapitre 2 - Les conceptions de l’être humain
 
-## Rousseau
+### Rousseau
 
 Selon la conception naturaliste de l’être humain de Rousseau, l’être humain possède deux états : l’état de nature et l’état de société. L’état de nature représente l’état hypothétique qu’aurait vécu l’homme avant toute forme de société. Cet état d’isolement est caractérisé par la liberté, la perfectibilité, l’amour de soi, la pitié et l’égalité. L’homme est libre de nature parce qu’il peut choisir de ne pas suivre son instinct comme les autres animaux. La liberté est donc pour l’homme son don naturel. Forcés par leurs faiblesses individuelles face à la nature, les hommes se regroupent et forment des sociétés. Cet état de société impose plusieurs maux aux êtres humains : il y a dorénavant de la concurrence, on développe l’amour-propre et progressivement l’instauration d’une autorité abusant les plus pauvres. Bref, Rousseau postule que l’homme n’est de nature ni bonne ni mauvaise, mais que c’est la société qui le corrompt. Pour Rousseau, la solution aux maux de l’état de société est le contrat social par lequel l’homme devient citoyen et renonce à ses intérêts individuels pour participer à la volonté générale et profiter de liberté et d’égalité.
 
-## Sartre
+### Sartre
 
 Pour Sartre, l’homme est un être qui se construit par ses actes qu’il commet pour atteindre son but. L’homme se choisit en agissant de telle ou telle façon. En d’autres mots, l’homme est un projet qui s’oriente vers ce qu’il choisit d’être, vers son but. Ainsi, la liberté est de se construire se choisissant dans telle ou telle situation. La liberté est absolue, mais n’existe qu’en situation puisqu’on ne peut exercer notre liberté hors situation. Sartre oppose deux concepts opposés pour aider décrire l’homme : l’en-soi et le pour-soi. L’en-soi caractérise tout objet dépourvu de conscience qui ne peut être plus que ce qu’il est. Pour l’en-soi, l’essence précède l’existence : on conçoit l’objet avant de le réaliser, on ne le réalise pas sans savoir son utilité. Avant même d’exister, l’objet possède déjà une finalité et une essence. Bref, l’en-soi est le monde des choses, il est statique et fixe : toute chose possède une essence fixe. Sartre oppose ce concept à la notion de pour-soi, elle décrit l’homme qui se différencie de l’en-soi par sa conscience. Contrairement à l’en-soi, l’homme ne possède pas d’essence, il est donc ouvert à toutes possibilités. Pour l’homme, l’existence précède l’essence. Il n’est pas défini avant d’exister, nous ne sommes pas étiquetés avocat ou médecin, nous choisissons de le devenir après avoir été propulsé dans l’existence. L’homme est donc néant puisqu’il est la négation de l’en-soi et des divers déterminismes qui agissent sur lui. L’homme par sa conscience est totalement libre, mais il ne peut exercer sa liberté qu’en situation, c’est-à-dire dans des circonstances auxquelles l’homme donne un sens avec ses buts. L’homme se construit par ses actes. Il n’y a pas de liberté sans angoisse, puisque l’homme est le seul à pouvoir décider pour lui-même : il possède l’entière responsabilité de sa vie. Devant de telles libertés, l’homme peut fuir dans la mauvaise foi qui consiste à refuser de choisir, d’être responsable de ses actes ou de se montrer tel que l’on est. Pour un autre l’homme, l’être-pour-soi de l’un est l’être pour-autrui de l’autre. La conscience en plus d’être subjective est intersubjective. Sa conscience est aussi une conscience de celle des autres. L’homme vit dans un monde rempli de significations qu’il ne peut choisir. Son prochain lui donnera une signification qu’il ne peut choisir. De plus, les hommes avant lui auront déjà rempli le monde de significations motivé par leurs fins. Ce qui n’empêche pas l’homme d‘exercer sa liberté, puisque ces éléments ne sont qu’une situation comme une autre et c’est à l’homme de décider du sens de cette situation par rapport à son projet.
 
-# Chapitre 3 - L'homme est-il libre?
+## Chapitre 3 - L'homme est-il libre?
 
-## Rousseau
+### Rousseau
 
 Selon la conception naturaliste de l’être humain de Rousseau, l’homme est libre dans son état de nature. Dès les premières lignes du premier chapitre du premier livre Du contrat social, Rousseau pose cette idée en écrivant : « L’homme est né libre » [^RousseauContrat]. Rousseau écrit que la liberté représente donc un don de la nature que chaque être humain possède dès la naissance. La liberté devient alors un élément essentiel à l’homme. Sa capacité de choisir d’obéir ou non à son instinct animal fait partie de la définition de l’homme, de ce qui le différentie des bêtes. L’homme est donc libre de nature et constitue un droit que chacun se doit de pouvoir exercer.
 
@@ -61,7 +61,7 @@ S’il n’est pas possible de retourner à l’état de nature, les hommes peuv
 
 Bref, selon Rousseau, l’homme est seulement libre dans son état hypothétique de nature. État qui avec la formation des premières sociétés fut remplacé par l’état de société qui infligea de nombreux maux aux hommes en les privant de leur liberté qui leur revient de droit. Rousseau propose alors un contrat social transformant l’homme en citoyen, lui rendant sa liberté qui lui revient de droit tout en lui procurant la sécurité que procure la société.
 
-## Sartre
+### Sartre
 
 Selon la conception existentialiste de l’homme de Sartre, l’homme est libre, même « condamné à être libre » [^Sartre] puisque contrairement à l’en-soi, l’être humain doit se définir par ses actes. Il est responsable de son propre projet. N’ayant pas d’essence propre, l’homme est obligé de se construire en se choisissant. Ainsi, la liberté consiste à se choisir, se construire, à travers les situations que nous vivons. Toutefois, cette liberté ne prend sens qu’en situation, on ait le choix de donner tel ou tel sens à une situation en les comparants à ses buts. Cette constante remise en question amène de l’angoisse.
 
@@ -79,7 +79,7 @@ La liberté est une liberté absolue, mais elle n’existe qu’en situation. On
 
 **Ma mort** : Ma mort représente un évènement absurde puisque je ne peux ni choisir ni interpréter le fait puisque je n’existerais plus. Sa mort n’est pas la limite ultime de ma liberté puisque ma conscience ne peut ni la concevoir ni l’atteindre ; la mort est néant. Elle est inévitable, mais elle ne m’empêche nullement de vivre ma vie selon mes buts avant son arrivée.
 
-# Chapitre 4 - Confrontation
+## Chapitre 4 - Confrontation
 
 Les conceptions de Rousseau et de Sartre sont grandement différentes. Les différences sont liées aux différents enjeux des époques des auteurs. Effectivement, au temps de Rousseau, où le peuple était opprimé par la monarchie, la liberté était une lutte collective. En opposition à l’époque de Sartre, la liberté est plus ou moins chose acquise, relativement au régime monarchique, avec la démocratisation de l’Europe. Cette différence se fait sentir dans leur définition de la liberté. Pour Rousseau, la liberté est « dépendante » des relations entre les hommes dans la mesure où la société est une entrave à la liberté et un contrat social une solution à ce problème. La liberté est pour Rousseau collective puisqu’elle est sociale selon Rousseau, c’est un droit naturel qui doit être respecté par la société. Pour Sartre, la liberté est individuelle et fait part même de l’existence. Pour Sartre, l’homme est libre parce que, dépourvu d’essence, il est obligé de se choisir continuellement. Ainsi, la seule vraie entrave à sa liberté est soi-même, avec la mauvaise foi, puisque la liberté sartrienne est absolue, quoiqu’en situation. L’homme se construit lui-même ; sa liberté est par rapport son existence personnelle. 
 
@@ -87,7 +87,7 @@ Autre différence, pour Rousseau la société peut empêcher l’homme à exerce
 
 Pour Rousseau, en société, on n’acquiert sa liberté qu’en renonçant à ses intérêts personnels pour participer au contrat social. Pour Sartre, c’est plutôt en se choisissant que nous sommes libres. Leurs opinions diffèrent pour ce qui est de la collectivité ou de l’individualité de la liberté. Rousseau conçoit la liberté par le contrat social comme un accord entre plusieurs individus pour devenir citoyen : ils se plient aux lois en échange de leur liberté. Pour Sartre, il s’agit de se choisir, donc de se construire plutôt que de s’effacer comme dans le contrat social. Cette différence peut aussi s’expliquer par le contexte historique des auteurs et aux évènements de leurs temps. 
 
-# Chapitre 5 - Prise de position
+## Chapitre 5 - Prise de position
 
 La conception naturaliste de Rousseau est intéressante parce qu’elle fournit des explications d’ordre naturel à la question de la liberté de l’homme. L’état de nature, malgré son état hypothétique, offre une bonne puissance explicative quant à la soif de liberté des hommes : la liberté est un don, un droit, pour l’homme. Dans le contexte historique du siècle des Lumières, ce changement de perception de l’homme alimenta de nombreuses révolutions en Europe. La pensée de Rousseau offre un contraste étonnant avec celle d’Aristote qui juge que certains hommes sont nés pour être esclave. L’égalité et la liberté sont beaucoup plus profitables à l’homme, qui peut s’épanouir, que l’esclavagisme ou la sujétion. Je suis d’accord avec Rousseau sur ce point, l’homme par nature est libre et on doit respecter ce droit.
 
@@ -95,19 +95,19 @@ Encore selon Rousseau, la société aurait un effet négatif sur l’homme : le
 
 Si je suis d’accord sur certains points avec Rousseau, je trouve que sa pensée s’applique mal à notre époque post-moderne puisque nous tenons pour acquis ce qui était jadis une lutte de tous les peuples. 
 
-## Sartre
+### Sartre
 
 La conception existentialiste de Sartre est très reliée à l’humanisme ; l’homme est le seul responsable de ses actes et il se choisit continuellement. Malgré le côté un peu métaphysique de l’essence des choses, la confrontation en-soi/pour-soi justifie la versatilité de l’homme ; contrairement à un objet, l’homme peut occuper plusieurs fonctions selon sa volonté. Un homme n’est pas avant sa naissance désigné à occuper telle ou telle fonction. C’est un concept très fort et optimiste pour l’homme, sa liberté est absolue, mais en situation. Je suis d’accord avec le concept de liberté en situation, effectivement, nous ne pouvons choisir ou nous choisir (se construire) que devant une situation, puisque chaque acte possède un contexte réel. Nous ne pouvons pas exercer notre liberté hors contexte. Étant le seul responsable de l’orientation de son projet, l’angoisse face à cette responsabilité est d’autant plus lourde. Je ne peux mettre la faute sur autrui, si je fais quelque chose, c’est totalement de ma responsabilité. Je suis totalement d’accord avec le concept de la mauvaise foi : devant tant de responsabilités, il est facile de se dire que nous n’avons pas le choix. Aussi, sa conception est plus représentative de notre époque, les enjeux du temps de Sartre sont plus ou moins encore les mêmes qu’à notre époque post-moderne. La recherche de soi-même, l’insécurité et la responsabilité de ses actes sont encore au cœur de notre culture. Sa pensée cadre parfaitement avec des concepts que tous vivent quotidiennement.
 
-## Rousseau contre Sartre
+### Rousseau contre Sartre
 
 D’entre les deux conceptions de Rousseau et de Sartre, je suis davantage en accord avec celle de Sartre. Son époque est très semblable à la nôtre, permettant à sa conception de définir l’homme moderne et post-moderne dans sa réalité contemporaine avec plus de fidélité que la conception de Rousseau qui s’applique plus à un monde prérévolution française. Il y a aussi toute la question de « s’effacer » pour suivre l’intérêt collectif qui me dérange, l’individualité est une grande force de l’être humain et l’on ne doit pas perdre ses propres intérêts. C’est pour cela que le « se choisir » de Sartre cadre plus dans mes valeurs individualisme.
 
-# Conclusion
+## Conclusion
 
 La liberté a toujours été importante aux hommes, autant dans le siècle de lutte que fut le siècle des Lumières qu’après les deux guerres mondiales. Peu importe la forme, elle reste un enjeu perpétuellement d’actualité que ce soit avec les révolutions des peuples opprimés par des dictateurs du printemps arable de 2010 ou des luttes pour la liberté d’expression dans plusieurs pays.
 
-# References
+## References
 
 D'autres textes ont été consultés pour la rédaction de cet essai: [^RousseauContrat], [^Sartre], [^Cuerrier], [^Rowell], [^StOnge], [^Manon], [^RousseauDiscours].
 

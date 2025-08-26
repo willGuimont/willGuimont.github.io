@@ -30,10 +30,10 @@ I discussed that compromise a bit more in [a previous post on abstract data type
 
 Here, I would like to discuss the software engineering aspect of using IOP and ADT when designing modules. I'll introduce the concept of inward and outward polymorphism.
 
-# Motivation
+## Motivation
 To motivate the introduction of those concepts, let's start with two small examples.
 
-## Algebraic Data Type
+### Algebraic Data Type
 
 You are charged to build a networking library in Rust. You want to support both IPv4 and IPv6. Each one represents addresses in different ways, IPv4 stores address using four 8 bits numbers, while IPv6 stores it as a string. Using Rust, and having recently read the <a class="external" href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html" target="_blank">Rust Book's chapter on enums</a>, you decide to declare them the following way:
 
@@ -46,12 +46,12 @@ enum IpAddr {
 
 The user will call your functions, like `connect_to(ip: IpAddr)`, using the polymorphic nature of `IpAddr` to use either IPv4 or IPv6.
 
-## Interface-Oriented Programming
+### Interface-Oriented Programming
 The next day, you are writing Java (poor you). You have to implement an application that provides support for plugins. So, you make an interface and write your code calling that interface. The user can then implement your interface with their code, and you can call their class since it implements your interface.
 
 So, your library calls the user's code polymorphically.
 
-## Inward or Outward
+### Inward or Outward
 In the last two examples, we can see two different uses of polymorphism. In the first example, the user called your library passing polymorphic data type, while the second one, the user implemented an interface so that your library would call their code.
 
 We can see that the flow of control is different in both cases. In the first example, the flow moves **into** your code whereas, in the other example, the flow moves **out of** your code.
@@ -60,7 +60,7 @@ Based on the control flow, we can define **inward polymorphism** as polymorphism
 
 The examples were about libraries, but the same concept of inward or outward can be applied to modules.
 
-# ADT or IOP
+## ADT or IOP
 Inward and outward polymorphism impose different types of constraints. 
 
 When I need to write inward polymorphic code, I like to use the expressiveness of ADT. This can make the code elegant and concise.

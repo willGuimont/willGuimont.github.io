@@ -27,7 +27,7 @@ This is the sequence A094028 of the <a class="external" href="https://oeis.org/A
 
 It isn't particularly striking that it should be the case. Let's see why 101 is the only prime number of the sequence.
 
-# The sequence
+## The sequence
 
 First of all, let's study a bit more the sequence. Say $A(n)$ the $n$th element of the sequence (0-indexed). 
 
@@ -49,7 +49,7 @@ For example, for the first element we have $$A(0)=100^0=1.$$
 
 Similarly, for $n=2$, $$A(2)=10000 + 100 + 1 = 10101.$$
 
-# A simpler form
+## A simpler form
 
 For the $(n - 1)$th element of the sequence, we have:
 
@@ -75,7 +75,7 @@ $$\implies A(n) = \frac{100^{n+1} - 1}{99}.$$
 
 So, we have: $A(n) = \frac{100^{n+1} - 1}{99}$, which we can see from the comment in the OEIS's website.
 
-# Cleaning things a bit
+## Cleaning things a bit
 
 We can rewrite $A(n)$ as $A(n) = \frac{(10^{n+1})^2 - 1}{99}$, because $100 = 10^2$.
 
@@ -109,7 +109,7 @@ We can cancel out the $9$s:
 
 $$A(k)=\frac{(10^n + 1)(\overbrace{11\ldots11}^{n\text{-times}})}{11}.$$
 
-# Division by 11
+## Division by 11
 
 Let's take a small break from our sequence to discuss the divisibility by $11$. For a number $n$ to be divisible by $11$, we must have that $n \equiv 0 \pmod {11}$
 
@@ -135,13 +135,13 @@ $$a_0 - a_1 + a_2 - a_3 + a_4 - a_5 \ldots \equiv 0 \pmod {11}.$$
 
 So, $n$ is divisible by $11$ if the sum of even placed digit (starting from the rightmost position) minus the sum of the odd placed digit is divisible by $11$.
 
-# The proof
+## The proof
 
 $$A(k)=\frac{(10^n + 1)(\overbrace{11\ldots11}^{n\text{-times}})}{11}.$$
 
 Now that we know that when a number is divisible by $11$, let's analyse $A(k)$.
 
-## $n > 1$ is even
+### $n > 1$ is even
 
 First, let's suppose that $n$ is even. In that case, we get that $\overbrace{11\ldots11}^{n\text{-times}}$ is divisible by $11$, because, since there is as much even placed $1$s as odd placed $1$s, the sum of even placed digit minus the sum of the odd placed digit is 0, which is divisible by $11$.
 
@@ -155,16 +155,16 @@ Posing $a=\frac{\overbrace{11\ldots11}^{(n\geq4)\text{-times}}}{11}$, we get $A(
 
 Since $A(k)$ is the result of the multiplication between two integers, each not equal to one, $A(k)$ is not prime.
 
-## $n > 1$ is odd
+### $n > 1$ is odd
 
 We can use a similar trick for any even $k\geq2$, this time with the other part of $A(k)$. When $k$ is even (so that $n$ is odd) in $(10^n + 1)$, we have that one $1$ is at a even position and the other at an odd position, thus $1 - 1 = 0$ which is divisible by $11$. Similarly, we have that $(10^n + 1)>11$ because $n\geq3$. Thus, $\frac{(10^n + 1)}{11}>1$ and it is an integer. We can then conclude that $A(k)$ is not prime for even $k=n-1\geq2$.
 
-## The remaining cases
+### The remaining cases
 
 This leaves us with two cases, $k=0$ and $k=1$. $A(0) = 1$ is not prime by definition and $A(1)$ is prime. Since for any other $k$, $A(k)$ is not prime, then $A(1)$ is the only prime in the sequence.
 
 <p style="text-align: right; width=100%;">$\blacksquare$</p>
 
-# References
+## References
 
 [^oeis]: OEIS. Sequence A094028, https://oeis.org/A094028

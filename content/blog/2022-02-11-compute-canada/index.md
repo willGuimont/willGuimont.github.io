@@ -26,13 +26,13 @@ We recommend Narval for deep learning as of now (2021-2022) because it has 4 NVI
 
 Also available on <a class="external" href="https://github.com/norlab-ulaval/Norlab_wiki/wiki/Compute-Canada-Quickstart" target="_blank">Norlab Wiki</a>.
 
-# Account creation
+## Account creation
 
 First of all, you'll need a Compute Canada account to access the clusters. To do so, please see <a class="external" href="https://docs.google.com/document/d/1fk0P_4wIKaP1giUD0rtbpCtxzj3YYm797RQKklQjpuk/edit?usp=sharing" target="_blank">Tips for new students</a>. You'll see the URL to apply for an account and Philippe Giguère's sponsor code.
 
 You'll need your username and your password for the following steps.
 
-# SSH and `ssh-copy-id`
+## SSH and `ssh-copy-id`
 
 To access Compute Canada's clusters, you'll need to ssh into them. You can get the login node URL by checking the cluster's wiki page. For Narval, the URL is **narval.computecanada.ca**.
 
@@ -60,7 +60,7 @@ ssh-copy-id <username>@narval.computecanada.ca
 
 If everything went right, you should now be able to ssh into your cluster without being asked your password.
 
-# Clone your code
+## Clone your code
 
 Now that you are logged in the cluster, you should have a bash shell. From that shell, you can use most Linux commands you're used to like `ls`, `cd`, etc..
 
@@ -70,7 +70,7 @@ From the cluster, you can create another SSH key and <a class="external" href="h
 
 This will allow you to `git clone` your repository into your home directory.
 
-# Setup your Python venv
+## Setup your Python venv
 
 It is recommended to create your Python venv from inside a SLURM job, if your installation script is quite complex, it will be easier to set up before starting any job.
 
@@ -100,7 +100,7 @@ pip install -U scikit-learn
 
 If you want to create your venv from inside a job, note the commands you did to setup your environment and copy them into your job script.
 
-# Putting your data on the cluster
+## Putting your data on the cluster
 
 To put your data on the cluster, we recommend using `sftp`.
 
@@ -128,7 +128,7 @@ cd data
 ln -s path/to/your/dataset <dataset-name>  # TODO change path and dataset name
 ```
 
-# SLURM jobs
+## SLURM jobs
 
 We can now create jobs. To do so, create a .sh file and paste the following inside:
 
@@ -169,7 +169,7 @@ deactivate
 
 This script is organized in five main parts.
 
-## Configure job
+### Configure job
 
 This part is used to configure the resources needed for your job.
 
@@ -183,7 +183,7 @@ This part is used to configure the resources needed for your job.
 #SBATCH --output=%x-%j.out                   # Log will be written to f'{job_name}_{job_id}'
 ```
 
-## Setup installation
+### Setup installation
 
 This part sets environment variables for multithreading and loads needed modules. You might need to change the loaded versions.
 
@@ -200,7 +200,7 @@ module load geos
 module load llvm/8.0.1
 ```
 
-## Loading the venv
+### Loading the venv
 
 This will load the venv we created earlier
 
@@ -209,7 +209,7 @@ This will load the venv we created earlier
 source ~/venv/bin/activate
 ```
 
-## Running your actual code
+### Running your actual code
 
 You will need to change this part to run what you want to run. This scripts shows how to use multi-GPU with mmdetection3d.
 
@@ -223,7 +223,7 @@ GPUS=4
 ./dist_train.sh ${CONFIG_FILE} ${GPUS} --work-dir ${WORK_DIR} --cfg-options cudnn_benchmark=True evaluation.gpu_collect=True  # gpu_collect=True is essential to do multi GPU training
 ```
 
-## Cleaning up
+### Cleaning up
 
 Not strictly needed, but it is always a good thing to clean up after yourself.
 
@@ -248,7 +248,7 @@ sq
 
 More information is available <a class="external" href="https://docs.computecanada.ca/wiki/Running_jobs" target="_blank">here</a>
 
-# Useful tools
+## Useful tools
 
 `sbatch`: queue a job.
 

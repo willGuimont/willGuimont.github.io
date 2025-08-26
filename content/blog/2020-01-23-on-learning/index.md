@@ -53,7 +53,7 @@ In a neural network, we are usually not concerned about memorizing all the input
 
 Perhaps we should tell students that they aren't in school to memorize facts, but instead to build a toolbox of mental representations to help them in life. Our brain is a neural network that needs to be trained with great care!
 
-# Sources
+## Sources
 [^Goodfellow]: Goodfellow, Ian & Bengio, Yoshua & Courville, Aaron. Deep Learning. 2016.
 [^Simon]: Simon, Herbert A. The Sciences of the Artificial, 1969.
 [^Dreyfus]: Dreyfus, Stuart E. The Five-Stage Model of Adult Skill Acquisition. 2004.
