@@ -104,51 +104,51 @@ Here are the microservices you must get working:
 2. a document management API written in Rust, requiring a PostgreSQL database; and
 3. a Python application for visualizing web server health.
 
+<div class="wide-crt">
 {% crt() %}
 ```
-┌────────────────────────────── MICROSERVICES (ARCH OVERVIEW) ──────────────────────────────┐
-│                                                                                           │
-│  (3) python_app (CLI)                                                                     │
-│      Image: python_app                                                                    │
-│      Mode: --network=host (workshop)                                                      │
-│      BACKEND_URL = http://localhost:8080                                                  │
-│      Uses: list/add endpoints, view uptime stats                                          │
-│            │                                                                              │
-│            │ HTTP (JSON)                                                                  │
-│            ▼                                                                              │
-│  (1) status-checker (Haskell)                                                             │
-│      Image: status-checker                                                                │
-│      Port: 8080                                                                           │
-│      Storage: monitoring.sqlite (SQLite)                                                  │
-│            │                                                                              │
-│            │ HTTP health probe (/documents or /health)                                    │
-│            ▼                                                                              │
-│  (2) rust_api (Actix Web)                                                                 │
-│      Image: rust_api (multi-stage)                                                        │
-│      Port: 8081                                                                           │
-│      Env: DATABASE_URL=postgres://postgres:postgres@db                                    │
-│            │                                                                              │
-│            │ SQL (Diesel)                                                                 │
-│            ▼                                                                              │
-│      PostgreSQL                                                                           │
-│      Image: postgres                                                                      │
-│      Port: 5432                                                                           │
-│      Volume: db:/var/lib/postgresql/data                                                  │
-│                                                                                           │
-│  Data Flows (top→down):                                                                   │
-│    python_app ──HTTP──▶ status-checker ──HTTP──▶ rust_api ──SQL──▶ PostgreSQL             │
-│                                                                                           │
-│  Summary:                                                                                 │
-│    - python_app only contacts status-checker.                                             │
-│    - status-checker pings rust_api for availability.                                      │
-│    - rust_api persists documents in Postgres.                                             │
-│                                                                                           │
-│  Ports: 8080 (status-checker) | 8081 (rust_api) | 5432 (Postgres)                         │
-└───────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────── MICROSERVICES (ARCH OVERVIEW) ───────────────────────────┐
+│                                                                                        │
+│  (3) python_app (CLI)                                                                  │
+│      Image: python_app                                                                 │
+│      Mode: --network=host (workshop)                                                   │
+│      BACKEND_URL = http://localhost:8080                                               │
+│      Uses: list/add endpoints, view uptime stats                                       │
+│            │                                                                           │
+│            │ HTTP (JSON)                                                               │
+│            ▼                                                                           │
+│  (1) status-checker (Haskell)                                                          │
+│      Image: status-checker                                                             │
+│      Port: 8080                                                                        │
+│      Storage: monitoring.sqlite (SQLite)                                               │
+│            │                                                                           │
+│            │ HTTP health probe (/documents or /health)                                 │
+│            ▼                                                                           │
+│  (2) rust_api (Actix Web)                                                              │
+│      Image: rust_api (multi-stage)                                                     │
+│      Port: 8081                                                                        │
+│      Env: DATABASE_URL=postgres://postgres:postgres@db                                 │
+│            │                                                                           │
+│            │ SQL (Diesel)                                                              │
+│            ▼                                                                           │
+│      PostgreSQL                                                                        │
+│      Image: postgres                                                                   │
+│      Port: 5432                                                                        │
+│      Volume: db:/var/lib/postgresql/data                                               │
+│                                                                                        │
+│  Data Flows (top→down):                                                                │
+│    python_app ──HTTP──▶ status-checker ──HTTP──▶ rust_api ──SQL──▶ PostgreSQL          │
+│                                                                                        │
+│  Summary:                                                                              │
+│    - python_app only contacts status-checker.                                          │
+│    - status-checker pings rust_api for availability.                                   │
+│    - rust_api persists documents in Postgres.                                          │
+│                                                                                        │
+│  Ports: 8080 (status-checker) | 8081 (rust_api) | 5432 (Postgres)                      │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 {% end %}
-
-> Integration update: We extend the architecture so that `status-checker` also pings the Rust `rust_api` service. In practice you can (a) register the rust_api base URL as an endpoint in status-checker, or (b) add a dedicated `/health` route in rust_api and have a small cron job in status-checker hitting it. This surfaces document service availability alongside existing monitored endpoints.
+</div>
 
 ### Why containerization?
 

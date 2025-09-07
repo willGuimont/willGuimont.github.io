@@ -101,37 +101,40 @@ Your boss then leads you to the server room, where an old CRT screen and a keybo
 He explains that it’s a Linux server edition, so without a graphical interface.
 You will therefore have to solve the problems using only the terminal.
 
+
+<div class="wide-crt">
 {% crt() %}
 
 ```
-  ┌───────────────────────────── SYSTEM DIAGNOSTIC (BOOT/RESCUE) ─────────────────────────────┐
-  │ Host: crt-prod-01                User: username               TTY: /dev/pts/0             │
-  │ Kernel: 5.15.x-generic           Uptime: 00:07:13             Load: 1.42 0.97 0.53        │
-  │ ----------------------------------------------------------------------------------------- │
-  │ LOG SCAN: messages.txt                                                                    │
-  │   Errors (raw): ................. 37  (use: grep 'Error' messages.txt)                    │
-  │   Unique 4xx errors: ............ pending (pipe into uniq | sed ...)                      │
-  │                                                                                           │
-  │ NEXT STEPS (YOU):                                                                         │
-  │   [1] Locate build log directory         (Exercise 02)                                    │
-  │   [2] Back up critical log file          (Exercise 03)                                    │
-  │   [3] Fix permissions & run diagnostics  (Exercise 04)                                    │
-  │   [4] Corral *.out + purge temp files    (Exercises 05–07)                                │
-  │   [5] Triage errors with grep/uniq/sed   (Exercises 09–12)                                │
-  │   [6] Hunt largest files (du/find/sort)  (Exercise 13)                                    │
-  │   [7] Awk your way through db.tsv        (Exercise 14)                                    │
-  │   [8] Script + rollback automation       (Exercises 15–16)                                │
-  │ ----------------------------------------------------------------------------------------- │
-  │ TIP: Build one-liners incrementally. Example pipeline scaffold:                           │
-  │        cat file | grep pattern | sort | head -n 5                                         │
-  │                                                                                           │
-  │ REMEMBER:                                                                                 │
-  │   man <cmd>    --help flags    help <builtin>    set -x (debug scripts)                   │
-  │                                                                                           │
-  │ STATUS LAMPS:  [CPU OK] [DISK OK] [NET OK] [SERVICE ERROR] -> Investigate app layer       │
-  └───────────────────────────────────────────────────────────────────────────────────────────┘
-  (enter the command line below…)
+┌───────────────────────────── SYSTEM DIAGNOSTIC (BOOT/RESCUE) ──────────────────────────┐
+│ Host: crt-prod-01                User: username               TTY: /dev/pts/0          │
+│ Kernel: 5.15.x-generic           Uptime: 00:07:13             Load: 1.42 0.97 0.53     │
+│ -------------------------------------------------------------------------------------- │
+│ LOG SCAN: messages.txt                                                                 │
+│   Errors (raw): ................. 37  (use: grep 'Error' messages.txt)                 │
+│   Unique 4xx errors: ............ pending (pipe into uniq | sed ...)                   │
+│                                                                                        │
+│ NEXT STEPS (YOU):                                                                      │
+│   [1] Locate build log directory         (Exercise 02)                                 │
+│   [2] Back up critical log file          (Exercise 03)                                 │
+│   [3] Fix permissions & run diagnostics  (Exercise 04)                                 │
+│   [4] Corral *.out + purge temp files    (Exercises 05–07)                             │
+│   [5] Triage errors with grep/uniq/sed   (Exercises 09–12)                             │
+│   [6] Hunt largest files (du/find/sort)  (Exercise 13)                                 │
+│   [7] Awk your way through db.tsv        (Exercise 14)                                 │
+│   [8] Script + rollback automation       (Exercises 15–16)                             │
+│ -------------------------------------------------------------------------------------- │
+│ TIP: Build one-liners incrementally. Example pipeline scaffold:                        │
+│        cat file | grep pattern | sort | head -n 5                                      │
+│                                                                                        │
+│ REMEMBER:                                                                              │
+│   man <cmd>    --help flags    help <builtin>    set -x (debug scripts)                │
+│                                                                                        │
+│ STATUS LAMPS:  [CPU OK] [DISK OK] [NET OK] [SERVICE ERROR] -> Investigate app layer    │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+(enter the command line below…)
 ```
+</div>
 
 {% end %}
 
