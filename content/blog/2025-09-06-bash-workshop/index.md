@@ -105,7 +105,7 @@ You will therefore have to solve the problems using only the terminal.
 
 ```
   ┌───────────────────────────── SYSTEM DIAGNOSTIC (BOOT/RESCUE) ─────────────────────────────┐
-  │ Host: crt-prod-01                User: glo2001                TTY: /dev/pts/0             │
+  │ Host: crt-prod-01                User: username               TTY: /dev/pts/0             │
   │ Kernel: 5.15.x-generic           Uptime: 00:07:13             Load: 1.42 0.97 0.53        │
   │ ----------------------------------------------------------------------------------------- │
   │ LOG SCAN: messages.txt                                                                    │
