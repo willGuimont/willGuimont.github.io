@@ -1,8 +1,8 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Bash Workshop"
-description = "Resources and outline for a Bash scripting workshop"
-date = 2025-09-07
+description = "Learn the basics of Bash scripting with this hands-on workshop"
+date = 2025-09-06
 # updated = ""
 # draft = false
 [taxonomies]
@@ -15,6 +15,9 @@ toc_inline = true
 # trigger = ""
 # disclaimer = ""
 +++
+
+Bash is a powerful command-line interpreter that allows users to interact with their operating system through text commands.
+As a programmer, you will often need to use the command line to perform various tasks, such as navigating the file system, managing files and directories, and executing scripts.
 
 ## Setup
 
@@ -39,20 +42,20 @@ The grading commands are of the form `correction_nn`, where `nn` is an integer r
 Instructions for validating commands will be provided with the first question that has an expected result.
 
 To complete this workshop, you must perform each exercise directly in the terminal.
-You will need to use the `nano` text editor to modify the requested scripts.
-To open a file with nano, run the following command in the terminal.
+You will use the `nano` text editor to modify the requested scripts.
+To open a file with nano, run the following in the terminal.
 
 ```bash
 nano test.sh
 ```
 
-You can then edit the file; write
+You can then edit the file; enter
 
 ```bash
 echo 'Hello world'
 ```
 
-To exit nano, press <kbd>Ctrl</kbd>+<kbd>X</kbd>, then answer <kbd>Y</kbd> to save the changes.
+To exit nano, press <kbd>CTRL</kbd>-<kbd>X</kbd>, then answer `y` to save the changes.
 Run the following commands to validate that everything works:
 
 ```bash
@@ -60,22 +63,22 @@ chmod +x test.sh
 ./test.sh
 ```
 
-These commands should display the text `Hello world`.
+These commands should print `Hello world`.
 
 {% alert(tip=true) %}
-**For adventurers only**
+**Adventurers only**
 
 If you are comfortable with the command line, we encourage you to try completing this workshop using `vim` as your text editor.
-A brief introduction to `vim` commands is available on the [MIT Missing Semester](https://missing.csail.mit.edu/2020/editors/) website.
+A brief introduction to `vim` commands is available on [MIT's The Missing Semester](https://missing.csail.mit.edu/2020/editors/).
 `vim` offers many shortcuts to edit text and code very efficiently.
-As a programmer, you will spend a lot of time writing code, so it is wise to invest in learning `vim` for the rest of your career.
+As a programmer, you will spend a lot of time writing code, so investing in learning `vim` is worthwhile for the rest of your career.
 There are plugins emulating `vim` commands for most IDEs: [Vim for VS Code](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) or [IdeaVim for JetBrains products](https://plugins.jetbrains.com/plugin/164-ideavim).
 
 **Please note that no assistance regarding `vim` will be provided during this workshop.**
 {% end %}
 
-### Solution
-The proposed solutions to the exercises in these workshops are available in the following GitHub repository: [willGuimont/IFT2001-Scripting](https://github.com/willGuimont/IFT2001-Scripting).
+### Solutions
+Proposed solutions to the exercises in these workshops are available in the following GitHub repository: [ulavalIFTGLOateliers/IFT2001-Scripting](https://github.com/ulavalIFTGLOateliers/IFT2001-Scripting).
 
 ---
 
