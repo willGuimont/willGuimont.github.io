@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment"
+title = "Using Citizen Science Data for UAV Image Analysis"
 description = "Using citizen science data to improve UAV image analysis"
 date = 2025-04-09
 # updated = ""

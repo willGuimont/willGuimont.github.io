@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Another Way To Sync Obsidian vaults to Android using Git"
+title = "Sync Obsidian vaults to Android using Git"
 description = "How to sync your Obsidian vault to an Android phone using Git"
 date = 2024-03-25
 # updated = ""

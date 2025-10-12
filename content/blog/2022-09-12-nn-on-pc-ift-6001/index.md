@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Apprentissage par réseaux de neurones profonds sur les nuages de points 3D"
+title = "Apprentissage profonds sur les nuages de points 3D"
 description = ""
 date = 2022-09-12
 # updated = ""

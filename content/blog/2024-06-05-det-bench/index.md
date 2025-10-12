@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Replication Study and Benchmarking of Real-Time Object Detection Models"
+title = "Benchmarking of Real-Time Object Detection Models"
 description = "In depth analysis of real-time object detection models"
 date = 2024-06-05
 # updated = ""

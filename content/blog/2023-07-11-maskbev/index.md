@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "MaskBEV: Joint Object Detection and Footprint Completion for Bird's-eye View 3D Point Clouds"
+title = "MaskBEV"
 description = ""
 date = 2023-07-11
 # updated = ""

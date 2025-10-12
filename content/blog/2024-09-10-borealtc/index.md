@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "Proprioception Is All You Need: Terrain Classification for Boreal Forests"
+title = "Terrain Classification for Boreal Forests"
 description = "Exterioception need-not apply"
 date = 2024-09-10
 # updated = ""

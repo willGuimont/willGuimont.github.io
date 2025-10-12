@@ -1,6 +1,6 @@
 +++
 authors = ["William Guimont-Martin"]
-title = "How to make APIs using Haskell and polysemy"
+title = "APIs using Haskell and polysemy"
 description = "How to use effects systems to build APIs in Haskell"
 date = 2022-06-08
 # updated = ""
