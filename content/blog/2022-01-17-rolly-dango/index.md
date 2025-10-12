@@ -20,7 +20,7 @@ Rolly Dango, an isometric rolling puzzle made with <a class="external" href="htt
 
 <a class="external" href="https://willguimont.github.io/rolly-dango/" target="_blank">Try the game here</a> or on <a class="external" href="https://willguimont.itch.io/rolly-dango" target="_blank">itch.io</a>!
 
-![rolly dango](https://raw.githubusercontent.com/willGuimont/rolly-dango/main/assets/game.webp)
+![rolly dango](game.webp)
 
 Source code is here: <a class="external" href="https://github.com/willGuimont/rolly-dango" target="_blank">willGuimont/rolly-dango</a>
 
@@ -32,4 +32,4 @@ Here's some key points of our project:
 - Made all of our sprites using <a class="external" href="https://www.aseprite.org/" target="_blank">Aseprite</a>
 
 Our level editor:
-![level editor](https://raw.githubusercontent.com/willGuimont/rolly-dango/main/assets/editor.webp)
+![level editor](editor.webp)
