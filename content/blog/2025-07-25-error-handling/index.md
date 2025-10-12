@@ -39,7 +39,7 @@ Java attempted to solve the uncertainty around which operations might throw exce
 
 Despite their limitations, exceptions are still very much useful for their convenience and ease of use in simple cases. That said, while it can be convenient to let domain exceptions bubble up - for instance, in a REST API handler where you want a 400 Bad Request - you’re still playing with a runtime grenade.
 
-## Errors as Values (Go)
+## `Go`ing Somewhere with Errors (Go)
 Go brought back the C-style return code (i.e., non-zero return for errors), modernized as error values returned by the function, now with `nil` as the successful return value. You call a function, and it returns both result and error:
 
 ```go
