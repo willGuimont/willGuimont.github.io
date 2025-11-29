@@ -24,7 +24,7 @@ Here's the procedure to sync your <a class="external" href="https://obsidian.md/
 First, you'll have to run these commands on your computer:
 1. Create a SSH key using `ssh-keygen -f ~/obsidian-phone-key -t ed25519 -C "your_email@example.com"`
 2. Add the public key (`~/obsidian-phone-key.pub`) to your GitHub account
-3. Connect your phone to your computer and allow the computer to access phone data
+3. Connect your phone to your computer and allow the computer to access phone data (e.g., using [LocalSend](https://localsend.org/))
 4. Copy the private key (`~/obsidian-phone-key`) to your phone
 
 Now, on your phone:
