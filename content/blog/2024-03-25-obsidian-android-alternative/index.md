@@ -34,17 +34,18 @@ Now, on your phone:
 4. In Termux install `termu-am` using `pkg install termux-am`
 5. Mount the phone storage using `termux-setup-storage`
 6. Copy your SSH key into `~/.ssh/` using `cp ~/storage/shared/path/to/obsidian-phone-key ~/.ssh/`
-7. Now go to the location you want to clone the repository (should be in `~/storage/shared/` for Obsidian to have access) and clone it using `git clone git@github.com:username/repo.git`
-8. You can now open Obsidian
+7. Follow [these instructions to add the ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
+8. Now go to the location you want to clone the repository (should be in `~/storage/shared/` for Obsidian to have access) and clone it using `git clone git@github.com:username/repo.git`
+9. You can now open Obsidian
 	1. Open folder as vault
 	2. Browse to the repository you copied from your computer
-9. Open F-Droid and install <a class="external" href="https://f-droid.org/packages/com.manichord.mgit/" target="_blank">MGit</a>
-10. From the settings page of MGit, import the SSH key
+10. Open F-Droid and install <a class="external" href="https://f-droid.org/packages/com.manichord.mgit/" target="_blank">MGit</a>
+11. From the settings page of MGit, import the SSH key
 	1. SSH Keys
 	2. Download button in the upper right corner
 	3. Select `obsidian-phone-key` you copied from your computer
-11. Go back to the main menu of MGit, press the three dots in the upper right and press the `Import Repository` button
-12. Browse to the repository you copied from your computer
-13. You should now be able to `pull` from MGit
-14. Your Obsidian vault is now synced using Git!
-15. (Optional) If you want to also be able to manage the repository from Termux, run the command `git config --global --add safe.directory ~/storage/shared/path/to/repo`
+12. Go back to the main menu of MGit, press the three dots in the upper right and press the `Import Repository` button
+13. Browse to the repository you copied from your computer
+14. You should now be able to `pull` from MGit
+15. Your Obsidian vault is now synced using Git!
+16. (Optional) If you want to also be able to manage the repository from Termux, run the command `git config --global --add safe.directory ~/storage/shared/path/to/repo`
