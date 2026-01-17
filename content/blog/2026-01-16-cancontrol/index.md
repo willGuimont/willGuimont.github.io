@@ -16,7 +16,7 @@ toc_ordered = true
 # disclaimer = ""
 +++
 
-FRC (FIRST Robotics Competition) robots often use motor controllers like the Talon SRX or Spark MAX, which communicate over the CAN bus.
+FRC (FIRST Robotics Competition) robots often use motor controllers like the [REV Robotics Spark MAX](https://www.revrobotics.com/rev-11-2158/), the [CTRE Talon SRX](https://store.ctr-electronics.com/products/talon-srx), or the [CTRE Victor SPX](https://store.ctr-electronics.com/products/victor-spx).
 However, these controllers are typically designed to work with specific libraries and hardware, such as the RoboRIO used in FRC.
 This can make it challenging to integrate them with other microcontrollers like Arduino.
 `CanControl` is an Arduino library that enables communication with FRC-compatible motor controllers over the CAN bus.
