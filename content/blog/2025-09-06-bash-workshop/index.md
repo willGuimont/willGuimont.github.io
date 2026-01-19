@@ -6,7 +6,7 @@ date = 2025-09-06
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Bash", "Workshop"]
+tags = ["Computer Sciences", "Bash", "Workshop", "Software Engineering"]
 [extra]
 # banner = ""
 toc = true
