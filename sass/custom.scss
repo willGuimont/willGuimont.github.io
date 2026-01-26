@@ -54,3 +54,65 @@
   -webkit-mask-image: var(--icon-tags);
   mask-image: var(--icon-tags);
 }
+
+// Custom Copy Button Styles
+.pre-container {
+  position: relative;
+
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s;
+
+    // Default background (transparent or very subtle dark for contrast)
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    backdrop-filter: blur(4px);
+
+    .icon {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      // Force dark icon color because code blocks are light
+      background-color: rgba(0, 0, 0, 0.6);
+      mask-image: var(--icon-copy);
+      -webkit-mask-image: var(--icon-copy);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+
+      .icon {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    }
+
+    &.copied {
+      opacity: 1;
+      // border-color: var(--green-fg); // Removed to match clipboard style
+
+      .icon {
+        // background-color: var(--green-fg); // Removed to match clipboard style
+        mask-image: var(--icon-checkmark);
+        -webkit-mask-image: var(--icon-checkmark);
+      }
+    }
+  }
+
+  &:hover .copy-btn {
+    opacity: 1;
+  }
+}
