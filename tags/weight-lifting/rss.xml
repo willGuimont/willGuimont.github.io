@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Weight Lifting</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/weight-lifting/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 08 Jun 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Turn Your Dumbbells Into Barbell Plates</title>
+          <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/dumb2bar-re/</link>
+          <guid>https://willguimont.com/blog/dumb2bar-re/</guid>
+          <description xml:base="https://willguimont.com/blog/dumb2bar-re/">&lt;p&gt;Introducing Dumb2Bar — a 3D-printable adapter that transforms your dumbbells into barbell plates.&lt;&#x2F;p&gt;
+&lt;p&gt;No need to buy separate weight plates — just reuse what you already own.&lt;&#x2F;p&gt;
+&lt;p&gt;Print it. Bolt it. Lift.&lt;&#x2F;p&gt;
+&lt;p&gt;🔗 Get it on Cults3D:
+&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cults3d.com&#x2F;en&#x2F;3d-model&#x2F;various&#x2F;dumbell-to-barbell-adapter&quot; target=&quot;_blank&quot;&gt;https:&#x2F;&#x2F;cults3d.com&#x2F;en&#x2F;3d-model&#x2F;various&#x2F;dumbell-to-barbell-adapter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

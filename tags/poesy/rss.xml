@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Poesy</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/poesy/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>L’Art poétique, Boileau</title>
+          <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/boileau/</link>
+          <guid>https://willguimont.com/blog/boileau/</guid>
+          <description xml:base="https://willguimont.com/blog/boileau/">&lt;p&gt;J’apprécie beaucoup le poème &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fr.wikisource.org&#x2F;wiki&#x2F;Boileau_-_%C5%92uvres_po%C3%A9tiques&#x2F;L%E2%80%99Art_po%C3%A9tique&#x2F;Chant_I&quot; target=&quot;_blank&quot;&gt;L’Art poétique&lt;&#x2F;a&gt; de Nicolas Boileau.&lt;&#x2F;p&gt;
+&lt;p&gt;Dans l’extrait suivant, il aborde l’importance de la clarté de l’esprit lors de l’écriture: Il est impossible d’écrire clairement si l’on n’a pas une idée précise de ce que l’on veut dire. Depuis que j’ai découvert ce poème, j’y pense dès lors que je m’assois pour écrire.&lt;&#x2F;p&gt;
+&lt;p&gt;Voici un extrait que je trouve particulièrement intéressant:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il est certains esprits dont les sombres pensées&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Sont d’un nuage épais toujours embarrassées ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Le jour de la raison ne le saurait percer. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Avant donc que d’écrire apprenez à penser. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Selon que notre idée est plus ou moins obscure, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;L’expression la suit, ou moins nette, ou plus pure. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Ce que l’on conçoit bien s’énonce clairement, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Et les mots pour le dire arrivent aisément. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Surtout, qu’en vos écrits la langue révérée &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Dans vos plus grands excès vous soit toujours sacrée. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;En vain vous me frappez d’un son mélodieux, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Si le terme est impropre, ou le tour vicieux ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Mon esprit n’admet pour un pompeux barbarisme, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Ni d’un vers ampoulé l’orgueilleux solécisme. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Sans la langue, en un mot, l’auteur le plus divin &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Est toujours, quoi qu’il fasse, un méchant écrivain. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Travaillez à loisir, quelque ordre qui vous presse, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Et ne vous piquez point d’une folle vitesse ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Un style si rapide, et qui court en rimant, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Marque moins trop d’esprit, que peu de jugement. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;J’aime mieux un ruisseau qui sur la molle arène &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Dans un pré plein de fleurs lentement se promène, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Qu’un torrent débordé qui, d’un cours orageux, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Roule, plein de gravier, sur un terrain fangeux. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Hâtez-vous lentement ; et, sans perdre courage, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Vingt fois sur le métier remettez votre ouvrage : &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Polissez-le sans cesse et le repolissez ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Ajoutez quelquefois, et souvent effacez. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;C’est peu qu’en un ouvrage où les fautes fourmillent, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Des traits d’esprit semés de temps en temps pétillent. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il faut que chaque chose y soit mise en son lieu ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Que le début, la fin répondent au milieu ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Que d’un art délicat les pièces assorties &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;N’y forment qu’un seul tout de diverses parties ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Que jamais du sujet le discours s’écartant &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;N’aille chercher trop loin quelque mot éclatant. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Craignez-vous pour vos vers la censure publique ? &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Soyez-vous à vous-même un sévère critique. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;L’ignorance toujours est prête à s’admirer. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Faites-vous des amis prompts à vous censurer ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Qu’ils soient de vos écrits les confidents sincères, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Et de tous vos défauts les zélés adversaires. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Dépouillez devant eux l’arrogance d’auteur ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Mais sachez de l’ami discerner le flatteur : &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Tel vous semble applaudir, qui vous raille et vous joue. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Aimez qu’on vous conseille et non pas qu’on vous loue. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Un flatteur aussitôt cherche à se récrier : &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Chaque vers qu’il entend le fait extasier. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Tout est charmant, divin : aucun mot ne le blesse ;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il trépigne de joie, il pleure de tendresse ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il vous comble partout d’éloges fastueux : &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;La vérité n’a point cet air impétueux. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Un sage ami, toujours rigoureux, inflexible, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Sur vos fautes jamais ne vous laisse paisible : &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il ne pardonne point les endroits négligés, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il renvoie en leur lieu les vers mal arrangés, &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Il réprime des mots l’ambitieuse emphase ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Ici le sens le choque, et plus loin c’est la phrase. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Votre construction semble un peu s’obscurcir ; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Ce terme est équivoque, il le faut éclaircir. &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;C’est ainsi que vous parle un ami véritable.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</description>
+      </item>
+    </channel>
+</rss>

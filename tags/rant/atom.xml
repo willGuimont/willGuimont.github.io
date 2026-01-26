@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Rant</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/rant/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2020-07-08T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/rant/atom.xml</id>
+    <entry xml:lang="en">
+        <title>FRP: You don&#x27;t own your android phone</title>
+        <published>2020-07-08T00:00:00+00:00</published>
+        <updated>2020-07-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/frp/"/>
+        <id>https://willguimont.com/blog/frp/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/frp/">&lt;p&gt;Recently, I had to change my phone. I got my grandfather’s old smartphone to replace it. I wanted to try a new OS to replace Google’s Android, I was thinking of trying either &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;lineageos.org&#x2F;&quot; target=&quot;_blank&quot;&gt;LineageOS&lt;&#x2F;a&gt; or &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;resurrectionremix.com&#x2F;&quot; target=&quot;_blank&quot;&gt;Ressurection REMIX OS&lt;&#x2F;a&gt;. So, I candidly hard reset it by entering the “Recovery Menu”, just like I would on any computer I ever installed Linux on.&lt;&#x2F;p&gt;
+&lt;p&gt;Except, there was something that went wrong. I got a weird error message. So, I booted the phone to see what was going on. I start the setup procedure. I am asked to log in with a Google Account, so I do. There, I get another weird message: I had to log in with the phone’s owner account…&lt;&#x2F;p&gt;
+&lt;p&gt;The phone was locked. Locked by Google. The physical device that I thought I owned, locked by the inside by Google.&lt;&#x2F;p&gt;
+&lt;p&gt;That particular “security” is called &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.androidcentral.com&#x2F;factory-reset-protection-what-you-need-know&quot; target=&quot;_blank&quot;&gt;Factory Reset Protection&lt;&#x2F;a&gt;. As far as I know, it is impossible to bypass that “protection”. Basically, once activated Google owns &lt;em&gt;your&lt;&#x2F;em&gt; phone.&lt;&#x2F;p&gt;
+&lt;p&gt;I lost a lot of time, had to ask my grandfather to enter a code on his new phone to unlock the one he gave me.&lt;&#x2F;p&gt;
+&lt;p&gt;When I was finally able to set up the phone, I was greeted by a lot of preinstalled and un-uninstallable applications. Truly, the smartphone &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Oligopoly&quot; target=&quot;_blank&quot;&gt;oligopoly&lt;&#x2F;a&gt; is a bad thing for users.&lt;&#x2F;p&gt;
+&lt;p&gt;Both Android and iPhone phones are locked, you don’t own your phone like you own your computer.&lt;&#x2F;p&gt;
+&lt;p&gt;We need more free and open-source alternatives, just like GNU&#x2F;Linux is in the computer OS market.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

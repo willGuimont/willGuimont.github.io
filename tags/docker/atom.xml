@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Docker</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/docker/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-09-07T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/docker/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Docker Workshop</title>
+        <published>2025-09-07T00:00:00+00:00</published>
+        <updated>2025-09-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/docker-workshop/"/>
+        <id>https://willguimont.com/blog/docker-workshop/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/docker-workshop/">&lt;p&gt;Docker and containerization have revolutionized the way applications are developed, deployed, and managed.
+Containers provide a lightweight and efficient way to package applications and their dependencies, ensuring consistency across different environments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;The original workshop was designed to use with a virtual machine (&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;IFT2001-Docker&quot;&gt;willGuimont&#x2F;IFT2001-Docker&lt;&#x2F;a&gt;).
+While you can follow the instructions below to set up the virtual machine, you can also choose to follow the workshop using Docker.&lt;&#x2F;p&gt;
+&lt;p&gt;Follow these steps to prepare your environment.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;docker run -it --rm ubuntu:latest bash&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;In the Docker container, run:
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install -y git&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;mkdir .atelier &amp;amp;&amp;amp; cd .atelier &amp;amp;&amp;amp; git clone https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;IFT2001-Docker&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;cd ateliers-iftglo-2001&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;.&#x2F;helper&#x2F;install.sh&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;python3 .&#x2F;helper&#x2F;prepare_bashrc.py &amp;amp;&amp;amp; source ~&#x2F;.bashrc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Copy the files in your home directory: &lt;code&gt;cd ~&#x2F;.atelier&#x2F;ateliers-iftglo-2001&#x2F;files &amp;amp;&amp;amp; cp -r . ~&#x2F;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;instructions&quot;&gt;Instructions&lt;&#x2F;h3&gt;
+&lt;p&gt;The instruction above sets up your environment for the workshop.
+The grading commands are of the form &lt;code&gt;correction_nn&lt;&#x2F;code&gt;, where &lt;code&gt;nn&lt;&#x2F;code&gt; is an integer representing the exercise number, for example &lt;code&gt;correction_03&lt;&#x2F;code&gt; for exercise 3.
+Instructions for validating commands will be provided with the first question that has an expected result.&lt;&#x2F;p&gt;
+&lt;p&gt;To complete this workshop, you must perform each exercise directly in the terminal.
+You will use the &lt;code&gt;nano&lt;&#x2F;code&gt; text editor to modify the requested scripts.
+To open a file with nano, run the following in the terminal.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;nano&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; test.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can then edit the file; enter&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-support z-function&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;Hello world&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To exit nano, press &lt;kbd&gt;CTRL&lt;&#x2F;kbd&gt;-&lt;kbd&gt;X&lt;&#x2F;kbd&gt;, then answer &lt;code&gt;y&lt;&#x2F;code&gt; to save the changes.
+Run the following commands to validate that everything works:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;chmod&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; +x&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; test.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;.&#x2F;test.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;These commands should print &lt;code&gt;Hello world&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;markdown-alert-tip&quot;&gt;
+	&lt;p&gt;&lt;strong&gt;Adventurers only&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you are comfortable with the command line, we encourage you to try completing this workshop using &lt;code&gt;vim&lt;&#x2F;code&gt; as your text editor.
+A brief introduction to &lt;code&gt;vim&lt;&#x2F;code&gt; commands is available on &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;missing.csail.mit.edu&#x2F;2020&#x2F;editors&#x2F;&quot;&gt;MIT’s The Missing Semester&lt;&#x2F;a&gt;.
+&lt;code&gt;vim&lt;&#x2F;code&gt; offers many shortcuts to edit text and code very efficiently.
+As a programmer, you will spend a lot of time writing code, so investing in learning &lt;code&gt;vim&lt;&#x2F;code&gt; is worthwhile for the rest of your career.
+There are plugins emulating &lt;code&gt;vim&lt;&#x2F;code&gt; commands for most IDEs: &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;marketplace.visualstudio.com&#x2F;items?itemName=vscodevim.vim&quot;&gt;Vim for VS Code&lt;&#x2F;a&gt; or &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;164-ideavim&quot;&gt;IdeaVim for JetBrains products&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Please note that no assistance regarding &lt;code&gt;vim&lt;&#x2F;code&gt; will be provided during this workshop.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;solutions&quot;&gt;Solutions&lt;&#x2F;h3&gt;
+&lt;p&gt;Proposed solutions to the exercises in these workshops are available in the following GitHub repository: &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ulavalIFTGLOateliers&#x2F;IFT2001-Docker&quot;&gt;ulavalIFTGLOateliers&#x2F;IFT2001-Docker&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;docker&quot;&gt;Docker&lt;&#x2F;h2&gt;
+&lt;p&gt;After your success with &lt;a href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;bash-workshop&#x2F;&quot;&gt;Bash&lt;&#x2F;a&gt;, your manager has given you a new mission: find a solution to the application deployment problem.
+Your company frequently encounters outages due to incompatibilities between different dependency versions.
+Indeed, each developer can choose the operating system they wish to work on.
+Consequently, some developers use different Linux distributions (Ubuntu, Arch, Gentoo), while others prefer Windows.&lt;&#x2F;p&gt;
+&lt;p&gt;This situation often leads to version issues, as dependencies vary from one OS to another.
+And worse, the versions used differ from those deployed on the production server.
+The recurring excuse “It worked on my machine” when a developer causes a production outage has finally exasperated your manager. He is asking you to find a solution.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s how you discover Docker, a platform that lets you build, deploy, and run applications in lightweight, isolated containers.
+With Docker, you can create a specific container for each microservice, including all required libraries and dependencies.
+This approach ensures that each application will run consistently, regardless of library versions used by individual developers.
+Moreover, Docker allows you to reproduce the development environment on the production server, thereby eliminating issues stemming from environment differences.&lt;&#x2F;p&gt;
+&lt;p&gt;With Docker, you will tackle the challenge of running your company’s three main microservices.
+Here are the microservices you must get working:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;a web server health monitoring application written in Haskell;&lt;&#x2F;li&gt;
+&lt;li&gt;a document management API written in Rust, requiring a PostgreSQL database; and&lt;&#x2F;li&gt;
+&lt;li&gt;a Python application for visualizing web server health.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;div class=&quot;wide-crt&quot;&gt;
+&lt;div class=&quot;crt scanlines&quot; aria-hidden=&quot;true&quot;&gt;
+	&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌────────────────────────────── MICROSERVICES (ARCH OVERVIEW) ───────────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│                                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  (3) python_app (CLI)                                                                  │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Image: python_app                                                                 │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Mode: --network=host (workshop)                                                   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      BACKEND_URL = http:&#x2F;&#x2F;localhost:8080                                               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Uses: list&#x2F;add endpoints, view uptime stats                                       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │ HTTP (JSON)                                                               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            ▼                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  (1) status-checker (Haskell)                                                          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Image: status-checker                                                             │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Port: 8080                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Storage: monitoring.sqlite (SQLite)                                               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │ HTTP health probe (&#x2F;documents or &#x2F;health)                                 │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            ▼                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  (2) rust_api (Actix Web)                                                              │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Image: rust_api (multi-stage)                                                     │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Port: 8081                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Env: DATABASE_URL=postgres:&#x2F;&#x2F;postgres:postgres@db                                 │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            │ SQL (Diesel)                                                              │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│            ▼                                                                           │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      PostgreSQL                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Image: postgres                                                                   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Port: 5432                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│      Volume: db:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data                                               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│                                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  Data Flows (top→down):                                                                │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│    python_app ──HTTP──▶ status-checker ──HTTP──▶ rust_api ──SQL──▶ PostgreSQL          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│                                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  Summary:                                                                              │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│    - python_app only contacts status-checker.                                          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│    - status-checker pings rust_api for availability.                                   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│    - rust_api persists documents in Postgres.                                          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│                                                                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  Ports: 8080 (status-checker) | 8081 (rust_api) | 5432 (Postgres)                      │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────────────────────────────────────────────────────────────────────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;div&gt;
+
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;why-containerization&quot;&gt;Why containerization?&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Isolation&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+One of the main advantages of containerization is isolation.
+It often happens that different applications require specific dependency versions.
+With Docker, you can install different dependency versions in distinct containers, without risking conflicts or compromising other applications.
+Furthermore, if you need to run applications on different operating systems, such as Ubuntu and Arch Linux, you can simply wrap them in Docker containers, avoiding the need to rewrite applications for each system.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Portability&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Portability is another key advantage of Docker.
+Once you have set up a development environment with all required dependencies, reproducing that configuration on other machines or for new team members becomes tedious.
+Thanks to Docker, you can create an image that contains all required dependencies and configuration, which can be easily distributed and run on different platforms, whether Linux, Windows, or others.
+This enables a new team member to start quickly without spending weeks configuring their environment.
+It’s also an advantage when deploying applications to a server.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Reproducibility&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Reproducibility is also simplified with Docker.
+Docker images are versioned, which means it is easy to reproduce builds identically, ensuring that development, test, and production environments are consistent.
+You just need to specify the version of the Docker image used to guarantee consistency and avoid issues related to variations across environments.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Efficiency&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+In terms of efficiency, Docker offers a significant advantage over virtual machines (VMs).
+Unlike VMs, Docker does not need to run a full operating system for each container, which greatly reduces resource consumption.
+Docker containers share the host kernel, making them lightweight and quick to start.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Community&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Docker’s surrounding community is very active and offers a multitude of preconfigured images for various popular tools and technologies such as Node.js, Python, and many others.
+These preconfigured images facilitate deployment and usage of these technologies, saving developers time by avoiding manual environment setup.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Industry&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Finally, it’s important to emphasize that Docker has become a de facto standard in the software development industry.
+Many companies use Docker for development, testing, and deployment of their applications.
+Docker is now an essential tool for software developers.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;what-is-containerization&quot;&gt;What is containerization?&lt;&#x2F;h3&gt;
+&lt;p&gt;Docker is an open-source software platform that lets you create, deploy, and run applications in lightweight, isolated containers.
+A Docker container is a runtime unit that encapsulates an application together with all of its necessary elements, such as libraries, dependencies, and configuration files.
+These containers are self-contained and portable, meaning they can run consistently across different systems, whether a development, test, or production environment.&lt;&#x2F;p&gt;
+&lt;p&gt;Docker is similar to a virtual machine that isolates an application from the host system.
+However, Docker is much more efficient than a VM, which requires a full operating system for each instance.
+Docker instead shares the host operating system’s &lt;code&gt;kernel&lt;&#x2F;code&gt;, saving resources and making containers faster to start and run.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is some Docker terminology.
+You do not have to read the advanced sections to complete this workshop.
+As a supplement, you can watch the video &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=J0NuOlA2xDc&quot;&gt;“Never install locally”&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Docker Image&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A Docker image is a template or build blueprint that contains all the elements needed to run an application.
+It includes the operating system, libraries, dependencies, the application’s source code, and configuration files.
+Docker images are created from files called &lt;code&gt;Dockerfile&lt;&#x2F;code&gt; that specify the steps to build the image.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A Dockerfile is a text file that contains the instructions to build a Docker image.
+It specifies the image layers, dependencies to install, files to include, and commands to run during image construction.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Docker Container&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A Docker container is a running instance of a Docker image.
+It is an isolated environment that runs the application with its dependencies.
+Containers are lightweight, portable, and self-contained, which makes them easy to deploy across different machines.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Docker Registry&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A Docker registry is a centralized repository that stores and manages Docker images.
+The default public registry is &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;hub.docker.com&#x2F;&quot;&gt;Docker Hub&lt;&#x2F;a&gt;, where you can find many ready-to-use images.
+You can also create and use your own private registry to store your own images.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Union filesystem (advanced concepts)&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+The &lt;em&gt;Union Filesystem&lt;&#x2F;em&gt;, also known as &lt;em&gt;UnionFS&lt;&#x2F;em&gt; or &lt;em&gt;OverlayFS&lt;&#x2F;em&gt;, is a technology used by Docker to manage images and container layers efficiently.
+The &lt;em&gt;Union Filesystem&lt;&#x2F;em&gt; allows you to overlay multiple file systems into a single logical view without physically merging them.
+This means Docker images and containers can share and reuse common file layers, saving storage space.
+It also speeds up image builds by caching layers already built.
+When a container starts, a new read-write layer is added on top of the image layers, enabling container-specific changes without affecting others.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;cgroups (advanced concepts)&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;code&gt;cgroups&lt;&#x2F;code&gt;, or &lt;em&gt;control groups&lt;&#x2F;em&gt;, are a Linux kernel feature used by Docker to limit and manage system resources used by containers.
+&lt;code&gt;cgroups&lt;&#x2F;code&gt; allow control of resources such as CPU, memory, disk bandwidth, and network, ensuring balanced and fair resource usage among containers.
+Docker uses &lt;code&gt;cgroups&lt;&#x2F;code&gt; to set limits and quotas on resources allocated to each container, ensuring isolation and predictable performance.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Namespaces (advanced concepts)&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Namespaces are a Linux kernel feature that isolates system resources among processes.
+Docker uses several types of namespaces to provide isolation between containers, including the PID namespace (process isolation), the network namespace (network isolation), the user namespace (user isolation), and the mount namespace (mount point isolation).
+These namespaces ensure that each container has its own isolated view of the system, preventing processes in one container from interfering with others or with the host system.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Chroot jail (advanced concepts)&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Chroot, or change root, is a Unix&#x2F;Linux feature that changes a process’s root directory and limits its access to the file system.
+Docker uses chroot to create an isolated environment inside the container, where the container’s root directory becomes the starting point for all file paths.
+This limits the container’s access to files and directories outside its isolated environment, thereby strengthening security and isolation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;containers-manually&quot;&gt;Containers manually&lt;&#x2F;h2&gt;
+&lt;p&gt;To clearly illustrate what Docker does, we will manually build a simplified container without using Docker.
+This section is inspired by &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;p8952&#x2F;bocker&quot;&gt;p8952&#x2F;bocker: Docker implemented in around 100 lines of bash&lt;&#x2F;a&gt;.
+In a terminal, enter the following commands:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Verify that neofetch is not installed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; The following command should raise an error; do not install the package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;neofetch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Folder for containers&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; ~&#x2F;containers&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-support z-function&quot;&gt; cd&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; ~&#x2F;containers&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Build the container&amp;#39;s filesystem&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; apt&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; update&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; sudo&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; apt&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; install&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;y&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; debootstrap&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; debootstrap&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; jammy&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; http:&#x2F;&#x2F;archive.ubuntu.com&#x2F;ubuntu&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Create an isolated environment (namespace)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; unshare&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-uts&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-pid&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-mount&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-ipc&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-fork&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Mount process, system, device, and temp folders&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; proc&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; none&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;proc&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; sysfs&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; none&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;sys&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;o&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bind&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &#x2F;dev&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;o&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bind&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &#x2F;tmp&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;tmp&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;cp&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &#x2F;etc&#x2F;apt&#x2F;sources.list&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;etc&#x2F;apt&#x2F;sources.list&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Use chroot to launch a shell in the container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;chroot&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&#x2F;ubuntu-container&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &#x2F;bin&#x2F;bash&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; and there you go, you&amp;#39;re in an isolated container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Install neofetch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;apt&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; update&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;apt&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; install&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;y&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; neofetch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Test neofetch; the command works!&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;neofetch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; You can run commands in the container here.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Exit the container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-support z-function&quot;&gt;exit&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Exit unshare&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-support z-function&quot;&gt;exit&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; If we try neofetch again, the command is not found.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; We have indeed isolated the container!&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;neofetch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As you can see, there is no magic in containers.
+We use basic Linux tools to isolate a process in its own filesystem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;docker-basics&quot;&gt;Docker basics&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;exercise-01-running-a-prebuilt-image&quot;&gt;Exercise 01 – Running a prebuilt image&lt;&#x2F;h3&gt;
+&lt;p&gt;Run the Docker image &lt;code&gt;hello-world&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To run a Docker image, use the &lt;code&gt;run&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; image-name&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;If the command works, you will see a message displayed.&lt;&#x2F;p&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; hello-world&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To execute a command in the container, specify the command at the end of &lt;code&gt;run&lt;&#x2F;code&gt;.
+In the following examples, we pass &lt;code&gt;bash -c &#x27;echo &quot;Hello world&quot;&#x27;&lt;&#x2F;code&gt; which interprets the string in the Bash interpreter.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Prints &amp;#39;Hello world&amp;#39; in an ubuntu container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; ubuntu&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bash&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;c&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;echo &amp;quot;Hello world&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Prints information about the host system&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;cat&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &#x2F;etc&#x2F;os-release&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Prints information from a container running Arch Linux&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; archlinux&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bash&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;c&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;cat &#x2F;etc&#x2F;os-release&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To launch an interactive command (such as a shell), use the &lt;code&gt;-it&lt;&#x2F;code&gt; flag.
+The &lt;code&gt;--rm&lt;&#x2F;code&gt; flag removes the container once it exits.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;it&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; archlinux&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bash&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;exercise-02-container-management&quot;&gt;Exercise 02 – Container management&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To see running containers: &lt;code&gt;docker ps&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To stop a container: &lt;code&gt;docker stop container_id&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Note that the command may take some time to run.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Tasks:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Launch an interactive terminal with Docker;&lt;&#x2F;li&gt;
+&lt;li&gt;Open another terminal and inspect running containers;&lt;&#x2F;li&gt;
+&lt;li&gt;Stop the Docker container from the second terminal.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; In the first terminal&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;it&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; archlinux&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; bash&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; In the second terminal&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; ps&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; stop&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; id&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; or&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;f&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; id&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;exercise-03-postgresql-database&quot;&gt;Exercise 03 – PostgreSQL database&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To set environment variables in a container, use the &lt;code&gt;-e&lt;&#x2F;code&gt; flag.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;it&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; HELLO=hello&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; archlinux&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; sh&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;c&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;echo $HELLO&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;To open a network port, use the &lt;code&gt;-p docker:host&lt;&#x2F;code&gt; flag, where &lt;code&gt;docker&lt;&#x2F;code&gt; is the port number inside the container and &lt;code&gt;host&lt;&#x2F;code&gt; is the port number on the host.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 127.0.0.1:8080:80&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; nginx&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; You can access the port via the URL http:&#x2F;&#x2F;localhost:8080&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; http:&#x2F;&#x2F;localhost:8080&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Launch a PostgreSQL database with Docker.&lt;&#x2F;p&gt;
+&lt;p&gt;Requirements:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Image name: &lt;code&gt;postgres&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Set the environment variable &lt;code&gt;POSTGRES_PASSWORD=postgres&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Map Docker port 5432 to host port 5432&lt;&#x2F;li&gt;
+&lt;li&gt;Leave this container running.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; POSTGRES_PASSWORD=postgres&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 5432:5432&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; or&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-name&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; postgres&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; POSTGRES_PASSWORD=postgres&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 5432:5432&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;d&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;h2 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;&#x2F;h2&gt;
+&lt;p&gt;Dockerfiles are configuration files used to create custom Docker images.
+They allow you to define, reproducibly and automatically, an application’s runtime environment inside a Docker container.&lt;&#x2F;p&gt;
+&lt;p&gt;A Dockerfile contains a series of instructions that specify the steps needed to build a Docker image.
+These instructions include actions such as selecting the base image, installing dependencies, configuring environment variables, copying files, running commands, and more.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is an annotated example Dockerfile for a Python application.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Use the Python 3.9 slim base image&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; python:3.9-slim&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Set the working directory inside the container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Specifies the directory for RUN, CMD, ENTRYPOINT, COPY, and ADD&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Copy requirements.txt from the host into the Docker container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; requirements.txt .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Run a Bash command to install Python dependencies&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; pip install -r requirements.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Copy the source code into the Docker container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Set the default command when the container starts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;python&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;app.py&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To build the image, use &lt;code&gt;docker build -t &amp;lt;tag&amp;gt; .&lt;&#x2F;code&gt;.
+The &lt;code&gt;-t &amp;lt;tag&amp;gt;&lt;&#x2F;code&gt; argument gives the image the name &lt;code&gt;&amp;lt;tag&amp;gt;&lt;&#x2F;code&gt;.
+For the previous application, you could use &lt;code&gt;docker build -t python-app .&lt;&#x2F;code&gt;.
+Note that the order of instructions matters.&lt;&#x2F;p&gt;
+&lt;p&gt;It is crucial to define the order of operations in a Dockerfile due to how Docker builds images.
+Each instruction in the Dockerfile creates a new layer in the Docker image, and the order can significantly impact build efficiency and performance.&lt;&#x2F;p&gt;
+&lt;p&gt;Docker uses a cache to speed up image builds.
+When you run an instruction, Docker checks whether that instruction has already been executed in a previous layer.
+If so and the parameters are identical, Docker reuses the cached layer instead of rebuilding it.
+This saves build time.
+However, if you modify an instruction higher up in the Dockerfile, all subsequent instructions will have their cache invalidated and must be rebuilt.
+&lt;strong&gt;For example, if you perform resource-intensive operations such as compiling code that changes whenever you modify the source, it can be preferable to place those steps towards the end of the Dockerfile to benefit from caching as much as possible.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;exercise-04-haskell-service-dockerfile&quot;&gt;Exercise 04 – Haskell service Dockerfile&lt;&#x2F;h3&gt;
+&lt;p&gt;Use the &lt;code&gt;README.md&lt;&#x2F;code&gt; in the folder &lt;code&gt;~&#x2F;Applications&#x2F;status-checker&lt;&#x2F;code&gt; to write a Dockerfile that runs the Haskell application.&lt;&#x2F;p&gt;
+&lt;p&gt;Requirements:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Base image &lt;code&gt;haskell:9.0-buster&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Run &lt;code&gt;stack setup --install-ghc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Workdir &lt;code&gt;&#x2F;app&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Copy the source code into &lt;code&gt;&#x2F;app&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Run &lt;code&gt;stack build&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Launch the server with &lt;code&gt;stack run&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Then, start the container exposing port 8080.
+If everything works, you should be able to run:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; http:&#x2F;&#x2F;localhost:8080&#x2F;endpoints&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Expected response&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;span&gt;%&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Or&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Leave this container running.&lt;&#x2F;p&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;p&gt;Dockerfile:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; haskell:9.0-buster&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; stack setup --install-ghc&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; stack build&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;stack&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;run&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Execution:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; build&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; status-checker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 8080:8080&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; status-checker&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;exercise-05-python-application-dockerfile&quot;&gt;Exercise 05 – Python application Dockerfile&lt;&#x2F;h3&gt;
+&lt;p&gt;Use the &lt;code&gt;README.md&lt;&#x2F;code&gt; in the folder &lt;code&gt;~&#x2F;Applications&#x2F;python_app&lt;&#x2F;code&gt; to write a Dockerfile that runs the Python application.&lt;&#x2F;p&gt;
+&lt;p&gt;Then, launch the application interactively and with the correct network mode.&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;markdown-alert-note&quot;&gt;
+	&lt;p&gt;This application will need to access your computer’s local network to make requests to the container from the previous exercise; to do so, pass the argument &lt;code&gt;--network=&quot;host&quot;&lt;&#x2F;code&gt; when you run the container.&lt;&#x2F;p&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;If everything works, you should be able to use the application to add URLs to monitor and see the results.&lt;&#x2F;p&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;p&gt;Dockerfile:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; python:3.9-slim&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; requirements.txt .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; pip install -r requirements.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;python&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;main.py&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Execution:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; build&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; python_app&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;it&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-network=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;host&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; python_app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;h2 id=&quot;advanced-docker&quot;&gt;Advanced Docker&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes, you may need to create more complex Docker images.
+Here, we will explore two advanced Docker features: multi-stage builds and volumes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;multi-stage-image-builds&quot;&gt;Multi-stage image builds&lt;&#x2F;h3&gt;
+&lt;p&gt;Multi-stage builds are an advanced Docker feature that enables optimized image creation using several distinct stages in the build process.
+This separates build and production stages, often resulting in final images that are lighter and more secure by minimizing what remains in the final image.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, for a JavaScript React application, we can split the build into two stages.&lt;&#x2F;p&gt;
+&lt;p&gt;Create the application:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;npx&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; create-react-app&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; my-app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Dockerfile:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Stage 1: Build the application&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Use `as build` to name this build stage&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; node:14-alpine &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;as&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; package*.json .&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; npm install&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; npm run build&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Stage 2: Prepare the server&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Here, we start a new image from scratch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; nginx:alpine&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Copy the compiled app from the previous stage&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; --from=build &#x2F;app&#x2F;build &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;EXPOSE&lt;&#x2F;span&gt;&lt;span&gt; 80&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;nginx&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;-g&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;daemon off;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To run:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; build&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; web-app&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 80:80&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; web-app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;exercise-06-rust-multi-stage-build&quot;&gt;Exercise 06 – Rust multi-stage build&lt;&#x2F;h3&gt;
+&lt;p&gt;Use the &lt;code&gt;README.md&lt;&#x2F;code&gt; in the folder &lt;code&gt;~&#x2F;Applications&#x2F;rust_api&lt;&#x2F;code&gt; to write a Dockerfile that runs the application.&lt;&#x2F;p&gt;
+&lt;p&gt;Requirements:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch the PostgreSQL database from a previous exercise;&lt;&#x2F;li&gt;
+&lt;li&gt;Create a first stage to compile the Rust code;&lt;&#x2F;li&gt;
+&lt;li&gt;Create a second stage to run the code;
+&lt;ul&gt;
+&lt;li&gt;Start this image from &lt;code&gt;debian:bullseye-slim&lt;&#x2F;code&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;Install the package &lt;code&gt;libpq-dev&lt;&#x2F;code&gt; with &lt;code&gt;apt update; apt install -y libpq-dev&lt;&#x2F;code&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;Set the environment variable &lt;code&gt;DATABASE_URL=postgres:&#x2F;&#x2F;postgres:postgres@localhost&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Copy &lt;code&gt;&#x2F;app&#x2F;target&#x2F;release&#x2F;rust_api&lt;&#x2F;code&gt; from the previous stage;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Run the container with &lt;code&gt;--network=&quot;host&quot;&lt;&#x2F;code&gt; and expose the correct port;&lt;&#x2F;li&gt;
+&lt;li&gt;Test that everything works with &lt;code&gt;curl http:&#x2F;&#x2F;localhost:8081&#x2F;documents&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;details&gt;&lt;summary&gt;Solution&lt;&#x2F;summary&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; rust:latest &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;AS&lt;&#x2F;span&gt;&lt;span&gt; build&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; cargo build --release&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; debian:bullseye-slim&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; apt update; apt install -y libpq-dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; --from=build &#x2F;app&#x2F;target&#x2F;release&#x2F;rust_api .&#x2F;rust_api&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;ENV&lt;&#x2F;span&gt;&lt;span&gt; DATABASE_URL=postgres:&#x2F;&#x2F;postgres:postgres@db&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; .&#x2F;rust_api&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Execution&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; POSTGRES_PASSWORD=postgres&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 5432:5432&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; build&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; rust_api&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-network=&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;host&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; rust_api&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Validate that the server works&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; http:&#x2F;&#x2F;localhost:8081&#x2F;documents&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;volumes&quot;&gt;Volumes&lt;&#x2F;h3&gt;
+&lt;p&gt;In Docker, volumes are used to allow containers to access, share, and persist data between the host system and the container itself.
+Docker volumes store data outside the lifecycle of containers.
+This means that even if you destroy or recreate a container, the data stored in the volume remains intact.
+This separates data persistence from the container environment, providing better data management.
+Volumes are also useful to grant containers access to datasets too large to copy into the image, such as a training dataset for a machine learning system.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, to store PostgreSQL database data in a host folder, specify the &lt;code&gt;PGDATA&lt;&#x2F;code&gt; variable and mount a volume:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; POSTGRES_PASSWORD=postgres&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 5432:5432&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;    -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;e&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; PGDATA=&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data&#x2F;pgdata&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;    -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;v&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; custom&#x2F;mount&#x2F;path:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-string&quot;&gt;    postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To avoid rebuilding the Docker image after each change to the source code—and thus speed up development—you can make the project’s source code accessible via a volume.
+Thus, a &lt;code&gt;DockerfileDev&lt;&#x2F;code&gt; for the Python application could look like this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; python:3.9-slim&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;WORKDIR&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; requirements.txt .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span&gt; pip install -r requirements.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; We removed the line COPY . .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;bash&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Run with:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; build&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; python_app&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;f&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; DockerfileDev&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; run&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-rm&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;v&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; .:&#x2F;app&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; my-app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; In the container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;python&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; main.py&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Modify the source code&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;python&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; main.py&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Changes are reflected in the container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Thus, you can reuse the same image even if the source code has changed.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;extras&quot;&gt;Extras&lt;&#x2F;h2&gt;
+&lt;p&gt;Some additional Docker features and tools that may be useful in your projects.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;cleanup&quot;&gt;Cleanup&lt;&#x2F;h3&gt;
+&lt;p&gt;When using Docker, it is important to consider the storage used by images, containers, volumes, and other Docker artifacts.
+Poor storage management can lead to excessive disk usage and make Docker maintenance and resource management difficult.
+Docker provides several &lt;code&gt;prune&lt;&#x2F;code&gt; commands to remove unused containers and images.
+To clean up various Docker artifacts, the command &lt;code&gt;docker system prune -a -f&lt;&#x2F;code&gt; removes all unused resources.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;docker-compose&quot;&gt;Docker Compose&lt;&#x2F;h3&gt;
+&lt;p&gt;Docker Compose is a tool that allows you to easily define and manage multi-container applications.
+It simplifies deployment and orchestration of Docker containers using a simple, readable configuration file.&lt;&#x2F;p&gt;
+&lt;p&gt;With Docker Compose, you can specify services, networks, volumes, and other configurations needed to run an application composed of multiple containers.
+You can also define dependencies among containers, environment variables, exposed ports, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Docker Compose uses a YAML configuration file to describe the application’s infrastructure.
+This file contains sections such as &lt;em&gt;services&lt;&#x2F;em&gt;, &lt;em&gt;networks&lt;&#x2F;em&gt;, &lt;em&gt;volumes&lt;&#x2F;em&gt;, etc., where you can define the different parts of your application and their configurations.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is an example &lt;code&gt;docker-compose.yml&lt;&#x2F;code&gt; for the Rust application that launches both the server and the PostgreSQL database:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; List of containers to launch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;s&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;ervices&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Database container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; We find the same parameters as in `docker run`&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;  d&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Specify the image to launch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    i&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;mage&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; p&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;ostgres:latest&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    r&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;estart&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; a&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;lways&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    e&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;nvironment&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; P&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;OSTGRES_USER=postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; P&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;OSTGRES_PASSWORD=postgres&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; P&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;GDATA=&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data&#x2F;pgdata&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    e&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;xpose&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 5432&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    v&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;olumes&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; d&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;b:&#x2F;var&#x2F;lib&#x2F;postgresql&#x2F;data&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Rust server&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;  a&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;pi&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Will build the Dockerfile in the directory containing docker-compose.yml&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    b&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;uild&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; .&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Build the db service before api&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    d&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;epends_on&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; d&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;b&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    p&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;orts&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; 8&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;081:8081&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; The database URL changes—rather than @localhost&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; docker-compose makes db accessible under the name @db&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    e&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;nvironment&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; D&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;ATABASE_URL=postgres:&#x2F;&#x2F;postgres:postgres@db&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;    #&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Wait for the database to be ready before launching the server&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    e&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;ntrypoint&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; b&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;ash -c &amp;quot;sleep 5 &amp;amp;&amp;amp; .&#x2F;rust_api&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;#&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Required for the database volume&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;v&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;olumes&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;  d&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;    d&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-tag&quot;&gt;river&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; l&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;ocal&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Run with:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker-compose&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; up&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt; -&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-other&quot;&gt;-build&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;podman&quot;&gt;Podman&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;podman.io&#x2F;&quot;&gt;Podman&lt;&#x2F;a&gt; is an open-source alternative to Docker.
+Docker and Podman are two popular containerization tools that share similar features but differ in architecture and security approach.
+Docker uses a client-server architecture, where the Docker daemon runs as a separate process and Docker commands are executed via the CLI.
+In contrast, Podman uses a daemonless architecture, meaning it runs directly as a regular user and does not require a separate daemon process.
+Thus, Podman can run without special privileges, limiting potential risks associated with running as superuser. See &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.redhat.com&#x2F;en&#x2F;topics&#x2F;containers&#x2F;what-is-podman&quot;&gt;What is podman?&lt;&#x2F;a&gt; for more information.&lt;&#x2F;p&gt;
+&lt;p&gt;Podman also offers tools to manage &lt;em&gt;pods&lt;&#x2F;em&gt;, a topic outside the scope of this workshop.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kubernetes&quot;&gt;Kubernetes&lt;&#x2F;h3&gt;
+&lt;p&gt;Kubernetes is an open-source container orchestration system that facilitates the deployment, management, and scaling of containerized applications.
+Using Kubernetes offers many benefits, such as fault tolerance, easier deployments, and management and scaling of containerized applications.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

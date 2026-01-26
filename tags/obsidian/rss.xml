@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Obsidian</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/obsidian/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Sync Obsidian vaults to Android using Git</title>
+          <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/obsidian-android-alternative/</link>
+          <guid>https://willguimont.com/blog/obsidian-android-alternative/</guid>
+          <description xml:base="https://willguimont.com/blog/obsidian-android-alternative/">&lt;p&gt;Updated way to sync your Obsidian vault to an Android phone using Git.
+Previous method can be found &lt;a href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;obsidian-android&#x2F;&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s the procedure to sync your &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot; target=&quot;_blank&quot;&gt;Obsidian&lt;&#x2F;a&gt; vault to an Android phone.&lt;&#x2F;p&gt;
+&lt;p&gt;First, you’ll have to run these commands on your computer:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a SSH key using &lt;code&gt;ssh-keygen -f ~&#x2F;obsidian-phone-key -t ed25519 -C &quot;your_email@example.com&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Add the public key (&lt;code&gt;~&#x2F;obsidian-phone-key.pub&lt;&#x2F;code&gt;) to your GitHub account&lt;&#x2F;li&gt;
+&lt;li&gt;Connect your phone to your computer and allow the computer to access phone data (e.g., using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;localsend.org&#x2F;&quot;&gt;LocalSend&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Copy the private key (&lt;code&gt;~&#x2F;obsidian-phone-key&lt;&#x2F;code&gt;) to your phone&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Now, on your phone:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;&quot; target=&quot;_blank&quot;&gt;F-Droid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Open F-Droid and install &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;packages&#x2F;com.termux&#x2F;&quot; target=&quot;_blank&quot;&gt;Termux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;In Termux, install &lt;code&gt;git&lt;&#x2F;code&gt; using &lt;code&gt;pkg install git&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;In Termux install &lt;code&gt;termu-am&lt;&#x2F;code&gt; using &lt;code&gt;pkg install termux-am&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Mount the phone storage using &lt;code&gt;termux-setup-storage&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Copy your SSH key into &lt;code&gt;~&#x2F;.ssh&#x2F;&lt;&#x2F;code&gt; using &lt;code&gt;cp ~&#x2F;storage&#x2F;shared&#x2F;path&#x2F;to&#x2F;obsidian-phone-key ~&#x2F;.ssh&#x2F;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Follow &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent&quot;&gt;these instructions to add the ssh key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Now go to the location you want to clone the repository (should be in &lt;code&gt;~&#x2F;storage&#x2F;shared&#x2F;&lt;&#x2F;code&gt; for Obsidian to have access) and clone it using &lt;code&gt;git clone git@github.com:username&#x2F;repo.git&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;You can now open Obsidian
+&lt;ol&gt;
+&lt;li&gt;Open folder as vault&lt;&#x2F;li&gt;
+&lt;li&gt;Browse to the repository you copied from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Open F-Droid and install &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;packages&#x2F;com.manichord.mgit&#x2F;&quot; target=&quot;_blank&quot;&gt;MGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;From the settings page of MGit, import the SSH key
+&lt;ol&gt;
+&lt;li&gt;SSH Keys&lt;&#x2F;li&gt;
+&lt;li&gt;Download button in the upper right corner&lt;&#x2F;li&gt;
+&lt;li&gt;Select &lt;code&gt;obsidian-phone-key&lt;&#x2F;code&gt; you copied from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Go back to the main menu of MGit, press the three dots in the upper right and press the &lt;code&gt;Import Repository&lt;&#x2F;code&gt; button&lt;&#x2F;li&gt;
+&lt;li&gt;Browse to the repository you copied from your computer&lt;&#x2F;li&gt;
+&lt;li&gt;You should now be able to &lt;code&gt;pull&lt;&#x2F;code&gt; from MGit&lt;&#x2F;li&gt;
+&lt;li&gt;Your Obsidian vault is now synced using Git!&lt;&#x2F;li&gt;
+&lt;li&gt;(Optional) If you want to also be able to manage the repository from Termux, run the command &lt;code&gt;git config --global --add safe.directory ~&#x2F;storage&#x2F;shared&#x2F;path&#x2F;to&#x2F;repo&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</description>
+      </item>
+      <item>
+          <title>Synchronise Obsidian vaults to Android using Git</title>
+          <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/obsidian-android/</link>
+          <guid>https://willguimont.com/blog/obsidian-android/</guid>
+          <description xml:base="https://willguimont.com/blog/obsidian-android/">&lt;p&gt;Here’s the procedure to sync your &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot; target=&quot;_blank&quot;&gt;Obsidian&lt;&#x2F;a&gt; vault to an Android phone.&lt;&#x2F;p&gt;
+&lt;p&gt;First, you’ll have to run these commands on your computer:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a SSH key using &lt;code&gt;ssh-keygen -f ~&#x2F;obsidian-phone-key -t ed25519 -C &quot;your_email@example.com&quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Add the public key (&lt;code&gt;~&#x2F;obsidian-phone-key.pub&lt;&#x2F;code&gt;) to your GitHub account&lt;&#x2F;li&gt;
+&lt;li&gt;Connect your phone to your computer and allow the computer to access phone data&lt;&#x2F;li&gt;
+&lt;li&gt;Copy the private key (&lt;code&gt;~&#x2F;obsidian-phone-key&lt;&#x2F;code&gt;) to your phone&lt;&#x2F;li&gt;
+&lt;li&gt;Also copy your Obsidian vault, including the &lt;code&gt;.git&lt;&#x2F;code&gt; folder&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Now, on your phone:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;&quot; target=&quot;_blank&quot;&gt;F-Droid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Open F-Droid and install &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;f-droid.org&#x2F;packages&#x2F;com.manichord.mgit&#x2F;&quot; target=&quot;_blank&quot;&gt;MGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;From the settings page of MGit, import the SSH key
+&lt;ol&gt;
+&lt;li&gt;SSH Keys&lt;&#x2F;li&gt;
+&lt;li&gt;Download button in the upper right corner&lt;&#x2F;li&gt;
+&lt;li&gt;Select &lt;code&gt;obsidian-phone-key&lt;&#x2F;code&gt; you copied from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Go back to the main menu of MGit, press the three dots in the upper right and press the &lt;code&gt;Import Repository&lt;&#x2F;code&gt; button&lt;&#x2F;li&gt;
+&lt;li&gt;Browse to the repository you copied from your computer&lt;&#x2F;li&gt;
+&lt;li&gt;You should now be able to &lt;code&gt;pull&lt;&#x2F;code&gt; from MGit&lt;&#x2F;li&gt;
+&lt;li&gt;You can now open Obsidian
+&lt;ol&gt;
+&lt;li&gt;Open folder as vault&lt;&#x2F;li&gt;
+&lt;li&gt;Browse to the repository you copied from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Your Obsidian vault is now synced using Git!&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</description>
+      </item>
+    </channel>
+</rss>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Tutorial</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/tutorial/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Exercice conditions avec des photorésistances</title>
+          <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/intro-photoresistance/</link>
+          <guid>https://willguimont.com/blog/intro-photoresistance/</guid>
+          <description xml:base="https://willguimont.com/blog/intro-photoresistance/">&lt;p&gt;Le but de cet exercice est de vous faire pratiquer les conditions et la boucle principale. De plus, vous aurez la chance de vous pratiquer à lire de la documentation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;photoresistance&quot;&gt;Photorésistance&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-photoresistance&#x2F;photores.webp&quot; alt=&quot;Photoresistance&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Une photorésistance est une composante électronique dont la résistance change selon la lumière qui l’éclaire. En bref, on peut regarder la tension aux bornes de la photorésistance.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;but-de-l-exercice&quot;&gt;But de l’exercice&lt;&#x2F;h2&gt;
+&lt;p&gt;Écrivez le code pour qu’une DEL s’allume lorsque la photorésistance est à l’ombre et éteindre la DEL lorsqu’elle est éclairée.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;liens-utiles&quot;&gt;Liens utiles&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.arduino.cc&#x2F;reference&#x2F;en&#x2F;language&#x2F;functions&#x2F;analog-io&#x2F;analogread&#x2F;&quot; target=&quot;_blank&quot;&gt;analogRead&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.arduino.cc&#x2F;en&#x2F;Serial&#x2F;Println&quot; target=&quot;_blank&quot;&gt;Serial pour afficher des informations à l’écran&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Introduction aux conditions et à la boucle principale</title>
+          <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/intro-conditions-arduino/</link>
+          <guid>https://willguimont.com/blog/intro-conditions-arduino/</guid>
+          <description xml:base="https://willguimont.com/blog/intro-conditions-arduino/">&lt;p&gt;Dans l’article précédant, nous avons vu comment faire clignoter une DEL 2 fois avant de s’éteindre. Maintenant, essayons de n’allumer la DEL que lorsqu’un bouton est enfoncé.&lt;&#x2F;p&gt;
+&lt;p&gt;En mots, on voudrait demander à l’Arduino:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Si le bouton est enfoncé
+&lt;ol&gt;
+&lt;li&gt;Allumer la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 3 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Éteindre la DEL&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Sinon
+&lt;ol&gt;
+&lt;li&gt;Laisser la DEL éteinte&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Pour ce faire, on branche un bouton de la façon suivante.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-conditions-arduino&#x2F;bouton.webp&quot; alt=&quot;Bouton&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Les zig-zags représentent la résistance. Le symbole avec les deux points vides et le bout de fil représente un bouton ou un interrupteur.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-conditions-arduino&#x2F;schema.webp&quot; alt=&quot;Schema&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fonctions-de-bases&quot;&gt;Fonctions de bases&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pin-en-lecture&quot;&gt;Pin en lecture&lt;&#x2F;h3&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; INPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Cette fonction permet de mettre la pin 2 en mode lecture.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;lecture-d-une-pin&quot;&gt;Lecture d’une pin&lt;&#x2F;h3&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;digitalRead&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Cette fonction retourne &lt;code&gt;HIGH&lt;&#x2F;code&gt; si la tension est près de 5V sur la pin, ou &lt;code&gt;LOW&lt;&#x2F;code&gt; si la tension est près de 0V.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;variables&quot;&gt;Variables&lt;&#x2F;h2&gt;
+&lt;p&gt;On aimerait pouvoir garder l’état du bouton pour pouvoir comparer sa valeur. Pour ce faire, on utilise des variables. Les variables sont comme des boîtes. On peut donner un nom à la boîte et mettre une valeur dedans.&lt;&#x2F;p&gt;
+&lt;p&gt;On peut demander à l’Arduino de nous créer une boîte avec un certain nom. On peut ensuite mettre une valeur à l’intérieur. Si on veut, on peut mettre une autre valeur dans la boîte par la suite.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;exemple&quot;&gt;Exemple&lt;&#x2F;h3&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; maVariable&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;maVariable &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 4&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;maVariable &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 2&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;maVariable &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; maVariable &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;+&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;int&lt;&#x2F;code&gt; correspond au type de la variable. maVariable est donc de type int. int veut dire integer, c’est-à-dire entier en français. Un nombre entier sont des nombres comme 0, 1, 2, 3, 4, -3, 42 et -245. On a donc que maVariable peut contenir des nombres entiers.
+On commence par donner la valeur 4 à maVariable.
+Ensuite, on change cette valeur pour 2.
+Ensuite, on met dans maVariable la valeur de maVariable + 1. Comme maVariable valait 2, on a que maVariable est maintenant 2 + 1, donc 3.&lt;&#x2F;p&gt;
+&lt;p&gt;On remarque que le signe = n’a pas le même sens qu’en mathématique. En mathématique, il serait faux de dire 2 = 3. Dans notre cas, on &lt;strong&gt;assigne&lt;&#x2F;strong&gt; la valeur de droite à la variable de gauche.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Remarque&lt;&#x2F;strong&gt;: On aurait pu utiliser n’importe quel autre nom pour la variable.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Remarque&lt;&#x2F;strong&gt;: D’autres opérateurs que l’addition (&lt;code&gt;+&lt;&#x2F;code&gt;) sont définis, on peut faire des soustractions (&lt;code&gt;-&lt;&#x2F;code&gt;), des multiplications (&lt;code&gt;*&lt;&#x2F;code&gt;), des division (&lt;code&gt;&#x2F;&lt;&#x2F;code&gt;) et le modulo (&lt;code&gt;%&lt;&#x2F;code&gt;). La division est toutefois tronqué avec des &lt;code&gt;int&lt;&#x2F;code&gt; puisqu’un &lt;code&gt;int&lt;&#x2F;code&gt; ne peut contenir que des nombres entiers. Le modulo calcule le reste de la division. Pour le moment, ne vous inquiétez pas avec cela.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;storer-l-etat-du-bouton-dans-une-variable&quot;&gt;Storer l’état du bouton dans une variable&lt;&#x2F;h2&gt;
+&lt;p&gt;Maintenant que nous savons ce qu’est une variable et comment récupérer l’état du bouton, sauvegardons l’état du bouton dans une variable.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; INPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;                 &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; pin 2 en lecture&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; etatBouton &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; digitalRead&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; mettre l&amp;#39;etat du bouton dans etatBouton&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Voilà, nous avons l’état du bouton dans etatBouton.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conditions&quot;&gt;Conditions&lt;&#x2F;h2&gt;
+&lt;p&gt;Maintenant que nous avons l’état du bouton dans une variable, on aimerait pouvoir réaliser certaines actions &lt;code&gt;SI&lt;&#x2F;code&gt; une condition est vraie et d’autres &lt;code&gt;SINON&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Il existe en C++ une façon de réaliser des branchements conditionnelles, c’est-à-dire de faire certaines chose si la condition est vraie. En voici un exemple simple:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 5&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span&gt;x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 10&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 10&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;if veut dire si en français. Si on lit le code en français, on a:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Créer une variable nommée x et mettre 5 dedans&lt;&#x2F;li&gt;
+&lt;li&gt;Si x &lt;strong&gt;est plus petit que&lt;&#x2F;strong&gt; 10 alors
+&lt;ol&gt;
+&lt;li&gt;On mets 10 dans x&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Comme 5 est plus petit que 10, on a que la valeur de x est maintenant 10.&lt;&#x2F;p&gt;
+&lt;p&gt;Voici un second exemple:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 42&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span&gt;x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;==&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 42&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;-&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 10&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;if veut dire si en français. Si on lit le code en français, on a:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Créer une variable nommée x et mettre 42 dedans&lt;&#x2F;li&gt;
+&lt;li&gt;Si x &lt;strong&gt;est égal à&lt;&#x2F;strong&gt; 42 alors
+&lt;ol&gt;
+&lt;li&gt;On mets x - 10 dans x&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Comme x est bien égal à 42, on soustrait 10 à x. x a donc la valeur de 32 après l’exécution.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Remarque&lt;&#x2F;strong&gt;: &lt;code&gt;==&lt;&#x2F;code&gt; veut dire &lt;strong&gt;est égal à&lt;&#x2F;strong&gt;, à ne pas confondre avec = qui veut dire assigner&lt;&#x2F;p&gt;
+&lt;p&gt;Disons que nous voulons réaliser ceci:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Soit un entier x qui vaut 39&lt;&#x2F;li&gt;
+&lt;li&gt;Si x == 42
+&lt;ol&gt;
+&lt;li&gt;x = x - 10&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Sinon
+&lt;ol&gt;
+&lt;li&gt;x = 0&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Comment pouvons nous traduire cela en code?
+Il existe le mot-clef &lt;code&gt;else&lt;&#x2F;code&gt; qui fait exactement cela.&lt;&#x2F;p&gt;
+&lt;p&gt;On aurait alors&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 39&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span&gt;x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;==&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 42&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;-&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 10&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;else&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    x &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 0&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Comme &lt;code&gt;x = 39&lt;&#x2F;code&gt;, on a que la condition &lt;code&gt;x == 42&lt;&#x2F;code&gt; est fausse, donc on n’exécute pas &lt;code&gt;x = x - 10&lt;&#x2F;code&gt;, on entre ensuite dans le else où on assigne 0 à &lt;code&gt;x&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Maintenant que nous savons comment faire des conditions, on peut allumer la DEL si l’état du bouton est à HIGH.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; INPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;                 &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; pin 2 en lecture&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;  int&lt;&#x2F;span&gt;&lt;span&gt; etatBouton &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; digitalRead&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; mettre l&amp;#39;etat du bouton dans etatBouton&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;  if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span&gt;etatBouton &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;==&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;    digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Si le bouton est a HIGH, on allume&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;  else&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;    digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Sinon on laisse éteint&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Il y a toutefois un petit problème, la lumière ne s’allume ou ne s’éteint qu’au démarrage de l’Arduino. Pour changer l’état de la lumière, il faut appuyer sur le bouton, puis redémarrer l’Arduino avec le bouton reset. Ce n’est pas très pratique. On aimerait que cela se fasse en tout temps.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-conditions-arduino&#x2F;reset.webp&quot; alt=&quot;Reset&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Pour palier à ce problème, on peut utiliser &lt;code&gt;loop&lt;&#x2F;code&gt;. Comme son nom l’indique, &lt;code&gt;loop&lt;&#x2F;code&gt; est une boucle, c’est-à-dire que le code dans cette fonction s’exécute continuellement après l’exécution de &lt;code&gt;setup&lt;&#x2F;code&gt;. Déplaçons donc ce qui doit être exécuté plusieurs fois dans &lt;code&gt;loop&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; pin 13 en sortie&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; INPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;    &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; pin 2 en lecture&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;  int&lt;&#x2F;span&gt;&lt;span&gt; etatBouton &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; digitalRead&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; mettre l&amp;#39;etat du bouton dans etatBouton&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;  if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span&gt;etatBouton &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;==&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;    digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Si le bouton est a HIGH, on allume&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;  else&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;    digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; Sinon on laisse éteint&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On remarque que les &lt;code&gt;pinMode&lt;&#x2F;code&gt; sont restés dans &lt;code&gt;setup&lt;&#x2F;code&gt;. En effet, on ne veut réserver ces pin qu’une seule fois.&lt;&#x2F;p&gt;
+&lt;p&gt;Alors que le &lt;code&gt;if&lt;&#x2F;code&gt; et &lt;code&gt;else&lt;&#x2F;code&gt; a été déplacé dans loop, puisque l’on veut continuellement vérifier si le bouton est enfoncé.&lt;&#x2F;p&gt;
+&lt;p&gt;Maintenant, on a que la lumière s’allume et s’éteint dès que l’on appuie ou relâche le bouton.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Introduction à Arduino</title>
+          <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/intro-arduino/</link>
+          <guid>https://willguimont.com/blog/intro-arduino/</guid>
+          <description xml:base="https://willguimont.com/blog/intro-arduino/">&lt;h2 id=&quot;qu-est-ce-qu-arduino&quot;&gt;Qu’est-ce qu’Arduino&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-arduino&#x2F;arduino.webp&quot; alt=&quot;Arduino&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.&lt;&#x2F;p&gt;
+&lt;p&gt;– Site officiel Arduino.cc&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Il s’agit d’une carte comprenant un micro-contrôleur. La puce sur la carte est un petit ordinateur que l’on peut programmer. Il y a un port USB pour envoyer le code sur la puce et communiquer avec un ordinateur. Les pins sur le côté permettent d’avoir des entrées-sorties vers le vrai monde. On peut activer des lumières et des moteurs. On peut aussi lire les données envoyées par un capteur de distance à l’ultrason ou une photorésistante pour savoir s’il fait noir.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction-a-la-programmation&quot;&gt;Introduction à la programmation&lt;&#x2F;h2&gt;
+&lt;p&gt;Un programme est une suite d’instructions exécutées les unes après les autres. On peut voir un programme comme une recette très précise pour réaliser des choses.&lt;&#x2F;p&gt;
+&lt;p&gt;On pourrait vouloir donner la suite d’étape pour faire un sandwich au beurre d’arachides. On pourrait essayer de demander à l’ordinateur de faire:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faire un sandwich au beurre d’arachide&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Toutefois, l’ordinateur ne comprend pas comment faire cela. On devrait alors décrire les étapes de façon plus précises de façon à ce que l’ordinateur comprenne. On aurait alors:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ouvrir le sac contenant le pain&lt;&#x2F;li&gt;
+&lt;li&gt;Sortir une tranche de pain&lt;&#x2F;li&gt;
+&lt;li&gt;Sortir le pot de beurre d’arachide de l’armoire&lt;&#x2F;li&gt;
+&lt;li&gt;Sortir un couteau&lt;&#x2F;li&gt;
+&lt;li&gt;Ouvrir le pot&lt;&#x2F;li&gt;
+&lt;li&gt;Tartiner le pain avec le couteau&lt;&#x2F;li&gt;
+&lt;li&gt;Sortir une seconde tranche de pain&lt;&#x2F;li&gt;
+&lt;li&gt;Placer la tranche sur l’autre qui est déjà beurrée&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Ouf ! C’est beaucoup d’étapes pour un simple sandwich.
+Pour programmer un robot, c’est très semblable. On ne peut pas dire au robot de:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Avancer pendant 10 secondes&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Il faut plutôt lui dire:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Actionne les moteurs&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 10 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Arrête les moteurs&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;del-et-arduino&quot;&gt;DEL et Arduino&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;DEL&lt;&#x2F;code&gt;: &lt;code&gt;D&lt;&#x2F;code&gt;iode &lt;code&gt;É&lt;&#x2F;code&gt;lectro &lt;code&gt;L&lt;&#x2F;code&gt;uminescente&lt;&#x2F;p&gt;
+&lt;img src=&quot;del.webp&quot; alt=&quot;DEL&quot; class=&quot;img-bg&quot; &#x2F;&gt;
+&lt;p&gt;En bref, une DEL est une lumière qui ne demande que très peu d’énergie. On peut donc l’alimenter directement depuis l’Arduino.&lt;&#x2F;p&gt;
+&lt;p&gt;Si l’on applique une tension aux deux bornes de la DEL, elle s’allumera.&lt;&#x2F;p&gt;
+&lt;p&gt;Une DEL a deux “pattes”. L’une d’elles est légèrement plus longue, il s’agit de la patte positive. L’autre est la négative. Lors du branchement, il faut faire attention de bien brancher la DEL.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;faire-clignoter-une-del&quot;&gt;Faire clignoter une DEL&lt;&#x2F;h2&gt;
+&lt;p&gt;On voudrait demander à l’Arduino de faire clignoter une la DEL deux fois en la laissant 2 secondes éteintes et 3 secondes allumées. En mots, on aurait:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Allumer la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 3 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Éteindre la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 2 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Allumer la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 3 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Éteindre la DEL&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;telecharger-arduino&quot;&gt;Télécharger Arduino&lt;&#x2F;h3&gt;
+&lt;p&gt;Il est maintenant temps d’essayer de demander à l’Arduino de faire ces étapes. Téléchargeons le logiciel depuis &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.arduino.cc&#x2F;en&#x2F;main&#x2F;software&quot; target=&quot;_blank&quot;&gt;le site officiel d’Arduino&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;On peut télécharger le ZIP ne demandant pas d’installation à cette &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.arduino.cc&#x2F;download_handler.php&quot; target=&quot;_blank&quot;&gt;adresse&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;On peut maintenant lancer l’application.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;premiers-pas-en-arduino&quot;&gt;Premiers pas en Arduino&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-arduino&#x2F;ide.webp&quot; alt=&quot;IDE&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On voit maintenant un code de base fournit par Arduino.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; put your setup code here, to run once:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; put your main code here, to run repeatedly:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;setup&lt;&#x2F;code&gt; est exécuté qu’une fois au démarrage de l’Arduino.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;loop&lt;&#x2F;code&gt; est ensuite exécuté continuellement.&lt;&#x2F;p&gt;
+&lt;p&gt;Toutefois, avant de commencer à coder, branchons la DEL dans l’Arduino.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-arduino&#x2F;branchement.webp&quot; alt=&quot;Branchement&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Dans le cadre de ce document, nous allons utiliser la &lt;strong&gt;pin&lt;&#x2F;strong&gt; numéro 13. Vous pouvez en choisir une autre si vous voulez. La longue patte doit être connectée dans la pin 13 et la courte au ground. Le &lt;strong&gt;ground&lt;&#x2F;strong&gt; est le 0 volt de référence de l’Arduino.&lt;&#x2F;p&gt;
+&lt;p&gt;Pour empêcher de brûler la DEL, on place une résistance en &lt;strong&gt;série&lt;&#x2F;strong&gt; avec la DEL. La résistance doit être entre 220 et 280 Ohms. Elle peut être placée avant ou après la DEL.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;fonctions-de-base&quot;&gt;Fonctions de base&lt;&#x2F;h4&gt;
+&lt;p&gt;Pour faire clignoter une DEL, on doit pouvoir être capable de l’allumer, de l’éteindre et d’attendre. Nous allons voir comment réaliser ces actions dans Arduino.&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;configuration-de-la-del&quot;&gt;Configuration de la DEL&lt;&#x2F;h5&gt;
+&lt;p&gt;On doit indiquer à l’Arduino quelles pins on désire utiliser, dans notre cas il s’agit de la pin 13. On appelle alors la fonction suivante:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;OUTPUT&lt;&#x2F;code&gt; signifie que l’on veut se servir de la pin comme d’une sortie, donc mettre une certaine tension à la pin plutôt que de lire la tension. On aurait pu utiliser &lt;code&gt;INPUT&lt;&#x2F;code&gt; pour initialiser la pin comme une entrée. Nous allons en voir une exemple par la suite.&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;allumer-la-del&quot;&gt;Allumer la DEL&lt;&#x2F;h5&gt;
+&lt;p&gt;Pour allumer la DEL, on doit mettre une certaine tension aux bornes de la DEL. Comme la patte négative est branchée au ground, on doit appliquer un voltage positif à la patte branchée dans la pin 13. Pour ce faire, on utilise la fonction suivante:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;HIGH&lt;&#x2F;code&gt; signifie une tension positive. Dans le cas d’une Arduino UNO, on met 5 volts sur la pin 13.&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;eteindre-la-del&quot;&gt;Éteindre la DEL&lt;&#x2F;h5&gt;
+&lt;p&gt;Pour l’éteindre, on procède de façon semblable.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h5 id=&quot;attendre&quot;&gt;Attendre&lt;&#x2F;h5&gt;
+&lt;p&gt;Pour attendre un certain temps, on utilise la fonction:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;1000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Ici, 1000 représente le temps à attendre en millisecondes. On a qu’une seconde est 1000 ms. Par exemple, pour attendre 5 secondes, on devrait indiquer 5000 ms.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;mettre-le-tout-ensemble&quot;&gt;Mettre le tout ensemble&lt;&#x2F;h4&gt;
+&lt;p&gt;Reprenons la liste d’étapes à suivre pour faire clignoter notre DEL:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Allumer la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 3 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Éteindre le DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 2 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Allumer la DEL&lt;&#x2F;li&gt;
+&lt;li&gt;Attendre 3 secondes&lt;&#x2F;li&gt;
+&lt;li&gt;Éteindre la DEL&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;On peut maintenant “traduire” chaque étape en code. Il manque toutefois l’initialisation de la pin au début. Avec les informations un peu plus haut, on peut maintenant coder notre Arduino.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;     &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 0. On dit a l&amp;#39;Arduino que l&amp;#39;on réserve la pin 13&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 1. Allumer la DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 2. Attendre 3 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 3. Éteindre le DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 4. Attendre 2 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 5. Allumer la DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 6. Attendre 3 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 7. Éteindre le DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On peut maintenant connecter l’Arduino par USB à l’ordinateur.&lt;&#x2F;p&gt;
+&lt;p&gt;On doit premièrement vérifier que l’Aduino est connectée dans Outils -&amp;gt; Port. Il faut s’assurer que le port selectionné est bien celui de l’Arduino.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;intro-arduino&#x2F;port.webp&quot; alt=&quot;Port&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On peut envoyer le code sur l’Arduino avec le bouton “Téléverser” (la flèche vers la droite). Après un certain temps, l’Arduino devrait faire clignoter la DEL deux fois selon les délais définit.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;a-l-infini&quot;&gt;À l’infini&lt;&#x2F;h3&gt;
+&lt;p&gt;Et si on désirait faire clignoter le DEL à l’infini? Il faudrait demander à l’Arduino de la faire clignoter pleins de fois. On pourrait avoir:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;     &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 0. On dit a l&amp;#39;Arduino que l&amp;#39;on réserve la pin 13&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 1. Allumer la DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 2. Attendre 3 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 3. Éteindre le DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 4. Attendre 2 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 5. Allumer la DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 6. Attendre 3 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 7. Éteindre le DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;           &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;           &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;             &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;           &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;....&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Et on devrait continuer ainsi pendant longtemps… Heureusement, il y a une meilleure façon !&lt;&#x2F;p&gt;
+&lt;p&gt;La fonction loop est exécutée continuellement après setup, il suffit donc d’avoir le code suivant:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; setup&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  pinMode&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; OUTPUT&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;     &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 0. On dit a l&amp;#39;Arduino que l&amp;#39;on réserve la pin 13&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage&quot;&gt;void&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; loop&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; HIGH&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;  &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 1. Allumer la DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;3000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 2. Attendre 3 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  digitalWrite&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span&gt; LOW&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;   &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 3. Éteindre le DEL&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;  delay&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;2000&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt;             &#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; 4. Attendre 2 secondes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On a donc que la lumière s’allume pour 3 secondes, et s’éteint pendant 3 secondes à l’infini. On remarque qu’il y a moins de code &lt;strong&gt;copier-collé&lt;&#x2F;strong&gt; !&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

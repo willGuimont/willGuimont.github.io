@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Learning</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/learning/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 29 Apr 2020 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>TossingBot</title>
+          <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/tossingbot/</link>
+          <guid>https://willguimont.com/blog/tossingbot/</guid>
+          <description xml:base="https://willguimont.com/blog/tossingbot/">&lt;p&gt;This video presents TossingBot, a robotic arm that learns to throw arbitrary objects with residual physics.&lt;&#x2F;p&gt;
+&lt;p&gt;This video was made for the class &lt;em&gt;GLO-7030: Deep Learning&lt;&#x2F;em&gt; at Université Laval.&lt;&#x2F;p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;Icx6j3s_Pmc&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;&#x2F;iframe&gt;
+</description>
+      </item>
+      <item>
+          <title>On Learning</title>
+          <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/on-learning/</link>
+          <guid>https://willguimont.com/blog/on-learning/</guid>
+          <description xml:base="https://willguimont.com/blog/on-learning/">&lt;p&gt;This is just some rambles on learning…&lt;&#x2F;p&gt;
+&lt;p&gt;I’m currently taking a class on deep neural networks. In the first class, we discussed multiple ways to have artificial intelligence systems.&lt;&#x2F;p&gt;
+&lt;p&gt;One way would be to code hand-designed programs to accomplish the task. &lt;code&gt;If&lt;&#x2F;code&gt; something happens, &lt;code&gt;then&lt;&#x2F;code&gt; the system does that, &lt;code&gt;else if&lt;&#x2F;code&gt; this other thing happens, &lt;code&gt;then&lt;&#x2F;code&gt; do this, &lt;code&gt;else if&lt;&#x2F;code&gt;… We can achieve great things using rule-based programs, but on more complex tasks we would need a lot of cases to handle a lot of different cases.&lt;&#x2F;p&gt;
+&lt;p&gt;Another way would be to make the computer learn from the data. So we analyze the data, find features for the system to learn from, then use classical machine learning algorithms such as SVM. Again, for complex tasks, we may miss some useful feature to correctly learn from the data.&lt;&#x2F;p&gt;
+&lt;p&gt;The next step is to make the algorithm find features by itself. This is what neural networks do. Each layer of a deep neural network extract features for the higher layers to “reason” about. The classical example is a neural network that detects faces. The first layers might detect very simple patterns like edges. Higher up, a layer might detect corners and contours. Layers at the end of the network might detect complex object parts used by the final layer to classify the object. This is what is called representation learning, the artificial intelligence system finds a way of representing the data so that it is easy to solve the task.&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Goodfellow-1&quot;&gt;&lt;a href=&quot;#fn-Goodfellow&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A good way of visualizing the different takes on artificial intelligence is from the book Deep Learning&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Goodfellow-2&quot;&gt;&lt;a href=&quot;#fn-Goodfellow&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.
+&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;on-learning&#x2F;types.webp&quot; alt=&quot;Types of learning&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dreyfus&quot;&gt;Dreyfus&lt;&#x2F;h2&gt;
+&lt;p&gt;When I learned about representation learning, it got me thinking about how we learn and the Dreyfus model&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Dreyfus-1&quot;&gt;&lt;a href=&quot;#fn-Dreyfus&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I think we can draw links between the Novice stage and rule-based systems. In this first stage of the Dreyfus model, the learner relies on rules to determine the action.&lt;&#x2F;p&gt;
+&lt;p&gt;Perhaps, there are other links between machine learning and the Dreyfus model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mental-representations&quot;&gt;Mental representations&lt;&#x2F;h2&gt;
+&lt;p&gt;In The Sciences of the artificial&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-Simon-1&quot;&gt;&lt;a href=&quot;#fn-Simon&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; from Herbert A. Simon, the author discusses the experience of A. de Groot and al. on chess perception. They showed chessboard with pieces in positions of real games for 5 seconds, then removed the pieces. Then they asked the subjects to put the pieces back in their position.&lt;&#x2F;p&gt;
+&lt;p&gt;As you might guess, somebody not accustomed to chess would have a pretty hard time to reconstruct the positions. For grandmasters and masters though, they were able to reconstruct the positions with almost no error!&lt;&#x2F;p&gt;
+&lt;p&gt;They then retried the experiment with &lt;em&gt;random&lt;&#x2F;em&gt; piece positions. In that case, even grandmasters could not reconstruct the board.&lt;&#x2F;p&gt;
+&lt;p&gt;This shows that a grandmaster or a master built a good mental &lt;em&gt;representation&lt;&#x2F;em&gt; of the game. Instead of memorizing all pieces, they memorized relations between pieces, which allow them to memorize them more easily.&lt;&#x2F;p&gt;
+&lt;p&gt;So, when I learned about representation learning, this reminded me of that particular example. Under the hood, a neural network &lt;em&gt;tries&lt;&#x2F;em&gt; to do exactly what the grandmaster did, build a good representation of the problem to solve. Once the representation is built, a simple linear layer can solve the problem!&lt;&#x2F;p&gt;
+&lt;p&gt;I think this is what is really going on when humans learn. All the studying isn’t about memorizing facts or formulas, it’s about building a good mental representation that can be used to solve many problems. Once you understand basic algebra, you can use that framework to solve many problems you weren’t trained on.&lt;&#x2F;p&gt;
+&lt;p&gt;In a neural network, we are usually not concerned about memorizing all the input data, instead, we want to generalize to unseen examples.&lt;&#x2F;p&gt;
+&lt;p&gt;Perhaps we should tell students that they aren’t in school to memorize facts, but instead to build a toolbox of mental representations to help them in life. Our brain is a neural network that needs to be trained with great care!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;sources&quot;&gt;Sources&lt;&#x2F;h2&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn-Goodfellow&quot;&gt;
+&lt;p&gt;Goodfellow, Ian &amp;amp; Bengio, Yoshua &amp;amp; Courville, Aaron. Deep Learning. 2016. &lt;a href=&quot;#fr-Goodfellow-1&quot;&gt;↩&lt;&#x2F;a&gt; &lt;a href=&quot;#fr-Goodfellow-2&quot;&gt;↩2&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li id=&quot;fn-Dreyfus&quot;&gt;
+&lt;p&gt;Dreyfus, Stuart E. The Five-Stage Model of Adult Skill Acquisition. 2004. &lt;a href=&quot;#fr-Dreyfus-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li id=&quot;fn-Simon&quot;&gt;
+&lt;p&gt;Simon, Herbert A. The Sciences of the Artificial, 1969. &lt;a href=&quot;#fr-Simon-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;section&gt;
+</description>
+      </item>
+    </channel>
+</rss>

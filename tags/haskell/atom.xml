@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Haskell</title>
+    <subtitle>William Guimont-Martin&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/haskell/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-06-08T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/haskell/atom.xml</id>
+    <entry xml:lang="en">
+        <title>APIs using Haskell and polysemy</title>
+        <published>2022-06-08T00:00:00+00:00</published>
+        <updated>2022-06-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/api-haskell/"/>
+        <id>https://willguimont.com/blog/api-haskell/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/api-haskell/">&lt;p&gt;Here’s a simple API in Haskell using Servant and Polysemy: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;status-checker&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;status-checker&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;And another one: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;exercises_api&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;exercises_api&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding monads: Some resources</title>
+        <published>2021-10-14T00:00:00+00:00</published>
+        <updated>2021-10-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/monads/"/>
+        <id>https://willguimont.com/blog/monads/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/monads/">&lt;p&gt;Instead of doing like everyone else and write a long-winded blog post about my &lt;code&gt;aha moment&lt;&#x2F;code&gt; about monads, I’ll only link some useful resources about monads.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cuddly-octo-palm-tree.com&#x2F;posts&#x2F;2021-04-11-monads-0&#x2F;&quot; target=&quot;_blank&quot;&gt;Cuddly, Octo-Palm Tree’s series on monads&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a class=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;www.jerf.org&#x2F;iri&#x2F;post&#x2F;2958&quot; target=&quot;_blank&quot;&gt;Functors and Monads For People Who Have Read Too Many “Tutorials”&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>
