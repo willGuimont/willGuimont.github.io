@@ -17,7 +17,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build only
-        uses: shalzz/zola-deploy-action@v0.21.0
+        uses: shalzz/zola-deploy-action@v0.22.0
         env:
           BUILD_ONLY: true
           BUILD_FLAGS: --drafts
@@ -33,7 +33,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build and deploy
-        uses: shalzz/zola-deploy-action@v0.21.0
+        uses: shalzz/zola-deploy-action@v0.22.0
         env:
           PAGES_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

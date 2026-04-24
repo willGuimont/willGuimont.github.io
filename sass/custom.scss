@@ -25,7 +25,9 @@
   }
 }
 
-@media (min-width: 105ch) { /* apply only when we can comfortably fit 100ch */
+@media (min-width: 105ch) {
+
+  /* apply only when we can comfortably fit 100ch */
   .wide-crt {
     width: 98ch;
     max-width: 100ch;
@@ -42,4 +44,75 @@
   mask-position: center;
   -webkit-mask-size: contain;
   mask-size: contain;
+}
+
+:root {
+  --icon-tags: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2716%27%20height%3D%2716%27%3E%3Cpath%20d%3D%27M2.5%201A1.5%201.5%200%200%200%201%202.5v4.293c0%20.398.158.78.44%201.06l5.207%205.207a1.5%201.5%200%200%200%202.122%200l4.293-4.293a1.5%201.5%200%200%200%200-2.122L7.854%201.44A1.5%201.5%200%200%200%206.793%201H2.5zm0%201.5h4.293L12%207.707%207.707%2012%202.5%206.793V2.5zM4.5%203a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%27%2F%3E%3C%2Fsvg%3E");
+}
+
+#tags .icon {
+  -webkit-mask-image: var(--icon-tags);
+  mask-image: var(--icon-tags);
+}
+
+// Custom Copy Button Styles
+.pre-container {
+  position: relative;
+
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s;
+
+    // Default background (transparent or very subtle dark for contrast)
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    backdrop-filter: blur(4px);
+
+    .icon {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      // Force dark icon color because code blocks are light
+      background-color: rgba(0, 0, 0, 0.6);
+      mask-image: var(--icon-copy);
+      -webkit-mask-image: var(--icon-copy);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+
+      .icon {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    }
+
+    &.copied {
+      opacity: 1;
+      // border-color: var(--green-fg); // Removed to match clipboard style
+
+      .icon {
+        // background-color: var(--green-fg); // Removed to match clipboard style
+        mask-image: var(--icon-checkmark);
+        -webkit-mask-image: var(--icon-checkmark);
+      }
+    }
+  }
+
+  &:hover .copy-btn {
+    opacity: 1;
+  }
 }

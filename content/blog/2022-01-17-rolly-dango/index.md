@@ -6,7 +6,7 @@ date = 2022-01-17
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Gamedev", "Software Engineering", "Dango"]
+tags = ["Gamedev", "Dango"]
 [extra]
 # banner = ""
 # toc = true
