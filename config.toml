@@ -27,14 +27,12 @@ default_language = "en"
 taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-	{ theme = "solarized-dark", filename = "syntax-theme-dark.css" },
-	{ theme = "solarized-light", filename = "syntax-theme-light.css" },
-]
 smart_punctuation = true
 bottom_footnotes = true
+highlighting = { highlight_code = true, theme = "solarized-dark", highlight_themes_css = [
+    { theme = "solarized-dark", filename = "syntax-theme-dark.css" },
+    { theme = "solarized-light", filename = "syntax-theme-light.css" },
+] }
 
 [search]
 index_format = "fuse_json"
