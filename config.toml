@@ -29,10 +29,6 @@ taxonomies = [{ name = "tags", feed = true }]
 [markdown]
 smart_punctuation = true
 bottom_footnotes = true
-# highlighting = { highlight_code = true, theme = "solarized-dark", highlight_themes_css = [
-#     { theme = "solarized-dark", filename = "syntax-theme-dark.css" },
-#     { theme = "solarized-light", filename = "syntax-theme-light.css" },
-# ] }
 
 [markdown.highlighting]
 style = "class"
@@ -175,6 +171,7 @@ show_repo = true
 links = [
 	# { url = "@/demo/index.md", name = "Demo" },
 	{ url = "@/blog/_index.md", name = "Blog" },
+	{ url = "@/creative/_index.md", name = "Creative" },
 	{ name = "Links", menu = [
 		{ url = "https://github.com/willGuimont", name = "GitHub" },
 		{ url = "https://www.youtube.com/@willGuimont", name = "YouTube" },
