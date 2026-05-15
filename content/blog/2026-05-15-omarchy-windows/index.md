@@ -54,13 +54,6 @@ The ESP was shared on the NVMe, and Manjaro's wipe had taken the Windows EFI fil
 Omarchy uses Limine, so the first task was adding a Windows entry to `/boot/limine.conf`.
 The key lesson here: **match the path syntax of your working entries**.
 
-My working Omarchy entry used:
-```
-path: boot():/EFI/Linux/omarchy_linux.efi
-```
-
-So the Windows entry should use the same style -- forward slashes, `boot()` with no arguments (meaning "the partition Limine itself booted from"):
-
 ```
 /Windows
     protocol: efi_chainload
