@@ -311,7 +311,7 @@ Overall, Odin strikes a nice balance between explicitness and elegance in error 
 
 Rust’s tagged unions `Result<T, E>` and `Option<T>` types offers a different approach.
 Errors are in the type system.
-The compiler forces you to handle them - or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
+The compiler forces you to handle them --- or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
 You can use Rust's pattern matching to destructure and handle errors explicitly.
 
 Rust also provides the `?` operator for concise error propagation:
@@ -355,6 +355,12 @@ Of course, Rust doesn’t force you to propagate or handle errors safely --- you
 let val = foo().unwrap(); // panics if Err
 let val = foo().expect("better crash message"); // same, but with context
 ```
+
+It is worth distinguishing between `Result<T, E>` and `Option<T>`.
+`Result<T, E>` models a computation that failed and can say why, `Option<T>` models mere *absence*, a value that may legitimately not be there, with no error to report.
+Conflating them is a common design smell. A "Key not found in map" is usually an `Option`, as absence is expected and unremarkable, whereas "could not read the config file" is a `Result`, you want the reason.
+This choice encodes intent directly into the type system, in a way that using nullable does not.
+Rust lets you convert between them (`Option::ok_or`, `Result::ok`) precisely because the boundary is a judgment call that shifts with context, in some context, *absence* is *error* or *error* is *absence*.
 
 ### A Monadic Digression
 
