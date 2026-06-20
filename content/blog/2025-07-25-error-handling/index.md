@@ -30,6 +30,39 @@ At the end of my undergraduate studies in software engineering, we were assigned
 They gave us *carte blanche* on the choice of technology.
 Looking to try less mainstream languages and explore new paradigms, we decided to explore and compare several less conventional stacks -- paying particular attention to how each one approached error handling, since our project required high reliability and robustness.
 
+## `errno` of Our Ways (C)
+
+Before looking at more *modern* approaches of error handling, it is worth recalling the baselin most of them react egainst: C.
+C has ne dedicated error mechanism at all.
+Functions signal failure through their return value --- a `NULL` pointer, a non-zero integer, or some other sentinel value --- and stash the reason in a global variable, `errno`.
+You are expected to check the return value, then read `errno` to find the out what actually went wrong.
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main(void) {
+    FILE *f = fopen("nonexistent.txt", "r");
+    if (f == NULL) {
+        // errno was set by fopen; translate it to a message
+        fprintf(stderr, "Error: %s\n", strerror(errno));
+        // will print the string followed by the string representation of errno
+        perror("Error opening file");
+        return 1;
+    }
+
+    fclose(f);
+    return 0;
+}
+```
+
+This simple model presents some flaws.
+Errors are ignorable by default — nothing forces you to check the return value, and the happy path compiles fine whether or not you do.
+The signal is in-band: -1 is both a valid integer and an error sentinel, so the meaning depends entirely on convention and documentation.
+And `errno` is global mutable state, which means it's only meaningfully valid immediately after the call, is clobbered by the next failing function, and is a thread-safety hazard (hence `errno` being a per-thread macro in modern C, since C11).
+Every guarantee is shifted onto the discipline of the programmer, the language does not provide much tooling to handle errors.
+
 ## `Try`ing to `Catch` ~~Lightning in a Bottle~~ Exceptions (Java and Friends)
 
 The most well-known model is the `try/catch` mechanism.
@@ -60,6 +93,42 @@ Despite their limitations, exceptions are still very much useful for their conve
 That said, while it can be convenient to let domain exceptions bubble up -- for instance, in a REST API handler where you want a 400 Bad Request -- you’re still playing with possibly impossible-to-predict, and more importantly difficult to debug, control flow.
 This is especially true in large codebases with many layers of abstraction, where an exception thrown deep in the stack can be caught and handled far away from its origin, making it hard to trace the error's source.
 While you can try to limit this with coding standards and best practices, it remains challenging and cumbersome if the language does not provide good alternatives.
+
+### What Checked Exceptions Could Have Been (Swift)
+
+Swift offers a variation on the exception model, addressing some of the limitations and drawbacks of traditional exception handling by requiring explicit `try` annotations, ensuring that potential failure points are visible at the call site.
+Errors are values conforming to the `Error` protocol (not a class hierarchy rooted in `Throwable`), functions advertise fallibility with throws in their signature, and every call site must acknowledge it with try, making throwing operations syntactically visible rather than invisible like Java's unchecked exceptions.
+
+```swift
+enum DivisionError: Error {
+    case divisionByZero
+}
+
+func divide(_ x: Int, by y: Int) throws(DivisionError) -> Int {
+    guard y != 0 else { throw DivisionError.divisionByZero }
+    return x / y
+}
+
+// Must acknowledge the throw with `try`, inside do/catch
+do {
+    let result = try divide(10, by: 0)
+    print("Result: \(result)")
+} catch DivisionError.divisionByZero {   // exhaustive: the type is known
+    print("Cannot divide by zero")
+}
+
+let maybe  = try? divide(10, by: 0)  // nil — collapses the throw into an Optional
+let forced = try! divide(10, by: 2)  // 5  — asserts it won't throw; crashes if it does
+```
+
+While similar to Java's checked exceptions, Swift's model sidesteps the problems of Java:
+
+1. It's opt-in, not mandatory. Plain throws still means "throws anything" — formally `throws(any Error)`.
+   Java forces you to either declare every checked exception in your signatures or wrap them; there's no escape hatch, so real codebases need to sprinkle `throws Exception` or convert everything to unchecked `RuntimeException`.
+   Swift lets you reach for a precise type only where it pays off (a critical domain error) and stay untyped everywhere else.
+2. Call-site ergonomics for choosing your safety level.
+   The `try` / `try?` / `try!` family lets each call decide per-use whether to propagate, downgrade the throw into an Optional, or assert-and-crash.
+   Java has no call-site marker at all (you can't see at the use site that a call might throw, so anything could throw anywhere).
 
 ## `Go`ing Somewhere with Errors (Go)
 
@@ -126,6 +195,85 @@ result, err := doSomething()
 if err != nil {
     // f will still be closed!
     return err
+}
+```
+
+Go also has a second, exception-like channel it would rather you didn't reach for: `panic` and `recover`.
+A panic unwinds the stack like an exception, and a deferred recover can catch it, used almost exclusively for truly unrecoverable bugs or at goroutine boundaries, not ordinary error handling.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Result:", safeDivide(10, 0))
+	// The panic is caught and recovered, so the program continues running
+	fmt.Println("Main keeps running")
+}
+
+func safeDivide(a, b int) (result int) {
+	defer func() {
+		if r := recover(); r != nil {
+			// "Catches" the panic and recovers, returning 0 as the result
+			fmt.Println("Recovered:", r)
+			result = 0
+		}
+	}()
+	return compute(a, b)
+}
+
+func compute(a, b int) int {
+	return a / b // panics here
+}
+```
+
+More idiomatically, Go's standard library leans on sentinel errors plus wrapping.
+Wrapping an error with %w preserves it in a chain, and `errors.Is`/`errors.As` walk that chain to match against a sentinel or extract a typed error, recovering some of the structure that bare `if err != nil` throws away.
+
+```go
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+var ErrDivideByZero = errors.New("divide by zero")
+
+// custom type carries the operands AND wraps the sentinel
+type DivideError struct {
+	A, B int
+}
+
+func (e *DivideError) Error() string {
+	return fmt.Sprintf("cannot divide %d by %d", e.A, e.B)
+}
+
+// Unwrap lets errors.Is reach ErrDivideByZero underneath
+func (e *DivideError) Unwrap() error { return ErrDivideByZero }
+
+func divide(a, b int) (int, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("divide failed: %w", &DivideError{A: a, B: b})
+	}
+	return a / b, nil
+}
+
+func main() {
+	_, err := divide(10, 0)
+	fmt.Println("Error:", err)
+
+	// errors.Is: match the category (walks through DivideError's Unwrap)
+	if errors.Is(err, ErrDivideByZero) {
+		fmt.Println("Category: divide by zero")
+	}
+
+	// errors.As: extract the data
+	var de *DivideError
+	if errors.As(err, &de) {
+		fmt.Printf("Operands: a=%d, b=%d\n", de.A, de.B)
+	}
 }
 ```
 
@@ -361,6 +509,51 @@ It is worth distinguishing between `Result<T, E>` and `Option<T>`.
 Conflating them is a common design smell. A "Key not found in map" is usually an `Option`, as absence is expected and unremarkable, whereas "could not read the config file" is a `Result`, you want the reason.
 This choice encodes intent directly into the type system, in a way that using nullable does not.
 Rust lets you convert between them (`Option::ok_or`, `Result::ok`) precisely because the boundary is a judgment call that shifts with context, in some context, *absence* is *error* or *error* is *absence*.
+
+### Riding the Happy Rails (F# / Elm)
+
+The `?` operator from Rust is really sugar for a pattern that some languages make the centerpiece: railway-oriented programming (a term coined by Scott Wlaschin for F#).
+Picture two parallel tracks, success and failure.
+Each step is a function that takes a success value and returns a `Result`; `bind`/`andThen` chains them so that the first failure switches you onto the error track, where you stay for the rest of the journey.
+
+```fsharp
+let parseInt (s: string) =
+    match System.Int32.TryParse s with
+    | true, n  -> Ok n
+    | false, _ -> Error (sprintf "'%s' is not a number" s)
+
+let divide divisor x =
+    if divisor = 0 then Error "divide by zero"
+    else Ok (x / divisor)
+
+let checkEven x =
+    if x % 2 = 0 then Ok x
+    else Error (sprintf "%d is not even" x)
+
+// Parse a string, divide by 2, then require the result to be even.
+let compute input =
+    input
+    |> parseInt
+    |> Result.bind (divide 2)
+    |> Result.bind checkEven
+
+[<EntryPoint>]
+let main _ =
+    let inputs =
+        [ "16"     // 16 / 2 = 8, even   -> Ok
+          "12"     // 12 / 2 = 6, even   -> Ok
+          "10"     // 10 / 2 = 5, odd    -> fails at checkEven
+          "abc" ]  // not a number       -> fails at parseInt
+
+    for input in inputs do
+        match compute input with
+        | Ok n    -> printfn "ok:    %d" n
+        | Error e -> printfn "error: %s" e
+    0
+```
+
+Elm spells the same idea `Result.andThen`.
+F#'s `bind` is inspired by Haskell monads, and the `bind` operator `>>=`, which will be the subject of the next section.
 
 ### A Monadic Digression
 
@@ -688,6 +881,122 @@ It is very elegant of thinking of your program as a series of composable effects
 More complex operations can be decomposed into smaller effects, before being interpreter.
 In some ways, it feels like a sort of interpreter that compiles your source code into a simpler bytecode (core language primitive operations) that is then executed.
 However, the learning curve is steep, and the abstraction overhead can be significant for small to medium projects.
+
+## Resuming the Conversation (OCaml, Koka, Effekt)
+
+Polysemy's interpreters live in Haskell's type system, but effects can be a language feature.
+OCaml 5, Koka, and Effekt provide algebraic effects with handlers, and crucially, a handler can resume the suspended computation, not just abort it.
+Where `try`/`catch` only ever unwinds, an effect handler holds a continuation it can call to pick up exactly where the effect was performed.
+
+The real power shows up when you keep the computation fixed and swap only the handler.
+Here pipeline is written once and knows nothing about how a division by zero is dealt with; two handlers impose two completely different policies on it:
+
+```ocaml
+open Effect
+open Effect.Deep
+
+(* The effect carries the numerator, so the handler has something to decide with. *)
+type _ Effect.t += Div_by_zero : int -> int Effect.t
+
+let divide x y =
+  if y = 0 then perform (Div_by_zero x) else x / y
+
+(* The computation. It does NOT know how divide-by-zero is handled. *)
+let pipeline () =
+  let a = divide 10 2 in   (* 5 *)
+  let b = divide 7 0 in    (* performs Div_by_zero 7 *)
+  let c = divide 20 4 in   (* 5 — runs only if b resumes *)
+  a + b + c
+
+(* Policy 1: resume, substituting the numerator as the result. *)
+let resume_with_numerator f =
+  match_with f ()
+    { retc = (fun v -> v)
+    ; exnc = raise
+    ; effc = (fun (type a) (eff : a Effect.t) ->
+        match eff with
+        | Div_by_zero n -> Some (fun (k : (a, _) continuation) -> continue k n)
+        | _ -> None) }
+
+(* Policy 2: abort the whole computation with a sentinel. *)
+exception Aborted
+let abort_on_zero f =
+  match_with f ()
+    { retc = (fun v -> v)
+    ; exnc = raise
+    ; effc = (fun (type a) (eff : a Effect.t) ->
+        match eff with
+        | Div_by_zero _ -> Some (fun (_ : (a, _) continuation) -> raise Aborted)
+        | _ -> None) }
+
+let () =
+  (* Same pipeline, two policies — only the handler differs. *)
+  Printf.printf "resume: %d\n" (resume_with_numerator pipeline);  (* 5 + 7 + 5 = 17 *)
+  match abort_on_zero pipeline with
+  | n -> Printf.printf "abort:  %d\n" n
+  | exception Aborted -> Printf.printf "abort:  aborted\n"
+```
+
+This is the separation of concerns that exceptions can't express.
+`pipeline` decides where a problem is raised; the handler decides what it means.
+Under `resume_with_numerator`, the handler calls `continue k 7`, it resumes the suspended `divide 7 0` in place, hands back `7`, and execution flows on to `c`, so the block completes and sums to `17`.
+Under abort_on_zero, the handler simply doesn't call the continuation, it raises instead, discarding the rest of the computation, and `c` never runs.
+Same code, opposite outcomes, and pipeline is none the wiser.
+
+That's the leverage: with `try`/`catch` the decision to abort is baked into the throwing code (once you throw, the frames are gone).
+With effects, "abort" and "resume" are just two handlers you can choose between after the fact, abort is the special case where you decline to resume.
+That resumption ability, recovering without unwinding, is the bridge to the oldest idea in this whole post: Common Lisp's conditions and restarts.
+
+## Terms and Conditions (Common Lisp)
+
+Most mechanisms here fuse three concerns into one act: signaling a problem, deciding how to recover, and performing the recovery all happen at the catch site, after the stack has already been torn down.
+Common Lisp's condition system, predating almost everything above, keeps them separate, and never unwinds until it's good and ready.
+
+A condition is signaled deep in the stack.
+Restarts are named recovery strategies defined at that same low level.
+But the handler that chooses which restart to invoke sits high up — and it runs with the stack still intact, in the dynamic context of the signaling code.
+
+```common-lisp
+(define-condition divide-by-zero (error)
+  ((numerator :initarg :numerator :reader numerator-of)))
+
+(defun divide (x y)
+  (restart-case
+      (if (zerop y)
+          (error 'divide-by-zero :numerator x)
+          (/ x y))
+    ;; Recovery strategies, defined DOWN at the point of failure:
+    (use-value (v) :report "Supply a replacement result." v)
+    (use-zero  ()  :report "Treat the result as 0."       0)))
+
+(defun run-pipeline ()
+  ;; The policy, decided UP here — chosen without unwinding the stack:
+  (handler-bind
+      ((divide-by-zero
+         (lambda (c)
+           (invoke-restart 'use-value (numerator-of c)))))
+    (let ((a (divide 10 2))   ; 5
+          (b (divide 7 0))    ; signals -> handler picks the use-value restart -> 7
+          (c (divide 20 4)))  ; 5 -- still runs, because the restart resumed in place
+      (+ a b c))))            ; 5 + 7 + 5 = 17
+
+(format t "result: ~a~%" (run-pipeline))  ; => 17
+```
+
+When `(divide 7 0)` runs, divide does two things and stops: it signals a condition and publishes a menu of restarts (`use-value`, `use-zero`).
+Signalling is not throwing, nothing unwinds, so `divide`'s frame is still alive.
+The matching handler-bind runs while the stack is frozen, reads the numerator off the condition, and calls `(invoke-restart 'use-value 7)`.
+That resumes divide in place with `7`, so c still runs and the block sums to `17`.
+
+The whole idea is that one split: signal (where), restart (how), handler (which).
+`divide` provides the recovery mechanisms without choosing one; `run-pipeline` chooses the policy without knowing how recovery works.
+Swap the handler to `use-zero` and divisions by zero become `0`; decline to restart and you abort, all without touching divide.
+
+And because the restarts are just a published menu, if no handler matches, Lisp doesn't crash, it drops into the debugger and offers those same restarts to a human, who can pick one and resume the live program.
+Error handling, interactive recovery, and debugging are one mechanism.
+
+This is the most general model in the post: exceptions are just the degenerate case where the only restart is "unwind to the handler."
+It pairs naturally with Elixir's "let it crash" as the opposite pole, where Erlang isolates failure and restarts a process, Lisp keeps the process alive and restarts a computation.
 
 ## Trust, but ~~verify~~ `assert` (D)
 
