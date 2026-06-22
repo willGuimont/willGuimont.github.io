@@ -22,19 +22,19 @@ Despite this, most programming languages either struggle to make error handling 
 It's almost always easy to write the happy path.
 The moment something goes wrong, though, most languages make the not-so-happy path either verbose, implicit, or dangerously ignorable.
 
-Handling errors well should be a first-class concern.
+Handling errors well should be a first-class concern of most programming languages.
 It feels as if errors are just an afterthought in mainstream languages, added inelegantly out of necessity.
 
 This blog post stems from some experimentation on error handling I did back in 2021.
-At the end of my undergraduate studies in software engineering, we were assigned a final project in collaboration with an industry partner.
+Then at the end of my undergraduate studies in software engineering at Université Laval, we were assigned a final project in collaboration with an industry partner.
 They gave us *carte blanche* on the choice of technology.
 Looking to try less mainstream languages and explore new paradigms, we decided to explore and compare several less conventional stacks -- paying particular attention to how each one approached error handling, since our project required high reliability and robustness.
 
 ## `errno` of Our Ways (C)
 
-Before looking at more *modern* approaches of error handling, it is worth recalling the baselin most of them react egainst: C.
-C has ne dedicated error mechanism at all.
-Functions signal failure through their return value --- a `NULL` pointer, a non-zero integer, or some other sentinel value --- and stash the reason in a global variable, `errno`.
+Before looking at more *modern* approaches of error handling, it is worth recalling the baseline most of them react against: C.
+C has no dedicated error mechanism at all.
+Functions signal failure through their return value -- a `NULL` pointer, a non-zero integer, or some other sentinel value -- and stash the reason in a global variable, `errno`.
 You are expected to check the return value, then read `errno` to find the out what actually went wrong.
 
 ```c
@@ -57,19 +57,47 @@ int main(void) {
 }
 ```
 
-This simple model presents some flaws.
-Errors are ignorable by default — nothing forces you to check the return value, and the happy path compiles fine whether or not you do.
-The signal is in-band: -1 is both a valid integer and an error sentinel, so the meaning depends entirely on convention and documentation.
+While simple and practical, this model presents some flaws.
+As C does not support multiple return values -- i.e., tuples -- without much boilerplate (defining a `struct` with the return value and the error, a tagged union, or setting output variables via pointers), we end up using a value *in-band* of the return type: `-1` is both a valid integer, and might indicate an error.
 And `errno` is global mutable state, which means it's only meaningfully valid immediately after the call, is clobbered by the next failing function, and is a thread-safety hazard (hence `errno` being a per-thread macro in modern C, since C11).
 Every guarantee is shifted onto the discipline of the programmer, the language does not provide much tooling to handle errors.
+With this model, the programmer needs to fix it by convention, for example returning the value via assignation to a pointer, and keep the function return value to undicate the error:
+
+```c
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
+
+// Return value signals success/failure; result is written through `out`.
+int divide(int x, int y, int *out) {
+    if (y == 0) {
+        return EDOM;  // non-zero: error (domain error)
+    }
+    *out = x / y;
+    return 0;         // zero: success
+}
+
+int main(void) {
+    int result;
+
+    int err = divide(10, 0, &result);
+    if (err != 0) {
+        fprintf(stderr, "Error: %s\n", strerror(err));
+        return 1;
+    }
+
+    printf("Result: %d\n", result);
+    return 0;
+}
+```
 
 ## `Try`ing to `Catch` ~~Lightning in a Bottle~~ Exceptions (Java and Friends)
 
-The most well-known model is the `try/catch` mechanism.
-You throw an error and hope someone, somewhere, catches it.
+The most well-known model is the `try`/`catch` mechanism available in most mainstream programming languages.
+You throw an error and hope someone, somewhere, catches it up the stack.
 Otherwise, your program crashes unceremoniously.
 
-It’s an *easy* method for the error generating code, throw the exception and forget about it, but not simple.
+It’s an *easy* method for the error generating code, throw the exception and forget about it, but it is far from simple.
 This is similar to the distinction between *simple* and *easy* made by Rich Hickey in his talk "<a class="external" href="https://www.infoq.com/presentations/Simple-Made-Easy/" target="_blank">Simple Made Easy</a>".
 Exceptions are **complecting** by nature, they intertwine normal control flow with error handling.
 The control flow is no longer linear and predictable, you climb back up the stack looking for a handler.
@@ -77,11 +105,11 @@ The control flow is no longer linear and predictable, you climb back up the stac
 They let you skip instructions, bubble errors up several layers, and bypass normal control flow.
 In a way, they are sugar-coated `goto`s that jump through stack frames.
 
-Yes, `try/catch/finally` blocks and RAII (in C++/Java with try-with-resources) can clean things up nicely (although, I prefer using `defer` or `err_defer`), but you're still left with a system where it's not obvious what code might throw.
+Yes, `try`/`catch`/`finally` blocks and RAII (in C++/Java with `try-with-resources`) can clean things up nicely (although, I prefer using `defer` or `err_defer`, which we will discuss later), but you're still left with a system where it's not obvious what code might throw and who handles the exception.
 
 Java attempted to solve the uncertainty around which operations might throw exceptions through checked exceptions, but that just shifted the problem.
 You now have to annotate everything, tracing all possible failure paths and punting the problem upstream.
-Most Java developers end up defaulting to unchecked exceptions anyway, sacrificing safety for sanity.
+Most Java developers end up defaulting to unchecked exceptions anyway, sacrificing safety for their sanity.
 Even Robert C. Martin said in Clean Code:
 
 > Checked exceptions can sometimes be useful if you are writing a critical library: You must catch them.
@@ -90,14 +118,14 @@ Even Robert C. Martin said in Clean Code:
 > -- Robert C. Martin. Clean Code. 2008.
 
 Despite their limitations, exceptions are still very much useful for their convenience and ease of use in simple cases.
-That said, while it can be convenient to let domain exceptions bubble up -- for instance, in a REST API handler where you want a 400 Bad Request -- you’re still playing with possibly impossible-to-predict, and more importantly difficult to debug, control flow.
+That said, while it can be convenient to let domain exceptions bubble up -- for instance, in a REST API handler where you want a 404 Not Found if the entity is not found in the repository deep in the domain -- you’re still playing with possibly impossible-to-predict, and more importantly difficult to debug, control flow.
 This is especially true in large codebases with many layers of abstraction, where an exception thrown deep in the stack can be caught and handled far away from its origin, making it hard to trace the error's source.
 While you can try to limit this with coding standards and best practices, it remains challenging and cumbersome if the language does not provide good alternatives.
 
-### What Checked Exceptions Could Have Been (Swift)
+### What Java's throws Wanted to Be (Swift)
 
-Swift offers a variation on the exception model, addressing some of the limitations and drawbacks of traditional exception handling by requiring explicit `try` annotations, ensuring that potential failure points are visible at the call site.
-Errors are values conforming to the `Error` protocol (not a class hierarchy rooted in `Throwable`), functions advertise fallibility with throws in their signature, and every call site must acknowledge it with try, making throwing operations syntactically visible rather than invisible like Java's unchecked exceptions.
+Swift 6.0+ offers a variation on the exception model, addressing some of the limitations and drawbacks of traditional exception handling by requiring explicit `try` annotations, ensuring that potential failure points are visible at the call site.
+Errors are values conforming to the `Error` protocol (not a class hierarchy rooted in `Throwable`), functions advertise fallibility with throws in their signature, and every call site must acknowledge it with `try`, making throwing operations syntactically visible rather than invisible like Java's unchecked exceptions.
 
 ```swift
 enum DivisionError: Error {
@@ -128,11 +156,10 @@ While similar to Java's checked exceptions, Swift's model sidesteps the problems
    Swift lets you reach for a precise type only where it pays off (a critical domain error) and stay untyped everywhere else.
 2. Call-site ergonomics for choosing your safety level.
    The `try` / `try?` / `try!` family lets each call decide per-use whether to propagate, downgrade the throw into an Optional, or assert-and-crash.
-   Java has no call-site marker at all (you can't see at the use site that a call might throw, so anything could throw anywhere).
 
 ## `Go`ing Somewhere with Errors (Go)
 
-Go brought back the C-style return code (i.e., non-zero return for errors), modernized as error values returned by the function, now with `nil` as the successful return value.
+Go brought back the C-style return code (i.e., non-zero return for errors), modernized as error values returned by the function, now with `nil` as the successful return value (absence of error).
 You call a function, and it returns both result and error.
 By convention, the error is the last return value.
 
@@ -174,27 +201,63 @@ But this explicitness comes at the cost of verbosity and boilerplate.
 You will see `if err != nil` peppered everywhere.
 Also, Go gives you no tools to help with error handling.
 You’re mostly on your own to handle errors consistently.
-Go does not provide any syntactic sugar for error handling, i.e., no `try/catch`, no pattern matching, no monadic operators.
+Go does not provide any syntactic sugar for error handling, i.e., no `try`/`catch`, no pattern matching, no monadic operators.
 Just `if err != nil` over and over.
-The little Go I did write felt like it required a lot of duplicate boilerplate code to handle errors properly.
-I had to keep `if err != nil {}` in my clipboard for quick pasting.
 
-You end up either duplicating error propagation boilerplate or using helper functions to hide the verbosity (e.g., <a class="external" href="https://pkg.go.dev/errors#Join" target="_blank">errors.Join</a>) -- at which point you’ve reinvented a monad poorly.
+You end up either duplicating error-propagation boilerplate or hiding the verbosity behind a generic helper that turns a non-nil error into a `panic` (unwound by a `recover` at the boundary, more on that mechanism below):
+
+```go
+func try[T any](v T, err error) T {
+    if err != nil {
+        panic(err)
+    }
+    return v
+}
+```
+
+At which point you've reinvented a monad poorly: you've recovered the `?`-style short-circuiting from Rust, but with none of the type-level guarantees -- the control flow now rides on `panic`/`recover`, the compiler no longer sees the failure path, and one stray panic outside a recovering frame takes down the program.
+The thing Go removed on purpose, smuggled back in through the back door.
 
 To its credit, Go includes one elegant feature for cleanup after an error might have occurred: `defer`.
 It allows you to schedule resource cleanup (like closing files or releasing locks) regardless of how the function exits, which pairs well with manual error handling:
 
 ```go
-f, err := os.Open("file.txt")
-if err != nil {
-    return err
-}
-defer f.Close() // Yes, this could also return an error and would need to be handled correctly
+package main
 
-result, err := doSomething()
-if err != nil {
-    // f will still be closed!
-    return err
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	if err := process(); err != nil {
+		fmt.Fprintln(os.Stderr, "Error:", err)
+		os.Exit(1)
+	}
+}
+
+func process() error {
+	f, err := os.Open("file.txt")
+	if err != nil {
+		return err
+	}
+	defer func() {
+		fmt.Println("Closing file")
+		f.Close() // Yes, this could also return an error and would need to be handled correctly
+	}()
+
+	result, err := doSomething()
+	if err != nil {
+		// f will still be closed! ("Closing file" prints even on this early return)
+		return err
+	}
+
+	fmt.Println("Result:", result)
+	return nil
+}
+
+func doSomething() (string, error) {
+	return "done", nil
 }
 ```
 
@@ -229,7 +292,8 @@ func compute(a, b int) int {
 ```
 
 More idiomatically, Go's standard library leans on sentinel errors plus wrapping.
-Wrapping an error with %w preserves it in a chain, and `errors.Is`/`errors.As` walk that chain to match against a sentinel or extract a typed error, recovering some of the structure that bare `if err != nil` throws away.
+Wrapping an error with `%w` preserves it in a chain; and `errors.Is` and `errors.As` then walk that chain to match a sentinel or extract a typed error.
+This recovers some of the structure that a bare `if err != nil` discards.
 
 ```go
 package main
@@ -241,7 +305,7 @@ import (
 
 var ErrDivideByZero = errors.New("divide by zero")
 
-// custom type carries the operands AND wraps the sentinel
+// Custom type carries the operands AND wraps the sentinel
 type DivideError struct {
 	A, B int
 }
@@ -364,7 +428,7 @@ pub fn main() !void {
 I recently started experimenting with Odin, which has some interesting ideas around error handling.
 Instead of considering errors as exceptions or special types, Odin treats them as regular return values.
 As it is the case for Go, Odin conventionally returns an error as the last return value of a function.
-Unlike Zig, which uses error unions that require declaring error types using `error{}`, Odin simply treats non-zero return values as errors.
+Unlike Zig, which uses error unions that require declaring error types using `error{}`, Odin, by convention, simply treats non-zero return values as errors.
 This is paired with Odin's commitment to make zero values useful defaults, so a function returning zero for an error indicates success.
 
 ```odin
@@ -424,7 +488,6 @@ divide_positive :: proc(x, y: int) -> (int, Division_Error) {
     return x / y, .None
 }
 
-// wrapper_proc demonstrates or_return
 wrapper_proc :: proc(a, b: int) -> (val: int, error_out: Division_Error) {
     // Because parameters are named, or_return knows to put 
     // the error into 'error_out' and return.
@@ -459,7 +522,7 @@ Overall, Odin strikes a nice balance between explicitness and elegance in error 
 
 Rust’s tagged unions `Result<T, E>` and `Option<T>` types offers a different approach.
 Errors are in the type system.
-The compiler forces you to handle them --- or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
+The compiler forces you to handle them -- or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
 You can use Rust's pattern matching to destructure and handle errors explicitly.
 
 Rust also provides the `?` operator for concise error propagation:
@@ -490,14 +553,14 @@ fn main() {
 ```
 
 The `?` operator propagates errors up, and makes code shorter, but it can also obscure control flow.
-The whole flow of the function can be interrupted by a single `?`.
+The whole flow of the function can be interrupted by a single `?` character.
 This single symbol rewires control flow and introduces implicit short-circuiting, which can obscure the data path.
 At least, the `?` operator is limited to functions returning `Result` or `Option`, so its use is explicit in the function signature.
 
 This is a limited form of monadic error handling.
 This is arguably one of Rust's strengths, it makes functional programming ideas more mainstream, e.g., algebraic data types, pattern matching, higher-order functions, and monadic error handling.
 
-Of course, Rust doesn’t force you to propagate or handle errors safely --- you can always opt out:
+Of course, Rust doesn’t force you to propagate or handle errors safely -- you can always opt out:
 
 ```rust
 let val = foo().unwrap(); // panics if Err
@@ -613,7 +676,7 @@ fn do_something() -> MyResult<i32, &'static str> {
 }
 
 fn main() {
-    println!("Output: ", do_something());
+    println!("Output: {:?}", do_something());
 }
 
 ```
@@ -648,7 +711,7 @@ You can throw, catch, pattern match, and compose computations in `Either`, `Mayb
 As in Rust, `Either Error Value` encodes a computation that can fail.
 But in Haskell, you can manipulate it using the full suite of monadic tools.
 
-The example below shows how `ExceptT`—a monad transformer—extends any base monad (typically `IO`) with error-handling capabilities.
+The example below shows how `ExceptT`, a monad transformer, extends any base monad (typically `IO`) with error-handling capabilities.
 It generalizes the `Either e a` pattern, allowing you to compose error propagation with other effects (like `IO`, `State`, etc.).
 
 ```haskell
@@ -688,7 +751,7 @@ main = do
 
 This is elegant -- you get typed, structured error handling that composes seamlessly with `IO`.
 
-But once you start stacking more than one effect - say, `ReaderT`, `StateT`, and `ExceptT` -- it quickly becomes hard to manage.
+But once you start stacking more than one effect -- say, `ReaderT`, `StateT`, and `ExceptT` -- it quickly becomes hard to manage.
 Libraries like `mtl`, `freer`, or `polysemy` try to reduce this friction, but the conceptual weight remains high.
 The learning curve is steep, and yes, monads still confuse people.
 Not because they’re inherently difficult, but because most programming education doesn’t equip you to think in algebraic structures.
@@ -696,7 +759,8 @@ Not because they’re inherently difficult, but because most programming educati
 ### Excepting Monads
 
 Despite Haskell’s emphasis on pure functions and strong static typing, it still includes support for runtime exceptions.
-Why? Because not all errors fit cleanly into a type-level model—especially when dealing with I/O or legacy code.
+Why?
+Because not all errors fit cleanly into a type-level model—especially when dealing with I/O or legacy code.
 However, these exceptions can be safely and idiomatically captured and transformed into more composable types like `Either`, making them compatible with the broader functional ecosystem.
 
 ```haskell
@@ -877,7 +941,7 @@ startServer = do
 This makes exception handling more explicit and modular -- you can define and run separate interpreters for each type of error, allowing each subsystem to handle its own failures independently.
 
 This approach tickles my functional programming itch, but it comes with complexity.
-It is very elegant of thinking of your program as a series of composable effects, that are then interpreted at the edges of your system.
+It is very elegant to think of your program as a series of composable effects, that are then interpreted at the edges of your system.
 More complex operations can be decomposed into smaller effects, before being interpreter.
 In some ways, it feels like a sort of interpreter that compiles your source code into a simpler bytecode (core language primitive operations) that is then executed.
 However, the learning curve is steep, and the abstraction overhead can be significant for small to medium projects.
@@ -945,7 +1009,7 @@ Same code, opposite outcomes, and pipeline is none the wiser.
 
 That's the leverage: with `try`/`catch` the decision to abort is baked into the throwing code (once you throw, the frames are gone).
 With effects, "abort" and "resume" are just two handlers you can choose between after the fact, abort is the special case where you decline to resume.
-That resumption ability, recovering without unwinding, is the bridge to the oldest idea in this whole post: Common Lisp's conditions and restarts.
+That resumption ability, recovering without unwinding, is the bridge to one of the oldest idea in this whole post: Common Lisp's conditions and restarts.
 
 ## Terms and Conditions (Common Lisp)
 
@@ -954,7 +1018,7 @@ Common Lisp's condition system, predating almost everything above, keeps them se
 
 A condition is signaled deep in the stack.
 Restarts are named recovery strategies defined at that same low level.
-But the handler that chooses which restart to invoke sits high up — and it runs with the stack still intact, in the dynamic context of the signaling code.
+But the handler that chooses which restart to invoke sits high up -- and it runs with the stack still intact, in the dynamic context of the signaling code.
 
 ```common-lisp
 (define-condition divide-by-zero (error)
@@ -970,7 +1034,7 @@ But the handler that chooses which restart to invoke sits high up — and it run
     (use-zero  ()  :report "Treat the result as 0."       0)))
 
 (defun run-pipeline ()
-  ;; The policy, decided UP here — chosen without unwinding the stack:
+  ;; The policy, decided UP here - chosen without unwinding the stack:
   (handler-bind
       ((divide-by-zero
          (lambda (c)
