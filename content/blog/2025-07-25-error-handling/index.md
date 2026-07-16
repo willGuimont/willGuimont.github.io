@@ -157,6 +157,14 @@ While similar to Java's checked exceptions, Swift's model sidesteps the problems
 2. Call-site ergonomics for choosing your safety level.
    The `try` / `try?` / `try!` family lets each call decide per-use whether to propagate, downgrade the throw into an Optional, or assert-and-crash.
 
+### `C++` and RAII
+
+C++ does have one particularly elegant answer to exceptions: Resource Acquisition Is Initialization (RAII).
+Instead of explicitly cleaning up resources in every possible failure path, you bind their lifetime to an object: the constructor acquires the resource, and the destructor releases it.
+When an exception unwinds the stack, destructors for fully constructed local objects are called automatically in reverse order, so files are closed, locks released, and memory freed without finally blocks.
+Standard types such as std::vector, std::unique_ptr, and std::lock_guard make this the default style of modern C++.
+RAII does not make exception control flow any less implicit, but it makes that implicit flow considerably safer by ensuring that abandoning a scope does not also abandon its resources—provided, crucially, that destructors themselves do not throw.
+
 ## `Go`ing Somewhere with Errors (Go)
 
 Go brought back the C-style return code (i.e., non-zero return for errors), modernized as error values returned by the function, now with `nil` as the successful return value (absence of error).
