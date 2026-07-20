@@ -5,7 +5,7 @@ date = 2026-07-10
 weight = 110
 [extra]
 category = "Games"
-app_url = "https://willguimont.com/cgame/hexatak/"
+app_url = "https://willguimont.com/cgame/hexatak_classic/"
 action_label = "Play the game"
 source_url = "https://github.com/willGuimont/cgame"
 blog_post = "blog/2026-07-10-hexatak/index.md"

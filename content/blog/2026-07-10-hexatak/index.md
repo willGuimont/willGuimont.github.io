@@ -15,7 +15,7 @@ toc_ordered = true
 
 You move whole stacks one tile at a time, spread towers across multiple cells, merge matching values, and satisfy bridge conditions before running out of moves. Later levels add gates that require specific stone values or exact stack heights, so the puzzle is not just about reaching the other side, but about routing the right road with the right pieces.
 
-**Play it here:** [willguimont.com/cgame/hexatak](https://willguimont.com/cgame/hexatak/)
+**Play it here:** [willguimont.com/cgame/hexatak](https://willguimont.com/cgame/hexatak_classic/)
 
 **Also on itch.io:** [willguimont.itch.io/hexatak](https://willguimont.itch.io/hexatak)
 
