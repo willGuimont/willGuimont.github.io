@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">CanControl</title>
+  <desc id="desc">An Arduino board communicates with a motor controller over a CAN bus.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#102934"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#7bd7ff" stroke-opacity=".06"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/><rect width="1440" height="810" fill="url(#grid)"/>
+  <text x="90" y="115" fill="#66ccff" font-family="ui-monospace,monospace" font-size="28" font-weight="700" letter-spacing="7">ROBOTICS / CAN BUS</text>
+  <text x="90" y="190" fill="#f5f7f8" font-family="Georgia,serif" font-size="72">CanControl</text>
+  <g transform="translate(105 285)">
+    <rect width="340" height="280" rx="28" fill="#10232b" stroke="#66ccff" stroke-width="4"/>
+    <rect x="45" y="48" width="250" height="130" rx="12" fill="#173b43" stroke="#48d7b0" stroke-width="3"/>
+    <circle cx="92" cy="92" r="17" fill="#48d7b0"/><circle cx="150" cy="92" r="17" fill="#66ccff"/><rect x="194" y="73" width="62" height="38" rx="5" fill="#07151b"/>
+    <path d="M65 218h210M65 240h150" stroke="#8ea1a9" stroke-width="10" stroke-linecap="round"/>
+    <text x="170" y="330" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="24" text-anchor="middle">ARDUINO</text>
+  </g>
+  <g filter="url(#glow)" fill="none" stroke-linecap="round">
+    <path d="M470 390H960" stroke="#66ccff" stroke-width="12"/><path d="M470 465H960" stroke="#48d7b0" stroke-width="12"/>
+    <circle cx="590" cy="390" r="11" fill="#66ccff"/><circle cx="720" cy="465" r="11" fill="#48d7b0"/><circle cx="850" cy="390" r="11" fill="#66ccff"/>
+  </g>
+  <text x="715" y="360" fill="#f5f7f8" font-family="ui-monospace,monospace" font-size="26" text-anchor="middle">CAN HIGH</text>
+  <text x="715" y="515" fill="#f5f7f8" font-family="ui-monospace,monospace" font-size="26" text-anchor="middle">CAN LOW</text>
+  <g transform="translate(980 285)">
+    <rect width="340" height="280" rx="28" fill="#10232b" stroke="#66ccff" stroke-width="4"/>
+    <circle cx="170" cy="132" r="82" fill="#07151b" stroke="#f1b56b" stroke-width="7"/>
+    <circle cx="170" cy="132" r="28" fill="#f1b56b"/><path d="M170 50v35M170 179v35M88 132h35M217 132h35" stroke="#f1b56b" stroke-width="10"/>
+    <text x="170" y="330" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="24" text-anchor="middle">MOTOR CONTROLLER</text>
+  </g>
+</svg>

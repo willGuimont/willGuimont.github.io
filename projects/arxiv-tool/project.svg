@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">arxiv_tool</title><desc id="desc">LaTeX source files are collected into an arXiv-ready paper package.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#08141a"/><stop offset="1" stop-color="#17242b"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".3"/></filter></defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <circle cx="1200" cy="100" r="260" fill="#66ccff" opacity=".05"/><circle cx="220" cy="780" r="330" fill="#b45a68" opacity=".08"/>
+  <text x="90" y="115" fill="#66ccff" font-family="ui-monospace,monospace" font-size="28" font-weight="700" letter-spacing="7">PAPER TOOLING</text>
+  <text x="90" y="190" fill="#f5f7f8" font-family="Georgia,serif" font-size="72">arxiv_tool</text>
+  <g transform="translate(120 285)" font-family="ui-monospace,monospace" filter="url(#shadow)">
+    <rect width="370" height="325" rx="22" fill="#12252d" stroke="#344a53" stroke-width="3"/>
+    <circle cx="38" cy="38" r="8" fill="#ff7b72"/><circle cx="65" cy="38" r="8" fill="#f1b56b"/><circle cx="92" cy="38" r="8" fill="#48d7b0"/>
+    <text x="38" y="104" fill="#8ea1a9" font-size="24">paper/</text><text x="72" y="151" fill="#f5f7f8" font-size="24">main.tex</text><text x="72" y="197" fill="#f5f7f8" font-size="24">references.bib</text><text x="72" y="243" fill="#f5f7f8" font-size="24">figures/</text><text x="72" y="289" fill="#f5f7f8" font-size="24">style.sty</text>
+  </g>
+  <g fill="none" stroke="#66ccff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M545 448h290"/><path d="m795 408 44 40-44 40"/></g>
+  <text x="690" y="410" fill="#66ccff" font-family="ui-monospace,monospace" font-size="22" text-anchor="middle">COLLECT + CLEAN</text>
+  <g transform="translate(895 260)" filter="url(#shadow)">
+    <path d="M0 35Q0 0 35 0h300l95 95v380q0 35-35 35H35Q0 510 0 475z" fill="#f3f0e9"/>
+    <path d="M335 0v95h95" fill="#d8d3c9"/>
+    <path d="M60 145h310M60 205h310M60 265h230M60 380h310M60 420h240" stroke="#9aa3a7" stroke-width="13" stroke-linecap="round"/>
+    <text x="215" y="345" fill="#b31b1b" font-family="Georgia,serif" font-size="78" text-anchor="middle">arXiv</text>
+  </g>
+</svg>

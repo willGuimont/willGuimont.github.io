@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Essay</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/essay/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 01 May 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Hello, World!</title>
+          <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/creative/hello-world/</link>
+          <guid>https://willguimont.com/creative/hello-world/</guid>
+          <description xml:base="https://willguimont.com/creative/hello-world/">&lt;p&gt;This is the first &lt;em&gt;test&lt;&#x2F;em&gt; essay of &lt;code&gt;wigum::creative&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

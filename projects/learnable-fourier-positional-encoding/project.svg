@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Learnable Fourier Positional Encoding</title><desc id="desc">Spatial coordinates flow through Fourier waves into a learned feature embedding.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#132933"/></linearGradient><linearGradient id="wave" x1="0" x2="1"><stop stop-color="#66ccff"/><stop offset="1" stop-color="#b889ff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <text x="85" y="105" fill="#66ccff" font-family="ui-monospace,monospace" font-size="26" font-weight="700" letter-spacing="5">POSITION → REPRESENTATION</text>
+  <text x="85" y="178" fill="#f5f7f8" font-family="Georgia,serif" font-size="63">Learnable Fourier Features</text>
+  <g transform="translate(95 300)" font-family="ui-monospace,monospace">
+    <rect width="250" height="300" rx="28" fill="#10242c" stroke="#344b55" stroke-width="3"/><text x="125" y="62" fill="#9fb1b8" font-size="23" text-anchor="middle">COORDINATES</text>
+    <text x="125" y="166" fill="#f5f7f8" font-size="58" text-anchor="middle">(x, y)</text><text x="125" y="235" fill="#66ccff" font-size="26" text-anchor="middle">ℝ²</text>
+  </g>
+  <g transform="translate(420 285)" fill="none" stroke="url(#wave)" stroke-width="9" filter="url(#glow)">
+    <path d="M0 75c50-45 100 45 150 0s100-45 150 0 100 45 150 0"/>
+    <path d="M0 190c25-42 50 42 75 0s50-42 75 0 50 42 75 0 50-42 75 0 50 42 75 0 50-42 75 0" opacity=".8"/>
+    <path d="M0 305c75-45 150 45 225 0s150-45 225 0" opacity=".6"/>
+  </g>
+  <text x="685" y="675" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="22" text-anchor="middle">LEARNED FREQUENCIES</text>
+  <g transform="translate(995 270)">
+    <rect width="340" height="360" rx="28" fill="#10242c" stroke="#b889ff" stroke-width="4"/>
+    <g fill="#66ccff"><rect x="55" y="60" width="45" height="45" rx="6"/><rect x="115" y="60" width="45" height="45" rx="6" opacity=".4"/><rect x="175" y="60" width="45" height="45" rx="6" opacity=".75"/><rect x="235" y="60" width="45" height="45" rx="6" opacity=".25"/></g>
+    <g fill="#b889ff"><rect x="55" y="120" width="45" height="45" rx="6" opacity=".45"/><rect x="115" y="120" width="45" height="45" rx="6"/><rect x="175" y="120" width="45" height="45" rx="6" opacity=".3"/><rect x="235" y="120" width="45" height="45" rx="6" opacity=".7"/></g>
+    <g fill="#48d7b0"><rect x="55" y="180" width="45" height="45" rx="6" opacity=".8"/><rect x="115" y="180" width="45" height="45" rx="6" opacity=".25"/><rect x="175" y="180" width="45" height="45" rx="6"/><rect x="235" y="180" width="45" height="45" rx="6" opacity=".5"/></g>
+    <text x="170" y="290" fill="#f5f7f8" font-family="ui-monospace,monospace" font-size="31" text-anchor="middle">EMBEDDING</text><text x="170" y="326" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="21" text-anchor="middle">LEARNABLE</text>
+  </g>
+  <path d="M900 450h55m-24-25 27 25-27 25" fill="none" stroke="#f5f7f8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

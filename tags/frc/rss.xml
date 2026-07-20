@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - FRC</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/frc/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>CanControl</title>
+          <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/cancontrol/</link>
+          <guid>https://willguimont.com/blog/cancontrol/</guid>
+          <description xml:base="https://willguimont.com/blog/cancontrol/">&lt;p&gt;FRC (FIRST Robotics Competition) robots often use motor controllers like the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.revrobotics.com&#x2F;rev-11-2158&#x2F;&quot;&gt;REV Robotics Spark MAX&lt;&#x2F;a&gt;, the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;store.ctr-electronics.com&#x2F;products&#x2F;talon-srx&quot;&gt;CTRE Talon SRX&lt;&#x2F;a&gt;, or the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;store.ctr-electronics.com&#x2F;products&#x2F;victor-spx&quot;&gt;CTRE Victor SPX&lt;&#x2F;a&gt;.
+However, these controllers are typically designed to work with specific libraries and hardware, such as the RoboRIO used in FRC.
+This can make it challenging to integrate them with other microcontrollers like Arduino.
+&lt;code&gt;CanControl&lt;&#x2F;code&gt; is an Arduino library that enables communication with FRC-compatible motor controllers over the CAN bus.
+With &lt;code&gt;CanControl&lt;&#x2F;code&gt;, you can send commands to motor controllers, read sensor data, and configure settings directly from an Arduino board.
+This opens up new possibilities for robotics projects that want to leverage the capabilities of FRC motor controllers without being tied to the FRC ecosystem.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;&#x2F;strong&gt; &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;CanControl&quot; target=&quot;_blank&quot;&gt;willGuimont&#x2F;CanControl&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
