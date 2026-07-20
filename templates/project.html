@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="project-detail">
+	<p class="project-detail-back"><a href="{{ get_url(path='projects') }}">← All projects</a></p>
+	<header>
+		<p class="project-detail-category">{{ page.extra.category }}</p>
+		<h1>{{ page.title }}</h1>
+		<p class="project-detail-summary">{{ page.description }}</p>
+
+		{%- if page.extra.app_url or page.extra.source_url or page.extra.blog_post %}
+		<nav class="project-actions" aria-label="Project links">
+			{%- if page.extra.app_url %}
+			<a class="project-action project-action-primary" href="{{ page.extra.app_url }}" target="_blank" rel="noopener noreferrer">
+				{{ page.extra.action_label | default(value="Run the app") }} <span aria-hidden="true">↗</span>
+			</a>
+			{%- endif %}
+			{%- if page.extra.source_url %}
+			<a class="project-action" href="{{ page.extra.source_url }}" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a>
+			{%- endif %}
+			{%- if page.extra.blog_post %}
+			{%- set blog_post = get_page(path=page.extra.blog_post) %}
+			<a class="project-action" href="{{ blog_post.permalink }}">Original post</a>
+			{%- endif %}
+		</nav>
+		{%- endif %}
+	</header>
+
+	<div class="project-detail-media">
+		{%- if page.extra.screenshot %}
+		<img src="{{ page.permalink ~ page.extra.screenshot }}"
+			alt="{{ page.extra.screenshot_alt | default(value=page.title) }}">
+		{%- else %}
+		<div class="project-screenshot-placeholder" role="img" aria-label="Screenshot placeholder">
+			<span aria-hidden="true">&lt;/&gt;</span>
+			<small>Screenshot coming soon</small>
+		</div>
+		{%- endif %}
+	</div>
+
+	<div class="project-detail-content">
+		{{ page.content | safe }}
+	</div>
+</article>
+{% endblock content %}

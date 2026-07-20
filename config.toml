@@ -171,11 +171,15 @@ show_repo = true
 links = [
 	# { url = "@/demo/index.md", name = "Demo" },
 	{ url = "@/blog/_index.md", name = "Blog" },
+	{ url = "@/projects/_index.md", name = "Projects" },
+	{ url = "@/papers/index.md", name = "Papers" },
 	{ url = "@/creative/_index.md", name = "Creative" },
+	{ url = "@/about/index.md", name = "About" },
 	{ name = "Links", menu = [
 		{ url = "https://github.com/willGuimont", name = "GitHub" },
 		{ url = "https://www.youtube.com/@willGuimont", name = "YouTube" },
 		{ url = "https://www.linkedin.com/in/william-guimont-martin/", name = "LinkedIn" },
+		{ url = "https://willguimont.itch.io/", name = "itch.io" },
 		{ url = "https://www.thingiverse.com/wigum/designs", name = "Thingiverse" },
 		{ url = "https://cults3d.com/en/users/wigum/", name = "Cults3D" },
 		{ url = "https://www.instagram.com/wilguimont/", name = "Instagram" },

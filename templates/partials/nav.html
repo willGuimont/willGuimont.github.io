@@ -1,4 +1,5 @@
 {%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+{%- set nav_current_url = current_url | default(value='/') -%}
 
 {%- if config.extra.nav.auto_hide %}
 <div id="handle"></div>
@@ -59,7 +60,7 @@
 			<li>
 				<a href="{{ get_url(path=link.url, lang=lang)}}" {%- if current_url | default(value='/' ) |
 					trim_end_matches(pat='/' ) | safe==get_url(path=link.url, lang=lang) | trim_end_matches(pat='/' ) |
-					safe -%} class="active" {%- endif -%}>
+					safe or link.name == 'Projects' and nav_current_url is matching('/projects/') -%} class="active" {%- endif -%}>
 					{{- macros_translate::translate(key=link.name, default=link.name, language_strings=language_strings)
 					-}}
 				</a>

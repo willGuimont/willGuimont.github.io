@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="about-page">
+	<header class="about-hero">
+		<p class="about-eyebrow">Deep learning · 3D perception · robotics</p>
+		<h1>{{ page.extra.name }}</h1>
+		<p class="about-location">{{ page.extra.location }}</p>
+		<p class="about-lead">{{ page.extra.intro }}</p>
+		<nav class="about-links" aria-label="Contact and profiles">
+			<a href="mailto:{{ page.extra.email }}">Email</a>
+			<a href="https://github.com/willGuimont" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+			<a href="https://scholar.google.com/citations?user=sZIyj3IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+		</nav>
+	</header>
+
+	{%- if page.toc %}
+	<nav class="about-index" aria-label="About page sections">
+		<strong>On this page</strong>
+		<ul>
+			{%- for heading in page.toc %}
+			<li><a href="{{ heading.permalink | safe }}">{{ heading.title }}</a></li>
+			{%- endfor %}
+		</ul>
+	</nav>
+	{%- endif %}
+
+	<div class="about-body">
+		{{ page.content | safe }}
+	</div>
+</article>
+{% endblock content %}

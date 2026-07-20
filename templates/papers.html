@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+	<h1>{{ page.title }}</h1>
+	<div class="papers-intro">{{ page.content | safe }}</div>
+
+	<section aria-labelledby="research-papers">
+		<h2 id="research-papers">Research papers</h2>
+		<div class="paper-list">
+			{%- for paper in page.extra.papers %}
+			<article class="paper-card">
+				<span class="paper-year">{{ paper.year }}</span>
+				<h3><a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a></h3>
+				<p class="paper-authors">{{ paper.authors }}</p>
+				<p class="paper-venue">{{ paper.venue }}</p>
+				{%- if paper.note %}<p class="paper-note">{{ paper.note }}</p>{%- endif %}
+				<div class="paper-links">
+					<a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+					{%- if paper.blog_post %}
+					{%- set blog_post = get_page(path=paper.blog_post) %}
+					<a href="{{ blog_post.permalink }}">Blog post</a>
+					{%- endif %}
+					{%- if paper.code_url %}<a href="{{ paper.code_url }}" target="_blank" rel="noopener noreferrer">Code ↗</a>{%- endif %}
+				</div>
+			</article>
+			{%- endfor %}
+		</div>
+	</section>
+
+	<section aria-labelledby="contributed-work">
+		<h2 id="contributed-work">Contributed work</h2>
+		<div class="paper-list">
+			{%- for paper in page.extra.contributed %}
+			<article class="paper-card">
+				<span class="paper-year">{{ paper.year }}</span>
+				<h3><a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a></h3>
+				<p class="paper-authors">{{ paper.authors }}</p>
+				<p class="paper-venue">{{ paper.venue }}</p>
+				<p class="paper-note">{{ paper.note }}</p>
+				<div class="paper-links"><a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer">Paper ↗</a></div>
+			</article>
+			{%- endfor %}
+		</div>
+	</section>
+
+	<section aria-labelledby="patents">
+		<h2 id="patents">Patent</h2>
+		<div class="paper-list">
+			{%- for patent in page.extra.patents %}
+			<article class="paper-card">
+				<span class="paper-year">{{ patent.year }}</span>
+				<h3><a href="{{ patent.url }}" target="_blank" rel="noopener noreferrer">{{ patent.title }}</a></h3>
+				<p class="paper-authors">{{ patent.authors }}</p>
+				<p class="paper-venue">{{ patent.venue }}</p>
+			</article>
+			{%- endfor %}
+		</div>
+	</section>
+</article>
+{% endblock content %}
