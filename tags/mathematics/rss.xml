@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Mathematics</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/mathematics/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Proof of sequence A094028</title>
+          <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/proof10101/</link>
+          <guid>https://willguimont.com/blog/proof10101/</guid>
+          <description xml:base="https://willguimont.com/blog/proof10101/">&lt;p&gt;1, 101, 10101, 1010101, 101010101, 10101010101, 1010101010101, 101010101010101, 10101010101010101, 1010101010101010101, 101010101010101010101, 10101010101010101010101, 1010101010101010101010101, 101010101010101010101010101, 10101010101010101010101010101&lt;&#x2F;p&gt;
+&lt;p&gt;This is the sequence A094028 of the &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;oeis.org&#x2F;A094028&quot; target=&quot;_blank&quot;&gt;On-Line Encyclopedia of Integer Sequences (OEIS)&lt;&#x2F;a&gt;. According to a comment from Felix Fröhlich on the sequence’s page:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;101 is the only term that is prime, since (100^k-1)&#x2F;99 = (10^k+1)&#x2F;11 * (10^k-1)&#x2F;9. When k is odd and not 1, (10^k+1)&#x2F;11 is an integer &amp;gt; 1 and thus (100^k-1)&#x2F;99 is nonprime. When k is even and greater than 2, (100^k-1)&#x2F;99 has the prime factor 101 and is nonprime.&lt;&#x2F;p&gt;
+&lt;p&gt;Felix Fröhlich, Oct 17 2015&lt;sup class=&quot;footnote-reference&quot; id=&quot;fr-oeis-1&quot;&gt;&lt;a href=&quot;#fn-oeis&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;It isn’t particularly striking that it should be the case. Let’s see why 101 is the only prime number of the sequence.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-sequence&quot;&gt;The sequence&lt;&#x2F;h2&gt;
+&lt;p&gt;First of all, let’s study a bit more the sequence. Say $A(n)$ the $n$th element of the sequence (0-indexed).&lt;&#x2F;p&gt;
+&lt;p&gt;For the first few elements we have:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(0)=1$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(1)=101$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(2)=10101$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(3)=1010101$$&lt;&#x2F;p&gt;
+&lt;p&gt;We can see that we can write the sequence as $$A(n)=\sum_{k=0}^n 100^k.$$&lt;&#x2F;p&gt;
+&lt;p&gt;For example, for the first element we have $$A(0)=100^0=1.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Similarly, for $n=2$, $$A(2)=10000 + 100 + 1 = 10101.$$&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-simpler-form&quot;&gt;A simpler form&lt;&#x2F;h2&gt;
+&lt;p&gt;For the $(n - 1)$th element of the sequence, we have:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(n) = 1 + 100 + 10000 + \ldots + 100^{n-1} + 100^n.$$&lt;&#x2F;p&gt;
+&lt;p&gt;We would like to remove some of terms, let’s consider&lt;&#x2F;p&gt;
+&lt;p&gt;$$100A(n) = 100 + 10000 + 1000000 + \ldots + 100^{n} + 100^{n+1}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;This sequence has many similar terms to $A(n)$, let’s subtract $100A(n)$ from $A(n)$.&lt;&#x2F;p&gt;
+&lt;p&gt;We can cancel the common terms, we end up with:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(n) - 100A(n) = 1 - 100^{n+1}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;To find out what $A(n)$ is, let’s isolate it from the equation.&lt;&#x2F;p&gt;
+&lt;p&gt;$$-99A(n)=1 - 100^{n+1}$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$\implies 99A(n)=100^{n+1} - 1$$&lt;&#x2F;p&gt;
+&lt;p&gt;$$\implies A(n) = \frac{100^{n+1} - 1}{99}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;So, we have: $A(n) = \frac{100^{n+1} - 1}{99}$, which we can see from the comment in the OEIS’s website.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;cleaning-things-a-bit&quot;&gt;Cleaning things a bit&lt;&#x2F;h2&gt;
+&lt;p&gt;We can rewrite $A(n)$ as $A(n) = \frac{(10^{n+1})^2 - 1}{99}$, because $100 = 10^2$.&lt;&#x2F;p&gt;
+&lt;p&gt;We now have a difference of squares, we can factorize it further:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(n) = \frac{(10^{n+1} + 1)(10^{n+1}-1)}{99}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;To make it a bit simpler to work with, let’s do a little variable substitution with $k=n-1$:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=A(n-1)= \frac{(10^{(n-1)+1} + 1)(10^{(n-1)+1}-1)}{99}=\frac{(10^{n} + 1)(10^{n}-1)}{99}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore,&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=\frac{(10^{n} + 1)(10^{n}-1)}{99}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, now we can write the $(k-1)$th element of the sequence a bit more easily, but it isn’t clear how we could prove that only 101 is prime. Let’s try to simplify this expression a bit more:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=\frac{(10^n + 1)(10^n-1)}{99}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;First of all, we can see that $(10^n-1)$ will be of the form $\underbrace{99\ldots99}_{n\text{-times}}$.&lt;&#x2F;p&gt;
+&lt;p&gt;We can split the $99$ in the denominator into $9\cdot 11$. We now have&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=\frac{(10^n + 1)(\overbrace{99\ldots99}^{n\text{-times}})}{9\cdot 11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;We can do the same for the $\overbrace{99\ldots99}^{n\text{-times}}$ in the numerator, we get:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=\frac{(10^n + 1)(9\cdot\overbrace{11\ldots11}^{n\text{-times}})}{9\cdot 11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;We can cancel out the $9$s:&lt;&#x2F;p&gt;
+&lt;p&gt;$$A(k)=\frac{(10^n + 1)(\overbrace{11\ldots11}^{n\text{-times}})}{11}.$$&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;division-by-11&quot;&gt;Division by 11&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s take a small break from our sequence to discuss the divisibility by $11$. For a number $n$ to be divisible by $11$, we must have that $n \equiv 0 \pmod {11}$&lt;&#x2F;p&gt;
+&lt;p&gt;A number in decimal base can be expressed as $n=a_ka_{k-1}\ldots a_1a_0$, so the value of $n$ is $10^ka_k+10^{k-1}a_{k-1}+\ldots+10a_1+a_0$.&lt;&#x2F;p&gt;
+&lt;p&gt;Note that $10 \equiv -1 \pmod {11}$.&lt;&#x2F;p&gt;
+&lt;p&gt;So,&lt;&#x2F;p&gt;
+&lt;p&gt;$$10^ka_k+10^{k-1}a_{k-1}+\ldots+10a_1+a_0 \equiv (-1)^ka_k+(-1)^{k-1}a_{k-1}+\ldots+(-a_1)+a_0 \pmod {11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Since $(-1)^{2n} = 1 \quad \forall n \in \mathbf{N}$, we deduce that every even placed digit are added, whereas odd placed numbers are subtracted ($(-1)^{2n + 1} = -1 \quad \forall n \in \mathbf{N}$).&lt;&#x2F;p&gt;
+&lt;p&gt;So, we can rewrite&lt;&#x2F;p&gt;
+&lt;p&gt;$$(-1)^ka_k+(-1)^{k-1}a_{k-1}+\ldots+(-a_1)+a_0 \equiv a_0 - a_1 + a_2 - a_3 + a_4 - a_5 \ldots \pmod {11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Since we want to check if $n$ is divisible by $11$, we must check if&lt;&#x2F;p&gt;
+&lt;p&gt;$$a_0 - a_1 + a_2 - a_3 + a_4 - a_5 \ldots \equiv 0 \pmod {11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;So, $n$ is divisible by $11$ if the sum of even placed digit (starting from the rightmost position) minus the sum of the odd placed digit is divisible by $11$.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-proof&quot;&gt;The proof&lt;&#x2F;h2&gt;
+&lt;p&gt;$$A(k)=\frac{(10^n + 1)(\overbrace{11\ldots11}^{n\text{-times}})}{11}.$$&lt;&#x2F;p&gt;
+&lt;p&gt;Now that we know that when a number is divisible by $11$, let’s analyse $A(k)$.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;n-1-is-even&quot;&gt;$n &amp;gt; 1$ is even&lt;&#x2F;h3&gt;
+&lt;p&gt;First, let’s suppose that $n$ is even. In that case, we get that $\overbrace{11\ldots11}^{n\text{-times}}$ is divisible by $11$, because, since there is as much even placed $1$s as odd placed $1$s, the sum of even placed digit minus the sum of the odd placed digit is 0, which is divisible by $11$.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, let’s use the variable $k=n-1$ to link the divisibility of $\overbrace{11\ldots11}^{n\text{-times}}$ by $11$ with the sequence. We notice that for $n &amp;gt; 1$ to be even, we must have that $k$ is odd, because $k=n-1$.&lt;&#x2F;p&gt;
+&lt;p&gt;For $k\geq3$, we have $n=k+1\geq4$, so that $\overbrace{11\ldots11}^{(n\geq4)\text{-times}} &amp;gt; 11$.&lt;&#x2F;p&gt;
+&lt;p&gt;Thus, we can deduce that $\frac{\overbrace{11\ldots11}^{(n\geq4)\text{-times}}}{11} &amp;gt; 1$ and that it is an integer.&lt;&#x2F;p&gt;
+&lt;p&gt;Posing $a=\frac{\overbrace{11\ldots11}^{(n\geq4)\text{-times}}}{11}$, we get $A(k) = (10^n + 1)a$.&lt;&#x2F;p&gt;
+&lt;p&gt;Since $A(k)$ is the result of the multiplication between two integers, each not equal to one, $A(k)$ is not prime.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;n-1-is-odd&quot;&gt;$n &amp;gt; 1$ is odd&lt;&#x2F;h3&gt;
+&lt;p&gt;We can use a similar trick for any even $k\geq2$, this time with the other part of $A(k)$. When $k$ is even (so that $n$ is odd) in $(10^n + 1)$, we have that one $1$ is at a even position and the other at an odd position, thus $1 - 1 = 0$ which is divisible by $11$. Similarly, we have that $(10^n + 1)&amp;gt;11$ because $n\geq3$. Thus, $\frac{(10^n + 1)}{11}&amp;gt;1$ and it is an integer. We can then conclude that $A(k)$ is not prime for even $k=n-1\geq2$.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-remaining-cases&quot;&gt;The remaining cases&lt;&#x2F;h3&gt;
+&lt;p&gt;This leaves us with two cases, $k=0$ and $k=1$. $A(0) = 1$ is not prime by definition and $A(1)$ is prime. Since for any other $k$, $A(k)$ is not prime, then $A(1)$ is the only prime in the sequence.&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align: right; width=100%;&quot;&gt;$\blacksquare$&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn-oeis&quot;&gt;
+&lt;p&gt;OEIS. Sequence A094028, https:&#x2F;&#x2F;oeis.org&#x2F;A094028 &lt;a href=&quot;#fr-oeis-1&quot;&gt;↩&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;section&gt;
+</description>
+      </item>
+    </channel>
+</rss>

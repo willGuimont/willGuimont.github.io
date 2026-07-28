@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>wigum favicon proposal: CRT w</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16212a"/>
+      <stop offset="100%" stop-color="#0c141a"/>
+    </linearGradient>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="rgba(102,204,255,0.08)"/>
+    </pattern>
+  </defs>
+  <rect width="64" height="64" fill="url(#bg)"/>
+  <rect width="64" height="64" fill="url(#scanlines)" opacity="0.55"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="11.25" fill="none" stroke="#21445a" stroke-width="1.5"/>
+  <text x="32" y="42" text-anchor="middle" font-size="30" font-family="&quot;JetBrains Mono&quot;, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, monospace" fill="#66ccff">w</text>
+  <path d="M15 49h34" stroke="#66ccff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+</svg>

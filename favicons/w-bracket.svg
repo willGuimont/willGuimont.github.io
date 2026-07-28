@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>wigum favicon: bracketed w</title>
+  <rect width="64" height="64" fill="#101820"/>
+  <path d="M20 14h-7v36h7" fill="none" stroke="#ff5f4d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 14h7v36h-7" fill="none" stroke="#ff5f4d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="43" text-anchor="middle" font-size="30" font-family="&quot;JetBrains Mono&quot;, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, monospace" fill="#66ccff">w</text>
+</svg>

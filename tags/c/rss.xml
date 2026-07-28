@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - C</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/c/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Hexatak</title>
+          <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/hexatak/</link>
+          <guid>https://willguimont.com/blog/hexatak/</guid>
+          <description xml:base="https://willguimont.com/blog/hexatak/">&lt;p&gt;&lt;code&gt;Hexatak&lt;&#x2F;code&gt; is a hex-grid puzzle about merging and stacking stones to build a contiguous road between two board edges. It was made in C for the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;itch.io&#x2F;jam&#x2F;raylib-6x-gamejam&quot;&gt;raylib 6.x game jam&lt;&#x2F;a&gt;, built around the themes &lt;code&gt;hex&lt;&#x2F;code&gt; and &lt;code&gt;merge&lt;&#x2F;code&gt;, and loosely inspired by the stack movement ideas in &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Tak_(game)&quot;&gt;Tak&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You move whole stacks one tile at a time, spread towers across multiple cells, merge matching values, and satisfy bridge conditions before running out of moves. Later levels add gates that require specific stone values or exact stack heights, so the puzzle is not just about reaching the other side, but about routing the right road with the right pieces.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Play it here:&lt;&#x2F;strong&gt; &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;cgame&#x2F;hexatak_classic&#x2F;&quot;&gt;willguimont.com&#x2F;cgame&#x2F;hexatak&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Also on itch.io:&lt;&#x2F;strong&gt; &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.itch.io&#x2F;hexatak&quot;&gt;willguimont.itch.io&#x2F;hexatak&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Source code:&lt;&#x2F;strong&gt; &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;willGuimont&#x2F;cgame&quot;&gt;github.com&#x2F;willGuimont&#x2F;cgame&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;blog&#x2F;hexatak&#x2F;title_screen.png&quot; alt=&quot;Hexatak title screen&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-in-the-game&quot;&gt;What is in the game&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;18 handcrafted puzzle levels with escalating mechanics&lt;&#x2F;li&gt;
+&lt;li&gt;Stack movement, stack spreading, and value merges&lt;&#x2F;li&gt;
+&lt;li&gt;Blocked cells, fixed bridge anchors, value gates, and height gates&lt;&#x2F;li&gt;
+&lt;li&gt;A built-in level editor used to design and test puzzles&lt;&#x2F;li&gt;
+&lt;li&gt;Debug-only tooling for checking solvability and loading levels quickly during development&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;how-it-plays&quot;&gt;How it plays&lt;&#x2F;h2&gt;
+&lt;p&gt;The goal in each puzzle is to create a valid connected road between two board edges.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Move a whole stack one tile at a time&lt;&#x2F;li&gt;
+&lt;li&gt;Spread a tower across multiple cells in one direction&lt;&#x2F;li&gt;
+&lt;li&gt;Merge stones with matching values&lt;&#x2F;li&gt;
+&lt;li&gt;Meet exact bridge conditions within the level move limit&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This leads to puzzles where the shape of the path matters, the value distribution matters, and sometimes even the exact height of a stack matters.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;controls&quot;&gt;Controls&lt;&#x2F;h2&gt;
+&lt;p&gt;Mouse:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Left click a stack, then left click a target cell to move it one step&lt;&#x2F;li&gt;
+&lt;li&gt;Left click and drag from a stack to spread it in a direction&lt;&#x2F;li&gt;
+&lt;li&gt;Right click to cancel the current selection&lt;&#x2F;li&gt;
+&lt;li&gt;Use the on-screen buttons for undo, redo, reset, and other actions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Keyboard:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;U&lt;&#x2F;code&gt;: undo&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Y&lt;&#x2F;code&gt;: redo&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;R&lt;&#x2F;code&gt;: reset the current level&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Esc&lt;&#x2F;code&gt;: return to the menu or leave the editor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Space&lt;&#x2F;code&gt; &#x2F; &lt;code&gt;Enter&lt;&#x2F;code&gt;: advance dialogs and continue after a cleared level&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;&#x2F;h2&gt;
+&lt;div class=&quot;img-row&quot;&gt;
+  &lt;img src=&quot;in_game_01.png&quot; alt=&quot;Hexatak gameplay showing stacked stones on a hex grid&quot;&gt;
+  &lt;img src=&quot;in_game_02.png&quot; alt=&quot;Hexatak gameplay with bridge routing and gates&quot;&gt;
+&lt;&#x2F;div&gt;
+&lt;div class=&quot;img-row&quot;&gt;
+  &lt;img src=&quot;in_game_03.png&quot; alt=&quot;Hexatak late-game puzzle screenshot&quot;&gt;
+  &lt;img src=&quot;level_editor.png&quot; alt=&quot;Hexatak built-in level editor&quot;&gt;
+&lt;&#x2F;div&gt;
+</description>
+      </item>
+    </channel>
+</rss>

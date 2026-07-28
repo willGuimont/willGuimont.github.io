@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">torch_waymo</title><desc id="desc">A point-cloud road scene is converted into a PyTorch tensor.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#102833"/></linearGradient><linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#17313b"/><stop offset="1" stop-color="#091217"/></linearGradient></defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <text x="84" y="110" fill="#66ccff" font-family="ui-monospace,monospace" font-size="27" font-weight="700" letter-spacing="6">POINT CLOUDS → TENSORS</text>
+  <text x="84" y="188" fill="#f5f7f8" font-family="Georgia,serif" font-size="72">torch_waymo</text>
+  <path d="M250 810 560 265h320l310 545z" fill="url(#road)" stroke="#344b55" stroke-width="3"/>
+  <path d="M705 745 720 680M737 610l15-66M770 474l14-63M800 348l10-43" stroke="#f1b56b" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#66ccff">
+    <circle cx="300" cy="650" r="8"/><circle cx="358" cy="583" r="5"/><circle cx="409" cy="525" r="7"/><circle cx="475" cy="447" r="5"/><circle cx="507" cy="382" r="7"/><circle cx="935" cy="620" r="8"/><circle cx="997" cy="679" r="5"/><circle cx="902" cy="522" r="7"/><circle cx="870" cy="444" r="5"/><circle cx="1060" cy="728" r="7"/>
+  </g>
+  <g transform="translate(455 420)"><path d="m35 118 30-82q8-24 36-24h165q28 0 39 24l32 82" fill="#1c3d47" stroke="#48d7b0" stroke-width="5"/><rect y="108" width="370" height="125" rx="32" fill="#17313b" stroke="#48d7b0" stroke-width="5"/><circle cx="78" cy="229" r="35" fill="#07151b" stroke="#66ccff" stroke-width="7"/><circle cx="292" cy="229" r="35" fill="#07151b" stroke="#66ccff" stroke-width="7"/><path d="M105 42h156l28 66H82z" fill="#66ccff" opacity=".22"/></g>
+  <g transform="translate(1100 275)" fill="none" stroke="#ee4c2c" stroke-width="13" stroke-linecap="round"><path d="M80 0H15v350h65M190 0h65v350h-65"/><path d="M90 80h75M90 145h75M90 210h75M90 275h75" opacity=".7"/></g>
+  <text x="1227" y="690" fill="#ee4c2c" font-family="ui-monospace,monospace" font-size="25" font-weight="700" text-anchor="middle">PYTORCH</text>
+</svg>

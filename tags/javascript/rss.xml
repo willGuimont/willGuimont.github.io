@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - JavaScript</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/javascript/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Nelligan Web</title>
+          <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/nelligan-web/</link>
+          <guid>https://willguimont.com/blog/nelligan-web/</guid>
+          <description xml:base="https://willguimont.com/blog/nelligan-web/">&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;nelligan-web&#x2F;&quot;&gt;Nelligan&lt;&#x2F;a&gt; is a small web application for memorizing poetry.
+It helps you progressively hide parts of a poem, recall them from memory, and repeat the process until you can recite the complete text.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;nelligan-web&#x2F;&quot;&gt;Open Nelligan&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

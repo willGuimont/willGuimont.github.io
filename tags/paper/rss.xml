@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Paper</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/paper/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>SilvaScenes</title>
+          <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/silvascenes/</link>
+          <guid>https://willguimont.com/blog/silvascenes/</guid>
+          <description xml:base="https://willguimont.com/blog/silvascenes/">&lt;p&gt;Co-authored paper: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2510.09458&quot; target=&quot;_blank&quot;&gt;SilvaScenes: Tree Segmentation and Species Classification from Under-Canopy Images in Natural Forests&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Interest in robotics for forest management is growing, but perception in complex, natural environments remains a significant hurdle. Conditions such as heavy occlusion, variable lighting, and dense vegetation pose challenges to automated systems, which are essential for precision forestry, biodiversity monitoring, and the automation of forestry equipment. These tasks rely on advanced perceptual capabilities, such as detection and fine-grained species classification of individual trees. Yet, existing datasets are inadequate to develop such perception systems, as they often focus on urban settings or a limited number of species. To address this, we present SilvaScenes, a new dataset for instance segmentation of tree species from under-canopy images. Collected across five bioclimatic domains in Quebec, Canada, SilvaScenes features 1476 trees from 24 species with annotations from forestry experts. We demonstrate the relevance and challenging nature of our dataset by benchmarking modern deep learning approaches for instance segmentation. Our results show that, while tree segmentation is easy, with a top mean average precision (mAP) of 67.65%, species classification remains a significant challenge with an mAP of only 35.69%. Our dataset and source code will be available at &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norlab-ulaval&#x2F;SilvaScenes&quot;&gt;this https URL&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Using Citizen Science Data for UAV Image Analysis</title>
+          <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/citizen-sciences/</link>
+          <guid>https://willguimont.com/blog/citizen-sciences/</guid>
+          <description xml:base="https://willguimont.com/blog/citizen-sciences/">&lt;p&gt;Co-authored paper in MDPI: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.mdpi.com&#x2F;1999-4907&#x2F;16&#x2F;4&#x2F;616&quot; target=&quot;_blank&quot;&gt;Using Citizen Science Data as Pre-Training for Semantic Segmentation of High-Resolution UAV Images for Natural Forests Post-Disturbance Assessment&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The ability to monitor forest areas after disturbances is key to ensure their regrowth. Problematic situations that are detected can then be addressed with targeted regeneration efforts. However, achieving this with automated photo interpretation is problematic, as training such systems requires large amounts of labeled data. To this effect, we leverage citizen science data (iNaturalist) to alleviate this issue. More precisely, we seek to generate pre-training data from a classifier trained on selected exemplars. This is accomplished by using a moving-window approach on carefully gathered low-altitude images with an Unmanned Aerial Vehicle (UAV), WilDReF-Q (Wild Drone Regrowth Forest—Quebec) dataset, to generate high-quality pseudo-labels. To generate accurate pseudo-labels, the predictions of our classifier for each window are integrated using a majority voting approach. Our results indicate that pre-training a semantic segmentation network on over 140,000 auto-labeled images yields an $F1$ score of 43.74% over 24 different classes, on a separate ground truth dataset. In comparison, using only labeled images yields a score of 32.45%, while fine-tuning the pre-trained network only yields marginal improvements (46.76%). Importantly, we demonstrate that our approach is able to benefit from more unlabeled images, opening the door for learning at scale. We also optimized the hyperparameters for pseudo-labeling, including the number of predictions assigned to each pixel in the majority voting process. Overall, this demonstrates that an auto-labeling approach can greatly reduce the development cost of plant identification in regeneration regions, based on UAV imagery.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Terrain Classification for Boreal Forests</title>
+          <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/borealtc/</link>
+          <guid>https://willguimont.com/blog/borealtc/</guid>
+          <description xml:base="https://willguimont.com/blog/borealtc/">&lt;p&gt;Co-authored paper at IROS 2024: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;norlab-ulaval.github.io&#x2F;BorealTC&#x2F;&quot; target=&quot;_blank&quot;&gt;Proprioception Is All You Need: Terrain Classification for Boreal Forests&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in field robotics highlighted the importance of resiliency against different types of terrains. Boreal forests, in particular, are home to many mobility-impeding terrains that should be considered for off-road autonomous navigation. Also, being one of the largest land biomes on Earth, boreal forests are an area where autonomous vehicles are expected to become increasingly common. In this paper, we address the issue of classifying boreal terrains by introducing BorealTC, a publicly available dataset for proprioceptive-based terrain classification (TC). Recorded with a Husky A200, our dataset contains 116 min of Inertial Measurement Unit (IMU), motor current, and wheel odometry data, focusing on typical boreal forest terrains, notably snow, ice, and silty loam. Combining our dataset with another dataset from the literature, we evaluate both a Convolutional Neural Network (CNN) and the novel state space model (SSM)-based Mamba architecture on a TC task. We show that while CNN outperforms Mamba on each separate dataset, Mamba achieves greater accuracy when trained on a combination of both. In addition, we demonstrate that Mamba’s learning capacity is greater than a CNN for increasing amounts of data. We show that the combination of two TC datasets yields a latent space that can be interpreted with the properties of the terrains. We also discuss the implications of merging datasets on classification. Our source code and dataset are &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norlab-ulaval&#x2F;BorealTC&quot; target=&quot;_blank&quot;&gt;publicly available online&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Benchmarking of Real-Time Object Detection Models</title>
+          <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/det-bench/</link>
+          <guid>https://willguimont.com/blog/det-bench/</guid>
+          <description xml:base="https://willguimont.com/blog/det-bench/">&lt;p&gt;Published a paper to ArXiv: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2405.06911&quot; target=&quot;_blank&quot;&gt;Replication Study and Benchmarking of Real-Time Object Detection Models&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This work examines the reproducibility and benchmarking of state-of-the-art real-time object detection models. As object detection models are often used in real-world contexts, such as robotics, where inference time is paramount, simply measuring models’ accuracy is not enough to compare them. We thus compare a large variety of object detection models’ accuracy and inference speed on multiple graphics cards. In addition to this large benchmarking attempt, we also reproduce the following models from scratch using PyTorch on the MS COCO 2017 dataset: DETR, RTMDet, ViTDet and YOLOv7. More importantly, we propose a unified training and evaluation pipeline, based on MMDetection’s features, to better compare models. Our implementation of DETR and ViTDet could not achieve accuracy or speed performances comparable to what is declared in the original papers. On the other hand, reproduced RTMDet and YOLOv7 could match such performances. Studied papers are also found to be generally lacking for reproducibility purposes. As for MMDetection pretrained models, speed performances are severely reduced with limited computing resources (larger, more accurate models even more so). Moreover, results exhibit a strong trade-off between accuracy and speed, prevailed by anchor-free models - notably RTMDet or YOLOx models. The code used is this paper and all the experiments is available in the repository at &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Don767&#x2F;segdet_mlcr2024&quot; target=&quot;_blank&quot;&gt;this https URL&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>MaskBEV</title>
+          <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maskbev/</link>
+          <guid>https://willguimont.com/blog/maskbev/</guid>
+          <description xml:base="https://willguimont.com/blog/maskbev/">&lt;p&gt;Accepted paper at IROS 2023: &lt;a class=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2307.01864&quot; target=&quot;_blank&quot;&gt;MaskBEV: Joint Object Detection and Footprint Completion for Bird’s-eye View 3D Point Clouds&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in object detection in LiDAR point clouds mostly focus on predicting bounding boxes around objects. This prediction is commonly achieved using anchor-based or anchor-free detectors that predict bounding boxes, requiring significant explicit prior knowledge about the objects to work properly. To remedy these limitations, we propose MaskBEV, a bird’s-eye view (BEV) mask-based object detector neural architecture. MaskBEV predicts a set of BEV instance masks that represent the footprints of detected objects. Moreover, our approach allows object detection and footprint completion in a single pass. MaskBEV also reformulates the detection problem purely in terms of classification, doing away with regression usually done to predict bounding boxes. We evaluate the performance of MaskBEV on both SemanticKITTI and KITTI datasets while analyzing the architecture advantages and limitations.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</description>
+      </item>
+    </channel>
+</rss>

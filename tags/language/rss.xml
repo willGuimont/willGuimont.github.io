@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Language</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#x27;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/language/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Ars Linguae Web</title>
+          <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/arslinguae-web/</link>
+          <guid>https://willguimont.com/blog/arslinguae-web/</guid>
+          <description xml:base="https://willguimont.com/blog/arslinguae-web/">&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;arslinguae-web&#x2F;&quot;&gt;Ars Linguae&lt;&#x2F;a&gt; is a small web application for discovering new words and committing them to memory through regular review.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;willguimont.com&#x2F;arslinguae-web&#x2F;&quot;&gt;Open Ars Linguae&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
