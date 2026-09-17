@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Robotics</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#39;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/robotics/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>CanControl</title>
+          <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/cancontrol/</link>
+          <guid>https://willguimont.com/blog/cancontrol/</guid>
+          <description xml:base="https://willguimont.com/blog/cancontrol/">&lt;p&gt;FRC (FIRST Robotics Competition) robots often use motor controllers like the &lt;a rel=&quot;external&quot; href=&quot;https://www.revrobotics.com/rev-11-2158/&quot;&gt;REV Robotics Spark MAX&lt;/a&gt;, the &lt;a rel=&quot;external&quot; href=&quot;https://store.ctr-electronics.com/products/talon-srx&quot;&gt;CTRE Talon SRX&lt;/a&gt;, or the &lt;a rel=&quot;external&quot; href=&quot;https://store.ctr-electronics.com/products/victor-spx&quot;&gt;CTRE Victor SPX&lt;/a&gt;.
+However, these controllers are typically designed to work with specific libraries and hardware, such as the RoboRIO used in FRC.
+This can make it challenging to integrate them with other microcontrollers like Arduino.
+&lt;code&gt;CanControl&lt;/code&gt; is an Arduino library that enables communication with FRC-compatible motor controllers over the CAN bus.
+With &lt;code&gt;CanControl&lt;/code&gt;, you can send commands to motor controllers, read sensor data, and configure settings directly from an Arduino board.
+This opens up new possibilities for robotics projects that want to leverage the capabilities of FRC motor controllers without being tied to the FRC ecosystem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/CanControl&quot; target=&quot;_blank&quot;&gt;willGuimont/CanControl&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>3D-Printed AprilTags That Withstand the Real World</title>
+          <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/cube/</link>
+          <guid>https://willguimont.com/blog/cube/</guid>
+          <description xml:base="https://willguimont.com/blog/cube/">&lt;p&gt;In many robotics projects, AprilTags are indispensable. But the standard approach — printing on paper, gluing to cardboard — doesn’t hold up outside the lab.
+Tags peel, warp, fade, and disintegrate when exposed to handling, humidity, or rough environments.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Tracker3D.jl&lt;/code&gt; solves this.
+It generates 3D-printable AprilTags engineered for the real world: flat, durable, weather-resistant, and easy to integrate directly into enclosures or mounts.
+Whether you’re field-testing robots or deploying long-term vision systems, these tags won’t fail you.&lt;/p&gt;
+&lt;p&gt;Why &lt;code&gt;Tracker3D.jl&lt;/code&gt;?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚫 No more flimsy paper or fragile adhesives&lt;/li&gt;
+&lt;li&gt;✅ Always flat, robust, and easy to embed&lt;/li&gt;
+&lt;li&gt;☁️ Weatherproof and reusable&lt;/li&gt;
+&lt;li&gt;🧩 Ideal for industrial, outdoor, or educational setups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/Tracker3D.jl&quot; target=&quot;_blank&quot;&gt;willGuimont/Tracker3D.jl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ready-to-print tags:&lt;/strong&gt; &lt;a class=&quot;external&quot; href=&quot;https://www.thingiverse.com/thing:6983741&quot; target=&quot;_blank&quot;&gt;Thingiverse&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

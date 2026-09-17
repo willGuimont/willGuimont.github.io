@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - 3D Printing</title>
+    <subtitle>William Guimont-Martin&#39;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/3d-printing/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-06-08T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/3d-printing/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Turn Your Dumbbells Into Barbell Plates</title>
+        <published>2025-06-08T00:00:00+00:00</published>
+        <updated>2025-06-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/dumb2bar-re/"/>
+        <id>https://willguimont.com/blog/dumb2bar-re/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/dumb2bar-re/">&lt;p&gt;Introducing Dumb2Bar — a 3D-printable adapter that transforms your dumbbells into barbell plates.&lt;/p&gt;
+&lt;p&gt;No need to buy separate weight plates — just reuse what you already own.&lt;/p&gt;
+&lt;p&gt;Print it. Bolt it. Lift.&lt;/p&gt;
+&lt;p&gt;🔗 Get it on Cults3D:
+&lt;a class=&quot;external&quot; href=&quot;https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter&quot; target=&quot;_blank&quot;&gt;https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter&lt;/a&gt;&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>3D-Printed AprilTags That Withstand the Real World</title>
+        <published>2025-05-27T00:00:00+00:00</published>
+        <updated>2025-05-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/cube/"/>
+        <id>https://willguimont.com/blog/cube/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/cube/">&lt;p&gt;In many robotics projects, AprilTags are indispensable. But the standard approach — printing on paper, gluing to cardboard — doesn’t hold up outside the lab.
+Tags peel, warp, fade, and disintegrate when exposed to handling, humidity, or rough environments.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Tracker3D.jl&lt;/code&gt; solves this.
+It generates 3D-printable AprilTags engineered for the real world: flat, durable, weather-resistant, and easy to integrate directly into enclosures or mounts.
+Whether you’re field-testing robots or deploying long-term vision systems, these tags won’t fail you.&lt;/p&gt;
+&lt;p&gt;Why &lt;code&gt;Tracker3D.jl&lt;/code&gt;?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚫 No more flimsy paper or fragile adhesives&lt;/li&gt;
+&lt;li&gt;✅ Always flat, robust, and easy to embed&lt;/li&gt;
+&lt;li&gt;☁️ Weatherproof and reusable&lt;/li&gt;
+&lt;li&gt;🧩 Ideal for industrial, outdoor, or educational setups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/Tracker3D.jl&quot; target=&quot;_blank&quot;&gt;willGuimont/Tracker3D.jl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ready-to-print tags:&lt;/strong&gt; &lt;a class=&quot;external&quot; href=&quot;https://www.thingiverse.com/thing:6983741&quot; target=&quot;_blank&quot;&gt;Thingiverse&lt;/a&gt;&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Dumbbell to Barbell Adapter</title>
+        <published>2024-09-11T00:00:00+00:00</published>
+        <updated>2024-09-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/dumb2bar/"/>
+        <id>https://willguimont.com/blog/dumb2bar/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/dumb2bar/">&lt;p&gt;This dumbbell-to-barbell adapter allows you to transform your dumbbells into barbell plates. Designed to fit on a standard barbell, this adapter ensures your dumbbells stay in place during even the most intense workouts. It’s a cost-effective, space-saving solution for those looking to expand their weightlifting capabilities without purchasing additional equipment.&lt;/p&gt;
+&lt;p&gt;The adapter fits on standard barbells with a diameter of 1“ (25.4 mm) and is compatible with dumbbells that have a handle length of 6“ (124 mm) or longer.&lt;/p&gt;
+&lt;p&gt;Available here: &lt;a class=&quot;external&quot; href=&quot;https://cults3d.com/en/3d-model/various/dumbell-to-barbell-adapter&quot; target=&quot;_blank&quot;&gt;Dumbbell to Barbell Adapter @ cults3d.com&lt;/a&gt;&lt;/p&gt;
+</content>
+        
+    </entry>
+</feed>

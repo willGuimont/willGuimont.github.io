@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>wigum favicon proposal: terminal chip</title>
+  <rect width="64" height="64" fill="#172129"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="11.25" fill="none" stroke="#24303a" stroke-width="1.5"/>
+  <text x="32" y="43" text-anchor="middle" font-size="38" font-family="&quot;JetBrains Mono&quot;, &quot;Cascadia Mono&quot;, &quot;SFMono-Regular&quot;, monospace" fill="#ff5f4d">w</text>
+</svg>

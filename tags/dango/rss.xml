@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Dango</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin&#39;s personal website</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/dango/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Dashy Dango</title>
+          <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/dashy-dango/</link>
+          <guid>https://willguimont.com/blog/dashy-dango/</guid>
+          <description xml:base="https://willguimont.com/blog/dashy-dango/">&lt;p&gt;Dashy Dango a wave fighting game made with &lt;a class=&quot;external&quot; href=&quot;https://wasm4.org/&quot; target=&quot;_blank&quot;&gt;WASM-4&lt;/a&gt; by &lt;a class=&quot;external&quot; href=&quot;https://github.com/samX500&quot; target=&quot;_blank&quot;&gt;@samX500&lt;/a&gt; and &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont&quot; target=&quot;_blank&quot;&gt;@willGuimont&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https://willguimont.github.io/dashy-dango/&quot; target=&quot;_blank&quot;&gt;Try the game here&lt;/a&gt; or on &lt;a class=&quot;external&quot; href=&quot;https://willguimont.itch.io/dashy-dango&quot; target=&quot;_blank&quot;&gt;itch.io&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/dashy-dango/DashyDangolong.webp&quot; alt=&quot;dash dango&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Source code is here: &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/dashy-dango&quot; target=&quot;_blank&quot;&gt;willGuimont/dashy-dango&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We built our own ECS (entity-component-systems) from scratch in Rust.&lt;/p&gt;
+&lt;p&gt;More screenshots:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/dashy-dango/dashy_1.webp&quot; alt=&quot;screenshot 1&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/dashy-dango/dashy_2.webp&quot; alt=&quot;screenshot 2&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/dashy-dango/dashy_3.webp&quot; alt=&quot;screenshot 3&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Rolly Dango</title>
+          <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/rolly-dango/</link>
+          <guid>https://willguimont.com/blog/rolly-dango/</guid>
+          <description xml:base="https://willguimont.com/blog/rolly-dango/">&lt;p&gt;Rolly Dango, an isometric rolling puzzle made with &lt;a class=&quot;external&quot; href=&quot;https://wasm4.org/&quot; target=&quot;_blank&quot;&gt;WASM-4&lt;/a&gt;. We made it for the &lt;a class=&quot;external&quot; href=&quot;https://itch.io/jam/wasm4&quot; target=&quot;_blank&quot;&gt;WASM-4 Game Jam&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https://willguimont.github.io/rolly-dango/&quot; target=&quot;_blank&quot;&gt;Try the game here&lt;/a&gt; or on &lt;a class=&quot;external&quot; href=&quot;https://willguimont.itch.io/rolly-dango&quot; target=&quot;_blank&quot;&gt;itch.io&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/rolly-dango/game.webp&quot; alt=&quot;rolly dango&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Source code is here: &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/rolly-dango&quot; target=&quot;_blank&quot;&gt;willGuimont/rolly-dango&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here’s some key points of our project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We made our own ECS (entity-component-systems) from scratch&lt;/li&gt;
+&lt;li&gt;To save cartridge space, we built our own Huffman coding algorithm&lt;/li&gt;
+&lt;li&gt;To help ourselves make levels, we built our own level editor using &lt;a class=&quot;external&quot; href=&quot;https://p5js.org/&quot; target=&quot;_blank&quot;&gt;p5.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Made all of our sprites using &lt;a class=&quot;external&quot; href=&quot;https://www.aseprite.org/&quot; target=&quot;_blank&quot;&gt;Aseprite&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our level editor:
+&lt;img src=&quot;https://willguimont.com/blog/rolly-dango/editor.webp&quot; alt=&quot;level editor&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
