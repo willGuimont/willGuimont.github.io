@@ -89,6 +89,7 @@
     object-fit: cover;
     object-position: top;
     transition: transform 220ms ease;
+
   }
 
   &:hover img {
@@ -220,6 +221,7 @@
     margin: 0;
     border-radius: 0;
     object-fit: cover;
+
   }
 }
 

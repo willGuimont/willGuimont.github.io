@@ -20,4 +20,4 @@ This video presents TossingBot, a robotic arm that learns to throw arbitrary obj
 
 This video was made for the class *GLO-7030: Deep Learning* at Université Laval.
 
-{{ youtube(id="Icx6j3s_Pmc") }}
+{{<youtube id="Icx6j3s_Pmc" />}}

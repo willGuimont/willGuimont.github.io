@@ -22,4 +22,4 @@ Voici les diapositives: <a href="Point-BERT-IFT-6001.pdf" target="_blank">Point-
 
 Voici l'enregistrement de la présentation:
 
-{{ youtube(id="fywySHYLzW4") }}
+{{<youtube id="fywySHYLzW4" />}}

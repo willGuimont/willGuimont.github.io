@@ -59,9 +59,9 @@ Pour explorer cette technique un peu plus en détail, j’ai implémenté un ray
 
 Le code source est disponible ici : <a class="external" href="https://github.com/willGuimont/ray" target="_blank">willGuimont/ray</a>. À noter qu'il est possible de faire de l'illumination avec cette technique aussi. Il faut simplement approximer la normale en lançant des rayons autour du rayon de la caméra. Cette technique est vraiment très intéressante.
 
-{% alert(important=true) %}
+{% <alert important={true}> %}
 J'ai aussi implémenté le même algorithme en Rust: <a class="external" href="https://github.com/willGuimont/rust_ray" target="_blank">willGuimont/rust_ray</a>
-{% end %}
+{% </alert> %}
 
 
 ## Références

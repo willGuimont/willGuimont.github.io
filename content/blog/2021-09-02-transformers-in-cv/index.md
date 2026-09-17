@@ -22,4 +22,4 @@ Here are the slides: <a href="TransformersInComputerVision.pdf" target="_blank">
 
 And here is the recording of the event:
 
-{{ youtube(id="eaWXeXs8dh0") }}
+{{<youtube id="eaWXeXs8dh0" />}}

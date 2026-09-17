@@ -12,7 +12,7 @@ This website serves as a space to share my work, ideas, and projects --- whether
 
 Check out the latest posts in the [blog](@/blog/_index.md), see my lastest [projects](@/projects/_index.md), [papers](@/papers/index.md) I worked on, explore [creative writing](@/creative/_index.md), or connect with me on the wider internet through the links in the navigation bar.
 
-{% crt() %}
+{% <crt> %}
 ```
 > Once, men turned their thinking over to machines in the hope that
 > this would set them free. But that only permitted other men
@@ -20,4 +20,4 @@ Check out the latest posts in the [blog](@/blog/_index.md), see my lastest [proj
 
 - Frank Herbert, Dune
 ```
-{% end %}
+{% </crt> %}

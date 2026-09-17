@@ -7,6 +7,7 @@ weight = 130
 category = "Games"
 app_url = "https://willguimont.github.io/rolly-dango/"
 action_label = "Play the game"
+itch_url = "https://willguimont.itch.io/rolly-dango"
 source_url = "https://github.com/willGuimont/rolly-dango"
 blog_post = "blog/2022-01-17-rolly-dango/index.md"
 screenshot = "game.webp"

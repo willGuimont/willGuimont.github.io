@@ -65,7 +65,7 @@ chmod +x test.sh
 
 These commands should print `Hello world`.
 
-{% alert(tip=true) %}
+{% <alert tip={true}> %}
 **Adventurers only**
 
 If you are comfortable with the command line, we encourage you to try completing this workshop using `vim` as your text editor.
@@ -75,7 +75,7 @@ As a programmer, you will spend a lot of time writing code, so investing in lear
 There are plugins emulating `vim` commands for most IDEs: [Vim for VS Code](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) or [IdeaVim for JetBrains products](https://plugins.jetbrains.com/plugin/164-ideavim).
 
 **Please note that no assistance regarding `vim` will be provided during this workshop.**
-{% end %}
+{% </alert> %}
 
 ### Solutions
 Proposed solutions to the exercises in these workshops are available in the following GitHub repository: [ulavalIFTGLOateliers/IFT2001-Docker](https://github.com/ulavalIFTGLOateliers/IFT2001-Docker).
@@ -105,7 +105,7 @@ Here are the microservices you must get working:
 3. a Python application for visualizing web server health.
 
 <div class="wide-crt">
-{% crt() %}
+{% <crt> %}
 ```
 ┌────────────────────────────── MICROSERVICES (ARCH OVERVIEW) ───────────────────────────┐
 │                                                                                        │
@@ -147,7 +147,7 @@ Here are the microservices you must get working:
 │  Ports: 8080 (status-checker) | 8081 (rust_api) | 5432 (Postgres)                      │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
-{% end %}
+{% </crt> %}
 </div>
 
 ### Why containerization?
@@ -299,13 +299,13 @@ We use basic Linux tools to isolate a process in its own filesystem.
 ### Exercise 01 – Running a prebuilt image
 Run the Docker image `hello-world`.
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To run a Docker image, use the `run` command.
 
 ```bash
 docker run image-name
 ```
-{% end %}
+{% </alert> %}
 
 If the command works, you will see a message displayed.
 
@@ -317,7 +317,7 @@ docker run hello-world
 
 </details>
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To execute a command in the container, specify the command at the end of `run`.
 In the following examples, we pass `bash -c 'echo "Hello world"'` which interprets the string in the Bash interpreter.
 
@@ -329,26 +329,26 @@ cat /etc/os-release
 # Prints information from a container running Arch Linux
 docker run archlinux bash -c 'cat /etc/os-release'
 ```
-{% end %}
+{% </alert> %}
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To launch an interactive command (such as a shell), use the `-it` flag.
 The `--rm` flag removes the container once it exits.
 
 ```bash
 docker run -it --rm archlinux bash
 ```
-{% end %}
+{% </alert> %}
 
 ### Exercise 02 – Container management
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To see running containers: `docker ps`.
 
 To stop a container: `docker stop container_id`.
 
 **Note that the command may take some time to run.**
-{% end %}
+{% </alert> %}
 
 Tasks:
 1. Launch an interactive terminal with Docker;
@@ -372,15 +372,15 @@ docker rm -f id
 
 ### Exercise 03 – PostgreSQL database
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To set environment variables in a container, use the `-e` flag.
 
 ```bash
 docker run -it --rm -e HELLO=hello archlinux sh -c 'echo $HELLO'
 ```
-{% end %}
+{% </alert> %}
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 To open a network port, use the `-p docker:host` flag, where `docker` is the port number inside the container and `host` is the port number on the host.
 
 ```bash
@@ -388,7 +388,7 @@ docker run -p 127.0.0.1:8080:80 nginx
 # You can access the port via the URL http://localhost:8080/
 curl http://localhost:8080/
 ```
-{% end %}
+{% </alert> %}
 
 
 Launch a PostgreSQL database with Docker.
@@ -506,9 +506,9 @@ Use the `README.md` in the folder `~/Applications/python_app` to write a Dockerf
 
 Then, launch the application interactively and with the correct network mode.
 
-{% alert(note=true) %}
+{% <alert note={true}> %}
 This application will need to access your computer’s local network to make requests to the container from the previous exercise; to do so, pass the argument `--network="host"` when you run the container.
-{% end %}
+{% </alert> %}
 
 If everything works, you should be able to use the application to add URLs to monitor and see the results.
 

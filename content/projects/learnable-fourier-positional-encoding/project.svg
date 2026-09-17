@@ -2,6 +2,7 @@
   <title id="title">Learnable Fourier Positional Encoding</title><desc id="desc">Spatial coordinates flow through Fourier waves into a learned feature embedding.</desc>
   <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#132933"/></linearGradient><linearGradient id="wave" x1="0" x2="1"><stop stop-color="#66ccff"/><stop offset="1" stop-color="#b889ff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
   <rect width="1440" height="810" fill="url(#bg)"/>
+  <circle cx="1215" cy="715" r="300" fill="#b889ff" opacity=".055"/><circle cx="300" cy="25" r="235" fill="#66ccff" opacity=".045"/>
   <text x="85" y="105" fill="#66ccff" font-family="ui-monospace,monospace" font-size="26" font-weight="700" letter-spacing="5">POSITION → REPRESENTATION</text>
   <text x="85" y="178" fill="#f5f7f8" font-family="Georgia,serif" font-size="63">Learnable Fourier Features</text>
   <g transform="translate(95 300)" font-family="ui-monospace,monospace">

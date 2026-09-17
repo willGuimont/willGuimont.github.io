@@ -1,15 +1,113 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
-  <title id="title">torch_waymo</title><desc id="desc">A point-cloud road scene is converted into a PyTorch tensor.</desc>
-  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#102833"/></linearGradient><linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#17313b"/><stop offset="1" stop-color="#091217"/></linearGradient></defs>
+  <title id="title">torch_waymo</title>
+  <desc id="desc">A 2D bird eye view (BEV) lidar point-cloud scan with detected objects, feeding into PyTorch.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#102833"/></linearGradient>
+    <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#102630"/><stop offset="1" stop-color="#09161c"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#7bd7ff" stroke-opacity=".05"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dy="14" stdDeviation="14" flood-opacity=".35"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
   <rect width="1440" height="810" fill="url(#bg)"/>
-  <text x="84" y="110" fill="#66ccff" font-family="ui-monospace,monospace" font-size="27" font-weight="700" letter-spacing="6">POINT CLOUDS → TENSORS</text>
+  <circle cx="1130" cy="-70" r="280" fill="#ff4b2b" opacity=".05"/><circle cx="115" cy="720" r="300" fill="#48d7b0" opacity=".045"/>
+  <rect width="1440" height="810" fill="url(#grid)"/>
+  <text x="84" y="110" fill="#66ccff" font-family="ui-monospace,monospace" font-size="27" font-weight="700" letter-spacing="6">AUTONOMOUS DRIVING DATA</text>
   <text x="84" y="188" fill="#f5f7f8" font-family="Georgia,serif" font-size="72">torch_waymo</text>
-  <path d="M250 810 560 265h320l310 545z" fill="url(#road)" stroke="#344b55" stroke-width="3"/>
-  <path d="M705 745 720 680M737 610l15-66M770 474l14-63M800 348l10-43" stroke="#f1b56b" stroke-width="12" stroke-linecap="round"/>
-  <g fill="#66ccff">
-    <circle cx="300" cy="650" r="8"/><circle cx="358" cy="583" r="5"/><circle cx="409" cy="525" r="7"/><circle cx="475" cy="447" r="5"/><circle cx="507" cy="382" r="7"/><circle cx="935" cy="620" r="8"/><circle cx="997" cy="679" r="5"/><circle cx="902" cy="522" r="7"/><circle cx="870" cy="444" r="5"/><circle cx="1060" cy="728" r="7"/>
+
+  <!-- 2D BEV Lidar Scan Panel -->
+  <g transform="translate(70 245)" filter="url(#shadow)">
+    <rect width="790" height="455" rx="28" fill="url(#panel)" stroke="#344b55" stroke-width="3"/>
+
+    <!-- BEV Range Rings and Polar Grid (clamped within panel) -->
+    <g stroke-linecap="round" fill="none">
+      <circle cx="395" cy="227.5" r="60" stroke="#48d7b0" stroke-width="2" stroke-dasharray="3 7" opacity=".35"/>
+      <circle cx="395" cy="227.5" r="120" stroke="#66ccff" stroke-width="2" stroke-dasharray="3 9" opacity=".3"/>
+      <circle cx="395" cy="227.5" r="180" stroke="#48d7b0" stroke-width="2" stroke-dasharray="3 11" opacity=".22"/>
+      <path d="M 65 227.5 H 725 M 395 35 V 420" stroke="#66ccff" stroke-width="1.5" stroke-dasharray="4 8" opacity=".2"/>
+      <g font-family="ui-monospace,monospace" font-size="11" fill="#66ccff" opacity=".55">
+        <text x="460" y="220">15m</text>
+        <text x="520" y="220">30m</text>
+        <text x="580" y="220">45m</text>
+      </g>
+    </g>
+
+    <!-- 2D Point Cloud Road & Lane Markings (BEV Top-Down) -->
+    <g fill="none" stroke-linecap="round" filter="url(#glow)">
+      <!-- Left & Right Road Edge / Curb point cloud curves -->
+      <path d="M 140 35 C 165 150 160 310 130 420" stroke="#66ccff" stroke-width="7" stroke-dasharray="1 14"/>
+      <path d="M 650 35 C 625 140 630 310 660 420" stroke="#66ccff" stroke-width="7" stroke-dasharray="1 14"/>
+      <!-- Lane divider point cloud lines -->
+      <path d="M 395 35 V 140 M 395 315 V 420" stroke="#48d7b0" stroke-width="6" stroke-dasharray="1 13"/>
+      <path d="M 265 35 C 275 160 270 310 250 420" stroke="#48d7b0" stroke-width="5" stroke-dasharray="1 15" opacity=".7"/>
+      <path d="M 525 35 C 515 140 520 310 540 420" stroke="#48d7b0" stroke-width="5" stroke-dasharray="1 15" opacity=".7"/>
+
+      <!-- Point Cloud Scan Rays / Sweeps from Ego Vehicle -->
+      <g stroke="#66ccff" stroke-width="1.8" opacity=".2">
+        <path d="M 395 227.5 L 395 85 M 395 227.5 L 240 115 M 395 227.5 L 530 105 M 395 227.5 L 150 195 M 395 227.5 L 640 185 M 395 227.5 L 230 335 M 395 227.5 L 560 325 M 395 227.5 L 490 160 M 395 227.5 L 310 165"/>
+      </g>
+
+      <!-- Obstacle 1: Lead Vehicle (Front, Orange 2D Bounding Box & Point Cloud) -->
+      <g transform="translate(395 100)">
+        <rect x="-24" y="-35" width="48" height="70" rx="6" stroke="#f1b56b" stroke-width="3" stroke-dasharray="6 3"/>
+        <path d="M -24 -35 H 24 V 35 H -24 Z" stroke="#f1b56b" stroke-width="8" stroke-dasharray="1 11"/>
+        <path d="M 0 -35 V -50" stroke="#f1b56b" stroke-width="3"/>
+        <path d="M -5 -45 L 0 -53 L 5 -45" stroke="#f1b56b" stroke-width="3"/>
+      </g>
+
+      <!-- Obstacle 2: Front-Left Vehicle (Rotated -15 deg, Purple 2D Bounding Box & Point Cloud) -->
+      <g transform="translate(235 120) rotate(-15)">
+        <rect x="-22" y="-32" width="44" height="64" rx="6" stroke="#b889ff" stroke-width="3" stroke-dasharray="6 3"/>
+        <path d="M -22 -32 H 22 V 32 H -22 Z" stroke="#b889ff" stroke-width="8" stroke-dasharray="1 11"/>
+        <path d="M 0 -32 V -46" stroke="#b889ff" stroke-width="3"/>
+        <path d="M -4 -40 L 0 -48 L 4 -40" stroke="#b889ff" stroke-width="3"/>
+      </g>
+
+      <!-- Obstacle 3: Rear-Right Vehicle (Rotated 12 deg, Orange 2D Bounding Box & Point Cloud) -->
+      <g transform="translate(560 325) rotate(12)">
+        <rect x="-22" y="-30" width="44" height="60" rx="6" stroke="#f1b56b" stroke-width="3" stroke-dasharray="6 3"/>
+        <path d="M -22 -30 H 22 V 30 H -22 Z" stroke="#f1b56b" stroke-width="8" stroke-dasharray="1 11"/>
+        <path d="M 0 -30 V -44" stroke="#f1b56b" stroke-width="3"/>
+        <path d="M -4 -38 L 0 -46 L 4 -38" stroke="#f1b56b" stroke-width="3"/>
+      </g>
+
+      <!-- Obstacle 4: Pedestrian / Cyclist (Front-Right, Teal 2D Bounding Box & Point Cloud) -->
+      <g transform="translate(490 160)">
+        <circle cx="0" cy="0" r="16" stroke="#48d7b0" stroke-width="3" stroke-dasharray="4 3"/>
+        <circle cx="0" cy="0" r="16" stroke="#48d7b0" stroke-width="8" stroke-dasharray="1 8"/>
+        <path d="M 0 -16 V -26" stroke="#48d7b0" stroke-width="2.5"/>
+      </g>
+    </g>
+
+    <!-- Top-Down Ego Vehicle (Center) -->
+    <g transform="translate(395 227.5)">
+      <!-- Lidar Scan Pulses -->
+      <circle cx="0" cy="0" r="36" fill="none" stroke="#48d7b0" stroke-width="3" stroke-dasharray="2 6" opacity=".7"/>
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#66ccff" stroke-width="2" stroke-dasharray="2 8" opacity=".5"/>
+      <!-- Ego Car Body (BEV 2D) -->
+      <rect x="-20" y="-32" width="40" height="64" rx="8" fill="#0c1f28" stroke="#66ccff" stroke-width="3"/>
+      <!-- Windshield & Roof lines -->
+      <rect x="-14" y="-18" width="28" height="16" rx="4" fill="#184050" stroke="#48d7b0" stroke-width="1.5"/>
+      <line x1="-14" y1="12" x2="14" y2="12" stroke="#344b55" stroke-width="2"/>
+      <!-- Headlights / Tail lights -->
+      <rect x="-17" y="-31" width="8" height="4" rx="1" fill="#66ccff"/>
+      <rect x="9" y="-31" width="8" height="4" rx="1" fill="#66ccff"/>
+      <rect x="-17" y="27" width="8" height="4" rx="1" fill="#ff4b2b"/>
+      <rect x="9" y="27" width="8" height="4" rx="1" fill="#ff4b2b"/>
+      <!-- Lidar Sensor Puck -->
+      <circle cx="0" cy="-6" r="9" fill="#48d7b0" stroke="#ffffff" stroke-width="2.5"/>
+      <circle cx="0" cy="-6" r="4" fill="#07151b"/>
+    </g>
   </g>
-  <g transform="translate(455 420)"><path d="m35 118 30-82q8-24 36-24h165q28 0 39 24l32 82" fill="#1c3d47" stroke="#48d7b0" stroke-width="5"/><rect y="108" width="370" height="125" rx="32" fill="#17313b" stroke="#48d7b0" stroke-width="5"/><circle cx="78" cy="229" r="35" fill="#07151b" stroke="#66ccff" stroke-width="7"/><circle cx="292" cy="229" r="35" fill="#07151b" stroke="#66ccff" stroke-width="7"/><path d="M105 42h156l28 66H82z" fill="#66ccff" opacity=".22"/></g>
-  <g transform="translate(1100 275)" fill="none" stroke="#ee4c2c" stroke-width="13" stroke-linecap="round"><path d="M80 0H15v350h65M190 0h65v350h-65"/><path d="M90 80h75M90 145h75M90 210h75M90 275h75" opacity=".7"/></g>
-  <text x="1227" y="690" fill="#ee4c2c" font-family="ui-monospace,monospace" font-size="25" font-weight="700" text-anchor="middle">PYTORCH</text>
+
+  <!-- Flow Arrow -->
+  <g transform="translate(885 472.5)" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M0 0h95" stroke="#66ccff" stroke-width="10"/>
+    <path d="m65-30 32 30-32 30" stroke="#66ccff" stroke-width="10"/>
+  </g>
+
+  <!-- PyTorch Bracket and Torch Logo -->
+  <g transform="translate(1010 245)" filter="url(#shadow)">
+    <path d="M 85 40 H 30 V 415 H 85 M 235 40 H 290 V 415 H 235" fill="none" stroke="#ee4c2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <image x="50" y="117.5" width="220" height="220" href="data:image/png;base64,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fon20zwHzkWIOBdR3kU+C5dYd/UQ9rvy62tE/Hbu95+XE/h+inWkH1baV9Hve9r7EnAuRsS5mB4c0XpJ32Md94iI32Id+X08hPpB3x73OpdfhovVx9pD0B8izkWVkM/CpVi6x9vIuDgR5+I6/D5y+uk+It6f+1YHPEbEqWY5Gswi4kPtOeAI32Md8JRPGJDfX2sPQH+VzT//qj0HHOg2It4KODVZiVNdeXTpJmx4Iw8b2GiClTjVlXuJb2N9OAa07D7WG9gEnCZYidMU98lp2LeImLh8TkusxGlKuU/+91iveKAVn2N9hKqA0xQrcZq0HA2uYn2f3GNo1HQf69X3Te1B4DEiTtOWo8E0Ij7VnoNeuo11wO9qDwJPEXGaV055uwnnd3M5/xouVte1h4CXuCdO88p9yLcR8UvtWei8bxHxNwEnCytxUinPlF+He+Wc1n1ETMWbbESclMq98o/hgBiO5943aYk4aZUd7LPwGk0O8z0iPtp5TmYiTnrL0eB9rC+x2/jGrv4dEdfDxeq32oPAMUScznCJnR18ifXq+672IHAKIk6nlHeVX4ejW/mz21hvXJvXHgROScTppHK/fBpi3nffYx3vWe1B4BxEnE4rMb+OiJ8rj8JliTe9IOL0gpV5b4g3vSLi9IqYd9a3WO82n9UeBC5JxOmlEvNJ2M2e3ZdYx3teexCoQcTptbKb/X2sV+eeM8/hPtaH/Fx7VIy+E3Eoyrnsk3CpvVXfYr1J8cYhLbAm4rClrM4n5ZcXrdT1sOqelbfZARtEHJ5R3mU+ifUld5fbL+dzrFfczjWHZ4g47EjQz+5LRNyEy+WwMxGHA2wEfRwuuR/qPkq0I2Iu3LA/EYcjlcfVxrFeoY/DI2vPuY2IeaxX2+5xw5FEHE6srNLHG7/6HPXbiPga63BbbcOJiTicWYn65q93dSc6m++xDvbXWAd7Xncc6D4Rhwo2wn4V69X6VeTZLHcff8T67uF/tsqGyxNxaEiJ+0+xDnts/PMqLhv52/LPrxHx2+Y/xRraIeKQzEboH2z/77t6CHNERLj8DfmIOAAk9dfaAwAAhxFxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBISsQBICkRB4CkRBwAkhJxAEhKxAEgKREHgKREHACSEnEASErEASApEQeApEQcAJIScQBI6n8B0w6ICIyAi2QAAAAASUVORK5CYII="/>
+  </g>
 </svg>

@@ -22,4 +22,4 @@ Here are the slides: <a href="Point-BERT.pdf" target="_blank">Point-BERT</a>
 
 And here is the recording of the event:
 
-{{ youtube(id="VPm3Cq7JMp4") }}
+{{<youtube id="VPm3Cq7JMp4" />}}

@@ -7,6 +7,7 @@ weight = 110
 category = "Games"
 app_url = "https://willguimont.com/cgame/hexatak_classic/"
 action_label = "Play the game"
+itch_url = "https://willguimont.itch.io/hexatak"
 source_url = "https://github.com/willGuimont/cgame"
 blog_post = "blog/2026-07-10-hexatak/index.md"
 screenshot = "thumbnail.png"

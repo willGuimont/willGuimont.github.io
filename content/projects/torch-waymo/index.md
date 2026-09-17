@@ -8,7 +8,7 @@ category = "Libraries"
 source_url = "https://github.com/willGuimont/torch_waymo"
 blog_post = "blog/2023-02-02-torch_waymo/index.md"
 screenshot = "project.svg"
-screenshot_alt = "A point-cloud street scene flowing into a PyTorch tensor"
+screenshot_alt = "A lidar sensor scanning point-cloud walls and objects, flowing into the PyTorch logo"
 +++
 
 `torch_waymo` is a Python library for loading the Waymo Open Dataset in PyTorch without requiring TensorFlow in the training pipeline. It converts Waymo records into either simplified frames or complete frame data, then exposes the result through a PyTorch-friendly dataset interface.

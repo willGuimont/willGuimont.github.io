@@ -1,7 +1,7 @@
 +++
 title = "wigum::projects"
 description = "Web apps, games, and libraries I have built"
-sort_by = "date"
+sort_by = "weight"
 template = "projects.html"
 page_template = "project.html"
 [extra]

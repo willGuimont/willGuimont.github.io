@@ -7,6 +7,7 @@ weight = 120
 category = "Games"
 app_url = "https://willguimont.github.io/dashy-dango/"
 action_label = "Play the game"
+itch_url = "https://willguimont.itch.io/dashy-dango"
 source_url = "https://github.com/willGuimont/dashy-dango"
 blog_post = "blog/2022-08-01-dashy-dango/index.md"
 screenshot = "DashyDangolong.webp"
