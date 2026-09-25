@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - iOS</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/ios/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Free 3D Scanning using iOS devices</title>
+          <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/3d-scanning/</link>
+          <guid>https://willguimont.com/blog/3d-scanning/</guid>
+          <description xml:base="https://willguimont.com/blog/3d-scanning/">&lt;p&gt;The current state of 3D scanning apps on the App Store is a bit disappointing.
+Most of them are either paid or have a subscription model.
+Not doing enough scanning to justify the cost, I decided to look for a free alternative.&lt;/p&gt;
+&lt;p&gt;I was pleasantly surprised to find that Apple’s own &lt;a class=&quot;external&quot; href=&quot;https://developer.apple.com/documentation/realitykit&quot; target=&quot;_blank&quot;&gt;RealityKit&lt;/a&gt; framework has a sample app for exactly this purpose.
+&lt;a class=&quot;external&quot; href=&quot;https://developer.apple.com/documentation/realitykit/scanning-objects-using-object-capture&quot; target=&quot;_blank&quot;&gt;Scanning objects using Object Capture&lt;/a&gt; is a free app that lets you scan objects using your iOS device.&lt;/p&gt;
+&lt;p&gt;To get started, install Xcode and download the sample app from the &lt;a class=&quot;external&quot; href=&quot;https://developer.apple.com/documentation/realitykit/scanning-objects-using-object-capture&quot; target=&quot;_blank&quot;&gt;Object Capture sample code&lt;/a&gt;.
+Build and run the app on your iOS device, and follow the instructions to scan an object.&lt;/p&gt;
+&lt;p&gt;Once done, you can export the scanned object as a USDZ file or save all the images to your device.
+The images can then be used with &lt;a class=&quot;external&quot; href=&quot;https://developer.apple.com/documentation/realitykit/building-an-object-reconstruction-app&quot; target=&quot;_blank&quot;&gt;Building an object reconstruction app&lt;/a&gt; to create a high-quality 3D model.&lt;/p&gt;
+&lt;p&gt;Since USDZ is not a widely supported format in the 3D printing world or CAD software, you can convert it to other formats using tools like &lt;a class=&quot;external&quot; href=&quot;https://www.blender.org/&quot; target=&quot;_blank&quot;&gt;Blender&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Object Detection</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/object-detection/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Benchmarking of Real-Time Object Detection Models</title>
+          <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/det-bench/</link>
+          <guid>https://willguimont.com/blog/det-bench/</guid>
+          <description xml:base="https://willguimont.com/blog/det-bench/">&lt;p&gt;Published a paper to ArXiv: &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2405.06911&quot; target=&quot;_blank&quot;&gt;Replication Study and Benchmarking of Real-Time Object Detection Models&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This work examines the reproducibility and benchmarking of state-of-the-art real-time object detection models. As object detection models are often used in real-world contexts, such as robotics, where inference time is paramount, simply measuring models’ accuracy is not enough to compare them. We thus compare a large variety of object detection models’ accuracy and inference speed on multiple graphics cards. In addition to this large benchmarking attempt, we also reproduce the following models from scratch using PyTorch on the MS COCO 2017 dataset: DETR, RTMDet, ViTDet and YOLOv7. More importantly, we propose a unified training and evaluation pipeline, based on MMDetection’s features, to better compare models. Our implementation of DETR and ViTDet could not achieve accuracy or speed performances comparable to what is declared in the original papers. On the other hand, reproduced RTMDet and YOLOv7 could match such performances. Studied papers are also found to be generally lacking for reproducibility purposes. As for MMDetection pretrained models, speed performances are severely reduced with limited computing resources (larger, more accurate models even more so). Moreover, results exhibit a strong trade-off between accuracy and speed, prevailed by anchor-free models - notably RTMDet or YOLOx models. The code used is this paper and all the experiments is available in the repository at &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/segdet_mlcr2024&quot; target=&quot;_blank&quot;&gt;this https URL&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>MaskBEV</title>
+          <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maskbev/</link>
+          <guid>https://willguimont.com/blog/maskbev/</guid>
+          <description xml:base="https://willguimont.com/blog/maskbev/">&lt;p&gt;Accepted paper at IROS 2023: &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2307.01864&quot; target=&quot;_blank&quot;&gt;MaskBEV: Joint Object Detection and Footprint Completion for Bird’s-eye View 3D Point Clouds&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in object detection in LiDAR point clouds mostly focus on predicting bounding boxes around objects. This prediction is commonly achieved using anchor-based or anchor-free detectors that predict bounding boxes, requiring significant explicit prior knowledge about the objects to work properly. To remedy these limitations, we propose MaskBEV, a bird’s-eye view (BEV) mask-based object detector neural architecture. MaskBEV predicts a set of BEV instance masks that represent the footprints of detected objects. Moreover, our approach allows object detection and footprint completion in a single pass. MaskBEV also reformulates the detection problem purely in terms of classification, doing away with regression usually done to predict bounding boxes. We evaluate the performance of MaskBEV on both SemanticKITTI and KITTI datasets while analyzing the architecture advantages and limitations.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      </item>
+    </channel>
+</rss>

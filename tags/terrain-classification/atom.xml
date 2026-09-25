@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Terrain Classification</title>
+    <subtitle>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/terrain-classification/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-09-10T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/terrain-classification/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Terrain Classification for Boreal Forests</title>
+        <published>2024-09-10T00:00:00+00:00</published>
+        <updated>2024-09-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/borealtc/"/>
+        <id>https://willguimont.com/blog/borealtc/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/borealtc/">&lt;p&gt;Co-authored paper at IROS 2024: &lt;a class=&quot;external&quot; href=&quot;https://norlab-ulaval.github.io/BorealTC/&quot; target=&quot;_blank&quot;&gt;Proprioception Is All You Need: Terrain Classification for Boreal Forests&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in field robotics highlighted the importance of resiliency against different types of terrains. Boreal forests, in particular, are home to many mobility-impeding terrains that should be considered for off-road autonomous navigation. Also, being one of the largest land biomes on Earth, boreal forests are an area where autonomous vehicles are expected to become increasingly common. In this paper, we address the issue of classifying boreal terrains by introducing BorealTC, a publicly available dataset for proprioceptive-based terrain classification (TC). Recorded with a Husky A200, our dataset contains 116 min of Inertial Measurement Unit (IMU), motor current, and wheel odometry data, focusing on typical boreal forest terrains, notably snow, ice, and silty loam. Combining our dataset with another dataset from the literature, we evaluate both a Convolutional Neural Network (CNN) and the novel state space model (SSM)-based Mamba architecture on a TC task. We show that while CNN outperforms Mamba on each separate dataset, Mamba achieves greater accuracy when trained on a combination of both. In addition, we demonstrate that Mamba’s learning capacity is greater than a CNN for increasing amounts of data. We show that the combination of two TC datasets yields a latent space that can be interpreted with the properties of the terrains. We also discuss the implications of merging datasets on classification. Our source code and dataset are &lt;a class=&quot;external&quot; href=&quot;https://github.com/norlab-ulaval/BorealTC&quot; target=&quot;_blank&quot;&gt;publicly available online&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        
+    </entry>
+</feed>

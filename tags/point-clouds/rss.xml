@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Point Clouds</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/point-clouds/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>MaskBEV</title>
+          <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maskbev/</link>
+          <guid>https://willguimont.com/blog/maskbev/</guid>
+          <description xml:base="https://willguimont.com/blog/maskbev/">&lt;p&gt;Accepted paper at IROS 2023: &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2307.01864&quot; target=&quot;_blank&quot;&gt;MaskBEV: Joint Object Detection and Footprint Completion for Bird’s-eye View 3D Point Clouds&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recent works in object detection in LiDAR point clouds mostly focus on predicting bounding boxes around objects. This prediction is commonly achieved using anchor-based or anchor-free detectors that predict bounding boxes, requiring significant explicit prior knowledge about the objects to work properly. To remedy these limitations, we propose MaskBEV, a bird’s-eye view (BEV) mask-based object detector neural architecture. MaskBEV predicts a set of BEV instance masks that represent the footprints of detected objects. Moreover, our approach allows object detection and footprint completion in a single pass. MaskBEV also reformulates the detection problem purely in terms of classification, doing away with regression usually done to predict bounding boxes. We evaluate the performance of MaskBEV on both SemanticKITTI and KITTI datasets while analyzing the architecture advantages and limitations.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>Apprentissage profonds sur les nuages de points 3D</title>
+          <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/nn-on-pc-ift-6001/</link>
+          <guid>https://willguimont.com/blog/nn-on-pc-ift-6001/</guid>
+          <description xml:base="https://willguimont.com/blog/nn-on-pc-ift-6001/">&lt;p&gt;Papier réalisé pour le cours IFT-6001 @ Université Laval sur l’apprentissage par réseaux de neurones profonds sur les nuages de points 3D: &lt;a href=&quot;ApprentissageParReseauxDeNeuronesProfondsSurLesNuagesDePoints3D.pdf&quot; target=&quot;_blank&quot;&gt;Apprentissage par réseaux de neurones profonds sur les nuages de points 3D&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Point-BERT IFT-6001</title>
+          <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/point-bert-ift-6001/</link>
+          <guid>https://willguimont.com/blog/point-bert-ift-6001/</guid>
+          <description xml:base="https://willguimont.com/blog/point-bert-ift-6001/">&lt;p&gt;Voici une présentation que j’ai donnée le 28 avril 2022 pour le cours &lt;a class=&quot;external&quot; href=&quot;https://www.ulaval.ca/etudes/cours/ift-6001-introduction-a-la-recherche-en-informatique-communication-et-methodologie&quot; target=&quot;_blank&quot;&gt;IFT-6001 Introduction à la recherche en informatique : communication et méthodologie&lt;/a&gt; à l’Université Laval sur &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2111.14819&quot; target=&quot;_blank&quot;&gt;Point-BERT&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Voici les diapositives: &lt;a href=&quot;Point-BERT-IFT-6001.pdf&quot; target=&quot;_blank&quot;&gt;Point-BERT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Voici l’enregistrement de la présentation:&lt;/p&gt;
+&lt;iframe
+	class=&quot;youtube-embed&quot;
+	src=&quot;https://www.youtube-nocookie.com/embed/fywySHYLzW4&quot;
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+	referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
+      </item>
+    </channel>
+</rss>

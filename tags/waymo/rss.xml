@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Waymo</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/waymo/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>torch_waymo</title>
+          <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/torch-waymo/</link>
+          <guid>https://willguimont.com/blog/torch-waymo/</guid>
+          <description xml:base="https://willguimont.com/blog/torch-waymo/">&lt;p&gt;Here’s a small library I made to use the &lt;a class=&quot;external&quot; href=&quot;https://waymo.com/open/&quot; target=&quot;_blank&quot;&gt;Waymo Open Dataset&lt;/a&gt; in PyTorch, without any dependency to Tensorflow: &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/torch_waymo&quot; target=&quot;_blank&quot;&gt;willGuimont/torch_waymo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the corresponding PyPI package: &lt;a class=&quot;external&quot; href=&quot;https://pypi.org/project/torch-waymo/&quot; target=&quot;_blank&quot;&gt;torch-waymo&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Vue.js</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/vue-js/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 23 Jun 2019 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Rubik&#39;s Cube Timer in Vue.js</title>
+          <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/cube-timer/</link>
+          <guid>https://willguimont.com/blog/cube-timer/</guid>
+          <description xml:base="https://willguimont.com/blog/cube-timer/">&lt;p&gt;Here a simple Rubik’s Cube Timer I made in Vue.js&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https://willguimont.github.io/cube_timer/&quot; target=&quot;_blank&quot;&gt;Link to the timer&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Pomodoro Timer in Vue.js</title>
+          <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/pomodoro-timer/</link>
+          <guid>https://willguimont.com/blog/pomodoro-timer/</guid>
+          <description xml:base="https://willguimont.com/blog/pomodoro-timer/">&lt;p&gt;Here a simple Pomodoro Timer I made in Vue.js.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;external&quot; href=&quot;https://willguimont.github.io/Pomodoro/&quot; target=&quot;_blank&quot;&gt;Link to the timer&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

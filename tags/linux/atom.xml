@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Linux</title>
+    <subtitle>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/linux/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-05-15T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/linux/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Recovering Windows After Wiping GRUB for Limine</title>
+        <published>2026-05-15T00:00:00+00:00</published>
+        <updated>2026-05-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/omarchy-windows/"/>
+        <id>https://willguimont.com/blog/omarchy-windows/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/omarchy-windows/">&lt;p&gt;I had a working dual-boot setup: Manjaro on one SSD for work, Windows on another for leisure, with GRUB acting as the selector between them.
+GRUB would chainload Windows at boot.
+Everything worked fine – until I decided to replace Manjaro with &lt;a rel=&quot;external&quot; href=&quot;https://omarchy.org&quot;&gt;Omarchy&lt;/a&gt;, which uses the Limine bootloader instead of GRUB.&lt;/p&gt;
+&lt;p&gt;I wiped the Manjaro SSD, installed Omarchy, and promptly lost access to Windows.&lt;/p&gt;
+&lt;p&gt;Here’s what happened and how I fixed it.&lt;/p&gt;
+&lt;h2 id=&quot;what-actually-broke&quot;&gt;What Actually Broke&lt;/h2&gt;
+&lt;p&gt;The setup had a hidden dependency: my UEFI firmware was booting GRUB, and GRUB was chainloading Windows.
+When I wiped Manjaro, GRUB disappeared – and with it, the only thing pointing at Windows.&lt;/p&gt;
+&lt;p&gt;Windows itself was completely untouched.
+The NTFS partitions on the Windows SSD were fine.
+But the EFI System Partition (ESP), the FAT32 partition that holds bootloaders, was on my NVMe drive alongside Omarchy, and the Windows EFI files (&lt;code&gt;\EFI\Microsoft\Boot\&lt;/code&gt;) were simply gone.&lt;/p&gt;
+&lt;h2 id=&quot;disk-layout&quot;&gt;Disk Layout&lt;/h2&gt;
+&lt;pre class=&quot;giallo z-l-code z-d-code&quot; &gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;sdb (931 GB)          ← Windows SSD&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;├─ sdb1  16 MB        Microsoft Reserved Partition&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;├─ sdb2  930 GB NTFS  Windows C: drive&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└─ sdb3  817 MB NTFS  Windows Recovery&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;nvme0n1 (1.8 TB)      ← Omarchy NVMe&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;├─ nvme0n1p1  2 GB vfat   ← ESP, mounted at /boot&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└─ nvme0n1p2  1.8 TB LUKS → btrfs root&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No EFI partition on the Windows SSD at all.
+The ESP was shared on the NVMe, and Manjaro’s wipe had taken the Windows EFI files with it.&lt;/p&gt;
+&lt;h2 id=&quot;step-1-configure-limine&quot;&gt;Step 1: Configure Limine&lt;/h2&gt;
+&lt;p&gt;Omarchy uses Limine, so the first task was adding a Windows entry to &lt;code&gt;/boot/limine.conf&lt;/code&gt;.
+The key lesson here: &lt;strong&gt;match the path syntax of your working entries&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class=&quot;giallo z-l-code z-d-code&quot; &gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;/Windows&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    protocol: efi_chainload&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    path: boot():/EFI/Microsoft/Boot/bootmgfw.efi&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;step-2-copy-the-efi-files-from-the-windows-partition&quot;&gt;Step 2: Copy the EFI Files from the Windows Partition&lt;/h2&gt;
+&lt;p&gt;The Windows bootloader (&lt;code&gt;bootmgfw.efi&lt;/code&gt;) wasn’t on the ESP, but it &lt;em&gt;was&lt;/em&gt; still sitting on the Windows partition itself, under &lt;code&gt;Windows/Boot/EFI/&lt;/code&gt;.
+So I mounted the Windows SSD and copied it over:&lt;/p&gt;
+&lt;pre class=&quot;giallo z-l-code z-d-code&quot; &gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-l-1 z-d-1&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;z-l-2 z-d-2&quot;&gt; mkdir&lt;/span&gt;&lt;span class=&quot;z-l-8 z-d-8&quot;&gt; -&lt;/span&gt;&lt;span class=&quot;z-l-8 z-d-8&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;z-l-2 z-d-2&quot;&gt; /boot/EFI/Microsoft/Boot&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-l-1 z-d-1&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;z-l-2 z-d-2&quot;&gt; cp&lt;/span&gt;&lt;span class=&quot;z-l-8 z-d-8&quot;&gt; -&lt;/span&gt;&lt;span class=&quot;z-l-8 z-d-8&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;z-l-2 z-d-2&quot;&gt; /mnt/Windows/Boot/&lt;/span&gt;&lt;span class=&quot;z-l-1 z-d-1&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;z-l-2 z-d-2&quot;&gt; /boot/EFI/Microsoft/Boot/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This allowed me to finally boot Windows from Limine, it could now find and launch &lt;code&gt;bootmgfw.efi&lt;/code&gt;.
+But Windows then hit a different wall:&lt;/p&gt;
+&lt;pre class=&quot;giallo z-l-code z-d-code&quot; &gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Recovery&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;The Boot Configuration Data for your PC is missing or contains errors.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;File: \EFI\Microsoft\Boot\BCD&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Error code: 0xc000000f&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;step-3-rebuild-the-bcd-with-bcdboot&quot;&gt;Step 3: Rebuild the BCD with bcdboot&lt;/h2&gt;
+&lt;p&gt;The BCD (Boot Configuration Data) is a binary database that tells the Windows bootloader where the OS actually lives.
+It’s not part of the &lt;code&gt;Windows/Boot/&lt;/code&gt; folder – it gets generated by a Windows tool called &lt;code&gt;bcdboot&lt;/code&gt;.
+You can’t create it from Linux.&lt;/p&gt;
+&lt;p&gt;This required a Windows installation USB.
+After booting it and hitting &lt;strong&gt;Shift+F10&lt;/strong&gt; to open a command prompt, the fix was:&lt;/p&gt;
+&lt;pre class=&quot;giallo z-l-code z-d-code&quot; &gt;&lt;code data-lang=&quot;bat&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-l-5 z-d-5&quot;&gt;diskpart&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;select disk &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;1&lt;/span&gt;&lt;span&gt;          :: NVMe &lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;1863 GB&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;select partition &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;1&lt;/span&gt;&lt;span&gt;     :: the &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;2048&lt;/span&gt;&lt;span&gt; MB ESP&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;assign letter=S&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;select disk &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;0&lt;/span&gt;&lt;span&gt;          :: Windows SSD &lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;931 GB&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;select partition &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;2&lt;/span&gt;&lt;span&gt;     :: the &lt;/span&gt;&lt;span class=&quot;z-l-9 z-d-9&quot;&gt;930&lt;/span&gt;&lt;span&gt; GB primary partition&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;assign letter=C&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-l-5 z-d-5&quot;&gt;exit&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-l-5 z-d-5&quot;&gt;bcdboot&lt;/span&gt;&lt;span&gt; C:\Windows /s S: /f UEFI&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;bcdboot&lt;/code&gt; regenerated the BCD store on the ESP, pointing it at the Windows installation on the other SSD.
+One reboot later, Limine showed the Windows entry and it booted cleanly.&lt;/p&gt;
+</content>
+        
+    </entry>
+</feed>

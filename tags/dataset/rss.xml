@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Dataset</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/dataset/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>SilvaScenes</title>
+          <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/silvascenes/</link>
+          <guid>https://willguimont.com/blog/silvascenes/</guid>
+          <description xml:base="https://willguimont.com/blog/silvascenes/">&lt;p&gt;Co-authored paper: &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2510.09458&quot; target=&quot;_blank&quot;&gt;SilvaScenes: Tree Segmentation and Species Classification from Under-Canopy Images in Natural Forests&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Interest in robotics for forest management is growing, but perception in complex, natural environments remains a significant hurdle. Conditions such as heavy occlusion, variable lighting, and dense vegetation pose challenges to automated systems, which are essential for precision forestry, biodiversity monitoring, and the automation of forestry equipment. These tasks rely on advanced perceptual capabilities, such as detection and fine-grained species classification of individual trees. Yet, existing datasets are inadequate to develop such perception systems, as they often focus on urban settings or a limited number of species. To address this, we present SilvaScenes, a new dataset for instance segmentation of tree species from under-canopy images. Collected across five bioclimatic domains in Quebec, Canada, SilvaScenes features 1476 trees from 24 species with annotations from forestry experts. We demonstrate the relevance and challenging nature of our dataset by benchmarking modern deep learning approaches for instance segmentation. Our results show that, while tree segmentation is easy, with a top mean average precision (mAP) of 67.65%, species classification remains a significant challenge with an mAP of only 35.69%. Our dataset and source code will be available at &lt;a rel=&quot;external&quot; href=&quot;https://github.com/norlab-ulaval/SilvaScenes&quot;&gt;this https URL&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      </item>
+      <item>
+          <title>torch_waymo</title>
+          <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/torch-waymo/</link>
+          <guid>https://willguimont.com/blog/torch-waymo/</guid>
+          <description xml:base="https://willguimont.com/blog/torch-waymo/">&lt;p&gt;Here’s a small library I made to use the &lt;a class=&quot;external&quot; href=&quot;https://waymo.com/open/&quot; target=&quot;_blank&quot;&gt;Waymo Open Dataset&lt;/a&gt; in PyTorch, without any dependency to Tensorflow: &lt;a class=&quot;external&quot; href=&quot;https://github.com/willGuimont/torch_waymo&quot; target=&quot;_blank&quot;&gt;willGuimont/torch_waymo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the corresponding PyPI package: &lt;a class=&quot;external&quot; href=&quot;https://pypi.org/project/torch-waymo/&quot; target=&quot;_blank&quot;&gt;torch-waymo&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

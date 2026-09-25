@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>wigum::website - Photos</title>
+      <link>https://willguimont.com/</link>
+      <description>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://willguimont.com/tags/photos/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Random Photos I found on my Hard Drive</title>
+          <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/random-photos/</link>
+          <guid>https://willguimont.com/blog/random-photos/</guid>
+          <description xml:base="https://willguimont.com/blog/random-photos/">&lt;p&gt;Here are some pictures I took in somewhere in Quebec City.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP3555.webp&quot; alt=&quot;IGP3555&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP3563.webp&quot; alt=&quot;IGP3563&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP4787.webp&quot; alt=&quot;IGP4787&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP4790.webp&quot; alt=&quot;IGP4790&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP4912.webp&quot; alt=&quot;IGP4912&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP4954.webp&quot; alt=&quot;IGP4954&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP5105.webp&quot; alt=&quot;IGP5105&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP9267.webp&quot; alt=&quot;IGP9267&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP9311.webp&quot; alt=&quot;IGP9311&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP9508.webp&quot; alt=&quot;IGP9508&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP9791.webp&quot; alt=&quot;IGP9791&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IGP9792.webp&quot; alt=&quot;IGP9792&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IMG8149.webp&quot; alt=&quot;IMG8149&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IMG8211.webp&quot; alt=&quot;IMG8211&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/random-photos/IMG8528.webp&quot; alt=&quot;IMG8528&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Maizerets 2</title>
+          <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maizerets-2/</link>
+          <guid>https://willguimont.com/blog/maizerets-2/</guid>
+          <description xml:base="https://willguimont.com/blog/maizerets-2/">&lt;p&gt;Here are some pictures I took in &lt;em&gt;Domaine de Maizerets&lt;/em&gt; in Quebec City.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/0.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/1.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/2.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/3.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/4.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/5.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/6.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/7.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/8.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/9.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets-2/10.webp&quot; alt=&quot;Maizeret jul 2023&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Maizerets</title>
+          <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/maizerets/</link>
+          <guid>https://willguimont.com/blog/maizerets/</guid>
+          <description xml:base="https://willguimont.com/blog/maizerets/">&lt;p&gt;Here are some pictures I took in &lt;em&gt;Domaine de Maizerets&lt;/em&gt; in Quebec City.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/maizerets/02.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/01.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/03.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/04.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/05.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/06.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/07.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/08.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/09.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/10.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/12.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/13.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/14.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/15.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/16.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/maizerets/17.webp&quot; alt=&quot;Maizeret oct 2022&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Ducks</title>
+          <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/ducks/</link>
+          <guid>https://willguimont.com/blog/ducks/</guid>
+          <description xml:base="https://willguimont.com/blog/ducks/">&lt;p&gt;Here are some pictures of ducks I took in the last few years. Most of them are from the &lt;em&gt;Domaine de Maizerets&lt;/em&gt; in Quebec City.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/ducks/01.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/04.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/03.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/05.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/02.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/06.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/07.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/ducks/08.webp&quot; alt=&quot;Duck&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Squirrels</title>
+          <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+          <author>William Guimont-Martin</author>
+          <link>https://willguimont.com/blog/squirrels/</link>
+          <guid>https://willguimont.com/blog/squirrels/</guid>
+          <description xml:base="https://willguimont.com/blog/squirrels/">&lt;p&gt;Here are some pictures of squirrels I took in the last few years. Most of them are from the &lt;em&gt;Domaine de Maizerets&lt;/em&gt; in Quebec City.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willguimont.com/blog/squirrels/02.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/03.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/01.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/04.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/05.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/06.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/07.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/08.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;
+&lt;img src=&quot;https://willguimont.com/blog/squirrels/09.webp&quot; alt=&quot;Squirrel&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; /&gt;&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

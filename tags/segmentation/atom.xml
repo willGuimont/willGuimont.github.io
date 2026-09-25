@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>wigum::website - Segmentation</title>
+    <subtitle>William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://willguimont.com/tags/segmentation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://willguimont.com/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-02-21T00:00:00+00:00</updated>
+    <id>https://willguimont.com/tags/segmentation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Segment Anything</title>
+        <published>2024-02-21T00:00:00+00:00</published>
+        <updated>2024-02-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            William Guimont-Martin
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://willguimont.com/blog/segment-anything/"/>
+        <id>https://willguimont.com/blog/segment-anything/</id>
+        
+        <content type="html" xml:base="https://willguimont.com/blog/segment-anything/">&lt;p&gt;Presentation made for the course &lt;a class=&quot;external&quot; href=&quot;https://www.ulaval.ca/etudes/cours/gif-7010-avancees-en-apprentissage-automatique&quot; target=&quot;_blank&quot;&gt;GIF-7010: Avancées en apprentissage automatique&lt;/a&gt; at Université Laval on &lt;a class=&quot;external&quot; href=&quot;https://arxiv.org/abs/2304.02643&quot; target=&quot;_blank&quot;&gt;Segment Anything&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are the slides:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;SegmentAnything.pptx&quot; target=&quot;_blank&quot;&gt;Segment Anything.pptx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;SegmentAnything.pdf&quot; target=&quot;_blank&quot;&gt;Segment Anything.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        
+    </entry>
+</feed>
