@@ -1,6 +1,7 @@
 +++
 insert_anchor_links = "left"
 title = "Home"
+description = "William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software."
 +++
 
 # `wigum::intro`

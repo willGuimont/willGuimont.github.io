@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2019-01-27-abstract-data-type/index.md",
+  "blog/2019-02-15-stack/index.md",
+]
 +++
 
 I've recently become fond of Algebraic Data Types (ADT).

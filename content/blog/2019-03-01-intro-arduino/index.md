@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2019-03-02-intro-conditions-arduino/index.md",
+  "blog/2019-03-03-intro-photoresistance/index.md",
+]
 +++
 
 ## Qu'est-ce qu'Arduino

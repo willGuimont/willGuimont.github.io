@@ -6,7 +6,7 @@ date = 2019-06-23
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Project"]
+tags = ["Computer Sciences", "Vue.js"]
 [extra]
 # banner = ""
 # toc = true

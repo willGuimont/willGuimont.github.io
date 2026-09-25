@@ -6,7 +6,7 @@ date = 2020-04-29
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "French", "Deep Learning", "Machine Learning", "Learning"]
+tags = ["Computer Sciences", "French", "Deep Learning", "Learning", "Robotics"]
 [extra]
 # banner = ""
 # toc = true

@@ -6,7 +6,7 @@ date = 2023-02-02
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning"]
+tags = ["Computer Sciences", "Deep Learning", "Autonomous Driving", "Dataset", "Waymo"]
 [extra]
 # banner = ""
 # toc = true

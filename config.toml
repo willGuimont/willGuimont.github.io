@@ -1,9 +1,11 @@
 title = "wigum::website"
 base_url = "https://willguimont.com/"
-description = "William Guimont-Martin's personal website"
+description = "William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software."
 
 compile_sass = true
 minify_html = true
+generate_sitemap = true
+generate_robots_txt = true
 generate_feeds = true
 # Only the first file will be used in the navbar feed button,
 # other feeds will still be available in page's head.
@@ -29,6 +31,7 @@ taxonomies = [{ name = "tags", feed = true }]
 [markdown]
 smart_punctuation = true
 bottom_footnotes = true
+lazy_async_image = true
 
 [markdown.highlighting]
 style = "class"
@@ -39,6 +42,8 @@ dark_theme = "solarized-dark"
 index_format = "fuse_json"
 
 [extra]
+seo_home_title = "William Guimont-Martin — Robotics, AI and Computer Science"
+seo_home_description = "William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software."
 # Which theme should be used by default (light/dark).
 #
 default_theme = "dark"

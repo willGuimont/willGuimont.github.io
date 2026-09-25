@@ -6,7 +6,7 @@ date = 2025-10-13
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning", "Paper"]
+tags = ["Computer Sciences", "Deep Learning", "Paper", "Computer Vision", "Forestry", "Dataset"]
 [extra]
 # banner = ""
 # toc = true

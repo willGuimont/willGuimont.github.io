@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2019-03-01-intro-arduino/index.md",
+  "blog/2019-03-02-intro-conditions-arduino/index.md",
+]
 +++
 
 Le but de cet exercice est de vous faire pratiquer les conditions et la boucle principale. De plus, vous aurez la chance de vous pratiquer à lire de la documentation.

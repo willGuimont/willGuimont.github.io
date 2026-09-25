@@ -15,8 +15,10 @@
 			<article class="project-card">
 				<a class="project-card-media" href="{{ project.permalink }}" aria-label="View {{ project.title }}">
 					{%- if project.extra.screenshot %}
+					{%- set image = get_image_metadata(path=project.colocated_path ~ project.extra.screenshot) %}
 					<img src="{{ project.permalink ~ project.extra.screenshot }}"
 						alt="{{ project.extra.screenshot_alt | default(value=project.title) }}"
+						width="{{ image.width }}" height="{{ image.height }}"
 						decoding="async" loading="lazy">
 					{%- else %}
 					<span class="project-screenshot-placeholder" role="img" aria-label="Screenshot placeholder">

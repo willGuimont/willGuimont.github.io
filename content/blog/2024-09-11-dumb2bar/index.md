@@ -6,7 +6,7 @@ date = 2024-09-11
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Training", "3D Printing"]
+tags = ["3D Printing", "Strength Training"]
 [extra]
 # banner = ""
 # toc = true
@@ -14,6 +14,9 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2025-06-08-dumb2bar-re/index.md",
+]
 +++
 
 This dumbbell-to-barbell adapter allows you to transform your dumbbells into barbell plates. Designed to fit on a standard barbell, this adapter ensures your dumbbells stay in place during even the most intense workouts. It’s a cost-effective, space-saving solution for those looking to expand their weightlifting capabilities without purchasing additional equipment.

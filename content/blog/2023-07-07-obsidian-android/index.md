@@ -15,6 +15,9 @@ toc_ordered = true
 # trigger = ""
 # disclaimer = ""
 archive = "Alternative way to sync your Obsidian vault to an Android phone using Git: [available here](@/blog/2024-03-25-obsidian-android-alternative/index.md)"
+related_posts = [
+  "blog/2024-03-25-obsidian-android-alternative/index.md",
+]
 +++
 
 Here's the procedure to sync your <a class="external" href="https://obsidian.md/" target="_blank">Obsidian</a> vault to an Android phone.

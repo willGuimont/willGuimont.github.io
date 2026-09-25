@@ -1,5 +1,6 @@
 +++
 title = "Nelligan app privacy policy"
+description = "Privacy policy for Nelligan, a poem-learning app that stores all content locally and collects no personal or usage data."
 [extra]
 go_to_top = true
 +++

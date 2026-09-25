@@ -6,7 +6,7 @@ date = 2024-07-14
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences"]
+tags = ["Computer Sciences", "Obsidian"]
 [extra]
 # banner = ""
 # toc = true

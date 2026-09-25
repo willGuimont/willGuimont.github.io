@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Proof of sequence A094028"
-description = ""
+description = "A step-by-step proof that 101 is the only prime term in OEIS sequence A094028, using geometric-series factorization and divisibility by 11."
 date = 2020-05-03
 # updated = ""
 # draft = false

@@ -1,5 +1,6 @@
 +++
 title = "Demo Page"
+description = "A demonstration of Duckquill’s Markdown, typography, media, shortcodes, KaTeX, and other theme components."
 [extra]
 go_to_top = true
 styles = ["demo/demo.css"]
@@ -23,7 +24,6 @@ Text can be **bold**, *italic*, ~~strikethrough~~, and ***~~all at the same time
 
 There should be whitespace between paragraphs[^1].
 
-# Heading 1
 ## Heading 2
 ### Heading 3
 #### Heading 4

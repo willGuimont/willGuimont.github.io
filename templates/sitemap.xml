@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for entry in entries %}
+{%- if entry.permalink | replace(from="/page/1/", to="") == entry.permalink %}
+	<url>
+		<loc>{{ entry.permalink }}</loc>
+		{%- if entry.updated %}
+		<lastmod>{{ entry.updated }}</lastmod>
+		{%- endif %}
+	</url>
+{%- endif %}
+{%- endfor %}
+</urlset>

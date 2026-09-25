@@ -1,0 +1,41 @@
+{%- set_global related_posts = [] -%}
+{%- set_global related_urls = [] -%}
+{%- if page.extra?.related_posts is defined -%}
+	{# An explicitly empty list intentionally disables the related-post section. #}
+	{%- for related_path in page.extra.related_posts -%}
+		{%- set related = get_page(path=related_path) -%}
+		{%- if related.permalink != page.permalink and related.permalink not in related_urls -%}
+			{%- set_global related_posts = [...related_posts, related] -%}
+			{%- set_global related_urls = [...related_urls, related.permalink] -%}
+		{%- endif -%}
+	{%- endfor -%}
+{%- elif page.taxonomies?.tags -%}
+	{%- set tags = get_taxonomy(kind="tags") -%}
+	{%- set non_specific_tags = ["Computer Sciences", "Computing Sciences", "French"] -%}
+	{%- set_global ranked_tags = [] -%}
+	{%- for tag in tags.items -%}
+		{%- if tag.name in page.taxonomies.tags and tag.name not in non_specific_tags -%}
+			{%- set tag_rank = {"name": tag.name, "count": tag.pages | length, "pages": tag.pages} -%}
+			{%- set_global ranked_tags = [...ranked_tags, tag_rank] -%}
+		{%- endif -%}
+	{%- endfor -%}
+	{# Rare tags are more specific, so consider their posts before broad tags. #}
+	{%- for tag in ranked_tags | sort(attribute="count") -%}
+		{%- for candidate in tag.pages -%}
+			{%- if candidate.permalink != page.permalink and candidate.permalink not in related_urls and related_posts | length < 3 -%}
+				{%- set_global related_posts = [...related_posts, candidate] -%}
+				{%- set_global related_urls = [...related_urls, candidate.permalink] -%}
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endfor -%}
+{%- endif -%}
+{%- if related_posts | length > 0 %}
+<aside class="related-posts" aria-labelledby="related-posts-title">
+	<h2 id="related-posts-title">Related posts</h2>
+	<ul>
+		{%- for related in related_posts %}
+		<li><a href="{{ related.permalink }}">{{ related.title }}</a></li>
+		{%- endfor %}
+	</ul>
+</aside>
+{%- endif -%}

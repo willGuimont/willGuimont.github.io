@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2019-03-01-intro-arduino/index.md",
+  "blog/2019-03-03-intro-photoresistance/index.md",
+]
 +++
 
 Dans l'article précédant, nous avons vu comment faire clignoter une DEL 2 fois avant de s'éteindre. Maintenant, essayons de n'allumer la DEL que lorsqu'un bouton est enfoncé.

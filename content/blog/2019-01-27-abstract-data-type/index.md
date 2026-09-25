@@ -6,7 +6,7 @@ date = 2019-01-27
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Data Structure"]
+tags = ["Computer Sciences", "Data Structures"]
 [extra]
 # banner = ""
 toc = true
@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2019-02-15-stack/index.md",
+  "blog/2020-07-09-polymorphism/index.md",
+]
 +++
 
 The proposition of abstract data types by Liskov and Zilles is an important step in the way we build computer software. Abstract data types allow programmers to leverage the power of abstraction. By hiding implementation details, they allow programmers to use a structure by only being concerned about their behaviors and not how the structure works inside.

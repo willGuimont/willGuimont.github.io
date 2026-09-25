@@ -4,7 +4,7 @@ title = "Ars Linguae Web"
 description = "A bilingual vocabulary notebook for discovering, saving, and reviewing words"
 date = 2026-07-20
 [taxonomies]
-tags = ["Language", "PWA", "TypeScript"]
+tags = ["Language Learning", "PWA", "TypeScript"]
 [extra]
 toc_inline = true
 toc_ordered = true

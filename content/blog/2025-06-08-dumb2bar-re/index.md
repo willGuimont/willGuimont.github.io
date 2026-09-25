@@ -6,7 +6,7 @@ date = 2025-06-08
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["3D Printing", "Training", "Weight Lifting"]
+tags = ["3D Printing", "Strength Training"]
 [extra]
 # banner = ""
 # toc = true
@@ -14,6 +14,9 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2024-09-11-dumb2bar/index.md",
+]
 +++
 
 Introducing Dumb2Bar — a 3D-printable adapter that transforms your dumbbells into barbell plates.

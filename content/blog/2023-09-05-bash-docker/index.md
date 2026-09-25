@@ -14,6 +14,10 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2025-09-06-bash-workshop/index.md",
+  "blog/2025-09-07-docker-workshop/index.md",
+]
 +++
 
 Ces ateliers ont été conçus pour le département d'informatique et de génie logiciel de l'Université Laval.

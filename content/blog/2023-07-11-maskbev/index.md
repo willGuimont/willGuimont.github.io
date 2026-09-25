@@ -1,12 +1,12 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "MaskBEV"
-description = ""
+description = "MaskBEV is an IROS 2023 paper on mask-based object detection and footprint completion in bird’s-eye-view LiDAR point clouds."
 date = 2023-07-11
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning", "Paper"]
+tags = ["Computer Sciences", "Deep Learning", "Paper", "Point Clouds", "LiDAR", "Object Detection", "Robotics"]
 [extra]
 # banner = ""
 # toc = true

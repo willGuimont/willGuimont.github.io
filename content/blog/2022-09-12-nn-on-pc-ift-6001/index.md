@@ -1,12 +1,12 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Apprentissage profonds sur les nuages de points 3D"
-description = ""
+description = "Rapport sur l’apprentissage par réseaux de neurones profonds appliqué aux nuages de points 3D, réalisé pour le cours IFT-6001."
 date = 2022-09-12
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning", "French"]
+tags = ["Computer Sciences", "Deep Learning", "Point Clouds", "French"]
 [extra]
 # banner = ""
 # toc = true

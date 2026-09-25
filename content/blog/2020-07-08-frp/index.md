@@ -6,7 +6,7 @@ date = 2020-07-08
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Rant", "Android"]
+tags = ["Android"]
 [extra]
 # banner = ""
 # toc = true

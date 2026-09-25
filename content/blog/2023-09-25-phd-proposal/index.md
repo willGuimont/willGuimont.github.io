@@ -14,6 +14,9 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2023-10-30-phd-proposal-passed/index.md",
+]
 +++
 
 This is my Ph.D. proposal. It is a work in progress: <a href="phdProposal_williamGuimontMartin_v0.pdf" target="_blank">Ph.D. Proposal</a>

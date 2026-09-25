@@ -1,0 +1,21 @@
+{%- if page?.description -%}
+	{%- if current_path is matching(pat="^/projects/[^/]+/$") -%}
+		{%- set description = page.description ~ ". Project details, links, and related work by " ~ config.author ~ "." -%}
+	{%- else -%}
+		{%- set description = page.description -%}
+	{%- endif -%}
+{%- elif page?.title -%}
+	{%- set description = "Read “" ~ page.title ~ "” by " ~ config.author ~ "." -%}
+{%- elif section?.description -%}
+	{%- set description = section.description -%}
+{%- elif term?.name -%}
+	{%- set description = "Browse articles by " ~ config.author ~ " tagged “" ~ term.name ~ ".”" -%}
+{%- elif taxonomy?.name -%}
+	{%- set description = "Browse " ~ taxonomy.name ~ " used to organize articles by " ~ config.author ~ "." -%}
+{%- else -%}
+	{%- set description = config.extra.seo_home_description | default(value=config.description) -%}
+{%- endif -%}
+{%- if paginator?.current_index and paginator.current_index > 1 -%}
+	{%- set description = description ~ " Page " ~ paginator.current_index ~ " of " ~ paginator.number_pagers ~ "." -%}
+{%- endif -%}
+{{- description -}}

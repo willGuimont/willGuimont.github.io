@@ -14,6 +14,10 @@ toc_inline = true
 # toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2025-09-07-docker-workshop/index.md",
+  "blog/2023-09-05-bash-docker/index.md",
+]
 +++
 
 Bash is a powerful command-line interpreter that allows users to interact with their operating system through text commands.

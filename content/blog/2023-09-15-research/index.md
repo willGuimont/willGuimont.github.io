@@ -6,7 +6,7 @@ date = 2023-09-15
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Research", "Random"]
+tags = ["Computer Sciences", "Research"]
 [extra]
 # banner = ""
 # toc = true

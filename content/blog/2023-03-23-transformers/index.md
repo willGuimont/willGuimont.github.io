@@ -6,7 +6,7 @@ date = 2023-03-23
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning"]
+tags = ["Computer Sciences", "Deep Learning", "Transformers"]
 [extra]
 # banner = ""
 # toc = true

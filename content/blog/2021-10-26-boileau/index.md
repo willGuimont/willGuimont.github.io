@@ -6,7 +6,7 @@ date = 2021-10-26
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Poesy", "French"]
+tags = ["Poetry", "French"]
 [extra]
 # banner = ""
 # toc = true

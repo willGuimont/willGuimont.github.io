@@ -14,6 +14,9 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2023-09-25-phd-proposal/index.md",
+]
 +++
 
 Passed the Ph.D. proposal exam!

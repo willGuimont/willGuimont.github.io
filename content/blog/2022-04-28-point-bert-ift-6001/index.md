@@ -1,12 +1,12 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Point-BERT IFT-6001"
-description = ""
+description = "Présentation sur Point-BERT, donnée dans le cadre du cours IFT-6001 à l’Université Laval, avec diapositives et enregistrement vidéo."
 date = 2022-04-28
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Deep Learning", "Machine Learning", "French"]
+tags = ["Computer Sciences", "Deep Learning", "Point Clouds", "French"]
 [extra]
 # banner = ""
 # toc = true

@@ -6,7 +6,7 @@ date = 2020-04-28
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Sciences", "French", "Climate"]
+tags = ["Paleoclimate", "French", "Climate"]
 [extra]
 # banner = ""
 # toc = true

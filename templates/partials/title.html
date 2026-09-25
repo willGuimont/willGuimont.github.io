@@ -1,0 +1,22 @@
+{%- set separator = " | " -%}
+{%- if current_path == "/" -%}
+	{{- config.extra.seo_home_title -}}
+{%- else -%}
+	{%- if page?.title -%}
+		{%- set prefix = page.title -%}
+	{%- elif section?.extra?.seo_title -%}
+		{%- set prefix = section.extra.seo_title -%}
+	{%- elif section?.title -%}
+		{%- set prefix = section.title -%}
+	{%- elif term?.name -%}
+		{%- set prefix = "Posts tagged “" ~ term.name ~ "”" -%}
+	{%- elif taxonomy?.name -%}
+		{%- set prefix = taxonomy.name | capitalize -%}
+	{%- else -%}
+		{%- set prefix = title | default(value="Page not found") -%}
+	{%- endif -%}
+	{%- if paginator?.current_index and paginator.current_index > 1 -%}
+		{%- set prefix = prefix ~ " — Page " ~ paginator.current_index -%}
+	{%- endif -%}
+	{{- prefix ~ separator ~ config.author -}}
+{%- endif -%}

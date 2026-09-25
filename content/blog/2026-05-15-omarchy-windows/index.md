@@ -6,7 +6,7 @@ date = 2026-05-15
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences"]
+tags = ["Computer Sciences", "Linux", "Windows", "Bootloader"]
 [extra]
 # banner = ""
 # toc = true

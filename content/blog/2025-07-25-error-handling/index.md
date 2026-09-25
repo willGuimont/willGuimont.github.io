@@ -6,7 +6,7 @@ date = 2025-07-25
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computing Sciences", "Programming", "Software Development"]
+tags = ["Computer Sciences", "Programming", "Software Engineering"]
 [extra]
 # banner = ""
 toc = true

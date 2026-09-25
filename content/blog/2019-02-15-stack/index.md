@@ -6,7 +6,7 @@ date = 2019-02-15
 # updated = ""
 # draft = false
 [taxonomies]
-tags = ["Computer Sciences", "Data Structure"]
+tags = ["Computer Sciences", "Data Structures"]
 [extra]
 # banner = ""
 toc = true
@@ -15,6 +15,10 @@ toc_ordered = true
 # trigger = ""
 # disclaimer = ""
 katex = true
+related_posts = [
+  "blog/2019-01-27-abstract-data-type/index.md",
+  "blog/2020-07-09-polymorphism/index.md",
+]
 +++
 
 Stacks are very much like a stack of plates. When you don't want to do the dishes, you simply *push* the dirty plate on top of the others. Whereas when you are washing them, you take to plate on the top of the stack and proceed to *pop* them all.

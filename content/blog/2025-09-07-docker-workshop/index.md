@@ -14,6 +14,10 @@ toc_inline = true
 # toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2025-09-06-bash-workshop/index.md",
+  "blog/2023-09-05-bash-docker/index.md",
+]
 +++
 
 Docker and containerization have revolutionized the way applications are developed, deployed, and managed.

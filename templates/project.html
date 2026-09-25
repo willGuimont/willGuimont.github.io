@@ -31,8 +31,11 @@
 
 	<div class="project-detail-media">
 		{%- if page.extra.screenshot %}
+		{%- set image = get_image_metadata(path=page.colocated_path ~ page.extra.screenshot) %}
 		<img src="{{ page.permalink ~ page.extra.screenshot }}"
-			alt="{{ page.extra.screenshot_alt | default(value=page.title) }}">
+			alt="{{ page.extra.screenshot_alt | default(value=page.title) }}"
+			width="{{ image.width }}" height="{{ image.height }}"
+			decoding="async">
 		{%- else %}
 		<div class="project-screenshot-placeholder" role="img" aria-label="Screenshot placeholder">
 			<span aria-hidden="true">&lt;/&gt;</span>

@@ -229,6 +229,27 @@
   max-width: 70ch;
 }
 
+.related-posts {
+  float: none;
+  clear: both;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 3rem 0 0;
+  padding: 1.25rem 1.5rem;
+
+  h2 {
+    margin: 0 0 0.75rem;
+    font-size: var(--font-size-x-large);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+  }
+}
+
 @media (max-width: 700px) {
   .project-grid {
     grid-template-columns: 1fr;

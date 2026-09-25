@@ -14,6 +14,9 @@ toc_inline = true
 toc_ordered = true
 # trigger = ""
 # disclaimer = ""
+related_posts = [
+  "blog/2023-07-07-obsidian-android/index.md",
+]
 +++
 
 Updated way to sync your Obsidian vault to an Android phone using Git.
