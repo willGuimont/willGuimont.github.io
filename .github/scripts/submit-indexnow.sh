@@ -3,7 +3,7 @@ set -euo pipefail
 
 site_host="willguimont.com"
 site_url="https://${site_host}"
-indexnow_endpoints=("https://www.bing.com/indexnow", "https://api.indexnow.org/indexnow" "https://yandex.com/indexnow")
+indexnow_endpoints=("https://www.bing.com/indexnow" "https://api.indexnow.org/indexnow" "https://yandex.com/indexnow")
 
 if [[ -z "${INDEXNOW_KEY:-}" ]]; then
 	echo "INDEXNOW_KEY is not configured; skipping submission."
