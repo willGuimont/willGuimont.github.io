@@ -25,17 +25,17 @@ The moment something goes wrong, though, most languages make the not-so-happy pa
 Handling errors well should be a first-class concern of most programming languages.
 It feels as if errors are just an afterthought in mainstream languages, added inelegantly out of necessity.
 
-This blog post stems from some experimentation on error handling I did back in 2021.
-Then at the end of my undergraduate studies in software engineering at Université Laval, we were assigned a final project in collaboration with an industry partner.
-They gave us *carte blanche* on the choice of technology.
-Looking to try less mainstream languages and explore new paradigms, we decided to explore and compare several less conventional stacks -- paying particular attention to how each one approached error handling, since our project required high reliability and robustness.
+This blog post stems from some error-handling experimentation I did back in 2021.
+Then, at the end of my undergraduate studies in software engineering at Université Laval, we were assigned a final project in collaboration with an industry partner.
+They gave us carte blanche to choose the technology.
+Looking to try less mainstream languages and explore new paradigms, we decided to explore and compare several less conventional stacks – paying particular attention to how each one approached error handling, since our project required high reliability and robustness.
 
 ## `errno` of Our Ways (C)
 
-Before looking at more *modern* approaches of error handling, it is worth recalling the baseline most of them react against: C.
+Before looking at more *modern* approaches to error handling, it is worth recalling the baseline most of them react against: C.
 C has no dedicated error mechanism at all.
 Functions signal failure through their return value -- a `NULL` pointer, a non-zero integer, or some other sentinel value -- and stash the reason in a global variable, `errno`.
-You are expected to check the return value, then read `errno` to find the out what actually went wrong.
+You are expected to check the return value, then read `errno` to find out what actually went wrong.
 
 ```c
 #include <stdio.h>
@@ -58,10 +58,10 @@ int main(void) {
 ```
 
 While simple and practical, this model presents some flaws.
-As C does not support multiple return values -- i.e., tuples -- without much boilerplate (defining a `struct` with the return value and the error, a tagged union, or setting output variables via pointers), we end up using a value *in-band* of the return type: `-1` is both a valid integer, and might indicate an error.
+As C does not support multiple return values -- i.e., tuples -- without much boilerplate (defining a `struct` with the return value and the error, a tagged union, or setting output variables via pointers), we end up using a value *in-band* of the return type: `-1` is both a valid integer and might indicate an error.
 And `errno` is global mutable state, which means it's only meaningfully valid immediately after the call, is clobbered by the next failing function, and is a thread-safety hazard (hence `errno` being a per-thread macro in modern C, since C11).
-Every guarantee is shifted onto the discipline of the programmer, the language does not provide much tooling to handle errors.
-With this model, the programmer needs to fix it by convention, for example returning the value via assignation to a pointer, and keep the function return value to undicate the error:
+Every guarantee is shifted onto the discipline of the programmer; the language does not provide much tooling to handle errors.
+With this model, the programmer needs to fix it by convention, for example, returning the value via assignment to a pointer, and keeping the function return value to indicate the error:
 
 ```c
 #include <errno.h>
@@ -97,15 +97,15 @@ The most well-known model is the `try`/`catch` mechanism available in most mains
 You throw an error and hope someone, somewhere, catches it up the stack.
 Otherwise, your program crashes unceremoniously.
 
-It’s an *easy* method for the error generating code, throw the exception and forget about it, but it is far from simple.
+It’s an *easy* method for the error-generating code: throw the exception and forget about it, but it is far from simple.
 This is similar to the distinction between *simple* and *easy* made by Rich Hickey in his talk "<a class="external" href="https://www.infoq.com/presentations/Simple-Made-Easy/" target="_blank">Simple Made Easy</a>".
-Exceptions are **complecting** by nature, they intertwine normal control flow with error handling.
-The control flow is no longer linear and predictable, you climb back up the stack looking for a handler.
+Exceptions are **complecting** by nature; they intertwine normal control flow with error handling.
+The control flow is no longer linear and predictable; you climb back up the stack looking for a handler.
 
 They let you skip instructions, bubble errors up several layers, and bypass normal control flow.
 In a way, they are sugar-coated `goto`s that jump through stack frames.
 
-Yes, `try`/`catch`/`finally` blocks and RAII (in C++/Java with `try-with-resources`) can clean things up nicely (although, I prefer using `defer` or `err_defer`, which we will discuss later), but you're still left with a system where it's not obvious what code might throw and who handles the exception.
+Yes, `try`/`catch`/`finally` blocks and RAII (in C++/Java with `try-with-resources`) can clean things up nicely (although I prefer using `defer` or `err_defer`, which we will discuss later), but you're still left with a system where it's not obvious what code might throw and who handles the exception.
 
 Java attempted to solve the uncertainty around which operations might throw exceptions through checked exceptions, but that just shifted the problem.
 You now have to annotate everything, tracing all possible failure paths and punting the problem upstream.
@@ -118,11 +118,11 @@ Even Robert C. Martin said in Clean Code:
 > -- Robert C. Martin. Clean Code. 2008.
 
 Despite their limitations, exceptions are still very much useful for their convenience and ease of use in simple cases.
-That said, while it can be convenient to let domain exceptions bubble up -- for instance, in a REST API handler where you want a 404 Not Found if the entity is not found in the repository deep in the domain -- you’re still playing with possibly impossible-to-predict, and more importantly difficult to debug, control flow.
+That said, while it can be convenient to let domain exceptions bubble up -- for instance, in a REST API handler where you want a 404 Not Found if the entity is not found in the repository deep in the domain -- you’re still playing with possibly impossible-to-predict, and more importantly difficult-to-debug, control flow.
 This is especially true in large codebases with many layers of abstraction, where an exception thrown deep in the stack can be caught and handled far away from its origin, making it hard to trace the error's source.
 While you can try to limit this with coding standards and best practices, it remains challenging and cumbersome if the language does not provide good alternatives.
 
-### What Java's throws Wanted to Be (Swift)
+### What Java's `throws` Wanted to Be (Swift)
 
 Swift 6.0+ offers a variation on the exception model, addressing some of the limitations and drawbacks of traditional exception handling by requiring explicit `try` annotations, ensuring that potential failure points are visible at the call site.
 Errors are values conforming to the `Error` protocol (not a class hierarchy rooted in `Throwable`), functions advertise fallibility with throws in their signature, and every call site must acknowledge it with `try`, making throwing operations syntactically visible rather than invisible like Java's unchecked exceptions.
@@ -168,7 +168,7 @@ RAII does not make exception control flow any less implicit, but it makes that i
 ## `Go`ing Somewhere with Errors (Go)
 
 Go brought back the C-style return code (i.e., non-zero return for errors), modernized as error values returned by the function, now with `nil` as the successful return value (absence of error).
-You call a function, and it returns both result and error.
+You call a function, and it returns both a result and an error.
 By convention, the error is the last return value.
 
 ```go
@@ -212,7 +212,7 @@ You’re mostly on your own to handle errors consistently.
 Go does not provide any syntactic sugar for error handling, i.e., no `try`/`catch`, no pattern matching, no monadic operators.
 Just `if err != nil` over and over.
 
-You end up either duplicating error-propagation boilerplate or hiding the verbosity behind a generic helper that turns a non-nil error into a `panic` (unwound by a `recover` at the boundary, more on that mechanism below):
+You end up either duplicating error-propagation boilerplate or hiding the verbosity behind a generic helper that turns a non-nil error into a `panic` (unwound by a `recover` at the boundary; more on that mechanism below):
 
 ```go
 func try[T any](v T, err error) T {
@@ -270,7 +270,7 @@ func doSomething() (string, error) {
 ```
 
 Go also has a second, exception-like channel it would rather you didn't reach for: `panic` and `recover`.
-A panic unwinds the stack like an exception, and a deferred recover can catch it, used almost exclusively for truly unrecoverable bugs or at goroutine boundaries, not ordinary error handling.
+A panic unwinds the stack like an exception, and a deferred recover can catch it; it is used almost exclusively for truly unrecoverable bugs or at goroutine boundaries, not ordinary error handling.
 
 ```go
 package main
@@ -300,7 +300,7 @@ func compute(a, b int) int {
 ```
 
 More idiomatically, Go's standard library leans on sentinel errors plus wrapping.
-Wrapping an error with `%w` preserves it in a chain; and `errors.Is` and `errors.As` then walk that chain to match a sentinel or extract a typed error.
+Wrapping an error with `%w` preserves it in a chain; `errors.Is` and `errors.As` then walk that chain to match a sentinel or extract a typed error.
 This recovers some of the structure that a bare `if err != nil` discards.
 
 ```go
@@ -354,12 +354,12 @@ func main() {
 Zig handles errors a bit differently.
 Instead of adding an explicit error return value, Zig uses error union types.
 By adding `!` before a type, you indicate that the function can return either a value of that type or an error, e.g., `fn doSomething() !i32`.
-Thus taking the union of the error set and the normal return type.
-You can optionally narrow down the error set to specific errors prefixing the error type, e.g., `fn doSomethingElse() ErrorType!ReturnType`.
+Thus, it takes the union of the error set and the normal return type.
+You can optionally narrow down the error set to specific errors by prefixing the error type, e.g., `fn doSomethingElse() ErrorType!ReturnType`.
 
 In addition, Zig has built-in syntax for propagating errors with `try` and `catch`.
 When you call a function that can return an error, you can use `try` to automatically propagate the error if it occurs, or get the value if it succeeds.
-With `catch`, you can provide a default value or handle the error in place passing the error to a lambda.
+With `catch`, you can provide a default value or handle the error in place by passing the error to a lambda.
 
 ```zig
 const std = @import("std");
@@ -435,7 +435,7 @@ pub fn main() !void {
 
 I recently started experimenting with Odin, which has some interesting ideas around error handling.
 Instead of considering errors as exceptions or special types, Odin treats them as regular return values.
-As it is the case for Go, Odin conventionally returns an error as the last return value of a function.
+As is the case for Go, Odin conventionally returns an error as the last return value of a function.
 Unlike Zig, which uses error unions that require declaring error types using `error{}`, Odin, by convention, simply treats non-zero return values as errors.
 This is paired with Odin's commitment to make zero values useful defaults, so a function returning zero for an error indicates success.
 
@@ -521,14 +521,14 @@ main :: proc() {
 ```
 
 Odin's approach is reminiscent of Go's explicit error handling but adds syntactic sugar to reduce boilerplate.
-From these *errors as values* methods, this is probably my favorite.
+From these *errors-as-values* methods, this is probably my favorite.
 It builds on Go's explicit error handling while providing operators like `or_return` to streamline common patterns.
 It does not require separate error construction like Zig, making it conceptually simpler.
 Overall, Odin strikes a nice balance between explicitness and elegance in error handling.
 
 ## Playing Tag with Errors (Rust)
 
-Rust’s tagged unions `Result<T, E>` and `Option<T>` types offers a different approach.
+Rust’s tagged unions `Result<T, E>` and `Option<T>` types offer a different approach.
 Errors are in the type system.
 The compiler forces you to handle them -- or explicitly ignore them (e.g., with `unwrap`, `expect`, etc.).
 You can use Rust's pattern matching to destructure and handle errors explicitly.
@@ -560,13 +560,13 @@ fn main() {
 }
 ```
 
-The `?` operator propagates errors up, and makes code shorter, but it can also obscure control flow.
+The `?` operator propagates errors up and makes code shorter, but it can also obscure control flow.
 The whole flow of the function can be interrupted by a single `?` character.
 This single symbol rewires control flow and introduces implicit short-circuiting, which can obscure the data path.
 At least, the `?` operator is limited to functions returning `Result` or `Option`, so its use is explicit in the function signature.
 
 This is a limited form of monadic error handling.
-This is arguably one of Rust's strengths, it makes functional programming ideas more mainstream, e.g., algebraic data types, pattern matching, higher-order functions, and monadic error handling.
+This is arguably one of Rust's strengths; it makes functional programming ideas more mainstream, e.g., algebraic data types, pattern matching, higher-order functions, and monadic error handling.
 
 Of course, Rust doesn’t force you to propagate or handle errors safely -- you can always opt out:
 
@@ -577,9 +577,9 @@ let val = foo().expect("better crash message"); // same, but with context
 
 It is worth distinguishing between `Result<T, E>` and `Option<T>`.
 `Result<T, E>` models a computation that failed and can say why, `Option<T>` models mere *absence*, a value that may legitimately not be there, with no error to report.
-Conflating them is a common design smell. A "Key not found in map" is usually an `Option`, as absence is expected and unremarkable, whereas "could not read the config file" is a `Result`, you want the reason.
+Conflating them is a common design smell. A "Key not found in map" is usually an `Option`, as absence is expected and unremarkable, whereas "could not read the config file" is a `Result`; you want the reason.
 This choice encodes intent directly into the type system, in a way that using nullable does not.
-Rust lets you convert between them (`Option::ok_or`, `Result::ok`) precisely because the boundary is a judgment call that shifts with context, in some context, *absence* is *error* or *error* is *absence*.
+Rust lets you convert between them (`Option::ok_or`, `Result::ok`) precisely because the boundary is a judgment call that shifts with context; in some cases, *absence* is *error* or *error* is *absence*.
 
 ### Riding the Happy Rails (F# / Elm)
 
@@ -629,7 +629,7 @@ F#'s `bind` is inspired by Haskell monads, and the `bind` operator `>>=`, which 
 ### A Monadic Digression
 
 Before writing this document, I assumed that Rust's `?` operator was limited to built-in types like `Result<T, E>` and `Option<T>`, effectively restricting its use to these specific monads.
-While this holds true on stable Rust, the nightly-only `try_trait_v2` feature extends the language’s capabilities by allowing custom types to participate in `?`-based control flow through the implementation of the `Try` and `FromResidual` traits.
+While this holds on stable Rust, the nightly-only `try_trait_v2` feature extends the language’s capabilities by allowing custom types to participate in `?`-based control flow through the implementation of the `Try` and `FromResidual` traits.
 
 ```rust
 #![feature(try_trait_v2)]
@@ -789,7 +789,7 @@ main = do
 
 ### Parsing and Non-Empty Chains (Scala)
 
-This brings us to 2021, where this blog post really began.
+This brings us to 2021, when this blog post really began.
 During my final undergraduate project with a company, we decided to step away from the mainstream and explore more functional tooling.
 That led us to Scala, and more specifically, to Cats.
 
@@ -949,8 +949,8 @@ startServer = do
 This makes exception handling more explicit and modular -- you can define and run separate interpreters for each type of error, allowing each subsystem to handle its own failures independently.
 
 This approach tickles my functional programming itch, but it comes with complexity.
-It is very elegant to think of your program as a series of composable effects, that are then interpreted at the edges of your system.
-More complex operations can be decomposed into smaller effects, before being interpreter.
+It is very elegant to think of your program as a series of composable effects that are then interpreted at the edges of your system.
+More complex operations can be decomposed into smaller effects before being interpreted.
 In some ways, it feels like a sort of interpreter that compiles your source code into a simpler bytecode (core language primitive operations) that is then executed.
 However, the learning curve is steep, and the abstraction overhead can be significant for small to medium projects.
 
@@ -961,7 +961,7 @@ OCaml 5, Koka, and Effekt provide algebraic effects with handlers, and crucially
 Where `try`/`catch` only ever unwinds, an effect handler holds a continuation it can call to pick up exactly where the effect was performed.
 
 The real power shows up when you keep the computation fixed and swap only the handler.
-Here pipeline is written once and knows nothing about how a division by zero is dealt with; two handlers impose two completely different policies on it:
+Here, the pipeline is written once and knows nothing about how a division by zero is dealt with; two handlers impose two completely different policies on it:
 
 ```ocaml
 open Effect
@@ -1012,12 +1012,12 @@ let () =
 This is the separation of concerns that exceptions can't express.
 `pipeline` decides where a problem is raised; the handler decides what it means.
 Under `resume_with_numerator`, the handler calls `continue k 7`, it resumes the suspended `divide 7 0` in place, hands back `7`, and execution flows on to `c`, so the block completes and sums to `17`.
-Under abort_on_zero, the handler simply doesn't call the continuation, it raises instead, discarding the rest of the computation, and `c` never runs.
-Same code, opposite outcomes, and pipeline is none the wiser.
+Under abort_on_zero, the handler simply doesn't call the continuation; it raises instead, discarding the rest of the computation, and `c` never runs.
+Same code, opposite outcomes, and the pipeline is none the wiser.
 
 That's the leverage: with `try`/`catch` the decision to abort is baked into the throwing code (once you throw, the frames are gone).
-With effects, "abort" and "resume" are just two handlers you can choose between after the fact, abort is the special case where you decline to resume.
-That resumption ability, recovering without unwinding, is the bridge to one of the oldest idea in this whole post: Common Lisp's conditions and restarts.
+With effects, "abort" and "resume" are just two handlers you can choose between after the fact; abort is the special case where you decline to resume.
+That resumption ability, recovering without unwinding, is the bridge to one of the oldest ideas in this whole post: Common Lisp's conditions and restarts.
 
 ## Terms and Conditions (Common Lisp)
 
@@ -1056,19 +1056,19 @@ But the handler that chooses which restart to invoke sits high up -- and it runs
 ```
 
 When `(divide 7 0)` runs, divide does two things and stops: it signals a condition and publishes a menu of restarts (`use-value`, `use-zero`).
-Signalling is not throwing, nothing unwinds, so `divide`'s frame is still alive.
+Signalling is not throwing: nothing unwinds, so `divide`'s frame is still alive.
 The matching handler-bind runs while the stack is frozen, reads the numerator off the condition, and calls `(invoke-restart 'use-value 7)`.
-That resumes divide in place with `7`, so c still runs and the block sums to `17`.
+That resumes divide in place with `7`, so `c` still runs, and the block sums to `17`.
 
 The whole idea is that one split: signal (where), restart (how), handler (which).
 `divide` provides the recovery mechanisms without choosing one; `run-pipeline` chooses the policy without knowing how recovery works.
-Swap the handler to `use-zero` and divisions by zero become `0`; decline to restart and you abort, all without touching divide.
+Swap the handler to `use-zero`, and divisions by zero become `0`; decline to restart, and you abort, all without touching divide.
 
-And because the restarts are just a published menu, if no handler matches, Lisp doesn't crash, it drops into the debugger and offers those same restarts to a human, who can pick one and resume the live program.
+And because the restarts are just a published menu, if no handler matches, Lisp doesn't crash; it drops into the debugger and offers those same restarts to a human, who can pick one and resume the live program.
 Error handling, interactive recovery, and debugging are one mechanism.
 
 This is the most general model in the post: exceptions are just the degenerate case where the only restart is "unwind to the handler."
-It pairs naturally with Elixir's "let it crash" as the opposite pole, where Erlang isolates failure and restarts a process, Lisp keeps the process alive and restarts a computation.
+It pairs naturally with Elixir's "let it crash" as the opposite pole, where Erlang isolates failure and restarts a process; Lisp keeps the process alive and restarts a computation.
 
 ## Trust, but ~~verify~~ `assert` (D)
 
