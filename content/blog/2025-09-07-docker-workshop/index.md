@@ -426,6 +426,7 @@ Tasks:
 <details><summary>Solution</summary>
 
 ```bash
+{% raw %}
 # Verify that the container is running
 docker ps
 
@@ -449,6 +450,7 @@ docker inspect \
 # Stop and remove it
 docker stop web-server
 docker rm web-server
+{% endraw %}
 ```
 
 `docker run` creates a new container, whereas `docker exec` executes another process inside an already running container.
