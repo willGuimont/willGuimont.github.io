@@ -12,8 +12,10 @@
 	{%- set description = "Browse articles by " ~ config.author ~ " tagged “" ~ term.name ~ ".”" -%}
 {%- elif taxonomy?.name -%}
 	{%- set description = "Browse " ~ taxonomy.name ~ " used to organize articles by " ~ config.author ~ "." -%}
-{%- else -%}
+{%- elif current_path == "/" -%}
 	{%- set description = config.extra.seo_home_description | default(value=config.description) -%}
+{%- else -%}
+	{%- set description = "The requested page could not be found. Return to the homepage to explore research, articles, and projects by " ~ config.author ~ "." -%}
 {%- endif -%}
 {%- if paginator?.current_index and paginator.current_index > 1 -%}
 	{%- set description = description ~ " Page " ~ paginator.current_index ~ " of " ~ paginator.number_pagers ~ "." -%}

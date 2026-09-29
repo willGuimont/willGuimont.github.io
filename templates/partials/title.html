@@ -4,6 +4,9 @@
 {%- else -%}
 	{%- if page?.title -%}
 		{%- set prefix = page.title -%}
+		{%- if current_path is matching(pat="^/projects/[^/]+/$") -%}
+			{%- set prefix = prefix ~ " — Project" -%}
+		{%- endif -%}
 	{%- elif section?.extra?.seo_title -%}
 		{%- set prefix = section.extra.seo_title -%}
 	{%- elif section?.title -%}

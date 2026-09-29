@@ -1,6 +1,6 @@
 title = "wigum::website"
 base_url = "https://willguimont.com/"
-description = "William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software."
+description = "William Guimont-Martin’s research in robotics, AI, and 3D perception, alongside software projects, technical articles, papers, and creative writing."
 
 compile_sass = true
 minify_html = true
@@ -42,8 +42,8 @@ dark_theme = "solarized-dark"
 index_format = "fuse_json"
 
 [extra]
-seo_home_title = "William Guimont-Martin — Robotics, AI and Computer Science"
-seo_home_description = "William Guimont-Martin is a computer science researcher working on robotics, artificial intelligence, 3D perception, point clouds, and software."
+seo_home_title = "William Guimont-Martin | Robotics, AI & Computer Science"
+seo_home_description = "William Guimont-Martin’s research in robotics, AI, and 3D perception, alongside software projects, technical articles, papers, and creative writing."
 # Which theme should be used by default (light/dark).
 #
 default_theme = "dark"

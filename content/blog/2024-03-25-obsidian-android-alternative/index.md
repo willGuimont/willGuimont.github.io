@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "Sync Obsidian vaults to Android using Git"
-description = "How to sync your Obsidian vault to an Android phone using Git"
+description = "Sync an Obsidian vault to Android using Git, Termux, and MGit. Follow the setup steps for SSH keys, GitHub access, cloning your vault, and pulling updates."
 date = 2024-03-25
 # updated = ""
 # draft = false

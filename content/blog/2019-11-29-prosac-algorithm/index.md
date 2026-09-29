@@ -1,7 +1,7 @@
 +++
 authors = ["William Guimont-Martin"]
 title = "PROSAC"
-description = "A variant of RANSAC using quality to speed up the process"
+description = "Learn how PROSAC speeds up RANSAC by ranking samples by quality, with an intuitive explanation, pseudocode, stopping criteria, and a Python implementation."
 date = 2019-12-26
 # updated = ""
 # draft = false
