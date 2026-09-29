@@ -32,8 +32,8 @@ Follow these steps to prepare your environment.
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 2. `docker run -it --rm ubuntu:latest bash`
 3. In the Docker container, run:
-   1. `sudo apt update && sudo apt install -y git`
-   2. `mkdir .atelier && cd .atelier && git clone https://github.com/willGuimont/IFT2001-Docker`
+   1. `apt update && apt install -y git`
+   2. `mkdir .atelier && cd .atelier && git clone https://github.com/willGuimont/IFT2001-Docker ateliers-iftglo-2001`
    3. `cd ateliers-iftglo-2001`
    4. `./helper/install.sh`
    5. `python3 ./helper/prepare_bashrc.py && source ~/.bashrc`
@@ -203,9 +203,9 @@ You do not have to read the advanced sections to complete this workshop.
 As a supplement, you can watch the video [“Never install locally”](https://www.youtube.com/watch?v=J0NuOlA2xDc).
 
 **Docker Image**  
-A Docker image is a template or build blueprint that contains all the elements needed to run an application.
-It includes the operating system, libraries, dependencies, the application’s source code, and configuration files.
-Docker images are created from files called `Dockerfile` that specify the steps to build the image.
+An image contains the filesystem and user-space components required by the application: binaries, libraries, dependencies, configuration files, and often a Linux distribution's userland.
+It does not contain its own Linux kernel.
+Docker images are typically created from files called `Dockerfile` that specify the steps to build the image.
 
 **Dockerfile**  
 A Dockerfile is a text file that contains the instructions to build a Docker image.
@@ -296,7 +296,8 @@ neofetch
 ```
 
 As you can see, there is no magic in containers.
-We use basic Linux tools to isolate a process in its own filesystem.
+There is no magic in a container: at its core, Linux provides mechanisms such as namespaces, filesystem isolation, and cgroups.
+Docker packages these mechanisms behind a convenient image, networking, storage, and lifecycle-management interface.
 
 ## Docker basics
 
@@ -355,6 +356,7 @@ To stop a container: `docker stop container_id`.
 {% </alert> %}
 
 Tasks:
+
 1. Launch an interactive terminal with Docker;
 2. Open another terminal and inspect running containers;
 3. Stop the Docker container from the second terminal.
@@ -374,7 +376,87 @@ docker rm -f id
 
 </details>
 
-### Exercise 03 – PostgreSQL database
+### Exercise 03 – Inspecting a running container
+
+Containers often run in the background.
+Docker provides several commands to inspect and interact with running containers.
+
+{% <alert note={true}> %}
+To display the output produced by a container:
+
+```bash
+docker logs container_name
+```
+
+To execute a command inside a running container:
+
+```bash
+docker exec container_name command
+```
+
+For example, to open an interactive shell:
+
+```bash
+docker exec -it container_name bash
+```
+
+Finally, docker inspect displays detailed information about a Docker object, including its network configuration, mounted filesystems, environment variables, and process configuration:
+
+```bash
+docker inspect container_name
+```
+
+{% </alert> %}
+
+Launch an nginx container in the background:
+
+```bash
+docker run --name web-server -d -p 8080:80 nginx
+```
+
+Tasks:
+
+1. Verify that the container is running.
+2. Display the container's logs.
+3. Open an interactive shell inside the running container.
+4. From inside the container, inspect the files in /usr/share/nginx/html.
+5. Use docker inspect to find the container's IP address.
+6. Stop and remove the container.
+
+<details><summary>Solution</summary>
+
+```bash
+# Verify that the container is running
+docker ps
+
+# Display its logs
+docker logs web-server
+
+# Execute Bash inside the existing container
+docker exec -it web-server bash
+
+# Inside the container
+ls /usr/share/nginx/html
+exit
+
+# Inspect the container
+docker inspect web-server
+# Find the IP address
+docker inspect \
+    --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+    web-server
+
+# Stop and remove it
+docker stop web-server
+docker rm web-server
+```
+
+`docker run` creates a new container, whereas `docker exec` executes another process inside an already running container.
+This distinction is useful when debugging services running in the background.
+
+</details>
+
+### Exercise 04 – PostgreSQL database
 
 {% <alert note={true}> %}
 To set environment variables in a container, use the `-e` flag.
@@ -385,7 +467,7 @@ docker run -it --rm -e HELLO=hello archlinux sh -c 'echo $HELLO'
 {% </alert> %}
 
 {% <alert note={true}> %}
-To open a network port, use the `-p docker:host` flag, where `docker` is the port number inside the container and `host` is the port number on the host.
+To open a network port, use the `-p host:docker` flag, where `host` is the port number on the host and `docker` is the port number inside the container.
 
 ```bash
 docker run -p 127.0.0.1:8080:80 nginx
@@ -459,7 +541,7 @@ This saves build time.
 However, if you modify an instruction higher up in the Dockerfile, all subsequent instructions will have their cache invalidated and must be rebuilt.
 **For example, if you perform resource-intensive operations such as compiling code that changes whenever you modify the source, it can be preferable to place those steps towards the end of the Dockerfile to benefit from caching as much as possible.**
 
-### Exercise 04 – Haskell service Dockerfile
+### Exercise 05 – Haskell service Dockerfile
 Use the `README.md` in the folder `~/Applications/status-checker` to write a Dockerfile that runs the Haskell application.
 
 Requirements:
@@ -505,13 +587,17 @@ docker run --rm -p 8080:8080 status-checker
 
 </details>
 
-### Exercise 05 – Python application Dockerfile
+### Exercise 06 – Python application Dockerfile
 Use the `README.md` in the folder `~/Applications/python_app` to write a Dockerfile that runs the Python application.
 
 Then, launch the application interactively and with the correct network mode.
 
 {% <alert note={true}> %}
-This application will need to access your computer’s local network to make requests to the container from the previous exercise; to do so, pass the argument `--network="host"` when you run the container.
+This application will need to access your computer's local network to make requests to the container from the previous exercise; to keep this exercise simple, use `--network="host"` when running the container.
+
+Host networking makes the container share the host's network stack.
+This is convenient here, but it reduces network isolation and is not the usual way for containers to communicate with each other.
+Later, Docker Compose will place the containers on a shared Docker network, where services can communicate directly using their service names.
 {% </alert> %}
 
 If everything works, you should be able to use the application to add URLs to monitor and see the results.
@@ -533,7 +619,7 @@ Execution:
 
 ```bash
 docker build -t python_app .
-docker run --rm -it --network="host" python_app
+docker run --rm -it --network=host python_app
 ```
 
 </details>
@@ -585,7 +671,7 @@ docker build -t web-app .
 docker run --rm -p 80:80 web-app
 ```
 
-### Exercise 06 – Rust multi-stage build
+### Exercise 07 – Rust multi-stage build
 Use the `README.md` in the folder `~/Applications/rust_api` to write a Dockerfile that runs the application.
 
 Requirements:
@@ -596,7 +682,7 @@ Requirements:
   - Install the package `libpq-dev` with `apt update; apt install -y libpq-dev`;
   - Set the environment variable `DATABASE_URL=postgres://postgres:postgres@localhost`
   - Copy `/app/target/release/rust_api` from the previous stage;
-- Run the container with `--network="host"` and expose the correct port;
+- Run the container with `--network=host` and expose the correct port;
 - Test that everything works with `curl http://localhost:8081/documents`.
 
 <details><summary>Solution</summary>
@@ -620,7 +706,7 @@ Execution
 ```bash
 docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
 docker build -t rust_api .
-docker run --rm --network="host" rust_api
+docker run --rm --network=host rust_api
 
 # Validate that the server works
 curl http://localhost:8081/documents
@@ -628,25 +714,54 @@ curl http://localhost:8081/documents
 
 </details>
 
-### Volumes
+### Volumes and bind mounts
 
-In Docker, volumes are used to allow containers to access, share, and persist data between the host system and the container itself.
-Docker volumes store data outside the lifecycle of containers.
-This means that even if you destroy or recreate a container, the data stored in the volume remains intact.
-This separates data persistence from the container environment, providing better data management.
-Volumes are also useful to grant containers access to datasets too large to copy into the image, such as a training dataset for a machine learning system.
+Containers have a writable filesystem, but this filesystem belongs to the container.
+If the container is removed, the data written inside it is also removed.
+Docker provides mounts to store data outside the container's filesystem.
 
-For example, to store PostgreSQL database data in a host folder, specify the `PGDATA` variable and mount a volume:
+There are two common types of mounts: **volumes** and **bind mounts**.
+
+A **volume** is storage managed by Docker. You give the volume a name, and Docker decides where the data is stored on the host:
 
 ```bash
-docker run -e POSTGRES_PASSWORD=postgres -p 5432:5432 --rm \
-    -e PGDATA=/var/lib/postgresql/data/pgdata \
-    -v custom/mount/path:/var/lib/postgresql/data \
+docker run -v database-data:/var/lib/postgresql/data postgres
+```
+
+Here, `database-data` is a Docker volume and `/var/lib/postgresql/data` is the directory where PostgreSQL sees it inside the container.
+The data remains available even if the container is removed.
+Volumes are therefore particularly useful for persistent application data such as databases.
+
+A **bind mount** directly maps an existing file or directory from the host filesystem into the container:
+
+```bash
+docker run -v ./src:/app/src my-app
+```
+
+Here, `./src` is a directory on the host and `/app/src` is where it appears inside the container.
+Changes made on either side are immediately visible on the other side.
+
+Volumes are generally appropriate for persistent application data.
+Bind mounts are useful when the container must directly access files from the host, for example source code, configuration files, or datasets.
+
+For example, we can persist PostgreSQL data using a named volume:
+
+```bash
+docker run \
+    -e POSTGRES_PASSWORD=postgres \
+    -p 5432:5432 \
+    --rm \
+    -v postgres-data:/var/lib/postgresql/data \
     postgres
 ```
 
-To avoid rebuilding the Docker image after each change to the source code—and thus speed up development—you can make the project’s source code accessible via a volume.
-Thus, a `DockerfileDev` for the Python application could look like this:
+Docker creates and manages `postgres-data`.
+Removing the container does not remove the volume.
+
+During development, we can instead use a bind mount to expose the Python application's source code directly inside the container.
+This avoids rebuilding the image whenever the source code changes.
+
+A DockerfileDev can therefore omit the source code:
 
 ```Dockerfile
 FROM python:3.9-slim
@@ -657,10 +772,10 @@ RUN pip install -r requirements.txt
 CMD ["bash"]
 ```
 
-Run with:
+Build and run it with:
 ```bash
 docker build -t python_app -f DockerfileDev . 
-docker run --rm -v .:/app my-app
+docker run --rm -it -v .:/app python_app
 # In the container
 python main.py
 # Modify the source code
@@ -698,35 +813,48 @@ Here is an example `docker-compose.yml` for the Rust application that launches b
 # List of containers to launch
 services:
   # Database container
-  # We find the same parameters as in `docker run`
+  # We find many of the same parameters as with `docker run`
   db:
-    # Specify the image to launch
-    image: postgres:latest
+    # Image to launch
+    image: postgres:18
+    # Restart the database if the container stops
     restart: always
+    # Environment variables passed to PostgreSQL
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    expose:
-      - 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    # Store the database outside the container using a named volume
     volumes:
       - db:/var/lib/postgresql/data
+    # Test whether PostgreSQL is ready to accept connections
+    # Starting a container does not necessarily mean that the
+    # application inside it is ready yet.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+  
   # Rust server
   api:
-    # Will build the Dockerfile in the directory containing docker-compose.yml
+    # Build the Dockerfile in the directory containing compose.yaml
     build: .
-    # Build the db service before api
+    # Start the API only once the database healthcheck succeeds
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    # Map host port 8081 to container port 8081
     ports:
-      - 8081:8081
-    # The database URL changes—rather than @localhost
-    # docker-compose makes db accessible under the name @db
+      - "8081:8081"
+    # Containers in the same Compose application share a network.
+    # Services can reach each other using their service name.
+    # Therefore, the database is available at hostname `db`
+    # rather than `localhost`.
     environment:
-      - DATABASE_URL=postgres://postgres:postgres@db
-    # Wait for the database to be ready before launching the server
-    entrypoint: bash -c "sleep 5 && ./rust_api"
-# Required for the database volume
+      DATABASE_URL: postgres://postgres:postgres@db
+
+# Named volumes used by the application
 volumes:
   db:
     driver: local
@@ -735,8 +863,14 @@ volumes:
 Run with:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
+
+Compose creates a default network for the application.
+The `api` container can therefore resolve `db` as a hostname and connect directly to the PostgreSQL container.
+
+`depends_on` normally controls startup order only.
+By combining it with the database healthcheck and condition: `service_healthy`, Compose waits until PostgreSQL is actually ready to accept connections before starting the API.
 
 ### Podman
 
