@@ -3,7 +3,7 @@ set -euo pipefail
 
 site_host="willguimont.com"
 site_url="https://${site_host}"
-indexnow_endpoint="https://api.indexnow.org/indexnow"
+indexnow_endpoints=("https://api.indexnow.org/indexnow" "https://yandex.com/indexnow")
 
 if [[ -z "${INDEXNOW_KEY:-}" ]]; then
 	echo "INDEXNOW_KEY is not configured; skipping submission."
@@ -113,7 +113,8 @@ fi
 echo "Submitting ${#sorted_urls[@]} URL(s) to IndexNow."
 response_file="$(mktemp)"
 trap 'rm -f "$response_file"' EXIT
-for ((attempt = 1; attempt <= 3; attempt++)); do
+for indexnow_endpoint in "${indexnow_endpoints[@]}"; do
+	echo "Using ${indexnow_endpoint}."
 	status="$(curl --silent --show-error \
 		--connect-timeout 5 --max-time 30 \
 		--output "$response_file" --write-out '%{http_code}' \
@@ -122,19 +123,25 @@ for ((attempt = 1; attempt <= 3; attempt++)); do
 		--data-binary "$payload" \
 		"$indexnow_endpoint")"
 	case "$status" in
-		200|202)
+		200)
 			echo "IndexNow submission accepted (HTTP ${status})."
 			exit 0
 			;;
+		202)
+			echo "IndexNow submission received; key verification is pending (HTTP 202)."
+			exit 0
+			;;
 		403)
-			if (( attempt < 3 )); then
-				echo "IndexNow key verification is not ready; retrying in 10 seconds (${attempt}/3)."
-				sleep 10
-				continue
-			fi
+			echo "${indexnow_endpoint} rejected key verification (HTTP 403)." >&2
+			cat "$response_file" >&2
+			printf '\n' >&2
+			continue
 			;;
 	esac
 	cat "$response_file" >&2
+	printf '\n' >&2
 	echo "::error::IndexNow submission failed (HTTP ${status})." >&2
 	exit 1
 done
+echo "::error::All IndexNow endpoints rejected key verification (HTTP 403), although the public key file matched. Retry later or investigate crawler access to ${key_location}." >&2
+exit 1
