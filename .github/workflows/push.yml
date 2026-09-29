@@ -41,7 +41,7 @@ jobs:
             echo "INDEXNOW_KEY is not configured; skipping key file."
             exit 0
           fi
-          if [[ ! "$INDEXNOW_KEY" =~ ^[A-Za-z0-9_-]{8,128}$ ]]; then
+          if [[ ! "$INDEXNOW_KEY" =~ ^[A-Za-z0-9-]{8,128}$ ]]; then
             echo "INDEXNOW_KEY has an invalid format" >&2
             exit 1
           fi

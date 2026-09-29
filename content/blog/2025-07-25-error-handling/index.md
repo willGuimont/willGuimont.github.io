@@ -524,7 +524,8 @@ Odin's approach is reminiscent of Go's explicit error handling but adds syntacti
 From these *errors-as-values* methods, this is probably my favorite.
 It builds on Go's explicit error handling while providing operators like `or_return` to streamline common patterns.
 It does not require separate error construction like Zig, making it conceptually simpler.
-Overall, Odin strikes a nice balance between explicitness and elegance in error handling.
+Overall, I find Odin's solution to error handling to be particularly elegant, while staying explicit.
+It looks like a **simpler** solution, albeit not necessarily an **easy** one.
 
 ## Playing Tag with Errors (Rust)
 
@@ -699,12 +700,13 @@ Output: Err("oops")
 
 In this implementation:
 
-- `from_output` is analogous to Haskell’s `return` (or `pure` in the applicative context), lifting a value into the monadic type.
-- `branch` corresponds to the monadic bind (`>>=`), determining whether to propagate the value or short-circuit.
-- `from_residual` is required for integrating with other `Try`-compatible types and enabling error propagation across type boundaries.
+- `from_output` is analogous to Haskell’s `return` (or `pure` in the applicative context), lifting a value into the `Try` type.
+- `branch` corresponds to a poor man's monadic bind (`>>=`), determining whether to propagate the value or short-circuit.
+- `from_residual` reconstructs the enclosing `Try` type from the residual when `?` short-circuits. Additional `FromResidual` implementations can also explicitly permit propagation between compatible residual types.
 
-Despite this flexibility, Rust’s `?` operator remains fundamentally tied to error-handling semantics.
-Unlike Haskell, where monads generalize sequencing of computations across various effects, Rust’s monadic ergonomics, through `?`, are constrained to types modelling control flow interruption.
+Despite this flexibility, Rust’s `?` operator is fundamentally an abstraction over short-circuiting control flow rather than general monadic sequencing.
+`Result` uses that mechanism for errors, `Option` for absence, and `ControlFlow` for explicit early termination.
+In Haskell, by contrast, >>= describes general sequencing of computations and is not inherently associated with early exit.
 
 Despite how tempting it might look to generalize `?` to arbitrary monads, I would caution against it.
 Unlike Haskell, where monads are a first-class abstraction for sequencing computations with various effects, using `?` with arbitrary monads could lead to confusion.
@@ -757,7 +759,7 @@ main = do
     Right val                   -> putStrLn $ "Success: " ++ show val
 ```
 
-This is elegant -- you get typed, structured error handling that composes seamlessly with `IO`.
+This is quite elegant mathematically: you get typed, structured error handling that composes well with `IO`.
 
 But once you start stacking more than one effect -- say, `ReaderT`, `StateT`, and `ExceptT` -- it quickly becomes hard to manage.
 Libraries like `mtl`, `freer`, or `polysemy` try to reduce this friction, but the conceptual weight remains high.

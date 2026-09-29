@@ -10,7 +10,7 @@ if [[ -z "${INDEXNOW_KEY:-}" ]]; then
 	exit 0
 fi
 
-if [[ ! "$INDEXNOW_KEY" =~ ^[A-Za-z0-9_-]{8,128}$ ]]; then
+if [[ ! "$INDEXNOW_KEY" =~ ^[A-Za-z0-9-]{8,128}$ ]]; then
 	echo "INDEXNOW_KEY has an invalid format." >&2
 	exit 1
 fi
@@ -84,14 +84,57 @@ payload="$(jq -n \
 	--argjson url_list "$url_json" \
 	'{host: $host, key: $key, keyLocation: $key_location, urlList: $url_list}')"
 
-echo "Submitting ${#sorted_urls[@]} URL(s) to IndexNow."
 if [[ "${INDEXNOW_DRY_RUN:-}" == "1" ]]; then
 	printf '%s\n' "${sorted_urls[@]}"
 	exit 0
 fi
-curl --fail-with-body --silent --show-error \
-	-X POST \
-	-H 'Content-Type: application/json; charset=utf-8' \
-	--data-binary "$payload" \
-	"$indexnow_endpoint"
-echo "IndexNow submission accepted."
+
+# The deploy action pushes gh-pages; publication happens asynchronously.
+# Verify the same public URL that IndexNow will fetch before submitting.
+key_location="${site_url}/${INDEXNOW_KEY}.txt"
+key_ready=false
+for ((attempt = 1; attempt <= 18; attempt++)); do
+	if key_content="$(curl --fail --silent --show-error \
+		--connect-timeout 5 --max-time 15 "$key_location")" && \
+		[[ "$key_content" == "$INDEXNOW_KEY" ]]; then
+		key_ready=true
+		break
+	fi
+	echo "Waiting for GitHub Pages to publish the IndexNow key (${attempt}/18)."
+	if (( attempt < 18 )); then
+		sleep 10
+	fi
+done
+if [[ "$key_ready" != true ]]; then
+	echo "::error::The public IndexNow key file is unavailable or does not match INDEXNOW_KEY. Check GitHub Pages publication and the key file on ${site_host}."
+	exit 1
+fi
+
+echo "Submitting ${#sorted_urls[@]} URL(s) to IndexNow."
+response_file="$(mktemp)"
+trap 'rm -f "$response_file"' EXIT
+for ((attempt = 1; attempt <= 3; attempt++)); do
+	status="$(curl --silent --show-error \
+		--connect-timeout 5 --max-time 30 \
+		--output "$response_file" --write-out '%{http_code}' \
+		-X POST \
+		-H 'Content-Type: application/json; charset=utf-8' \
+		--data-binary "$payload" \
+		"$indexnow_endpoint")"
+	case "$status" in
+		200|202)
+			echo "IndexNow submission accepted (HTTP ${status})."
+			exit 0
+			;;
+		403)
+			if (( attempt < 3 )); then
+				echo "IndexNow key verification is not ready; retrying in 10 seconds (${attempt}/3)."
+				sleep 10
+				continue
+			fi
+			;;
+	esac
+	cat "$response_file" >&2
+	echo "::error::IndexNow submission failed (HTTP ${status})." >&2
+	exit 1
+done
