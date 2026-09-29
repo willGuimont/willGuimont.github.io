@@ -32,8 +32,8 @@ Follow these steps to prepare your environment.
 1. Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 2. `docker run -it --rm ubuntu:latest bash`
 3. In the Docker container, run:
-   1. `sudo apt update && sudo apt install -y git`
-   2. `mkdir .atelier && cd .atelier && git clone https://github.com/willGuimont/IFT2001-Scripting`
+   1. `apt update && apt install -y git`
+   2. `mkdir .atelier && cd .atelier && git clone https://github.com/willGuimont/IFT2001-Scripting ateliers-iftglo-2001`
    3. `cd ateliers-iftglo-2001`
    4. `./helper/install.sh`
    5. `python3 ./helper/prepare_bashrc.py && source ~/.bashrc`
@@ -364,8 +364,8 @@ Permissions are generally represented by one character followed by three groups 
 Each group of three characters consists of the following permission types:
 
 1. `r` (*read*): Read the content of the file or directory.
-2. `w` (*write*): Modify or delete the file (or the contents of the directory).
-3. `x` (*execute*): Execute a file (or traverse a directory).
+2. `w` (*write*): Modify a file's contents; for a directory, create, delete, or rename entries inside it.
+3. `x` (*execute*): Execute a file; for a directory, traverse it and access entries within it.
 
 To modify these permissions, you can use the `chmod` command.
 For example, to add (`+`) the execute permission to a file:
@@ -404,8 +404,56 @@ chmod +x diagnostic.sh
 The script generated about ten `.out` files containing the results of the system analysis. You need to move these files into a new folder named `output`.
 Instead of moving each file manually with the command `mv out_01.out output/`, which would be tedious, you can use the wildcard character (`*`), which allows you to select multiple files at once.
 
+
+{% <alert note={true}> %}
+The `*` character is interpreted by the shell before the command is executed. This is called globbing.
+
+For example:
+
+```bash
+mv *.out output/
+```
+
+If the current directory contains:
+
+```
+a.out
+b.out
+notes.txt
+```
+
+Bash expands the command to something equivalent to:
+
+```bash
+mv a.out b.out output/
+```
+
+The `mv` command itself does not interpret `*.out`; Bash first replaces the pattern with the matching filenames, then launches `mv`.
+By default, `*` does not match filenames beginning with `.`.
+
+Some common glob patterns are:
+
+```
+*       any sequence of characters
+?       exactly one character
+[abc]   one character among a, b, or c
+[0-9]   one digit
+```
+
+For example:
+
+```
+ls *.txt
+ls file?.txt
+ls image[0-9].png
+```
+
+Globbing is different from regular expressions.
+A pattern such as `*.txt` is a shell glob: `*` matches any sequence of filename characters and `.` is literal. In a regular expression, `.` matches any single character and `*` repeats the preceding element. `grep` and `sed` use regular expressions; `find -name` uses shell-style filename patterns.
+{% </alert> %}
+
 Before moving the files, you can try the command `cat *`.
-This command displays the contents of all files in the current directory.
+This command displays the contents of matching non-hidden files in the current directory.
 
 However, in your case, you do not want to select all files.
 You can specify a specific pattern by adding a prefix or suffix to the filenames.
@@ -552,7 +600,7 @@ This cheat sheet will be useful throughout the workshop.
 | `find`     | File search |
 | `grep`     | Filter lines by a pattern |
 | `sort`     | Sort lines |
-| `uniq`     | Remove duplicate lines |
+| `uniq`     | Remove adjacent duplicate lines |
 | `wc`       | Count lines, words, and characters |
 | `head`     | Display the beginning of a file |
 | `tail`     | Display the end of a file |
@@ -575,7 +623,7 @@ Use a command to display all lines of `messages.txt` that contain the string `Er
 <details><summary>Solution</summary>
 
 ```bash
-grep Error messages.txt
+grep Error messages.txt > ~/errors.txt
 ```
 
 </details>
@@ -584,22 +632,75 @@ grep Error messages.txt
 After inspecting the errors that you copied into `~/errors.txt`, you realize there are many duplicates.
 Use a Bash command to remove duplicate lines and copy the result into `~/errors_2.txt`.
 
+{% <alert note={true}> %}
+`uniq` removes repeated **adjacent** lines. If identical lines are separated by other lines, `uniq` will not detect them.
+
+A common pattern is therefore:
+
+```bash
+sort file.txt | uniq
+```
+
+`sort` groups identical lines together, after which `uniq` removes the duplicates.
+{% </alert> %}
+
 <details><summary>Solution</summary>
 
 ```bash
-uniq ~/errors.txt
+sort ~/errors.txt | uniq > ~/errors_2.txt
+# or
+sort -u ~/errors.txt > ~/errors_2.txt
 ```
 
 </details>
 
 ### Exercise 11 – Advanced commands 3
-After inspecting the filtered errors from the file `~/errors_2.txt`, replace errors with a `400` code (`400`, `403` and `404`) with warnings.
-With `sed`, replace the text using the regular expression `'Error \(4[0-9]\+\)` with the following text: `Warning \1` where `\1` will copy the number captured in the regular expression.
+
+The log file `~/errors_2.txt` contains HTTP errors such as:
+
+```
+Error 404: File not found
+Error 403: Access denied
+Error 500: Internal server error
+```
+
+For this exercise, all client errors (`4xx` such as `400`, `403` and `404`) should be reclassified as warnings while preserving the error code.
+
+For example:
+
+```
+Error 404: File not found
+```
+
+should become:
+
+```
+Warning 404: File not found
+```
+
+With `sed -E`, match `^Error (4[0-9]{2}):` and replace it with `Warning \1:`. The `\1` inserts the captured error code.
 
 {% <alert tip={true}> %}
-The command will have the form `sed 's/regex1/regex2/g`.
+The substitution has the form: `s/pattern/replacement/g`
 
-`s` indicates that it is a **s**ubstitution applied **g**lobally.
+where:
+- `s` means substitute;
+- `pattern` is the regular expression to match;
+- `replacement` is the text that replaces the match;
+- `g` means replace every match on a line, rather than only the first. It is optional when a pattern can match only once per line.
+{% </alert> %}
+
+{% <alert tip={true}> %}
+In the regular expression `^Error (4[0-9]{2}):`:
+
+- `^` matches the beginning of the line, and `:` after the code prevents a match on a longer number such as 4000.
+- `4[0-9]{2}` matches exactly three digits starting with 4, such as 400, 403, or 404.
+- The parentheses capture those three digits as group 1.
+
+In the replacement `Warning \1:`:
+
+- `\1` inserts the text captured by group 1; the literal colon follows it.
+
 {% </alert> %}
 
 Use a Bash command to modify the messages and copy the result into `~/errors_3.txt`.
@@ -607,7 +708,7 @@ Use a Bash command to modify the messages and copy the result into `~/errors_3.t
 <details><summary>Solution</summary>
 
 ```bash
-sed 's/Error \(4[0-9]\+\)/Warning \1/g' ~/errors_2.txt
+sed -E 's/^Error (4[0-9]{2}):/Warning \1:/' ~/errors_2.txt > ~/errors_3.txt
 ```
 
 </details>
@@ -680,8 +781,8 @@ This operator is also called a *pipe*.
 (`command1 | command2`)
 
 ```bash
-# List files, and keep only .txt
-ls | grep ".txt"
+# List names ending in .txt
+ls | grep '\.txt$'
 
 # Sort the lines of a file, keep only the first 5 lines
 cat file.txt | sort | head -n 5
@@ -745,12 +846,14 @@ ABC
 **Examples**
 
 ```bash
-# Find the first 5 .txt in alphabetical order
-ls -l | grep ".txt" | sort | head -n 5
-# 1. List the files
-# 2. Keep only files containing .txt in their name
+# Find the first 5 names ending in .txt in alphabetical order
+ls | grep '\.txt$' | sort | head -n 5
+# 1. List the names
+# 2. Keep only names ending in .txt; \ makes the dot literal, and $ matches the end of the line
 # 3. Sort alphabetically
 # 4. Keep only the first 5 results
+# Using find for regular files; -name uses a filename glob, where the dot is already literal
+find . -maxdepth 1 -type f -name '*.txt' | sort | head -n 5
 
 # Keep only lines containing the text "warning",
 # replace "warning" with "error", then write the result to output.txt
@@ -759,6 +862,8 @@ cat data.txt | grep "warning" | sed 's/warning/error/g' > output.txt
 # 2. Filter lines to keep only those containing "warning"
 # 3. Apply a regex to replace "warning" with "error"
 # 4. > writes the result to the file output.txt
+# Can also just use grep
+grep "warning" data.txt | sed 's/warning/error/g' > output.txt
 
 # Generate a test file
 echo -e "1\t2\n2\t3\n3\t4\n" > foo.txt
@@ -771,16 +876,84 @@ cat foo.txt | awk '{sum += $1; sum2 += $2} END {print sum; print sum2}' \
 # 1. Display the contents of foo.txt
 # 2. Awk accumulates column sums and prints them
 # 3. Pass the awk result to echo
+# Or omit cat
+awk '{sum += $1; sum2 += $2} END {print sum; print sum2}' foo.txt \
+    | xargs echo "Sum of both columns"
 ```
 
 We recommend trying these commands one at a time to fully understand each step of the pipeline, for example:
 
 ```bash
-ls -l
-ls -l | grep ".txt"
-ls -l | grep ".txt" | sort |
-ls -l | grep ".txt" | sort | head -n 5
+ls
+ls | grep '\.txt$'
+ls | grep '\.txt$' | sort |
+ls | grep '\.txt$' | sort | head -n 5
 ```
+
+### Standard input, output, and errors
+
+Unix programs conventionally use three standard streams:
+
+```text
+0   stdin    standard input
+1   stdout   standard output
+2   stderr   standard error
+```
+
+`stdin` is where a program reads its input. `stdout` carries normal output, while `stderr` carries warnings and errors.
+
+For example:
+
+```bash
+grep "error" server.log
+```
+
+This reads `server.log` and writes matching lines to stdout. The `>` operator redirects stdout to a file:
+
+```bash
+grep "error" server.log > errors.txt
+```
+
+This is equivalent to explicitly writing `1>` because `1` refers to stdout:
+
+```bash
+grep "error" server.log 1> errors.txt
+```
+
+Errors can be redirected separately with `2>`:
+
+```bash
+grep "error" missing-file.txt 2> errors.log
+```
+
+Normal output would still go to the terminal, while error messages go to `errors.log`. You can redirect both streams independently:
+
+```bash
+command > output.txt 2> errors.txt
+```
+
+To discard a stream, redirect it to `/dev/null`:
+
+```bash
+command > /dev/null
+command 2> /dev/null
+```
+
+To discard both stdout and stderr:
+
+```bash
+command > /dev/null 2>&1
+```
+
+`2>&1` sends file descriptor `2` to the destination currently used by file descriptor `1`.
+
+By default, a pipeline passes only stdout from `command1` to stdin of `command2`:
+
+```bash
+command1 | command2
+```
+
+Errors from `command1` still appear on the terminal.
 
 ### Exercise 12 – Piping and redirection
 Use piping and redirection to rewrite exercises 9, 10 and 11 as a single command.
@@ -788,7 +961,7 @@ Use piping and redirection to rewrite exercises 9, 10 and 11 as a single command
 <details><summary>Solution</summary>
 
 ```bash
-grep Error messages.txt | uniq | sed 's/Error \(4[0-9]\+\)/Warning \1/g' > ~/out_12.txt
+grep Error messages.txt | sort | uniq | sed -E 's/^Error (4[0-9]{2}):/Warning \1:/' > ~/out_12.txt
 ```
 
 </details>
@@ -797,7 +970,7 @@ grep Error messages.txt | uniq | sed 's/Error \(4[0-9]\+\)/Warning \1/g' > ~/out
 Use this command which returns the list of files and their size:
 
 ```bash
-find Documents -type f | xargs du -sb
+find ~/Documents -type f -exec du -sb {} +
 ```
 
 Each line contains the size in bytes and the file name separated by a <kbd>Tab</kbd> character.
@@ -806,13 +979,11 @@ Use the output of this command to find the five largest files. Your script must 
 <details><summary>Solution</summary>
 
 ```bash
-find ~/Documents -type f | xargs du -sb | sort -rh | head -n 5 > ~/out_13.txt
-# or
-find ~/Documents -type f | xargs du -sb | sort -h | tac | head -n 5 > ~/out_13.txt
-# or
-find ~/Documents -type f | xargs du -sb | sort -h | tail -n 5 | tac > ~/out_13.txt
-# or
 find ~/Documents -type f -exec du -sb {} + | sort -rh | head -n 5 > ~/out_13.txt
+# or
+find ~/Documents -type f -exec du -sb {} + | sort -h | tac | head -n 5 > ~/out_13.txt
+# or
+find ~/Documents -type f -exec du -sb {} + | sort -h | tail -n 5 | tac > ~/out_13.txt
 ```
 
 </details>
@@ -915,6 +1086,72 @@ greet() {
 greet "Alice"
 ```
 
+### Quoting variables
+
+When a variable is expanded without quotes, Bash may split its value into multiple arguments and expand wildcard characters in it.
+
+Consider:
+
+```bash
+file="my report.txt"
+rm $file
+```
+
+Bash expands the command approximately as:
+
+```bash
+rm my report.txt
+```
+
+So `rm` receives two filenames:
+
+```text
+my
+report.txt
+```
+
+This is usually not what we want. Quote the expansion when the value should remain a single argument:
+
+```bash
+rm "$file"
+```
+
+Now `rm` receives exactly one filename:
+
+```text
+my report.txt
+```
+
+The same rule applies to most variable expansions:
+
+```bash
+cd "$directory"
+cp "$source" "$destination"
+kill "$server_pid"
+echo "$message"
+```
+
+As a general rule, write `"$variable"` unless you specifically want Bash to split the value into words or expand wildcard characters in it.
+
+Double quotes still allow variable and command substitution:
+
+```bash
+name="Alice"
+echo "Hello $name"
+```
+
+Single quotes do not:
+
+```bash
+echo 'Hello $name'
+```
+
+This prints:
+
+```text
+Hello $name
+```
+
 ### Exercise 15 – Test script
 
 After all that cleaning and analysis, you decide it is wiser to just roll back to a previous version of the server until the problem is fixed.
@@ -936,7 +1173,7 @@ server_pid=$!
 
 # The `stop_server` function stops the server process
 stop_server() {
-  kill $server_pid
+  kill "$server_pid"
 }
 
 # Register the `stop_server` function to be called when this script exits
@@ -965,7 +1202,7 @@ server_pid=$!
 
 # The `stop_server` function stops the server process
 stop_server() {
-  kill $server_pid
+  kill "$server_pid"
 }
 
 # Register the `stop_server` function to be called when this script exits
@@ -985,6 +1222,13 @@ else
   echo "Server is down"
   exit 1
 fi
+# Or cleaner
+if curl localhost:8000 > /dev/null; then
+    echo "Server is up"
+else
+    echo "Server is down"
+    exit 1
+fi
 ```
 
 </details>
@@ -996,6 +1240,15 @@ Use the given `revert_last_commit` function to roll back to the previous version
 
 Complete the following script to roll back to a previous version of the server until the test script passes.
 Save this script in the file `~/revert.sh`, and give it execute permissions.
+
+{% <alert tip={true}> %}
+The repository contains a known working version in its history, so repeatedly moving to the previous commit will eventually succeed.
+
+`git reset --hard` discards uncommitted changes.
+It is safe here because the workshop repository is disposable.
+Be careful if you use it in your own projects!
+{% </alert> %}
+
 
 ```bash
 #!/usr/bin/env bash
@@ -1025,13 +1278,13 @@ revert_last_commit() {
 }
 
 exit_status=1
-while [ $exit_status -ne 0 ]; do
+while [ "$exit_status" -ne 0 ]; do
   # Run the test script
   ~/test.sh > /dev/null 2>&1
   # Save the test script status
   exit_status=$?
 
-  if [ $exit_status -ne 0 ]; then
+  if [ "$exit_status" -ne 0 ]; then
     echo "The script returned a non-zero exit status ($exit_status). Reverting commit and retrying..."
     revert_last_commit
   else
@@ -1224,6 +1477,7 @@ Here's an example of useful `git` aliases from [here](https://gist.github.com/wi
 	obs = !"git commit -a -m \"obsidian\" && git p"
 	refs = !"git pull && git commit -a -m \"updated references\" && git p"
 	figs = !"git pull && git commit -a -m \"updated figures\" && git p"
+# In word diff, . matches each non-newline character
 	wdiff = diff --word-diff-regex=.
 [pull]
     ff = only
