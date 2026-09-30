@@ -1,0 +1,54 @@
+.pyodide-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 1fr);
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--fg-muted, #888);
+  border-radius: 0.5rem;
+}
+
+.pyodide-demo-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.pyodide-demo-controls label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pyodide-demo-controls input[type="range"] {
+  width: 100%;
+  margin: 0 0 0.7rem;
+}
+
+.pyodide-demo-plot svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  margin: auto;
+}
+
+.pyodide-demo-status,
+.pyodide-demo-code,
+.pyodide-demo-intro {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.pyodide-demo-code pre {
+  max-height: 28rem;
+  overflow: auto;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .pyodide-demo { grid-template-columns: 1fr; }
+  .pyodide-demo-plot { max-width: 340px; margin: auto; }
+}

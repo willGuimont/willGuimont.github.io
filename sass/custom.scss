@@ -176,6 +176,15 @@
   font-size: 1.15rem;
 }
 
+#heading > .article-subtitle {
+  display: block;
+  max-width: 65ch;
+  margin: 0.5rem auto 1rem;
+  color: var(--fg-muted-5);
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;

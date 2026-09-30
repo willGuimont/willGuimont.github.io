@@ -1,0 +1,20 @@
+{% component pyodide_demo(source, script, stylesheet="", title="Interactive Python example", code_path="") %}
+{% set python_file = "content" ~ source %}
+{% if code_path %}{% set python_file = code_path %}{% endif %}
+{% set python_source = load_data(path=python_file, format="plain") %}
+{% set python_markdown = "````python\n" ~ python_source ~ "\n````" %}
+<link rel="stylesheet" href="/pyodide/demo.css">
+{% if stylesheet %}<link rel="stylesheet" href="{{ stylesheet }}">{% endif %}
+<script defer src="/pyodide/demo.js"></script>
+<div class="pyodide-demo" data-source="{{ source }}">
+  {% if body | trim %}<div class="pyodide-demo-intro">{{ body | markdown | safe }}</div>{% endif %}
+  <div class="pyodide-demo-controls"></div>
+  <div class="pyodide-demo-plot" role="img" aria-label="{{ title }}"></div>
+  <p class="pyodide-demo-status" role="status" aria-live="polite">Loading Python example…</p>
+  <details class="pyodide-demo-code">
+    <summary>Show Python code</summary>
+    {{ python_markdown | markdown | safe }}
+  </details>
+</div>
+<script defer src="{{ script }}"></script>
+{% endcomponent pyodide_demo %}

@@ -136,7 +136,8 @@ csp = [
 		"https:",
 	] },
 	{ directive = "script-src", domains = [
-		"'self'",
+		"'wasm-unsafe-eval'",
+		"https://cdn.jsdelivr.net/pyodide/v0.27.7/full/",
 	] },
 	{ directive = "style-src", domains = [
 		"'self'",
@@ -149,6 +150,7 @@ csp = [
 	] },
 	{ directive = "connect-src", domains = [
 		"https://toot.community",
+		"https://cdn.jsdelivr.net/pyodide/v0.27.7/full/",
 	] },
 	{ directive = "base-uri", domains = [
 		"'none'",

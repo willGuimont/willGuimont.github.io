@@ -64,8 +64,8 @@
 	<link rel="stylesheet" href="{{ get_url(path=style) | safe }}" />
 		{%- endfor %}
 		{%- if config.markdown?.highlighting and config.markdown.highlighting.light_theme and config.markdown.highlighting.dark_theme %}
-	<link rel="stylesheet" href="{{ get_url(path='giallo-light.css') }}" media="(prefers-color-scheme: light)" />
-	<link rel="stylesheet" href="{{ get_url(path='giallo-dark.css') }}" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" href="{{ get_url(path='giallo-light.css') }}" />
+	<link rel="stylesheet" href="{{ get_url(path='giallo-dark.css') }}" />
 		{%- elif config.markdown?.highlighting and config.markdown.highlighting.theme %}
 	<link rel="stylesheet" href="{{ get_url(path='giallo.css') }}" />
 		{%- endif %}

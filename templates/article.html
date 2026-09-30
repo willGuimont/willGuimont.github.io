@@ -37,6 +37,9 @@
 		{%- endif -%}
 
 		<h1>{{ page.title }}</h1>
+		{%- if page.description -%}
+			<p class="article-subtitle">{{ page.description }}</p>
+		{%- endif -%}
 
 		{%- if page.authors or config.extra?.show_reading_time -%}
 			<p>

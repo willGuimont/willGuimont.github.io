@@ -16,6 +16,10 @@ disclaimer = """
 """
 +++
 
+## Interactive demos
+
+- [Pyodide demo and usage guide](@/demo/pyodide/index.md) — run an interactive Python figure in your browser and see how to embed one in an article.
+
 ## Markdown
 
 Text can be **bold**, *italic*, ~~strikethrough~~, and ***~~all at the same time~~***.
