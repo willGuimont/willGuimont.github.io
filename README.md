@@ -9,3 +9,5 @@ zola serve --drafts
 ```
 
 Theme: [Duckquill](https://duckquill.daudix.one/)
+
+Math posts: [shared KaTeX prelude demo and command guide](content/demo/math/index.md).

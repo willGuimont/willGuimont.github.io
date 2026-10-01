@@ -1,40 +1,48 @@
 +++
-title = "Pyodide Demo Component"
-description = "How to embed an interactive Python figure with Pyodide."
+title = "Pyodide Figure Library"
+description = "Build interactive 2D and 3D Python figures for articles."
 +++
 
-## Live example
+## 2D rotation: SVG
 
-This example runs Python in your browser with Pyodide. Drag the sliders, use **Play** and **Reset**, then expand **Show Python code** to see the source that generates the SVG figure.
+This figure runs Python in your browser with Pyodide. NumPy computes the rotated vector; `Figure2D` creates SVG. Try the sliders, **Play**, and **Reset**, then open **Show Python code**.
 
 {% <pyodide_demo source="/demo/pyodide/rotation.py" script="/demo/pyodide/rotation.js" stylesheet="/demo/pyodide/rotation.css" title="Unit vector rotated from the positive x-axis"> %}
-NumPy computes the position of the blue vector. The controls change its angular velocity and elapsed time.
+The blue vector rotates in the xy plane. Negative angular velocity reverses its direction.
 {% </pyodide_demo> %}
 
-## Add one to an article
+## 3D rotation: movable camera
 
-For a new figure, put its files in the article's page bundle:
+Here NumPy rotates a unit vector about the `(1, 1, 1)` axis. `Figure3D` describes the geometry in a persistent 3D scene. Drag the figure to turn the camera, scroll to zoom, or focus it and use the arrow keys and `+`/`-`. Camera movement works while the simulation is playing. The orange line shows the vector's trajectory.
 
-```text
-content/blog/my-article/
-├── index.md       # Article text and component call
-├── rotation.py    # NumPy calculation; returns an SVG string
-├── rotation.js    # Sliders/buttons and calls to Python
-└── rotation.css   # Figure-specific layout (optional)
-```
+{% <pyodide_demo source="/demo/pyodide/rotation3d.py" script="/demo/pyodide/rotation3d.js" stylesheet="/demo/pyodide/rotation3d.css" title="Unit vector rotated around the (1, 1, 1) axis in three dimensions"> %}
+Change the angular velocity and time, or press **Play** to animate the rotation.
+{% </pyodide_demo> %}
 
-Use [rotation.py](/demo/pyodide/rotation.py), [rotation.js](/demo/pyodide/rotation.js), and [rotation.css](/demo/pyodide/rotation.css) as the complete example. In this figure, `rotation.py` defines `rotation_svg(omega, time)`. It computes the rotated vector with NumPy, builds the drawing with `drawsvg`, and returns `drawing.as_svg(header="")`. The JavaScript calls the shared loader with `packages: ["numpy", "drawsvg"]` and `functionName: "rotation_svg"`, then passes the slider values to the returned function and puts its SVG result in `.pyodide-demo-plot`.
+## Add a figure to an article
 
-Add this to `index.md`, using the page bundle's URL for each file:
+Put a Python source file and a JavaScript control script in the article's page bundle, then call `pyodide_demo` with their URLs. A figure-specific stylesheet is optional. Zola displays the same Python source under **Show Python code**.
 
-<pre><code>&#123;% &lt;pyodide_demo source="/blog/my-article/rotation.py" script="/blog/my-article/rotation.js" stylesheet="/blog/my-article/rotation.css" title="Unit vector rotated from the positive x-axis"&gt; %&#125;
-Drag the sliders to change angular velocity and time.
+<pre><code>&#123;% &lt;pyodide_demo source="/blog/my-article/figure.py" script="/blog/my-article/figure.js" stylesheet="/blog/my-article/figure.css" title="Figure description"&gt; %&#125;
+Instructions for the reader.
 &#123;% &lt;/pyodide_demo&gt; %&#125;</code></pre>
 
-`source` and `script` are required. `stylesheet` and `title` are optional. The component provides a place for controls, an SVG plot, a loading status, and a **Show Python code** panel. Markdown between the opening and closing tags appears above the controls. Zola reads the Python file at build time and highlights that same file in the code panel. For a Python file outside `content/`, pass `code_path="static/path/to/file.py"` as well.
+The Python source imports `Figure2D` or `Figure3D` from [`figurekit`](/pyodide/figurekit.py). Build the figure and return `figure.to_json()` from a function. The JavaScript script uses `PyodideDemo.load(demo, { packages, functionName })` to get that function, then passes its result to `PyodideDemo.render(demo, result)`. See the complete [2D Python](/demo/pyodide/rotation.py), [2D controls](/demo/pyodide/rotation.js), [3D Python](/demo/pyodide/rotation3d.py), and [3D controls](/demo/pyodide/rotation3d.js) examples.
 
-The shared [Pyodide loader](/pyodide/demo.js) in `static/pyodide/` fetches and executes the Python source and loads its packages. The figure-specific [rotation.js](/demo/pyodide/rotation.js) defines the controls and calls the Python `rotation_svg` function. The [rotation.py](/demo/pyodide/rotation.py) file uses NumPy for the rotation and [drawsvg](https://cduck.github.io/drawsvg/) for SVG circles, lines, text, and the trajectory. The script requests NumPy and the locally stored `drawsvg` wheel through the shared loader, so the Python code does not need to assemble SVG markup by hand.
+```python
+from figurekit import Figure3D
 
-The `drawsvg` 2.4.2 wheel is stored at [static/pyodide/drawsvg-2.4.2-py3-none-any.whl](/pyodide/drawsvg-2.4.2-py3-none-any.whl). It includes its MIT license and supports paths, groups, gradients, clip paths, and SVG animation for more complex figures. The loader maps `"drawsvg"` in a figure's `packages` list to this local wheel.
+def make_figure():
+    figure = Figure3D(x_range=(-2, 2), y_range=(-2, 2), z_range=(-2, 2), axis_font_size=16)
+    figure.line([(0, 0, 0), (1, 1, 1)], color="#3996e6")
+    figure.points([(1, 1, 1)])
+    return figure.to_json()
+```
 
-The site's Content Security Policy allows the pinned Pyodide runtime from jsDelivr and WebAssembly execution. A network connection is needed the first time a visitor loads the runtime and its packages.
+`Figure2D` offers `line(x1, y1, x2, y2)`, `polyline(points)`, `circle(x, y, radius)`, `points(points)`, and `text(label, x, y)`. Set `x_range=(min, max)` and `y_range=(min, max)` in its constructor to choose the visible bounds; omitted ranges default to a centered view. Coordinates use the usual mathematical y direction; the library handles SVG's inverted y axis. Pass `class_="name"` to style SVG elements with CSS. It uses the locally stored `drawsvg` wheel, so include `"drawsvg"` in the loader's `packages` list.
+
+`Figure3D` offers `line(points)`, `points(points)`, `vector(start, end)`, and `surface(x, y, z)`. Points are `(x, y, z)` triples, and surfaces take matching 2D grids. Set `x_range=(min, max)`, `y_range=(min, max)`, or `z_range=(min, max)` in its constructor to fix individual axis limits; leave one out for automatic limits. Lines and points accept colors and widths or sizes. Surfaces support `colorscale="Viridis"`, `"Plasma"`, or `"Gray"`. The browser updates geometry while preserving the camera and canvas. `Figure3D` needs no Python plotting package.
+
+The site pins the [Pyodide runtime](https://pyodide.org/) and [Three.js](https://threejs.org/), which loads only for a 3D figure. A network connection is needed when a visitor first loads them. If the Python source lives outside `content/`, pass `code_path="static/path/to/file.py"` to the component so Zola can show it.
+
+Set `axis_font_size=16` on `Figure3D` to choose axis text size in pixels (default: 14). Axis names are slightly larger than numeric ticks, and text stays the same size when zooming.

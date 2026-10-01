@@ -138,6 +138,7 @@ csp = [
 	{ directive = "script-src", domains = [
 		"'wasm-unsafe-eval'",
 		"https://cdn.jsdelivr.net/pyodide/v0.27.7/full/",
+		"https://cdn.jsdelivr.net/npm/three@0.186.1/build/",
 	] },
 	{ directive = "style-src", domains = [
 		"'self'",

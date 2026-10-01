@@ -19,8 +19,7 @@
   const angleValue = demo.querySelector("#lie-angle");
   const play = demo.querySelector("#lie-play");
   const reset = demo.querySelector("#lie-reset");
-  const plot = demo.querySelector(".pyodide-demo-plot");
-  let rotationSvg;
+  let rotationFigure;
   let frame = 0;
   let previousTime = 0;
 
@@ -30,7 +29,9 @@
     omegaValue.textContent = `${angularVelocity.toFixed(2)} rad/s`;
     timeValue.textContent = `${seconds.toFixed(2)} s`;
     angleValue.textContent = `Angle: ${(angularVelocity * seconds).toFixed(2)} rad`;
-    if (rotationSvg) plot.innerHTML = rotationSvg(angularVelocity, seconds);
+    if (rotationFigure) {
+      PyodideDemo.render(demo, rotationFigure(angularVelocity, seconds)).catch(pause);
+    }
   }
 
   function pause() {
@@ -75,10 +76,10 @@
 
   PyodideDemo.load(demo, {
     packages: ["numpy", "drawsvg"],
-    functionName: "rotation_svg",
-    readyMessage: "Python, NumPy, and drawsvg ready.",
+    functionName: "rotation_figure",
+    readyMessage: "Python figure ready.",
   }).then((render) => {
-    rotationSvg = render;
+    rotationFigure = render;
     for (const control of [omega, time, play, reset]) control.disabled = false;
     draw();
   }).catch(() => {});

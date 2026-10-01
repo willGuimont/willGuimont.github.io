@@ -19,6 +19,7 @@ disclaimer = """
 ## Interactive demos
 
 - [Pyodide demo and usage guide](@/demo/pyodide/index.md) — run an interactive Python figure in your browser and see how to embed one in an article.
+- [Math prelude demo and usage guide](@/demo/math/index.md) — try the shared math commands and see how to use them in a post.
 
 ## Markdown
 

@@ -79,7 +79,7 @@
 		{%- set scripts = [...scripts, "count.js"] %}
 	{%- endif %}
 	{%- if page?.extra?.katex or section?.extra?.katex or config.extra?.katex %}
-		{%- set scripts = [...scripts, "katex.min.js", "auto-render.min.js", "katex-init.js"] %}
+		{%- set scripts = [...scripts, "katex.min.js", "auto-render.min.js", "math-prelude.js"] %}
 	{%- endif %}
 	{%- if config.build_search_index %}
 		{%- if config.search.index_format == "elasticlunr_json" %}
