@@ -1,0 +1,53 @@
+/* Zola 0.23 Giallo dark theme, scoped to the site theme. */
+
+:root[data-theme="dark"] .z-d-code {
+  color: #839496;
+  background-color: #002B36;
+}
+
+:root[data-theme="dark"] .z-d-hl {
+  background-color: #073642;
+}
+
+:root[data-theme="dark"] .z-d-1 { color: #268BD2; }
+:root[data-theme="dark"] .z-d-2 { color: #2AA198; }
+:root[data-theme="dark"] .z-d-3 { color: #586E75; }
+:root[data-theme="dark"] .z-d-4 { color: #6C71C4; }
+:root[data-theme="dark"] .z-d-5 { color: #859900; }
+:root[data-theme="dark"] .z-d-6 { color: #93A1A1; }
+:root[data-theme="dark"] .z-d-7 { color: #B58900; }
+:root[data-theme="dark"] .z-d-8 { color: #CB4B16; }
+:root[data-theme="dark"] .z-d-9 { color: #D33682; }
+:root[data-theme="dark"] .z-d-10 { color: #DC322F; }
+:root[data-theme="dark"] .z-d-b { font-weight: bold; }
+:root[data-theme="dark"] .z-d-i { font-style: italic; }
+:root[data-theme="dark"] .z-d-u { text-decoration: underline; }
+:root[data-theme="dark"] .z-d-s { text-decoration: line-through; }
+:root[data-theme="dark"] .z-d-us { text-decoration: underline line-through; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .z-d-code {
+  color: #839496;
+  background-color: #002B36;
+}
+
+  :root:not([data-theme]) .z-d-hl {
+  background-color: #073642;
+}
+
+  :root:not([data-theme]) .z-d-1 { color: #268BD2; }
+  :root:not([data-theme]) .z-d-2 { color: #2AA198; }
+  :root:not([data-theme]) .z-d-3 { color: #586E75; }
+  :root:not([data-theme]) .z-d-4 { color: #6C71C4; }
+  :root:not([data-theme]) .z-d-5 { color: #859900; }
+  :root:not([data-theme]) .z-d-6 { color: #93A1A1; }
+  :root:not([data-theme]) .z-d-7 { color: #B58900; }
+  :root:not([data-theme]) .z-d-8 { color: #CB4B16; }
+  :root:not([data-theme]) .z-d-9 { color: #D33682; }
+  :root:not([data-theme]) .z-d-10 { color: #DC322F; }
+  :root:not([data-theme]) .z-d-b { font-weight: bold; }
+  :root:not([data-theme]) .z-d-i { font-style: italic; }
+  :root:not([data-theme]) .z-d-u { text-decoration: underline; }
+  :root:not([data-theme]) .z-d-s { text-decoration: line-through; }
+  :root:not([data-theme]) .z-d-us { text-decoration: underline line-through; }
+}

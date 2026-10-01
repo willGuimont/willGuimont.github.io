@@ -1,0 +1,42 @@
+.lie-rotation-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pyodide-demo-plot .unit-circle,
+.pyodide-demo-plot .axis {
+  stroke: currentColor;
+  stroke-opacity: 0.35;
+  stroke-width: 0.008;
+}
+
+.pyodide-demo-plot .trail {
+  stroke: #dd8540;
+  stroke-width: 0.025;
+}
+
+.pyodide-demo-plot .reference {
+  stroke: currentColor;
+  stroke-opacity: 0.55;
+  stroke-width: 0.018;
+}
+
+.pyodide-demo-plot .vector {
+  stroke: #3996e6;
+  stroke-width: 0.03;
+}
+
+.pyodide-demo-plot .endpoint {
+  fill: #3996e6;
+}
+
+.pyodide-demo-plot .origin {
+  fill: currentColor;
+}
+
+.pyodide-demo-plot text {
+  fill: currentColor;
+  font-size: 0.15px;
+}
