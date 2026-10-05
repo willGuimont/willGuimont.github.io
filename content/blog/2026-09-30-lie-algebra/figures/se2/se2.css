@@ -1,0 +1,43 @@
+.axis-world { stroke: #71717a; stroke-dasharray: 4,4; stroke-width: 0.018; }
+.label-world { fill: #71717a; font-family: sans-serif; font-weight: 500; }
+.robot-chassis { stroke: #0284c7; stroke-width: 0.04; fill: rgba(2, 132, 199, 0.18); }
+.vector-t { stroke: #0284c7; stroke-width: 0.03; stroke-dasharray: 3,3; }
+.label-t { fill: #0284c7; font-weight: bold; font-family: sans-serif; }
+.axis-xs { stroke: #ef4444; stroke-width: 0.035; }
+.axis-ys { stroke: #16a34a; stroke-width: 0.035; }
+.label-xs { fill: #ef4444; font-weight: bold; font-family: sans-serif; }
+.label-ys { fill: #16a34a; font-weight: bold; font-family: sans-serif; }
+.vector-local-p { stroke: #a855f7; stroke-width: 0.025; stroke-dasharray: 2,2; }
+.landmark-y { fill: #dc2626; stroke: #991b1b; stroke-width: 0.01; }
+.label-y { fill: #dc2626; font-weight: bold; font-family: sans-serif; }
+.vector-q { stroke: #f97316; stroke-width: 0.038; }
+.point-q { fill: #f97316; stroke: #c2410c; stroke-width: 0.01; }
+.label-q { fill: #f97316; font-weight: bold; font-family: sans-serif; }
+.vector-residual { stroke: #d946ef; stroke-width: 0.035; stroke-dasharray: 3,3; }
+
+.matrix-readout {
+  margin-top: 8px;
+  font-family: monospace, monospace;
+  font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+  background: rgba(128,128,128,0.1);
+  padding: 8px 12px;
+  border-radius: 4px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.num-val {
+  display: inline-block;
+  width: 5.5em;
+  text-align: right;
+  font-family: monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9em;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
