@@ -409,32 +409,20 @@
 
 // About / CV
 .about-hero {
-  position: relative;
-  overflow: hidden;
   margin-block-end: 1.5rem;
-  border: max(1px, 0.0625rem) solid var(--fg-muted-2);
-  border-radius: var(--rounded-corner);
-  background:
-    radial-gradient(circle at 100% 0%, var(--accent-color-alpha), transparent 42%),
-    var(--fg-muted-1);
-  padding: clamp(1.5rem, 5vw, 3rem);
-  padding-block-start: clamp(1.25rem, 3vw, 2rem);
+  border-block-end: max(1px, 0.0625rem) solid var(--fg-muted-2);
+  padding-block-end: 2rem;
 
   h1 {
-    max-width: 13ch;
     margin: 0.5rem 0 0.5rem;
-    font-size: clamp(2.5rem, 8vw, 4.25rem);
-    line-height: 0.95;
+    overflow-wrap: anywhere;
   }
 }
 
-.about-eyebrow {
-  margin: 0;
-  color: var(--accent-color);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.about-name {
+  margin-block: 1.5rem 0;
+  font-size: 1.35rem;
+  font-weight: 650;
 }
 
 .about-location {
@@ -515,7 +503,6 @@
 
   h3 + p {
     margin-block-start: 0;
-    color: var(--fg-muted-5);
   }
 
   h4 {
@@ -547,6 +534,64 @@
 @media (max-width: 600px) {
   .about-index ul {
     grid-template-columns: 1fr;
+  }
+}
+
+.cv-page {
+  .about-name {
+    font-size: 1.5rem;
+  }
+
+  .about-index {
+    border: max(1px, 0.0625rem) solid var(--fg-muted-2);
+    border-radius: var(--rounded-corner);
+    background: var(--fg-muted-1);
+    padding: 1.25rem;
+
+    a {
+      display: block;
+      padding-block: 0.25rem;
+    }
+  }
+
+  .about-body {
+    > h2 {
+      margin-block-start: 3rem;
+      padding-block-start: 1.5rem;
+    }
+
+    > h2:first-child {
+      margin-block-start: 0;
+      border: 0;
+      padding: 0;
+    }
+
+    h3 {
+      margin-block: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    h4 {
+      margin-block: 1.75rem 0.5rem;
+      border: 0;
+      padding: 0;
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
+
+    h4 + p {
+      margin: 0 0 0.75rem;
+      color: var(--fg-muted-5);
+      font-size: 0.9rem;
+
+      strong {
+        font-weight: 500;
+      }
+    }
+
+    h4 + p + p {
+      margin-inline-start: 0;
+    }
   }
 }
 
