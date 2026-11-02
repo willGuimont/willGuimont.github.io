@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Revduino</title>
+  <desc id="desc">An Arduino-style board communicates with a REV Color Sensor V3 over I²C.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07151b"/><stop offset="1" stop-color="#102934"/></linearGradient>
+    <linearGradient id="pcb" x2="1" y2="1"><stop stop-color="#1685a7"/><stop offset="1" stop-color="#0b526d"/></linearGradient>
+    <linearGradient id="metal" x2="1" y2="1"><stop stop-color="#e7edef"/><stop offset=".5" stop-color="#75858c"/><stop offset="1" stop-color="#cbd4d7"/></linearGradient>
+    <linearGradient id="case" x2="1" y2="1"><stop stop-color="#2c3940"/><stop offset="1" stop-color="#10171b"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#7bd7ff" stroke-opacity=".06"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dy="15" stdDeviation="13" flood-opacity=".35"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)"/>
+  <circle cx="1320" cy="690" r="315" fill="#66ccff" opacity=".045"/><circle cx="410" cy="-65" r="245" fill="#21c55d" opacity=".045"/>
+  <rect width="1440" height="810" fill="url(#grid)"/>
+  <text x="90" y="115" fill="#66ccff" font-family="ui-monospace,monospace" font-size="28" font-weight="700" letter-spacing="7">ROBOTICS / I²C</text>
+  <text x="90" y="190" fill="#f5f7f8" font-family="Georgia,serif" font-size="72">Revduino</text>
+
+  <g transform="translate(95 285)" filter="url(#shadow)">
+    <path d="M36 0h274l40 40v198l-40 42H36C16 280 0 264 0 244V36C0 16 16 0 36 0z" fill="url(#pcb)" stroke="#66ccff" stroke-width="4"/>
+    <path d="M5 62h62v78H5z" fill="url(#metal)" stroke="#e6edef" stroke-width="3"/><path d="M17 80h38v43H17z" fill="#26333a"/>
+    <rect x="-8" y="184" width="73" height="59" rx="9" fill="#11191d" stroke="#607078" stroke-width="3"/><circle cx="16" cy="214" r="13" fill="#05090b" stroke="#819096" stroke-width="3"/>
+    <g fill="#172127" stroke="#9aa9ae" stroke-width="2"><rect x="89" y="13" width="202" height="27" rx="4"/><rect x="89" y="240" width="202" height="27" rx="4"/></g>
+    <g fill="#eef5f6">
+      <circle cx="106" cy="26" r="4"/><circle cx="129" cy="26" r="4"/><circle cx="152" cy="26" r="4"/><circle cx="175" cy="26" r="4"/><circle cx="198" cy="26" r="4"/><circle cx="221" cy="26" r="4"/><circle cx="244" cy="26" r="4"/><circle cx="267" cy="26" r="4"/>
+      <circle cx="106" cy="253" r="4"/><circle cx="129" cy="253" r="4"/><circle cx="152" cy="253" r="4"/><circle cx="175" cy="253" r="4"/><circle cx="198" cy="253" r="4"/><circle cx="221" cy="253" r="4"/><circle cx="244" cy="253" r="4"/><circle cx="267" cy="253" r="4"/>
+    </g>
+    <rect x="277" y="72" width="47" height="35" rx="4" fill="#dfe6e8" stroke="#77888e" stroke-width="3"/><circle cx="305" cy="153" r="10" fill="#48d7b0"/><circle cx="305" cy="187" r="10" fill="#f1b56b"/>
+    <g transform="translate(112 108)" fill="none" stroke="#f4fbfc" stroke-linecap="round"><path d="M0 27c16-31 42-31 62 0s45 31 63 0c-18-31-43-31-63 0S16 58 0 27z" stroke-width="7"/><path d="M17 27h23M29 15v24M86 27h23" stroke-width="4"/></g>
+    <text x="175" y="202" fill="#d9f4fb" font-family="ui-monospace,monospace" font-size="18" text-anchor="middle">ARDUINO</text>
+  </g>
+  <text x="270" y="622" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="24" text-anchor="middle">MICROCONTROLLER</text>
+
+  <g fill="none" stroke-width="12" stroke-linecap="round" filter="url(#glow)"><path d="M445 390H1040" stroke="#ffd23f"/><path d="M445 468H1040" stroke="#21c55d"/></g>
+  <g font-family="ui-monospace,monospace" font-size="24" font-weight="700" text-anchor="middle"><text x="720" y="358" fill="#ffd23f">SCL</text><text x="720" y="516" fill="#21c55d">SDA</text></g>
+  <g transform="translate(1030 290)" filter="url(#shadow)">
+    <rect width="270" height="290" rx="26" fill="#142c38" stroke="#66ccff" stroke-width="4"/>
+    <g fill="#07151b" stroke="#9fb1b8" stroke-width="4"><circle cx="25" cy="25" r="10"/><circle cx="245" cy="25" r="10"/><circle cx="25" cy="265" r="10"/><circle cx="245" cy="265" r="10"/></g>
+    <rect x="-6" y="75" width="38" height="125" rx="5" fill="#edf0ee" stroke="#9fb1b8" stroke-width="3"/>
+    <rect x="80" y="65" width="110" height="110" rx="12" fill="#111719" stroke="#7f8a8e" stroke-width="4"/>
+    <circle cx="135" cy="120" r="34" fill="#253844" stroke="#66ccff" stroke-width="3"/>
+    <g fill="#edf0ee"><rect x="65" y="192" width="22" height="15"/><rect x="185" y="192" width="22" height="15"/></g>
+    <g><circle cx="103" cy="230" r="9" fill="#e33835"/><circle cx="135" cy="230" r="9" fill="#21c55d"/><circle cx="167" cy="230" r="9" fill="#66ccff"/></g>
+    <text x="135" y="45" fill="#f5f7f8" font-family="Arial,sans-serif" font-size="21" font-weight="700" text-anchor="middle">REV</text>
+  </g>
+  <text x="1165" y="640" fill="#9fb1b8" font-family="ui-monospace,monospace" font-size="24" text-anchor="middle">COLOR SENSOR V3</text>
+</svg>
