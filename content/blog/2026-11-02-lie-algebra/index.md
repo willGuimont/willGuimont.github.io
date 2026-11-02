@@ -94,7 +94,7 @@ From that concrete example
 
 A robot with only a heading angle $\theta$ operating in the plane.
 
-{% <pyodide_demo source="/blog/lie-algebra/figures/so2/so2.py" script="/blog/lie-algebra/figures/so2/so2.js" stylesheet="/blog/lie-algebra/figures/so2/so2.css" code_path="content/blog/2026-09-30-lie-algebra/figures/so2/so2.py" title="SO(2) Robot Heading and Sensor Point Setup"> %}
+{% <pyodide_demo source="/blog/lie-algebra/figures/so2/so2.py" script="/blog/lie-algebra/figures/so2/so2.js" stylesheet="/blog/lie-algebra/figures/so2/so2.css" code_path="content/blog/2026-11-02-lie-algebra/figures/so2/so2.py" title="SO(2) Robot Heading and Sensor Point Setup"> %}
 A robot with heading orientation $\theta \in \mathrm{SO}(2)$, a local sensor reference frame $(X_s, Y_s)$, and a point $p_s$ expressed in the sensor referential mapped to world point $q = R(\theta)p_s$.
 {% </pyodide_demo> %}
 
@@ -111,7 +111,7 @@ Adding one more dim
 
 A robot with 2D translation $(x, y)$ and heading angle $\theta$.
 
-{% <pyodide_demo source="/blog/lie-algebra/figures/se2/se2.py" script="/blog/lie-algebra/figures/se2/se2.js" stylesheet="/blog/lie-algebra/figures/se2/se2.css" code_path="content/blog/2026-09-30-lie-algebra/figures/se2/se2.py" title="SE(2) Robot Pose and Sensor Point Setup"> %}
+{% <pyodide_demo source="/blog/lie-algebra/figures/se2/se2.py" script="/blog/lie-algebra/figures/se2/se2.js" stylesheet="/blog/lie-algebra/figures/se2/se2.css" code_path="content/blog/2026-11-02-lie-algebra/figures/se2/se2.py" title="SE(2) Robot Pose and Sensor Point Setup"> %}
 A robot with 2D position $(x, y)$ and heading $\theta$ represented by $T \in \mathrm{SE}(2)$, transforming sensor point $p_s$ to world point $q = R(\theta)p_s + t$.
 {% </pyodide_demo> %}
 
@@ -122,7 +122,7 @@ Need a better explanation why cross product here
 Can represent cross product as matrix mult -> hat operator
 Again, 3x3 matrix, but only 3 DoF w^p
 
-{% <pyodide_demo source="/blog/lie-algebra/figures/so3/so3.py" script="/blog/lie-algebra/figures/so3/so3.js" stylesheet="/blog/lie-algebra/figures/so3/so3.css" code_path="content/blog/2026-09-30-lie-algebra/figures/so3/so3.py" title="SO(3) 3D Robot Rotation and Sensor Point Setup"> %}
+{% <pyodide_demo source="/blog/lie-algebra/figures/so3/so3.py" script="/blog/lie-algebra/figures/so3/so3.js" stylesheet="/blog/lie-algebra/figures/so3/so3.css" code_path="content/blog/2026-11-02-lie-algebra/figures/so3/so3.py" title="SO(3) 3D Robot Rotation and Sensor Point Setup"> %}
 A robot rotating in 3D with orientation $R \in \mathrm{SO}(3)$, showing world frame axes, local sensor frame axes, and 3D point transformation $q = R p_s$. Drag the canvas to rotate the 3D camera view.
 {% </pyodide_demo> %}
 
@@ -130,7 +130,7 @@ A robot rotating in 3D with orientation $R \in \mathrm{SO}(3)$, showing world fr
 
 A robot with 3D translation $(x, y, z)$ and spatial orientation $R \in \mathrm{SO}(3)$.
 
-{% <pyodide_demo source="/blog/lie-algebra/figures/se3/se3.py" script="/blog/lie-algebra/figures/se3/se3.js" stylesheet="/blog/lie-algebra/figures/se3/se3.css" code_path="content/blog/2026-09-30-lie-algebra/figures/se3/se3.py" title="SE(3) 3D Robot Pose and Sensor Point Setup"> %}
+{% <pyodide_demo source="/blog/lie-algebra/figures/se3/se3.py" script="/blog/lie-algebra/figures/se3/se3.js" stylesheet="/blog/lie-algebra/figures/se3/se3.css" code_path="content/blog/2026-11-02-lie-algebra/figures/se3/se3.py" title="SE(3) 3D Robot Pose and Sensor Point Setup"> %}
 A robot with 3D spatial pose $T = (R, t) \in \mathrm{SE}(3)$, showing 3D translation $t = (x, y, z)$, 3D rotation $R$, local sensor frame, and world point $q = R p_s + t$. Drag the canvas to rotate the 3D camera view.
 {% </pyodide_demo> %}
 

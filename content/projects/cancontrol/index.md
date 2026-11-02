@@ -5,6 +5,7 @@ date = 2026-01-16
 weight = 210
 [extra]
 category = "Libraries"
+platformio_url = "https://registry.platformio.org/libraries/willguimont/CanControl"
 source_url = "https://github.com/willGuimont/CanControl"
 blog_post = "blog/2026-01-16-cancontrol/index.md"
 screenshot = "project.svg"

@@ -8,7 +8,7 @@
 		<h1>{{ page.title }}</h1>
 		<p class="project-detail-summary">{{ page.description }}</p>
 
-		{%- if page.extra.app_url or page.extra.itch_url or page.extra.source_url or page.extra.blog_post %}
+		{%- if page.extra.app_url or page.extra.itch_url or page.extra.source_url or page.extra.blog_post or page.extra.platformio_url %}
 		<nav class="project-actions" aria-label="Project links">
 			{%- if page.extra.app_url %}
 			<a class="project-action project-action-primary" href="{{ page.extra.app_url }}" target="_blank" rel="noopener noreferrer">
@@ -20,6 +20,9 @@
 			{%- endif %}
 			{%- if page.extra.source_url %}
 			<a class="project-action" href="{{ page.extra.source_url }}" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a>
+			{%- endif %}
+			{%- if page.extra.platformio_url %}
+			<a class="project-action" href="{{ page.extra.platformio_url }}" target="_blank" rel="noopener noreferrer">PlatformIO <span aria-hidden="true">↗</span></a>
 			{%- endif %}
 			{%- if page.extra.blog_post %}
 			{%- set blog_post = get_page(path=page.extra.blog_post) %}

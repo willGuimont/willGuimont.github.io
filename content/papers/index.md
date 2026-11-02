@@ -1,5 +1,5 @@
 +++
-title = "Papers"
+title = "wigum::papers"
 description = "Research papers, contributed work, and patents by William Guimont-Martin"
 template = "papers.html"
 
