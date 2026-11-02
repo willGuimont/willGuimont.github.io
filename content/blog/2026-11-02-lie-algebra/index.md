@@ -2,7 +2,7 @@
 authors = ["William Guimont-Martin"]
 title = "Lie Theory by Necessity"
 description = "An introduction to Lie groups and Lie algebras through the problems they solve in robotics."
-date = 2026-09-30
+date = 2026-11-02
 # updated = ""
 draft = true
 [taxonomies]
